@@ -1,0 +1,1 @@
+// This is the card for the Index Funds used on the home screen.
