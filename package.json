@@ -19,6 +19,7 @@
     "react-native-web": "~0.18.9"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
+    "@babel/core": "^7.12.9",
+    "@svgr/cli": "^6.5.1"
   }
 }
