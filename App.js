@@ -1,13 +1,23 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import BottomTabsNavigator from './src/navigation/BottomTabsNavigator';
+import { View, Text, StyleSheet } from 'react-native';
 
-const App = () => {
-    return(
-        <NavigationContainer>
-            <BottomTabsNavigator />
-        </NavigationContainer>
-    )
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>Hello, world!</Text>
+    </View>
+  );
 }
 
-export default App;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  text: {
+    fontSize: 24,
+    fontWeight: 'bold',
+  },
+});
