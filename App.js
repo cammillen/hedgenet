@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import fontstyles from './src/styles/Fonts';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Hello, world!</Text>
+      <Text style={fontstyles.text}>Hello world!</Text>
     </View>
   );
 }
@@ -15,9 +16,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  text: {
-    fontSize: 14,
-    fontWeight: 'bold',
   },
 });
