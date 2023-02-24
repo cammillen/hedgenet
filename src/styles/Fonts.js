@@ -18,7 +18,7 @@ const fontstyles = createStyles({
   },
 });
 
-export default fontstyles;
+export default styles;
 
 // import UrbanistBlack from '../assets/fonts/Urbanist-Black.ttf';
 // import UrbanistBlackItalic from '../assets/fonts/Urbanist-BlackItalic.ttf';
