@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-// import fontstyles from './src/styles/Fonts';
 
 export default function App() {
   return (
