@@ -2,7 +2,7 @@
 
 import { useFonts } from 'expo-font';
 
-export default function App() {
+export default function initialisingFonts() {
   const [fontsLoaded] = useFonts({
     'UrbanistBlack': require('../assets/fonts/Urbanist-Black.ttf'),
     'UrbanistBlackItalic': require('../assets/fonts/Urbanist-BlackItalic.ttf'), 
