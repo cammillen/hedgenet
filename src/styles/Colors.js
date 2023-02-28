@@ -1,5 +1,5 @@
 // HOW TO USE IN ANOTHER FILE: 
-// At the top of your file import globalColors: "import { globalColors } from './src/styles/Colors.js';"
+// At the top of your file import globalColors: "import { globalColors } from './src/styles/Colors.js';" (make sure you have the right path)
 // Then style text using e.g.: "style={{ color: globalColors.main.green.color }}"
 
 import { StyleSheet } from "react-native";

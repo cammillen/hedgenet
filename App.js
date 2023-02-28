@@ -4,12 +4,13 @@ import { useCallback } from 'react';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { globalColors } from './src/styles/Colors.js';
+import { globalFonts } from './src/styles/Fonts.js';
 
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
   const [fontsLoaded] = useFonts({
-    'Urbanist-Black': require('./src/assets/fonts/Urbanist-Black.ttf'),
+    'Urbanist-Bold': require('./src/assets/fonts/Urbanist-Bold.ttf'),
   });
 
   const onLayoutRootView = useCallback(async () => {
@@ -24,7 +25,7 @@ export default function App() {
 
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
-      <Text style={{ fontFamily: 'Urbanist-Black', fontSize: 30 }}>Urbanist Black</Text>
+      <Text style={globalFonts.H6(globalColors.main.green.color)}>Urbanist Bold</Text>
       <Text style={{ fontSize: 30, color: globalColors.main.green.color }}>Platform Default</Text>
     </View>
   );

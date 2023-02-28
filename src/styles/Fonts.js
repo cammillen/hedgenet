@@ -1,13 +1,69 @@
-// // Lays out the different font styles in the app - the most common ones. 
+// HOW TO USE IN ANOTHER FILE: 
+// At the top of your file import globalFonts: "import { globalFonts } from './src/styles/Fonts.js';" (make sure you have the right path)
+// Then style text using e.g.: "style={globalFonts.H1(globalColors.main.green.color)}" you pass the color prop through to the font from the globalColors file. 
 
-import { useFonts } from 'expo-font';
+import { StyleSheet } from "react-native";
 
-export default function initialisingFonts() {
-  const [fontsLoaded] = useFonts({
-    'UrbanistBlack': require('../assets/fonts/Urbanist-Black.ttf'),
-    'UrbanistBlackItalic': require('../assets/fonts/Urbanist-BlackItalic.ttf'), 
-  });
-}
+export const globalFonts = StyleSheet.create({
+
+  H1: (color) =>({
+      fontSize: 48,
+      fontFamily: 'Urbanist-Bold',
+      color: color,
+  }),
+
+  H2: (color) =>({
+    fontSize: 40,
+    fontFamily: 'Urbanist-Bold',
+    color: color,
+  }),
+
+  H3: (color) =>({
+    fontSize: 32,
+    fontFamily: 'Urbanist-Bold',
+    color: color,
+  }),
+
+  H4: (color) =>({
+    fontSize: 24,
+    fontFamily: 'Urbanist-Bold',
+    color: color,
+  }),
+
+  H5: (color) =>({
+    fontSize: 20,
+    fontFamily: 'Urbanist-Bold',
+    color: color,
+  }),
+
+  H6: (color) =>({
+    fontSize: 18,
+    fontFamily: 'Urbanist-Bold',
+    color: color,
+  }),
+
+
+
+
+
+  
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // import UrbanistBlack from '../assets/fonts/Urbanist-Black.ttf';
 // import UrbanistBlackItalic from '../assets/fonts/Urbanist-BlackItalic.ttf';
