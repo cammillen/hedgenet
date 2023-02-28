@@ -13,6 +13,9 @@ SplashScreen.preventAutoHideAsync();
 export default function App() {
   const [fontsLoaded] = useFonts({
     'Urbanist-Bold': require('./src/assets/fonts/Urbanist-Bold.ttf'),
+    'Urbanist-SemiBold': require('./src/assets/fonts/Urbanist-SemiBold.ttf'),
+    'Urbanist-Medium': require('./src/assets/fonts/Urbanist-Medium.ttf'),
+    'Urbanist-Regular': require('./src/assets/fonts/Urbanist-Regular.ttf'),
   });
 
   const onLayoutRootView = useCallback(async () => {
@@ -29,7 +32,11 @@ export default function App() {
 
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
-      <Text style={globalFonts.H5(globalColors.main.yellow.color)}>Urbanist Bold</Text>
+      <Text style={globalFonts.BodyXLarge.Regular(globalColors.main.green.color)}>Urbanist Bold</Text>
+      <Text style={globalFonts.BodyLarge.Regular(globalColors.main.yellow.color)}>Urbanist Bold</Text>
+      <Text style={globalFonts.BodyMedium.Regular(globalColors.main.green.color)}>Urbanist Bold</Text>
+      <Text style={globalFonts.BodySmall.Regular(globalColors.main.yellow.color)}>Urbanist Bold</Text>
+      <Text style={globalFonts.BodyXSmall.Regular(globalColors.main.green.color)}>Urbanist Bold</Text>
       <Text style={{ fontSize: 30, color: globalColors.main.yellow.color }}>Platform Default</Text>
     </View>
   );
