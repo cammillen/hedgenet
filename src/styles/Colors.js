@@ -93,5 +93,4 @@ export const globalColors = StyleSheet.create({
         orange: {color: 'rgba(255,152,0,0.08)'},
         cyan: {color: 'rgba(0,188,212,0.08)'}
     },
-    
   });
