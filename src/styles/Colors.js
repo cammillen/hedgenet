@@ -1,7 +1,8 @@
 // This is where we lay out the colors
 
+import { StyleSheet } from "react-native";
 
-const colours = StyleSheet.create({
+export const globalColours = StyleSheet.create({
 
     main: {
         green: {colour: '#12D18E'},
