@@ -6,7 +6,9 @@ import * as SplashScreen from 'expo-splash-screen';
 import { globalColors } from './src/styles/Colors.js';
 import { globalFonts } from './src/styles/Fonts.js';
 
-SplashScreen.preventAutoHideAsync();
+// Loading the custom fonts (you have to use this at the start of every screen): 
+
+SplashScreen.preventAutoHideAsync(); 
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -23,13 +25,17 @@ export default function App() {
     return null;
   }
 
+// Custom fonts loaded, code below is for the screen: 
+
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
-      <Text style={globalFonts.H6(globalColors.main.green.color)}>Urbanist Bold</Text>
-      <Text style={{ fontSize: 30, color: globalColors.main.green.color }}>Platform Default</Text>
+      <Text style={globalFonts.H5(globalColors.main.yellow.color)}>Urbanist Bold</Text>
+      <Text style={{ fontSize: 30, color: globalColors.main.yellow.color }}>Platform Default</Text>
     </View>
   );
 }
+
+// Style sheet with custom styles: 
 
 const styles = StyleSheet.create({
   container: {
