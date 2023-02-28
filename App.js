@@ -39,7 +39,7 @@ export default function App() {
       <Text style={globalFonts.BodyMedium.Regular(globalColors.primary._300.color)}>Urbanist Bold</Text>
       <Text style={globalFonts.BodySmall.Regular(globalColors.primary._200.color)}>Urbanist Bold</Text>
       <Text style={globalFonts.BodyXSmall.Regular(globalColors.primary._100.color)}>Urbanist Bold</Text>
-      <Text style={{ fontSize: 30, color: globalColors.primary._500.color }}>Platform Default</Text>
+      <Text style={{ fontSize: 30, color: globalColors.transparent.green.color }}>Platform Default</Text>
     </View>
   );
 }

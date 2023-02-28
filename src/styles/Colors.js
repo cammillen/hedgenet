@@ -12,7 +12,6 @@ export const globalColors = StyleSheet.create({
         _300: {color: '#71E3BB'},
         _200: {color: '#A0EDD2'},
         _100: {color: '#E7FAF4'},
-
     },
 
     secondary: {
@@ -21,7 +20,6 @@ export const globalColors = StyleSheet.create({
         _300: {color: '#FFDA6A'},
         _200: {color: '#FFE69C'},
         _100: {color: '#FFF9E6'},
-
     },
     
     status: {
@@ -52,28 +50,7 @@ export const globalColors = StyleSheet.create({
         _3: {color: '#35383F'}
     },
 
-    transparent: {
-        green: {color: '#12D18E'},
-        teal: {color: '#019B83'},
-        yellow: {color: '#FFD300'},
-        blue: {color: '#246BFD'},
-        purple: {color: '#6949FF'},
-        red: {color: '#FF5A5F'},
-        orange: {color: '#FF9800'},
-        cyan: {color: '#00BCD4'}
-    },
-
-    background: {
-        green: {color: '#F1FDF5'},
-        teal: {color: '#F2FFFD'},
-        yellow: {color: '#FFFCEB'},
-        blue: {color: '#F6F9FF'},
-        purple: {color: '#F9F8FF'},
-        red: {color: '#FFF7F8'},
-        orange: {color: '#FFF8ED'}
-    },
-
-    other: {
+    others: {
         white: {color: '#FFFFFF'},
         black: {color: '#000000'},
         red: {color: '#F44336'},
@@ -94,5 +71,27 @@ export const globalColors = StyleSheet.create({
         deepOrange: {color: '#FF5722'},
         brown: {color: '#795548'},
         blueGrey: {color: '#607D8B'}
-    }
+    },
+
+    background: {
+        green: {color: '#F1FDF5'},
+        teal: {color: '#F2FFFD'},
+        yellow: {color: '#FFFCEB'},
+        blue: {color: '#F6F9FF'},
+        purple: {color: '#F9F8FF'},
+        red: {color: '#FFF7F8'},
+        orange: {color: '#FFF8ED'}
+    },
+
+    transparent: {
+        green: {color: 'rgba(27,172,75,0.08)'},
+        yellow: {color: 'rgba(255,211,0,0.08)'},
+        blue: {color: 'rgba(36,107,253,0.08)'},
+        purple: {color: 'rgba(105,73,255,0.08)'},
+        teal: {color: 'rgba(1,155,131,0.08)'},
+        red: {color: 'rgba(255,90,95,0.08)'},
+        orange: {color: 'rgba(255,152,0,0.08)'},
+        cyan: {color: 'rgba(0,188,212,0.08)'}
+    },
+    
   });
