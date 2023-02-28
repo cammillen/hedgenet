@@ -6,18 +6,31 @@ import { StyleSheet } from "react-native";
 
 export const globalColors = StyleSheet.create({
 
-    main: {
-        green: {color: '#12D18E'},
-        yellow: {color: '#FFC107'}
+    primary: {
+        _500: {color: '#12D18E'},
+        _400: {color: '#41DAA5'},
+        _300: {color: '#71E3BB'},
+        _200: {color: '#A0EDD2'},
+        _100: {color: '#E7FAF4'},
+
     },
 
+    secondary: {
+        _500: {color: '#FFC107'},
+        _400: {color: '#FFCD39'},
+        _300: {color: '#FFDA6A'},
+        _200: {color: '#FFE69C'},
+        _100: {color: '#FFF9E6'},
+
+    },
+    
     status: {
-        green: {color: '#12D18E'},
-        disGreen: {color: '#0EA772'},
-        yellow: {color: '#FFC107'},
-        blue: {color: '#6949FF'},
-        grey: {color: '#D8D8D8'},
-        red: {color: '#F75555'}
+        success: {color: '#12D18E'},
+        disbutton: {color: '#0EA772'},
+        warning: {color: '#FFC107'},
+        info: {color: '#6949FF'},
+        disabled: {color: '#D8D8D8'},
+        error: {color: '#F75555'}
     },
     
     greyscale: {

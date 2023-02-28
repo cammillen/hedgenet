@@ -1,3 +1,5 @@
+// Import all packages: 
+
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { useCallback } from 'react';
@@ -32,12 +34,12 @@ export default function App() {
 
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
-      <Text style={globalFonts.BodyXLarge.Regular(globalColors.main.green.color)}>Urbanist Bold</Text>
-      <Text style={globalFonts.BodyLarge.Regular(globalColors.main.yellow.color)}>Urbanist Bold</Text>
-      <Text style={globalFonts.BodyMedium.Regular(globalColors.main.green.color)}>Urbanist Bold</Text>
-      <Text style={globalFonts.BodySmall.Regular(globalColors.main.yellow.color)}>Urbanist Bold</Text>
-      <Text style={globalFonts.BodyXSmall.Regular(globalColors.main.green.color)}>Urbanist Bold</Text>
-      <Text style={{ fontSize: 30, color: globalColors.main.yellow.color }}>Platform Default</Text>
+      <Text style={globalFonts.BodyXLarge.Regular(globalColors.primary._500.color)}>Urbanist Bold</Text>
+      <Text style={globalFonts.BodyLarge.Regular(globalColors.primary._400.color)}>Urbanist Bold</Text>
+      <Text style={globalFonts.BodyMedium.Regular(globalColors.primary._300.color)}>Urbanist Bold</Text>
+      <Text style={globalFonts.BodySmall.Regular(globalColors.primary._200.color)}>Urbanist Bold</Text>
+      <Text style={globalFonts.BodyXSmall.Regular(globalColors.primary._100.color)}>Urbanist Bold</Text>
+      <Text style={{ fontSize: 30, color: globalColors.primary._500.color }}>Platform Default</Text>
     </View>
   );
 }
