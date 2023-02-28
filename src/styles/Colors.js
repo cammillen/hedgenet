@@ -75,10 +75,10 @@ export const globalColors = StyleSheet.create({
 
     background: {
         green: {color: '#F1FDF5'},
-        teal: {color: '#F2FFFD'},
         yellow: {color: '#FFFCEB'},
         blue: {color: '#F6F9FF'},
         purple: {color: '#F9F8FF'},
+        teal: {color: '#F2FFFD'},
         red: {color: '#FFF7F8'},
         orange: {color: '#FFF8ED'}
     },
