@@ -1,5 +1,5 @@
 // HOW TO USE IN ANOTHER FILE: 
-// At the top of your file import globalFonts: "import { globalFonts } from './src/styles/Fonts.js';" (make sure you have the right path)
+// At the top of your file import globalFonts: "import { globalFonts } from './src/styles/Fonts.js';" (make sure you have the right file path)
 // Then style text using e.g.: "style={globalFonts.H1(globalColors.main.green.color)}" you pass the color prop through to the font from the globalColors file.
 // For the nested body fonts use e.g.: "style={globalFonts.BodyXLarge.Bold(globalColors.main.yellow.color)}"
 
