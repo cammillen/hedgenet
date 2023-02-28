@@ -11,22 +11,23 @@ function TopMenuBar() {
       <View style={styles.header}>
         <View style={styles.iconContainer}>
           <Image
-            source={require('../assets/icons/Avatar.png')}
-            style={[styles.avatarIcon, { marginRight: 19 }]}
+            source={require('../assets/icons/Avatar.png')} // BACKEND TO DO: backeng integration with profile picture. 
+            style={[styles.avatarIcon, { marginRight: 19 },  { marginLeft: 24 }]}
           />
           <Image
             source={require('../assets/icons/Notification.png')}
-            style={[styles.notificationIcon, { marginRight: 19 }]}
+            style={styles.notificationIcon}
           />
         </View>
         <Text style={globalFonts.H4(globalColors.others.white.color)}>Home</Text>
         <View style={styles.iconContainer}>
           <Image
-            source={require('../assets/icons/Chart.png')}
+            source={require('../assets/icons/Star.png')}
+            style={styles.starIcon}
           />
           <Image
-            source={require('../assets/icons/Chart.png')}
-            style={{ marginLeft: 19 }}
+            source={require('../assets/icons/Message.png')}
+            style={[styles.messageIcon, { marginLeft: 26 }, { marginRight: 24 }]}
           />
         </View>
       </View>
@@ -38,8 +39,8 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
-      backgroundColor: globalColors.dark._1.color,
-      padding: 16,
+      backgroundColor: globalColors.others.black.color,
+      padding: 10,
     },
     iconContainer: {
       flexDirection: 'row',
@@ -52,7 +53,17 @@ const styles = StyleSheet.create({
     },
     notificationIcon: {
         width: 21.08,
-        height: 24,
+        height: 24.5,
+        resizeMode: 'contain',
+    },
+    starIcon: {
+        width: 24.51,
+        height: 23.25,
+        resizeMode: 'contain',
+    },
+    messageIcon: {
+        width: 26,
+        height: 23.58,
         resizeMode: 'contain',
     },
   });
