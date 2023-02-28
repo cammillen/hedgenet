@@ -3,6 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { useCallback } from 'react';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
+import { globalColors } from './src/styles/Colors.js';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -24,7 +25,7 @@ export default function App() {
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
       <Text style={{ fontFamily: 'Urbanist-Black', fontSize: 30 }}>Urbanist Black</Text>
-      <Text style={{ fontSize: 30 }}>Platform Default</Text>
+      <Text style={{ fontSize: 30, color: globalColors.main.green.color }}>Platform Default</Text>
     </View>
   );
 }

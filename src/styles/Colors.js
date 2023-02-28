@@ -1,83 +1,85 @@
-// This is where we lay out the colors
+// HOW TO USE IN ANOTHER FILE: 
+// At the top of your file import globalColors: "import { globalColors } from './src/styles/Colors.js';"
+// Then style text using e.g.: "style={{ color: globalColors.main.green.color }}"
 
 import { StyleSheet } from "react-native";
 
-export const globalColours = StyleSheet.create({
+export const globalColors = StyleSheet.create({
 
     main: {
-        green: {colour: '#12D18E'},
-        yellow: {colour: '#FFC107'}
+        green: {color: '#12D18E'},
+        yellow: {color: '#FFC107'}
     },
 
     status: {
-        green: {colour: '#12D18E'},//repeat of above
-        disGreen: {colour: '#0EA772'},
-        yellow: {colour: '#FFC107'},//repeat of above
-        blue: {colour: '#6949FF'},
-        grey: {colour: '#D8D8D8'},
-        red: {colour: '#F75555'}
+        green: {color: '#12D18E'},
+        disGreen: {color: '#0EA772'},
+        yellow: {color: '#FFC107'},
+        blue: {color: '#6949FF'},
+        grey: {color: '#D8D8D8'},
+        red: {color: '#F75555'}
     },
     
     greyscale: {
-        _900: {colour: '#212121'},
-        _800: {colour: '#424242'},
-        _700: {colour: '#616161'},
-        _600: {colour: '#757575'},
-        _500: {colour: '#9E9E9E'},
-        _400: {colour: '#BDBDBD'},
-        _300: {colour: '#E0E0E0'},
-        _200: {colour: '#EEEEEE'},
-        _100: {colour: '#F5F5F5'},
-        _50: {colour: '#FAFAFA'}
+        _900: {color: '#212121'},
+        _800: {color: '#424242'},
+        _700: {color: '#616161'},
+        _600: {color: '#757575'},
+        _500: {color: '#9E9E9E'},
+        _400: {color: '#BDBDBD'},
+        _300: {color: '#E0E0E0'},
+        _200: {color: '#EEEEEE'},
+        _100: {color: '#F5F5F5'},
+        _50: {color: '#FAFAFA'}
     },
 
     dark: {
-        _1: {'#181A20'},
-        _2: {'#1F222A'},
-        _3: {'#35383F'}
+        _1: {color: '#181A20'},
+        _2: {color: '#1F222A'},
+        _3: {color: '#35383F'}
     },
 
     transparent: {
-        green: {colour: '#12D18E'},
-        teal: {colour: '#019B83'},
-        yellow: {colour: '#FFD300'},
-        blue: {colour: '#246BFD'},
-        purple: {colour: '#6949FF'},
-        red: {colour: '#FF5A5F'},
-        orange: {colour: '#FF9800'},
-        cyan: {colour: '#00BCD4'}
+        green: {color: '#12D18E'},
+        teal: {color: '#019B83'},
+        yellow: {color: '#FFD300'},
+        blue: {color: '#246BFD'},
+        purple: {color: '#6949FF'},
+        red: {color: '#FF5A5F'},
+        orange: {color: '#FF9800'},
+        cyan: {color: '#00BCD4'}
     },
 
     background: {
-        green: {colour: '#F1FDF5'},
-        teal: {colour: '#F2FFFD'},
-        yellow: {colour: '#FFFCEB'},
-        blue: {colour: '#F6F9FF'},
-        purple: {colour: '#F9F8FF'},
-        red: {colour: '#FFF7F8'},
-        orange: {colour: '#FFF8ED'}
+        green: {color: '#F1FDF5'},
+        teal: {color: '#F2FFFD'},
+        yellow: {color: '#FFFCEB'},
+        blue: {color: '#F6F9FF'},
+        purple: {color: '#F9F8FF'},
+        red: {color: '#FFF7F8'},
+        orange: {color: '#FFF8ED'}
     },
 
     other: {
-        white: {colour: '#FFFFFF'},
-        black: {colour: '#000000'},
-        red: {colour: '#F44336'},
-        pink: {colour: '#E91E63'},
-        purple: {colour: '#9C27B0'},
-        deepPurple: {colour: '#673AB7'},
-        indigo: {colour: '#3F51B5'},
-        blue: {colour: '#2196F3'},
-        lightBlue: {colour: '#03A9F4'},
-        cyan: {colour: '#00BCD4'},
-        teal: {colour: '#009688'},
-        green: {colour: '#4CAF50'},
-        lightGreen: {colour: '#8BC34A'},
-        lime: {colour: '#CDDC39'},
-        yellow: {colour: '#FFEB3B'},
-        amber: {colour: '#FFC107'},
-        orange: {colour: '#FF9800'},
-        deepOrange: {colour: '#FF5722'},
-        brown: {colour: '#795548'},
-        blueGrey: {colour: '#607D8B'}
+        white: {color: '#FFFFFF'},
+        black: {color: '#000000'},
+        red: {color: '#F44336'},
+        pink: {color: '#E91E63'},
+        purple: {color: '#9C27B0'},
+        deepPurple: {color: '#673AB7'},
+        indigo: {color: '#3F51B5'},
+        blue: {color: '#2196F3'},
+        lightBlue: {color: '#03A9F4'},
+        cyan: {color: '#00BCD4'},
+        teal: {color: '#009688'},
+        green: {color: '#4CAF50'},
+        lightGreen: {color: '#8BC34A'},
+        lime: {color: '#CDDC39'},
+        yellow: {color: '#FFEB3B'},
+        amber: {color: '#FFC107'},
+        orange: {color: '#FF9800'},
+        deepOrange: {color: '#FF5722'},
+        brown: {color: '#795548'},
+        blueGrey: {color: '#607D8B'}
     }
   });
