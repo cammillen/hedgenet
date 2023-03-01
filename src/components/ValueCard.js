@@ -6,30 +6,54 @@ import { StyleSheet, Text, View } from 'react-native';
 import { globalColors } from '../styles/Colors.js';
 import { globalFonts } from '../styles/Fonts.js';
 
-function ValueCard() {
-    return (
-        <View style={styles.header}>
-          <View style={styles.iconContainer}>
-            <Image
-              source={require('../assets/icons/HedgenetWhite.png')} // BACKEND TO DO: backeng integration with Hedgenet picture. 
-              style={[styles.avatarIcon, { marginRight: 19 },  { marginLeft: 24 }]}
-            />
-            <Image
-              source={require('../assets/icons/Notification.png')}
-              style={styles.notificationIcon}
-            />
-          </View>
-          <Text style={globalFonts.H4(globalColors.others.white.color)}>Home</Text>
-          <View style={styles.iconContainer}>
-            <Image
-              source={require('../assets/icons/Star.png')}
-              style={styles.starIcon}
-            />
-            <Image
-              source={require('../assets/icons/Message.png')}
-              style={[styles.messageIcon, { marginLeft: 26 }, { marginRight: 24 }]}
-            />
-          </View>
-        </View>
-    );
+
+const styles = StyleSheet.create({
+  header: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+    backgroundColor: globalColors.others.black.color,
+  },
+  subHeader: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: globalColors.others.black.color,
+  },
+  arrowIcon: {
+    width: 20,
+    height: 20,
+    resizeMode: 'contain',
 }
+});
+
+export default function ValueCard(param) {
+
+  let performance = (param.delta/param.cashBalance).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  let textColor = 'success';
+  let imageRequire = require('../assets/icons/ArrowUpSquare.png');
+  if (param.delta < 0) {
+    textColor = 'error';
+    imageRequire = require('../assets/icons/ArrowDownSquare.png');
+  }
+  let cashBalance = (param.cashBalance/100).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  let delta = (param.delta/100).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+  return (
+    <View style={styles.header}>
+
+      <Text style={globalFonts.H2(globalColors.others.white.color)}>${cashBalance}</Text>
+      <View style={styles.subHeader}>
+
+      <Image
+        source={imageRequire}
+        style={[styles.arrowIcon, { marginRight: 8 }]}
+      />
+      <Text style={globalFonts.BodyLarge.semiBold(globalColors.status[textColor].color)}>${delta}   {"("}{performance}%{")"}</Text>
+      </View>
+
+    </View>
+
+  );
+}
+

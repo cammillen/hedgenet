@@ -8,6 +8,9 @@ import * as SplashScreen from 'expo-splash-screen';
 import { globalColors } from './src/styles/Colors.js';
 import { globalFonts } from './src/styles/Fonts.js';
 import TopMenuBar from './src/components/TopMenuBar.js';
+import ValueCard from './src/components/ValueCard.js';
+
+
 
 // Loading the custom fonts (you have to use this at the start of every screen): 
 
@@ -31,8 +34,13 @@ export default function App() {
     return null;
   }
 
-// Custom fonts loaded, code below is for the screen: 
 
+  //VARIABLES FOR VALUECARD
+  let cash = 19654850;
+  let difference = 6637849;
+  //REPLACE WITH BACKEND CALL
+
+  // Custom fonts loaded, code below is for the screen: 
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
       <TopMenuBar />
@@ -42,6 +50,7 @@ export default function App() {
       <Text style={globalFonts.BodySmall.Regular(globalColors.primary._200.color)}>Urbanist Bold</Text>
       <Text style={globalFonts.BodyXSmall.Regular(globalColors.primary._100.color)}>Urbanist Bold</Text>
       <Text style={{ fontSize: 30, color: globalColors.greyscale._900.color }}>Platform Default</Text>
+      <ValueCard cashBalance={cash} delta={difference} />
     </View>
   );
 }

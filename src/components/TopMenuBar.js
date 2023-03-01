@@ -36,7 +36,7 @@ function TopMenuBar() {
 
 const styles = StyleSheet.create({
     header: {
-      flexDirection: 'row',
+      flexDirection: 'row', //Be SUPER careful with this. Has caused me untold fucking agony!
       justifyContent: 'space-between',
       alignItems: 'center',
       backgroundColor: globalColors.others.black.color,
