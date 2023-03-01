@@ -9,6 +9,7 @@ import { globalColors } from './src/styles/Colors.js';
 import { globalFonts } from './src/styles/Fonts.js';
 import TopMenuBar from './src/components/TopMenuBar.js';
 import ValueCard from './src/components/ValueCard.js';
+import FundLabel from './src/components/FundLabel.js';
 
 
 
@@ -35,10 +36,11 @@ export default function App() {
   }
 
 
-  //VARIABLES FOR VALUECARD
-  let cash = 19654850;
-  let difference = 6637849;
-  //REPLACE WITH BACKEND CALL
+  //DUMMY VARIABLES
+  let cash = 89653150;
+  let difference = -6637849;
+  let fundName = "My Portfolio";
+  //REPLACE ALL WITH BACKEND CALLS
 
   // Custom fonts loaded, code below is for the screen: 
   return (
@@ -50,6 +52,7 @@ export default function App() {
       <Text style={globalFonts.BodySmall.Regular(globalColors.primary._200.color)}>Urbanist Bold</Text>
       <Text style={globalFonts.BodyXSmall.Regular(globalColors.primary._100.color)}>Urbanist Bold</Text>
       <Text style={{ fontSize: 30, color: globalColors.greyscale._900.color }}>Platform Default</Text>
+      <FundLabel name={fundName} />      
       <ValueCard cashBalance={cash} delta={difference} />
     </View>
   );

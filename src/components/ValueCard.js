@@ -9,6 +9,7 @@ import { globalFonts } from '../styles/Fonts.js';
 
 const styles = StyleSheet.create({
   header: {
+    flewDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     padding: 10,
@@ -18,7 +19,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: globalColors.others.black.color,
+    padding: 10
   },
   arrowIcon: {
     width: 20,
@@ -29,7 +30,7 @@ const styles = StyleSheet.create({
 
 export default function ValueCard(param) {
 
-  let performance = (param.delta/param.cashBalance).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  let performance = (param.delta/param.cashBalance).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","); //comma & decimal place formatting
   let textColor = 'success';
   let imageRequire = require('../assets/icons/ArrowUpSquare.png');
   if (param.delta < 0) {
@@ -41,19 +42,14 @@ export default function ValueCard(param) {
 
   return (
     <View style={styles.header}>
-
-      <Text style={globalFonts.H2(globalColors.others.white.color)}>${cashBalance}</Text>
-      <View style={styles.subHeader}>
-
-      <Image
-        source={imageRequire}
-        style={[styles.arrowIcon, { marginRight: 8 }]}
-      />
-      <Text style={globalFonts.BodyLarge.semiBold(globalColors.status[textColor].color)}>${delta}   {"("}{performance}%{")"}</Text>
+      <View style={{backgroundColor: globalColors.dark._2.color, width: 382, borderColor: globalColors.dark._3.color, borderWidth: 1, alignItems: 'center', padding: 10, borderRadius: 20}}>
+        <Text style={globalFonts.H2(globalColors.others.white.color)}>${cashBalance}</Text>
+        <View style={styles.subHeader}>
+        <Image source={imageRequire} style={[styles.arrowIcon, { marginRight: 8 }]} />
+        <Text style={globalFonts.BodyLarge.semiBold(globalColors.status[textColor].color)}>${delta}   {"("}{performance}%{")"}</Text>
+        </View>
       </View>
-
     </View>
-
   );
 }
 
