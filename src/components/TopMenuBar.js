@@ -11,7 +11,7 @@ function TopMenuBar() {
       <View style={styles.header}>
         <View style={styles.iconContainer}>
           <Image
-            source={require('../assets/icons/Avatar.png')} // BACKEND TO DO: backeng integration with profile picture. 
+            source={require('../assets/icons/Avatar.png')} // BACKEND TO DO: backend integration with profile picture. 
             style={[styles.avatarIcon, { marginRight: 19 },  { marginLeft: 24 }]}
           />
           <Image
