@@ -40,12 +40,19 @@ const styles = StyleSheet.create({
 export default function PositionsItem(params) {
   console.log(params.stockName);
   console.log('../assets/icons/stocks/' + params.stockName + '.png');
-  console.log('../assets/icons/stocks/' + 'Google' + '.png');
+  console.log(`../assets/icons/stocks/${params.stockName}.png`);
   //C:\Users\arran\Desktop\hedgenet\src\assets\icons\stocks\Google.png
 
   //let stockImage = require('../assets/icons/stocks/' + params.stockName + '.png');
 
-  let stockImage = require('../assets/icons/stocks/' + String(params.stockName) + '.png');
+  //let imagePath = '../assets/stocks/'+ params.stockName + '.png';
+  let imagePath = 'C:\Users\arran\Desktop\hedgenet\src\assets\stocks\Google.png'
+  require('C:\Users\arran\Desktop\hedgenet\src\assets\stocks\Google.png');
+  require(imagePath);
+  
+  //require('../assets/stocks/Google.png');
+  //require(imagePath);
+
   //let graphImage = require('../assets/graphs(delete)/ExampleGraph.png');
   //let stockValue = (params.userShares * params.shareValue).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   //let percentageGrowth = "+ " + ((params.shareValue - params.previousValue)/params.previousValue).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
