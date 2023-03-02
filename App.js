@@ -14,7 +14,8 @@ import FundLabel from './src/components/FundLabel.js';
 import MyPositions from './src/components/MyPositions.js';
 import PositionsItem from './src/components/PositionsItem.js';
 import SliderBar from './src/components/SliderBar.js';
-import {NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
+import SearchBar from './src/components/SearchBarInactive.js'
 
 // Loading the custom fonts (you have to use this at the start of every screen): 
 
@@ -45,8 +46,7 @@ export default function App() {
       <StatusBar barStyle="light-content" backgroundColor="#000" />
       <View style={styles.container} onLayout={onLayoutRootView}>
         <TopMenuBar />
-        <Text></Text>
-        <Text style={{ fontSize: 30, color: globalColors.greyscale._900.color, marginLeft: 24}}>SearchBar Placeholder</Text>
+        <SearchBar/>
         <FundLabel name={fundName} />      
         <ValueCard cashBalance={cash} delta={difference} />
         <MyPositions />

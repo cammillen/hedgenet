@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     height: 32,
-    marginTop: 15,
+    marginTop: 30,
     marginBottom: 20,
   },
   subHeaderLeft: {

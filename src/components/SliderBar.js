@@ -54,4 +54,5 @@ function SliderBar() {
           padding: 10
       }
       });
+      
 export default SliderBar;
