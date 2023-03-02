@@ -61,6 +61,7 @@ export default function App() {
       <FundLabel name={fundName} />      
       <ValueCard cashBalance={cash} delta={difference} />
       <SliderBar />
+      <SliderBar />
       <MyPositions />
       <PositionsItem shareValue={1245.45} previousValue={565.89}/>
     </View>
