@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { StatusBar } from 'react-native';
 import { useCallback } from 'react';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
@@ -13,9 +14,7 @@ import FundLabel from './src/components/FundLabel.js';
 import MyPositions from './src/components/MyPositions.js';
 import PositionsItem from './src/components/PositionsItem.js';
 import SliderBar from './src/components/SliderBar.js';
-
-
-
+import {NavigationContainer} from '@react-navigation/native';
 
 // Loading the custom fonts (you have to use this at the start of every screen): 
 
@@ -39,7 +38,6 @@ export default function App() {
     return null;
   }
 
-
   //DUMMY VARIABLES
   let cash = 19654850;
   let difference = 6637849;
@@ -50,21 +48,27 @@ export default function App() {
 
   // Custom fonts loaded, code below is for the screen: 
   return (
-    <View style={styles.container} onLayout={onLayoutRootView}>
-      <TopMenuBar />
-      <Text style={globalFonts.BodyXLarge.Regular(globalColors.primary._500.color)}>Urbanist Bold</Text>
-      <Text style={globalFonts.BodyLarge.Regular(globalColors.primary._400.color)}>Urbanist Bold</Text>
-      <Text style={globalFonts.BodyMedium.Regular(globalColors.primary._300.color)}>Urbanist Bold</Text>
-      <Text style={globalFonts.BodySmall.Regular(globalColors.primary._200.color)}>Urbanist Bold</Text>
-      <Text style={globalFonts.BodyXSmall.Regular(globalColors.primary._100.color)}>Urbanist Bold</Text>
-      <Text style={{ fontSize: 30, color: globalColors.greyscale._900.color }}>Platform Default</Text>
-      <FundLabel name={fundName} />      
-      <ValueCard cashBalance={cash} delta={difference} />
-      <SliderBar />
-      <SliderBar />
-      <MyPositions />
-      <PositionsItem shareValue={1245.45} previousValue={565.89}/>
-    </View>
+    <NavigationContainer>
+    <>
+      <StatusBar barStyle="light-content" backgroundColor="#000" />
+      <View style={styles.container} onLayout={onLayoutRootView}>
+        <TopMenuBar />
+        <Text></Text>
+        <Text style={globalFonts.BodyXLarge.Regular(globalColors.primary._500.color)}>Urbanist Bold</Text>
+        <Text style={globalFonts.BodyLarge.Regular(globalColors.primary._400.color)}>Urbanist Bold</Text>
+        <Text style={globalFonts.BodyMedium.Regular(globalColors.primary._300.color)}>Urbanist Bold</Text>
+        <Text style={globalFonts.BodySmall.Regular(globalColors.primary._200.color)}>Urbanist Bold</Text>
+        <Text style={globalFonts.BodyXSmall.Regular(globalColors.primary._100.color)}>Urbanist Bold</Text>
+        <Text style={{ fontSize: 30, color: globalColors.greyscale._900.color }}>Platform Default</Text>
+        <FundLabel name={fundName} />      
+        <ValueCard cashBalance={cash} delta={difference} />
+        <SliderBar />
+        <SliderBar />
+        <MyPositions />
+        <PositionsItem shareValue={1245.45} previousValue={565.89}/>
+      </View>
+    </>
+    </NavigationContainer>
   );
 }
 
@@ -73,7 +77,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 55,
-    backgroundColor: globalColors.others.black.color
+    paddingTop: 40,
   },
 });
