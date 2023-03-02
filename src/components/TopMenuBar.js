@@ -62,7 +62,6 @@ const styles = StyleSheet.create({
       justifyContent: 'space-between',
       alignItems: 'center',
       backgroundColor: globalColors.others.black.color,
-      padding: 10,
     },
     iconContainer: {
       flexDirection: 'row',
