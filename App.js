@@ -49,9 +49,8 @@ export default function App() {
         <Text style={{ fontSize: 30, color: globalColors.greyscale._900.color }}>SearchBar Placeholder</Text>
         <FundLabel name={fundName} />      
         <ValueCard cashBalance={cash} delta={difference} />
-        <MyPositions />
-        <PositionsItem shareValue={1245.45} previousValue={565.89}/>
         <SliderBar />
+        <MyPositions />
       </View>
     </>
     </NavigationContainer>
