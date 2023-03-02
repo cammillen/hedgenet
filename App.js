@@ -12,6 +12,7 @@ import ValueCard from './src/components/ValueCard.js';
 import FundLabel from './src/components/FundLabel.js';
 import MyPositions from './src/components/MyPositions.js';
 import PositionsItem from './src/components/PositionsItem.js';
+import SliderBar from './src/components/SliderBar.js';
 
 
 
@@ -59,6 +60,7 @@ export default function App() {
       <Text style={{ fontSize: 30, color: globalColors.greyscale._900.color }}>Platform Default</Text>
       <FundLabel name={fundName} />      
       <ValueCard cashBalance={cash} delta={difference} />
+      <SliderBar />
       <MyPositions />
       <PositionsItem shareValue={1245.45} previousValue={565.89}/>
     </View>
