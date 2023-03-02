@@ -39,7 +39,9 @@ export default function App() {
   //DUMMY VARIABLES
   let cash = 89653150;
   let difference = -6637849;
-  let fundName = "My Portfolio";
+  //let fundName = "My Portfolio";
+  let fundName = "MMMMMMMMMMM";
+
   //REPLACE ALL WITH BACKEND CALLS
 
   // Custom fonts loaded, code below is for the screen: 
