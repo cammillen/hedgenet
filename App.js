@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { StatusBar } from 'react-native';
 import { useCallback } from 'react';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
@@ -11,9 +12,9 @@ import TopMenuBar from './src/components/TopMenuBar.js';
 import ValueCard from './src/components/ValueCard.js';
 import FundLabel from './src/components/FundLabel.js';
 import MyPositions from './src/components/MyPositions.js';
+import PositionsItem from './src/components/PositionsItem.js';
 import SliderBar from './src/components/SliderBar.js';
-
-
+import {NavigationContainer} from '@react-navigation/native';
 
 // Loading the custom fonts (you have to use this at the start of every screen): 
 
@@ -37,7 +38,6 @@ export default function App() {
     return null;
   }
 
-
   //DUMMY VARIABLES
   let cash = 19654850;
   let difference = 6637849;
@@ -48,6 +48,7 @@ export default function App() {
 
   // Custom fonts loaded, code below is for the screen: 
   return (
+<<<<<<< HEAD
     <View style={styles.container} onLayout={onLayoutRootView}>
       <TopMenuBar />
       <Text style={globalFonts.BodyXLarge.Regular(globalColors.primary._500.color)}>Urbanist Bold</Text>
@@ -61,6 +62,23 @@ export default function App() {
       <ValueCard cashBalance={cash} delta={difference} />
       <MyPositions />
     </View>
+=======
+    <NavigationContainer>
+    <>
+      <StatusBar barStyle="light-content" backgroundColor="#000" />
+      <View style={styles.container} onLayout={onLayoutRootView}>
+        <TopMenuBar />
+        <Text></Text>
+        <Text style={{ fontSize: 30, color: globalColors.greyscale._900.color }}>SearchBar Placeholder</Text>
+        <FundLabel name={fundName} />      
+        <ValueCard cashBalance={cash} delta={difference} />
+        <SliderBar />
+        <MyPositions />
+        <PositionsItem shareValue={1245.45} previousValue={565.89}/>
+      </View>
+    </>
+    </NavigationContainer>
+>>>>>>> 68dddc71921dcc12528d7e6f362a7d5ee71d2bec
   );
 }
 
@@ -69,7 +87,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 55,
-    backgroundColor: globalColors.others.black.color
+    paddingTop: 40,
   },
 });
