@@ -56,9 +56,9 @@ export default function App() {
       <Text style={globalFonts.BodySmall.Regular(globalColors.primary._200.color)}>Urbanist Bold</Text>
       <Text style={globalFonts.BodyXSmall.Regular(globalColors.primary._100.color)}>Urbanist Bold</Text>
       <Text style={{ fontSize: 30, color: globalColors.greyscale._900.color }}>Platform Default</Text>
-      <FundLabel name={fundName} />      
+      <FundLabel name={fundName} /> 
+      <SliderBar />     
       <ValueCard cashBalance={cash} delta={difference} />
-      <SliderBar />
       <MyPositions />
     </View>
   );
