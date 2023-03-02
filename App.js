@@ -38,31 +38,8 @@ export default function App() {
     return null;
   }
 
-  //DUMMY VARIABLES
-  let cash = 19654850;
-  let difference = 6637849;
-  let fundName = "My Portfolio";
-  //let fundName = "MMMMMMMMMMM";
-
-  //REPLACE ALL WITH BACKEND CALLS
-
   // Custom fonts loaded, code below is for the screen: 
   return (
-<<<<<<< HEAD
-    <View style={styles.container} onLayout={onLayoutRootView}>
-      <TopMenuBar />
-      <Text style={globalFonts.BodyXLarge.Regular(globalColors.primary._500.color)}>Urbanist Bold</Text>
-      <Text style={globalFonts.BodyLarge.Regular(globalColors.primary._400.color)}>Urbanist Bold</Text>
-      <Text style={globalFonts.BodyMedium.Regular(globalColors.primary._300.color)}>Urbanist Bold</Text>
-      <Text style={globalFonts.BodySmall.Regular(globalColors.primary._200.color)}>Urbanist Bold</Text>
-      <Text style={globalFonts.BodyXSmall.Regular(globalColors.primary._100.color)}>Urbanist Bold</Text>
-      <Text style={{ fontSize: 30, color: globalColors.greyscale._900.color }}>Platform Default</Text>
-      <FundLabel name={fundName} /> 
-      <SliderBar />     
-      <ValueCard cashBalance={cash} delta={difference} />
-      <MyPositions />
-    </View>
-=======
     <NavigationContainer>
     <>
       <StatusBar barStyle="light-content" backgroundColor="#000" />
@@ -72,13 +49,12 @@ export default function App() {
         <Text style={{ fontSize: 30, color: globalColors.greyscale._900.color }}>SearchBar Placeholder</Text>
         <FundLabel name={fundName} />      
         <ValueCard cashBalance={cash} delta={difference} />
-        <SliderBar />
         <MyPositions />
         <PositionsItem shareValue={1245.45} previousValue={565.89}/>
+        <SliderBar />
       </View>
     </>
     </NavigationContainer>
->>>>>>> 68dddc71921dcc12528d7e6f362a7d5ee71d2bec
   );
 }
 
@@ -90,3 +66,11 @@ const styles = StyleSheet.create({
     paddingTop: 40,
   },
 });
+
+  //DUMMY VARIABLES
+  let cash = 19654850;
+  let difference = 6637849;
+  let fundName = "My Portfolio";
+  //let fundName = "MMMMMMMMMMM";
+
+  //REPLACE ALL WITH BACKEND CALLS
