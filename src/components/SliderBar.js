@@ -19,17 +19,17 @@ function SliderBar() {
                             >
                                 <View style={{height:24, width:130, marginLeft: 24, borderWidth:0.5}}>
                                     <View style={{ flex: 1 }}>
-                                        <Text style={globalFonts.BodyXLarge.semiBold(globalColors.others.white.color)}>Option 1</Text>
+                                        <Text style={globalFonts.BodyXLarge.semiBold(globalColors.others.white.color)}>Personal Fund</Text>
                                     </View>
                                 </View>
                                 <View style={{height:24, width:130, marginLeft: 24, borderWidth:0.5}}>
                                     <View style={{ flex: 1 }}>
-                                        <Text style={globalFonts.BodyXLarge.semiBold(globalColors.others.white.color)}>Option 2</Text>
+                                        <Text style={globalFonts.BodyXLarge.semiBold(globalColors.others.white.color)}>UCL Fintech Fund</Text>
                                     </View>
                                 </View>
                                 <View style={{height:24, width:130, marginLeft: 20, borderWidth:0.5}}>
                                     <View style={{ flex: 1 }}>
-                                        <Text style={globalFonts.BodyXLarge.semiBold(globalColors.others.white.color)}>Option 3</Text>
+                                        <Text style={globalFonts.BodyXLarge.semiBold(globalColors.others.white.color)}>LSE Sustainable Finance Fund</Text>
                                     </View>
                                 </View>
                             </ScrollView>
