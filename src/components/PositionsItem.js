@@ -50,7 +50,8 @@ export default function PositionsItem(params) {
   console.log(imagePath);
   //TO DEMONSTRATE THEY'RE THE SAME
 
-  let stockImage = require(imagePath);
+  let stockImage = require('../assets/stocks/Google.png');
+  //let stockImage = require(imagePath);
 
   //IGNORE EVERYTHING BELOW
 
