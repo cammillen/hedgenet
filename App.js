@@ -8,9 +8,10 @@ import * as SplashScreen from 'expo-splash-screen';
 import { globalColors } from './src/styles/Colors.js';
 import { globalFonts } from './src/styles/Fonts.js';
 import TopMenuBar from './src/components/TopMenuBar.js';
-//import ValueCard from './src/components/ValueCard.js';
-//import FundLabel from './src/components/FundLabel.js';
-import SliderBar from './src/components/SliderBar.js';
+import ValueCard from './src/components/ValueCard.js';
+import FundLabel from './src/components/FundLabel.js';
+import MyPositions from './src/components/MyPositions.js';
+
 
 
 // Loading the custom fonts (you have to use this at the start of every screen): 
@@ -37,10 +38,10 @@ export default function App() {
 
 
   //DUMMY VARIABLES
-  let cash = 89653150;
-  let difference = -6637849;
-  //let fundName = "My Portfolio";
-  let fundName = "MMMMMMMMMMM";
+  let cash = 19654850;
+  let difference = 6637849;
+  let fundName = "My Portfolio";
+  //let fundName = "MMMMMMMMMMM";
 
   //REPLACE ALL WITH BACKEND CALLS
 
@@ -54,7 +55,9 @@ export default function App() {
       <Text style={globalFonts.BodySmall.Regular(globalColors.primary._200.color)}>Urbanist Bold</Text>
       <Text style={globalFonts.BodyXSmall.Regular(globalColors.primary._100.color)}>Urbanist Bold</Text>
       <Text style={{ fontSize: 30, color: globalColors.greyscale._900.color }}>Platform Default</Text>
-      <SliderBar />
+      <FundLabel name={fundName} />      
+      <ValueCard cashBalance={cash} delta={difference} />
+      <MyPositions />
     </View>
   );
 }
@@ -65,5 +68,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 55,
+    backgroundColor: globalColors.others.black.color
   },
 });
