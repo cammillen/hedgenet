@@ -11,6 +11,8 @@ import TopMenuBar from './src/components/TopMenuBar.js';
 import ValueCard from './src/components/ValueCard.js';
 import FundLabel from './src/components/FundLabel.js';
 import MyPositions from './src/components/MyPositions.js';
+import PositionsItem from './src/components/PositionsItem.js';
+
 
 
 
@@ -58,6 +60,7 @@ export default function App() {
       <FundLabel name={fundName} />      
       <ValueCard cashBalance={cash} delta={difference} />
       <MyPositions />
+      <PositionsItem shareValue={1245.45} previousValue={565.89}/>
     </View>
   );
 }
