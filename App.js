@@ -10,7 +10,6 @@ import { globalColors } from './src/styles/Colors.js';
 import { globalFonts } from './src/styles/Fonts.js';
 import TopMenuBar from './src/components/TopMenuBar.js';
 import {NavigationContainer} from '@react-navigation/native';
-import SearchBar from './src/components/SearchBar.js'
 
 // Loading the custom fonts (you have to use this at the start of every screen): 
 
@@ -42,11 +41,6 @@ export default function App() {
       <StatusBar barStyle="light-content" backgroundColor="#000" />
       <View style={styles.container} onLayout={onLayoutRootView}>
         <TopMenuBar />
-        {/* <SearchBar
-          searchTerm={searchTerm}
-          onSearchTermChange={onSearchTermChange}
-          onSearchTermSubmit={onSearchTermSubmit}
-        /> */}
         <Text></Text>
         <Text style={globalFonts.BodyXLarge.Regular(globalColors.primary._500.color)}>Urbanist Bold</Text>
         <Text style={globalFonts.BodyLarge.Regular(globalColors.primary._400.color)}>Urbanist Bold</Text>
