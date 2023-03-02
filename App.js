@@ -10,6 +10,7 @@ import { globalFonts } from './src/styles/Fonts.js';
 import TopMenuBar from './src/components/TopMenuBar.js';
 import ValueCard from './src/components/ValueCard.js';
 import FundLabel from './src/components/FundLabel.js';
+import MyPositions from './src/components/MyPositions.js';
 
 
 
@@ -37,10 +38,10 @@ export default function App() {
 
 
   //DUMMY VARIABLES
-  let cash = 89653150;
-  let difference = -6637849;
-  //let fundName = "My Portfolio";
-  let fundName = "MMMMMMMMMMM";
+  let cash = 19654850;
+  let difference = 6637849;
+  let fundName = "My Portfolio";
+  //let fundName = "MMMMMMMMMMM";
 
   //REPLACE ALL WITH BACKEND CALLS
 
@@ -56,6 +57,7 @@ export default function App() {
       <Text style={{ fontSize: 30, color: globalColors.greyscale._900.color }}>Platform Default</Text>
       <FundLabel name={fundName} />      
       <ValueCard cashBalance={cash} delta={difference} />
+      <MyPositions />
     </View>
   );
 }
@@ -66,5 +68,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 55,
+    backgroundColor: globalColors.others.black.color
   },
 });

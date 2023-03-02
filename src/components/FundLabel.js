@@ -12,12 +12,13 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: globalColors.others.black.color,
+    height: 48,
+    marginTop: 15,
+    marginBottom: 15,
   },
   subHeader: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: globalColors.others.black.color,
     maxWidth: 248, //limit text width
     maxHeight: 30
   },
@@ -35,18 +36,14 @@ const styles = StyleSheet.create({
 
 export default function FundLabel(param) {
 
-  //let name = trimmedString(param.name,param.name.length,50,false);
-  let name = param.name;
-  if (name.length > 23) { name = name.substring(0,20) + "..."; }
-
   return (
     <View style={styles.header}>
       <View style={styles.subHeader}>
-        <Image source={require('../assets/icons/HedgenetWhite.png')} style={[styles.hedgenetIcon, { marginRight: 16, marginLeft: 36}]} />
-        <Text style={globalFonts.H4(globalColors.others.white.color)}>{name}</Text>
+        <Image source={require('../assets/icons/HedgenetWhite.png')} style={[styles.hedgenetIcon, { marginRight: 16, marginLeft: 24}]} />
+        <Text style={globalFonts.H4(globalColors.others.white.color)}>{param.name}</Text>
         <Text style={globalFonts.H4(globalColors.others.white.color)}>...</Text>
       </View>
-        <Image source={require('../assets/icons/ExpandIcon.png')} style={[styles.moreIcon, { marginRight: 36 }]} />
+      <Image source={require('../assets/icons/MoreIcon.png')} style={[styles.moreIcon, { marginRight: 24 }]} />
     </View>
   );
 }

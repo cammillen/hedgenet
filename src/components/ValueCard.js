@@ -8,18 +8,27 @@ import { globalFonts } from '../styles/Fonts.js';
 
 
 const styles = StyleSheet.create({
+  rect: {
+    backgroundColor: globalColors.dark._2.color,
+    marginLeft: 24,
+    marginRight: 24,
+    borderColor: globalColors.dark._3.color,
+    borderWidth: 1,
+    alignItems: 'center',
+    padding: 12,
+    borderRadius: 24
+  },
   header: {
     flewDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 10,
-    backgroundColor: globalColors.others.black.color,
+    padding: 8,
   },
   subHeader: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 10
+    paddingTop: 6,
   },
   arrowIcon: {
     width: 20,
@@ -41,8 +50,8 @@ export default function ValueCard(param) {
   let delta = (param.delta/100).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
   return (
-    <View style={styles.header}>
-      <View style={{backgroundColor: globalColors.dark._2.color, width: 382, borderColor: globalColors.dark._3.color, borderWidth: 1, alignItems: 'center', padding: 10, borderRadius: 20}}>
+    <View style={styles.rect}>
+      <View style={styles.header}>
         <Text style={globalFonts.H2(globalColors.others.white.color)}>${cashBalance}</Text>
         <View style={styles.subHeader}>
         <Image source={imageRequire} style={[styles.arrowIcon, { marginRight: 8 }]} />
