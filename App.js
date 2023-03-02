@@ -9,6 +9,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import { globalColors } from './src/styles/Colors.js';
 import { globalFonts } from './src/styles/Fonts.js';
 import TopMenuBar from './src/components/TopMenuBar.js';
+import {NavigationContainer} from '@react-navigation/native';
 
 // Loading the custom fonts (you have to use this at the start of every screen): 
 
@@ -35,6 +36,7 @@ export default function App() {
 // Custom fonts loaded, code below is for the screen: 
 
   return (
+    <NavigationContainer>
     <>
       <StatusBar barStyle="light-content" backgroundColor="#000" />
       <View style={styles.container} onLayout={onLayoutRootView}>
@@ -48,6 +50,7 @@ export default function App() {
         <Text style={{ fontSize: 30, color: globalColors.greyscale._900.color }}>Platform Default</Text>
       </View>
     </>
+    </NavigationContainer>
   );
 }
 

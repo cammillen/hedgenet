@@ -8,49 +8,31 @@ import { globalFonts } from '../styles/Fonts.js';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-
 function TopMenuBar() {
     const navigation = useNavigation();
     
     return (
       <View style={styles.header}>
-        
         <View style={styles.iconContainer}>
-          
-          <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
-            <Image
-              source={require('../assets/icons/Avatar.png')} // BACKEND TO DO: backend integration with profile picture. 
-              style={[styles.avatarIcon, { marginRight: 19 },  { marginLeft: 24 }]}
-            />
-          </TouchableOpacity>
-
-          <TouchableOpacity onPress={() => navigation.navigate('Notifications')}>
-            <Image
-              source={require('../assets/icons/Notification.png')}
-              style={styles.notificationIcon}
-            />
-          </TouchableOpacity>
-
+          <Image
+            source={require('../assets/icons/Avatar.png')} // BACKEND TO DO: backend integration with profile picture. 
+            style={[styles.avatarIcon, { marginRight: 19 },  { marginLeft: 24 }]}
+          />
+          <Image
+            source={require('../assets/icons/Notification.png')}
+            style={styles.notificationIcon}
+          />
         </View>
-
-        <Text style={globalFonts.H4(globalColors.others.white.color)}>Link</Text>
-         
+        <Text style={globalFonts.H4(globalColors.others.white.color)}>Link</Text> 
         <View style={styles.iconContainer}>
-
-          <TouchableOpacity onPress={() => navigation.navigate('Leaderboard')}>
-            <Image
-              source={require('../assets/icons/Star.png')}
-              style={styles.starIcon}
-            />
-          </TouchableOpacity>
-
-          <TouchableOpacity onPress={() => navigation.navigate('Newsfeed')}>
-            <Image
-              source={require('../assets/icons/Message.png')}
-              style={[styles.messageIcon, { marginLeft: 26 }, { marginRight: 24 }]}
-            />
-          </TouchableOpacity>
-
+          <Image
+            source={require('../assets/icons/Star.png')}
+            style={styles.starIcon}
+          />
+          <Image
+            source={require('../assets/icons/Message.png')}
+            style={[styles.messageIcon, { marginLeft: 26 }, { marginRight: 24 }]}
+          />
         </View>
       </View>
     );
