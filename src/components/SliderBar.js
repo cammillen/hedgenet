@@ -27,7 +27,7 @@ function SliderBar() {
                                         <Text style={globalFonts.BodyXLarge.semiBold(globalColors.others.white.color)}>UCL Fintech Fund</Text>
                                     </View>
                                 </View>
-                                <View style={{height:24, width:130, marginLeft: 20, borderWidth:0.5}}>
+                                <View style={{height:24, width:130, marginLeft: 20, marginRight: 24, borderWidth:0.5}}>
                                     <View style={{ flex: 1 }}>
                                         <Text style={globalFonts.BodyXLarge.semiBold(globalColors.others.white.color)}>LSE Sustainable Finance Fund</Text>
                                     </View>
@@ -37,7 +37,7 @@ function SliderBar() {
                     //</View>
                 //</View>
         );
-    }
+    } //added marginRight to final column -- bring it in line w/ 24 pixel margin
 
     const styles = StyleSheet.create({
         header: {

@@ -5,85 +5,64 @@ import { Image } from 'react-native';
 import { StyleSheet, Text, View } from 'react-native';
 import { globalColors } from '../styles/Colors.js';
 import { globalFonts } from '../styles/Fonts.js';
-
+import LogoSelect from '../assets/logoRequire.js';
 
 const styles = StyleSheet.create({
   header: {
     justifyContent: 'space-between',
     flexDirection: 'row',
     alignItems: 'center',
-    height: 32,
-    marginTop: 15,
-    marginBottom: 20,
   },
   subHeaderLeft: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    paddingLeft: 24,
-    width: 105
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    justifyContent: 'space-around',
+    height: 55,
   },
   subHeaderRight: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
+    flexDirection: 'column',
+    alignItems: 'flex-end',
+    justifyContent: 'space-around',
+    height: 55,
     paddingRight: 24,
-    width: 105
   },
   logoIcon: {
     width: 60,
     height: 60,
     resizeMode: 'contain'
-}
+  },
+  graphVisual: {
+    width: 63.99,
+    height: 27.58,
+    resizeMode: 'contain'
+  }
 });
 
 export default function PositionsItem(params) {
-  let name = params.stockName;
 
-  //CHECK OUTPUT FIRST BEFORE UNCOMMENTING THE FOLLOWING
-  let imagePath = '../assets/stocks/Google.png'; //COMMENT OUT AND COMMENT IN BELOW
-  //let imagePath = '../assets/stocks/'+ name + '.png';
-  //imagePath = '../assets/stocks/Google.png'; //TO DEMONSTRATE THAT EVEN IF YOU REDEFINE IT AS A STRING, IT STILL DOESN'T WORK
-  //let stockImage = require(imagePath);
+  let stockImage = LogoSelect(params.stockName);
+  let graphImage = require('../assets/graphs(delete)/ExampleGraph.png');
+  let stockValue = (params.userShares * params.shareValue).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   
-  console.log(typeof ('../assets/stocks/'+ name + '.png'), '../assets/stocks/'+ name + '.png')
-  console.log(imagePath);
-  //TO DEMONSTRATE THEY'RE THE SAME
-
-  let stockImage = require('../assets/stocks/Google.png');
-  //let stockImage = require(imagePath);
-
-  //IGNORE EVERYTHING BELOW
-
-
-
-
-  //let graphImage = require('../assets/graphs(delete)/ExampleGraph.png');
-  //let stockValue = (params.userShares * params.shareValue).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  //let percentageGrowth = "+ " + ((params.shareValue - params.previousValue)/params.previousValue).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-//
-  //if (percentageGrowth[2] == '-') {
-  //  percentageGrowth = percentageGrowth.replace('-','');
-  //  percentageGrowth = percentageGrowth.replace('+','-');
-  //}
-//
+  let percentageGrowth = "+ " + (100*(params.shareValue - params.previousValue)/params.previousValue).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  let growthColor = 'success';
+  if (percentageGrowth[2] == '-') {
+    percentageGrowth = percentageGrowth.replace('-','').replace('+','-');
+    growthColor = 'error';
+  }
+  
   return (
     <View style={styles.header}>
-     <Image source={stockImage} style={[styles.logoIcon, { marginLeft: 24, marginRight: 16}]} />
+     <Image source={stockImage} style={[styles.logoIcon, { marginLeft: 24, marginRight: 16 }]} />
+      <View style={styles.subHeaderLeft}>
+        <Text style={globalFonts.H6(globalColors.others.white.color)}>{params.stockName}</Text>
+        <Text style={globalFonts.BodyMedium.semiBold(globalColors.others.white.color)}>{params.userShares.toFixed(5)} shares</Text>
+      </View>
+      <Image source={graphImage} style={[styles.graphVisual, { marginLeft: 16, marginRight: 16 }]} />
+      <View style={styles.subHeaderRight}>
+        <Text style={globalFonts.H6(globalColors.others.white.color)}>${stockValue}</Text>
+        <Text style={globalFonts.BodyMedium.semiBold(globalColors.status[growthColor].color)}>{percentageGrowth} shares</Text>
+      </View>
     </View>
   );
-  //    <View style={styles.subHeaderLeft}>
-  //      <Text style={globalFonts.H6(globalColors.others.white.color)}>{params.stockName}</Text>
-  //      <Text style={globalFonts.body.Medium.semiBold(globalColors.others.white.color)}>{params.userShares} shares</Text>
-//
-  //    </View>
-  //    <Image source={stockImage} style={[styles.logoIcon, { marginLeft: 24}]} />
-//
-  //    <View style={styles.subHeaderRight}>
-  //      <Text style={globalFonts.H6(globalColors.status.success.color)}>Recently</Text>
-  //      <Image source={graphImage} style={[styles.arrowsIcon, { marginLeft: 12}]} />
-  //    </View>
-  //  </View>
-  //);
 }
-
