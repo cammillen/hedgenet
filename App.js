@@ -50,8 +50,8 @@ export default function App() {
         <FundLabel name={fundName} />      
         <ValueCard cashBalance={cash} delta={difference} />
         <MyPositions />
-        <PositionsItem shareValue={1245.45} previousValue={565.89}/>
         <SliderBar />
+        <PositionsItem shareValue={1245.45} previousValue={1565.89} stockName={'Google'}/>
       </View>
     </>
     </NavigationContainer>

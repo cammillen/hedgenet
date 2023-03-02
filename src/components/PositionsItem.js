@@ -38,17 +38,23 @@ const styles = StyleSheet.create({
 });
 
 export default function PositionsItem(params) {
+  console.log(params.stockName);
+  console.log('../assets/icons/stocks/' + params.stockName + '.png');
+  console.log('../assets/icons/stocks/' + 'Google' + '.png');
+  //C:\Users\arran\Desktop\hedgenet\src\assets\icons\stocks\Google.png
+
   //let stockImage = require('../assets/icons/stocks/' + params.stockName + '.png');
+
+  let stockImage = require('../assets/icons/stocks/' + String(params.stockName) + '.png');
   //let graphImage = require('../assets/graphs(delete)/ExampleGraph.png');
   //let stockValue = (params.userShares * params.shareValue).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  let percentageGrowth = "+ " + ((params.shareValue - params.previousValue)/params.previousValue).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
-  if (percentageGrowth[2] == '-') {
-    percentageGrowth = percentageGrowth.replace('-','');
-    percentageGrowth = percentageGrowth.replace('+','-');
-  }
-  console.log(percentageGrowth);
-
+  //let percentageGrowth = "+ " + ((params.shareValue - params.previousValue)/params.previousValue).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+//
+  //if (percentageGrowth[2] == '-') {
+  //  percentageGrowth = percentageGrowth.replace('-','');
+  //  percentageGrowth = percentageGrowth.replace('+','-');
+  //}
+//
   //return (
   //  <View style={styles.header}>
   //    <Image source={stockImage} style={[styles.logoIcon, { marginLeft: 24, marginRight: 16}]} />
