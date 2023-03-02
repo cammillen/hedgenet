@@ -46,7 +46,7 @@ export default function App() {
       <View style={styles.container} onLayout={onLayoutRootView}>
         <TopMenuBar />
         <Text></Text>
-        <Text style={{ fontSize: 30, color: globalColors.greyscale._900.color }}>SearchBar Placeholder</Text>
+        <Text style={{ fontSize: 30, color: globalColors.greyscale._900.color, marginLeft: 24}}>SearchBar Placeholder</Text>
         <FundLabel name={fundName} />      
         <ValueCard cashBalance={cash} delta={difference} />
         <SliderBar />
