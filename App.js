@@ -54,15 +54,9 @@ export default function App() {
       <View style={styles.container} onLayout={onLayoutRootView}>
         <TopMenuBar />
         <Text></Text>
-        <Text style={globalFonts.BodyXLarge.Regular(globalColors.primary._500.color)}>Urbanist Bold</Text>
-        <Text style={globalFonts.BodyLarge.Regular(globalColors.primary._400.color)}>Urbanist Bold</Text>
-        <Text style={globalFonts.BodyMedium.Regular(globalColors.primary._300.color)}>Urbanist Bold</Text>
-        <Text style={globalFonts.BodySmall.Regular(globalColors.primary._200.color)}>Urbanist Bold</Text>
-        <Text style={globalFonts.BodyXSmall.Regular(globalColors.primary._100.color)}>Urbanist Bold</Text>
-        <Text style={{ fontSize: 30, color: globalColors.greyscale._900.color }}>Platform Default</Text>
+        <Text style={{ fontSize: 30, color: globalColors.greyscale._900.color }}>SearchBar Placeholder</Text>
         <FundLabel name={fundName} />      
         <ValueCard cashBalance={cash} delta={difference} />
-        <SliderBar />
         <SliderBar />
         <MyPositions />
         <PositionsItem shareValue={1245.45} previousValue={565.89}/>
