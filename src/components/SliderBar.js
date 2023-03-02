@@ -17,12 +17,12 @@ function SliderBar() {
                             <ScrollView
                                 horizontal={true}
                             >
-                                <View style={{height:80, width:130, marginLeft: 20, borderWidth:0.5}}>
+                                <View style={{height:80, width:130, marginLeft: 24, borderWidth:0.5}}>
                                     <View style={{ flex: 1 }}>
                                         <Text style={globalFonts.H4(globalColors.others.white.color)}>Option 1</Text>
                                     </View>
                                 </View>
-                                <View style={{height:50, width:130, marginLeft: 20, borderWidth:0.5}}>
+                                <View style={{height:50, width:130, marginLeft: 24, borderWidth:0.5}}>
                                     <View style={{ flex: 1 }}>
                                         <Text style={globalFonts.H4(globalColors.others.white.color)}>Option 2</Text>
                                     </View>
