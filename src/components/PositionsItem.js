@@ -39,20 +39,23 @@ const styles = StyleSheet.create({
 
 export default function PositionsItem(params) {
   let name = params.stockName;
-  console.log(typeof name);
-  console.log(typeof ('../assets/stocks/'+ name + '.png'), '../assets/stocks/'+ name + '.png')
-  //C:\Users\arran\Desktop\hedgenet\src\assets\icons\stocks\Google.png
 
-  //let stockImage = require('../assets/icons/stocks/' + params.stockName + '.png');
-
+  //CHECK OUTPUT FIRST BEFORE UNCOMMENTING THE FOLLOWING
+  let imagePath = '../assets/stocks/Google.png'; //COMMENT OUT AND COMMENT IN BELOW
   //let imagePath = '../assets/stocks/'+ name + '.png';
-  //console.log(imagePath);
-  let imagePath = '../assets/stocks/Google.png';
-  console.log(typeof imagePath);
-  //require(imagePath);
+  //imagePath = '../assets/stocks/Google.png'; //TO DEMONSTRATE THAT EVEN IF YOU REDEFINE IT AS A STRING, IT STILL DOESN'T WORK
+  //let stockImage = require(imagePath);
+  
+  console.log(typeof ('../assets/stocks/'+ name + '.png'), '../assets/stocks/'+ name + '.png')
+  console.log(imagePath);
+  //TO DEMONSTRATE THEY'RE THE SAME
 
-  //require('../assets/stocks/Google.png');
   let stockImage = require(imagePath);
+
+  //IGNORE EVERYTHING BELOW
+
+
+
 
   //let graphImage = require('../assets/graphs(delete)/ExampleGraph.png');
   //let stockValue = (params.userShares * params.shareValue).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
