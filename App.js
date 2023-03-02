@@ -8,9 +8,9 @@ import * as SplashScreen from 'expo-splash-screen';
 import { globalColors } from './src/styles/Colors.js';
 import { globalFonts } from './src/styles/Fonts.js';
 import TopMenuBar from './src/components/TopMenuBar.js';
-import ValueCard from './src/components/ValueCard.js';
-import FundLabel from './src/components/FundLabel.js';
-
+//import ValueCard from './src/components/ValueCard.js';
+//import FundLabel from './src/components/FundLabel.js';
+import SliderBar from './src/components/SliderBar.js';
 
 
 // Loading the custom fonts (you have to use this at the start of every screen): 
@@ -54,8 +54,7 @@ export default function App() {
       <Text style={globalFonts.BodySmall.Regular(globalColors.primary._200.color)}>Urbanist Bold</Text>
       <Text style={globalFonts.BodyXSmall.Regular(globalColors.primary._100.color)}>Urbanist Bold</Text>
       <Text style={{ fontSize: 30, color: globalColors.greyscale._900.color }}>Platform Default</Text>
-      <FundLabel name={fundName} />      
-      <ValueCard cashBalance={cash} delta={difference} />
+      <SliderBar />
     </View>
   );
 }
