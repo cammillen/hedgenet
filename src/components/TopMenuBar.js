@@ -33,7 +33,7 @@ function TopMenuBar() {
 
         </View>
 
-        <Text style={globalFonts.H4(globalColors.others.white.color)}>Link</Text>
+        <Text style={globalFonts.H4(globalColors.others.white.color)}>Home</Text>
          
         <View style={styles.iconContainer}>
 
