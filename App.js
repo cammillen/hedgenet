@@ -19,6 +19,7 @@ import SearchBarInactive from './src/components/SearchBarInactive.js';
 import SearchBarActive from './src/components/SearchBarActive.js';
 import Background from './src/components/Background.js';
 import BoxWithButton from './src/components/BottomMenuBar.js';
+import IndexFundCard from './src/components/IndexFundCard.js';
 
 // Loading the custom fonts (you have to use this at the start of every screen): 
 
@@ -53,6 +54,7 @@ export default function App() {
           <SearchBarInactive/>
           <FundLabel name={fundName} />      
           <ValueCard cashBalance={cash} delta={difference} />
+          <IndexFundCard/>
           <SliderBar />
           <MyPositions />
           <PositionsLoop stocks={['Google','Blackberry','Coca-Cola','Netflix','Apple','Alibaba','Amazon','Advanced Micro Devices','Dell','LG','Meta','Microsoft','Sony','Spotify','Tesla','Twitter','Virgin']} />
