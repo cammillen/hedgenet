@@ -1,5 +1,5 @@
 import * as React from "react";
-import { View, Image} from 'react-native';
+import { View, Image, Dimensions} from 'react-native';
 import Svg, { G, Path, Defs, Rect } from "react-native-svg";
 import { BlurView } from 'expo-blur';
 import MaskedView from '@react-native-community/masked-view';
@@ -7,11 +7,13 @@ import BlurredRect from './BlurredRect.js'
 
 /* SVGR has dropped some elements not supported by react-native-svg: filter */
 
+const { width } = Dimensions.get('window');
+
 const BottomMenuBar = (props) => (
   <MaskedView
     maskElement={
       <Svg
-        width={381}
+        width={width}
         height={113}
         fill="red"
         xmlns="http://www.w3.org/2000/svg"
