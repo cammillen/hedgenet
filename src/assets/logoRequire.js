@@ -10,7 +10,7 @@ export default function LogoSelect (name) {
         case 'Netflix':
             return require('../assets/stocks/Netflix.png');
         case 'Coca-Cola':
-          return require('../assets/stocks/Coca-Cola.png');
+          return require('../assets/stocks/CocaCola.png');
         case 'Blackberry':
           return require('../assets/stocks/Blackberry.png');
         case 'Apple':
