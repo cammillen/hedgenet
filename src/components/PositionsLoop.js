@@ -3,7 +3,6 @@
 import React from 'react';
 import { StyleSheet, View, ScrollView } from 'react-native';
 import PositionsItem from './PositionsItem.js';
-import { LinearGradient } from 'expo-linear-gradient';
 
 const styles = StyleSheet.create({
   container: {
@@ -35,8 +34,8 @@ export default function PositionsLoop(params) {
       Twitter: {userShares:23.629, shareValue:936.34, previousValue:889.04},
       Virgin: {userShares:23.629, shareValue:936.34, previousValue:889.04},
     };
-    let positions = [];
 
+    let positions = [];
     params.stocks.forEach(element => positions.push(
     <PositionsItem key = {element} stockName={element} userShares={temporaryStockValues[element].userShares} shareValue={temporaryStockValues[element].shareValue} previousValue={temporaryStockValues[element].previousValue} />
     ));
