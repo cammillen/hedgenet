@@ -5,6 +5,7 @@ import { Image } from 'react-native';
 import { StyleSheet, Text, View } from 'react-native';
 import { globalColors } from '../styles/Colors.js';
 import { globalFonts } from '../styles/Fonts.js';
+import GlobalLinearGradients from './LinearGradients.js';
 
 
 const styles = StyleSheet.create({
@@ -37,6 +38,7 @@ const styles = StyleSheet.create({
 export default function MyPositions() {
 
   return (
+    <View>
     <View style={styles.header}>
       <View style={styles.subHeaderLeft}>
         <Text style={globalFonts.H5(globalColors.others.white.color)}>My Positions</Text>
@@ -46,6 +48,7 @@ export default function MyPositions() {
         <Image source={require('../assets/icons/UpDownArrow.png')} style={[styles.arrowsIcon, { marginLeft: 12}]} />
       </View>
     </View>
+    <GlobalLinearGradients color1={'#000'} color2={'transparent'} style={'verticalDownOverlap'} dimensionSize={10} />
+    </View>
   );
 }
-

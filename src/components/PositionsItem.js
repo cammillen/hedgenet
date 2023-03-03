@@ -61,7 +61,7 @@ export default function PositionsItem(params) {
      <Image source={stockImage} style={[styles.logoIcon, { marginRight: 16 }]} />
       <View style={styles.subHeaderLeft}>
         <Text style={globalFonts.H6(globalColors.others.white.color)}>{params.stockName}</Text>
-        <Text style={globalFonts.BodyMedium.semiBold(globalColors.others.white.color)}>{params.userShares.toFixed(5)} shares</Text>
+        <Text style={globalFonts.BodyMedium.semiBold(globalColors.others.white.color)}>{String(params.userShares.toPrecision(6)).substring(0,7)} shares</Text>
       </View>
       <Image source={graphImage} style={[styles.graphVisual, { marginLeft: 16, marginRight: 16 }]} />
       <View style={styles.subHeaderRight}>

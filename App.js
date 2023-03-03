@@ -41,21 +41,19 @@ export default function App() {
   }
 
   // Custom fonts loaded, code below is for the screen: 
+  //add following below inactive variant:        <SearchBarActive/>
   return (
     <NavigationContainer>
-    <>
       <StatusBar barStyle="light-content" backgroundColor="#000" />
       <View style={styles.container} onLayout={onLayoutRootView}>
         <TopMenuBar />
         <SearchBarInactive/>
-        <SearchBarActive/>
         <FundLabel name={fundName} />      
         <ValueCard cashBalance={cash} delta={difference} />
         <SliderBar />
         <MyPositions />
-        <PositionsLoop stocks={['Google','Netflix']} />
+        <PositionsLoop stocks={['Google','Blackberry','Coca-Cola','Netflix']} />
       </View>
-    </>
     </NavigationContainer>
   );
 }
@@ -65,7 +63,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 55,
+    //paddingTop: 55,
   },
 });
 
