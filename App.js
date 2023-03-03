@@ -55,7 +55,7 @@ export default function App() {
           <ValueCard cashBalance={cash} delta={difference} />
           <SliderBar />
           <MyPositions />
-          <PositionsLoop stocks={['Google','Blackberry','Coca-Cola','Netflix']} />
+          <PositionsLoop stocks={['Google','Blackberry','Coca-Cola','Netflix','Apple','Alibaba','Amazon','Advanced Micro Devices','Dell','LG','Meta','Microsoft','Sony','Spotify','Tesla','Twitter','Virgin']} />
         </View>
         </Background>
     </NavigationContainer>
