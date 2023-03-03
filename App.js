@@ -54,6 +54,7 @@ export default function App() {
         <SliderBar />
         <MyPositions />
         <PositionsItem stockName={'Google'} userShares={0.17384} shareValue={96972.79} previousValue={93377.74} />
+        <PositionsItem stockName={'Netflix'} userShares={0.19375} shareValue={88966.84} previousValue={97316.56} />
       </View>
     </>
     </NavigationContainer>

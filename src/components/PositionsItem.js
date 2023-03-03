@@ -12,6 +12,12 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     flexDirection: 'row',
     alignItems: 'center',
+    marginTop: 20,
+    paddingBottom: 20,
+    marginRight: 24,
+    marginLeft: 24,
+    borderBottomColor: globalColors.dark._3.color,
+    borderBottomWidth: 1
   },
   subHeaderLeft: {
     flexDirection: 'column',
@@ -23,8 +29,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'flex-end',
     justifyContent: 'space-around',
-    height: 55,
-    paddingRight: 24,
+    height: 55
   },
   logoIcon: {
     width: 60,
@@ -41,7 +46,7 @@ const styles = StyleSheet.create({
 export default function PositionsItem(params) {
 
   let stockImage = LogoSelect(params.stockName);
-  let graphImage = require('../assets/graphs(delete)/ExampleGraph.png');
+  let graphImage = require('../assets/graphs(delete)/ExampleGraph.png'); //generalise once on graphing
   let stockValue = (params.userShares * params.shareValue).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   
   let percentageGrowth = "+ " + (100*(params.shareValue - params.previousValue)/params.previousValue).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -50,10 +55,10 @@ export default function PositionsItem(params) {
     percentageGrowth = percentageGrowth.replace('-','').replace('+','-');
     growthColor = 'error';
   }
-  
+
   return (
     <View style={styles.header}>
-     <Image source={stockImage} style={[styles.logoIcon, { marginLeft: 24, marginRight: 16 }]} />
+     <Image source={stockImage} style={[styles.logoIcon, { marginRight: 16 }]} />
       <View style={styles.subHeaderLeft}>
         <Text style={globalFonts.H6(globalColors.others.white.color)}>{params.stockName}</Text>
         <Text style={globalFonts.BodyMedium.semiBold(globalColors.others.white.color)}>{params.userShares.toFixed(5)} shares</Text>
@@ -61,7 +66,7 @@ export default function PositionsItem(params) {
       <Image source={graphImage} style={[styles.graphVisual, { marginLeft: 16, marginRight: 16 }]} />
       <View style={styles.subHeaderRight}>
         <Text style={globalFonts.H6(globalColors.others.white.color)}>${stockValue}</Text>
-        <Text style={globalFonts.BodyMedium.semiBold(globalColors.status[growthColor].color)}>{percentageGrowth} shares</Text>
+        <Text style={globalFonts.BodyMedium.semiBold(globalColors.status[growthColor].color)}>{percentageGrowth}%</Text>
       </View>
     </View>
   );
