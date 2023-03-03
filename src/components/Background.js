@@ -2,9 +2,9 @@
 // There also needs to be another part which is the black background underneath it that allows for the scrollable behaviour. 
 
 import React from 'react';
-import { View, ImageBackground, StyleSheet } from 'react-native';
+import { View, ImageBackground, StyleSheet, Platform } from 'react-native';
 
-const backgroundImage = require('../assets/background.png');
+const backgroundImage = Platform.OS == "ios" ? require('../assets/IOSBackground.png'): require('../assets/AndroidBackground.png');
 
 export default function Background(props) {
   return (
