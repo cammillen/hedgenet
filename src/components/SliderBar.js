@@ -17,17 +17,17 @@ function SliderBar() {
                             <ScrollView
                                 horizontal={true}
                             >
-                                <View style={{height:24, width:130, marginLeft: 24, borderWidth:0.5}}>
+                                <View style={{height:24, marginLeft: 24, borderWidth:0.5}}>
                                     <View style={{ flex: 1 }}>
                                         <Text style={globalFonts.BodyXLarge.semiBold(globalColors.others.white.color)}>Personal Fund</Text>
                                     </View>
                                 </View>
-                                <View style={{height:24, width:130, marginLeft: 24, borderWidth:0.5}}>
+                                <View style={{height:24, marginLeft: 24, borderWidth:0.5}}>
                                     <View style={{ flex: 1 }}>
                                         <Text style={globalFonts.BodyXLarge.semiBold(globalColors.others.white.color)}>UCL Fintech Fund</Text>
                                     </View>
                                 </View>
-                                <View style={{height:24, width:130, marginLeft: 20, marginRight: 24, borderWidth:0.5}}>
+                                <View style={{height:24, marginLeft: 20, marginRight: 24, borderWidth:0.5}}>
                                     <View style={{ flex: 1 }}>
                                         <Text style={globalFonts.BodyXLarge.semiBold(globalColors.others.white.color)}>LSE Sustainable Finance Fund</Text>
                                     </View>
