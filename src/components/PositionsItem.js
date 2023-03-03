@@ -66,7 +66,7 @@ export default function PositionsItem(params) {
       <Image source={graphImage} style={[styles.graphVisual, { marginLeft: 16, marginRight: 16 }]} />
       <View style={styles.subHeaderRight}>
         <Text style={globalFonts.H6(globalColors.others.white.color)}>${stockValue}</Text>
-        <Text style={globalFonts.BodyMedium.semiBold(globalColors.status[growthColor].color)}>{percentageGrowth} shares</Text>
+        <Text style={globalFonts.BodyMedium.semiBold(globalColors.status[growthColor].color)}>{percentageGrowth}%</Text>
       </View>
     </View>
   );
