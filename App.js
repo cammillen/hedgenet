@@ -54,8 +54,8 @@ export default function App() {
           <SearchBarInactive/>
           <FundLabel name={fundName} />      
           <ValueCard cashBalance={cash} delta={difference} />
-          <SliderBar />
           <IndexFundCard/>
+          <SliderBar />
           <MyPositions />
           <PositionsLoop stocks={['Google','Blackberry','Coca-Cola','Netflix']} />
         </View>
