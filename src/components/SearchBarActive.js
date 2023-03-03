@@ -1,5 +1,4 @@
-// this just needs to direct to search bar page on tap.
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Image } from 'react-native';
 import { StyleSheet, TextInput, View } from 'react-native';
 import { globalColors } from '../styles/Colors.js';
@@ -8,6 +7,12 @@ import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default function SearchBarActive() {
+    const inputRef = useRef(null);
+    useEffect(() => {
+        if (inputRef.current) {
+            inputRef.current.focus();
+        }
+    }, [inputRef]);
     return(
         <View style={styles.fullComp}>
 
@@ -22,8 +27,9 @@ export default function SearchBarActive() {
                     style={styles.searchIcon}
                 />   
                 <TextInput 
+                    keyboardAppearance='dark'
+                    ref={inputRef}
                     selectionColor={globalColors.others.white.color}
-                    autoFocus={true}
                     style={styles.input}
                     placeholder=""
                     placeholderTextColor = {globalColors.others.white.color}
@@ -91,4 +97,3 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
     },
 });
-
