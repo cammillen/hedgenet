@@ -54,7 +54,6 @@ export default function App() {
         <View style={styles.container} onLayout={onLayoutRootView}>
           <TopMenuBar />
           <SearchBarInactive/>
-          {/* <BlurredRect/> */}
           <FundLabel name={fundName} />      
           <ValueCard cashBalance={cash} delta={difference} />
           <IndexFundCard/>
@@ -81,7 +80,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: -170,
+    marginBottom: -5,
     marginLeft: 5,
   },
 });

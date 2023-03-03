@@ -9,7 +9,6 @@ import BlurredRect from './BlurredRect.js'
 
 const BottomMenuBar = (props) => (
   <MaskedView
-    style={{ flex: 1, flexDirection: 'row'}}
     maskElement={
       <Svg
         width={381}
@@ -29,9 +28,7 @@ const BottomMenuBar = (props) => (
         <Defs></Defs>
       </Svg>
     }>
-
     <BlurredRect/>
-
   </MaskedView>
 );
 
