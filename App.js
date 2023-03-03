@@ -51,9 +51,9 @@ export default function App() {
         <SearchBarActive/>
         <FundLabel name={fundName} />      
         <ValueCard cashBalance={cash} delta={difference} />
-        <MyPositions />
         <SliderBar />
-        <PositionsItem shareValue={1245.45} previousValue={1565.89} stockName={'Google'}/>
+        <MyPositions />
+        <PositionsItem stockName={'Google'} userShares={0.17384} shareValue={96972.79} previousValue={93377.74} />
       </View>
     </>
     </NavigationContainer>
