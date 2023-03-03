@@ -10,18 +10,34 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 export default function SearchBarActive() {
     return(
         <View style={styles.fullComp}>
+
             <Image
                 source={require('../assets/icons/ArrowLeft_Green.png')}
                 style={styles.ArrowLeft_GreenIcon}
             />      
-            <TextInput 
-                selectionColor={globalColors.others.white.color}
-                autoFocus={true}
-                style={styles.input}
-                placeholder=""
-                placeholderTextColor = {globalColors.others.white.color}
-                color = {globalColors.others.white.color}
+
+            <View style={styles.textInput} >
+                <Image
+                    source={require('../assets/icons/SearchGreen.png')}
+                    style={styles.searchIcon}
+                />   
+                <TextInput 
+                    selectionColor={globalColors.others.white.color}
+                    autoFocus={true}
+                    style={styles.input}
+                    placeholder=""
+                    placeholderTextColor = {globalColors.others.white.color}
+                    color = {globalColors.others.white.color}
+                    />
+                {/* NAVIGATION Add code for the filter popup when the filter icon is pressed. */}
+                <TouchableOpacity onPress={() => navigation.navigate('FilterSearch')}>
+                <Image
+                    source={require('../assets/icons/Filter.png')}
+                    style={styles.filterIcon}
                 />
+                </TouchableOpacity>
+            </View>
+
         </View>
     )
 }
@@ -34,26 +50,30 @@ const styles = StyleSheet.create({
         marginTop: 24,
         marginRight: 24,
     },
+    textInput:{
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginLeft: 10,
+        borderWidth: 1,
+        borderColor: globalColors.primary._500.color,
+        borderRadius: 16,
+        paddingLeft: 14,
+        paddingRight: 14,
+        backgroundColor: '#020E06',
+    },
     input:{
         caretColor: globalColors.others.white.color,
         marginLeft: 10,
         flex: 1,
         backgroundColor: globalColors.dark._2.color,
-        paddingLeft: 14,
-        paddingRight: 14,
         paddingTop: 18,
         paddingBottom: 18,
-        borderRadius: 16,
-        borderWidth: 1,
-        borderColor: globalColors.primary._500.color,
         backgroundColor: '#020E06',
+        paddingLeft: 3,
+        paddingRight: 14,
         fontFamily: 'Urbanist-Regular',
         fontSize: 16,
-    },
-    iconTextContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginLeft: 5,
     },
     searchIcon: {
         width: 20,
