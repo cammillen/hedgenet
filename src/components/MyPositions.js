@@ -7,6 +7,23 @@ import { globalColors } from '../styles/Colors.js';
 import { globalFonts } from '../styles/Fonts.js';
 import GlobalLinearGradients from './LinearGradients.js';
 
+export default function MyPositions() {
+
+  return (
+    <View>
+    <View style={styles.header}>
+      <View style={styles.subHeaderLeft}>
+        <Text style={globalFonts.H5(globalColors.others.white.color)}>My Positions</Text>
+      </View>
+      <View style={styles.subHeaderRight}>
+        <Text style={globalFonts.H6(globalColors.status.success.color)}>Recently</Text>
+        <Image source={require('../assets/icons/UpDownArrow.png')} style={[styles.arrowsIcon, { marginLeft: 12}]} />
+      </View>
+    </View>
+    <GlobalLinearGradients color1={'#000'} color2={'transparent'} style={'verticalDownOverlap'} dimensionSize={10} />
+    </View>
+  );
+}
 
 const styles = StyleSheet.create({
   header: {
@@ -34,21 +51,3 @@ const styles = StyleSheet.create({
     resizeMode: 'contain'
 }
 });
-
-export default function MyPositions() {
-
-  return (
-    <View>
-    <View style={styles.header}>
-      <View style={styles.subHeaderLeft}>
-        <Text style={globalFonts.H5(globalColors.others.white.color)}>My Positions</Text>
-      </View>
-      <View style={styles.subHeaderRight}>
-        <Text style={globalFonts.H6(globalColors.status.success.color)}>Recently</Text>
-        <Image source={require('../assets/icons/UpDownArrow.png')} style={[styles.arrowsIcon, { marginLeft: 12}]} />
-      </View>
-    </View>
-    <GlobalLinearGradients color1={'#000'} color2={'transparent'} style={'verticalDownOverlap'} dimensionSize={10} />
-    </View>
-  );
-}

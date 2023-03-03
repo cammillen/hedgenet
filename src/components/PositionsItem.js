@@ -17,7 +17,8 @@ const styles = StyleSheet.create({
     marginRight: 24,
     marginLeft: 24,
     borderBottomColor: globalColors.dark._3.color,
-    borderBottomWidth: 1
+    borderBottomWidth: 1,
+    backgroundColor: '#000000',
   },
   subHeaderLeft: {
     flexDirection: 'column',
