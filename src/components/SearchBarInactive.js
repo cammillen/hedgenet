@@ -7,7 +7,7 @@ import { globalFonts } from '../styles/Fonts.js';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-export default function SearchBar() {
+export default function SearchBarInactive() {
     return(  
         <TouchableOpacity onPress={() => navigation.navigate('Search')} style={styles.searchBox}>
             {/* NAVIGATION Add code to redirect to Search.js (search page) when the box is pressed. */}
@@ -39,8 +39,8 @@ const styles = StyleSheet.create({
         marginTop: 24,
         paddingLeft: 14,
         paddingRight: 14,
-        paddingTop: 16,
-        paddingBottom: 16,
+        paddingTop: 18,
+        paddingBottom: 18,
         borderRadius: 16
     },
     iconTextContainer: {
