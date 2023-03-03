@@ -12,7 +12,7 @@ import TopMenuBar from './src/components/TopMenuBar.js';
 import ValueCard from './src/components/ValueCard.js';
 import FundLabel from './src/components/FundLabel.js';
 import MyPositions from './src/components/MyPositions.js';
-import PositionsItem from './src/components/PositionsItem.js';
+import PositionsLoop from './src/components/PositionsLoop.js';
 import SliderBar from './src/components/SliderBar.js';
 import { NavigationContainer } from '@react-navigation/native';
 import SearchBarInactive from './src/components/SearchBarInactive.js'
@@ -53,8 +53,7 @@ export default function App() {
         <ValueCard cashBalance={cash} delta={difference} />
         <SliderBar />
         <MyPositions />
-        <PositionsItem stockName={'Google'} userShares={0.17384} shareValue={96972.79} previousValue={93377.74} />
-        <PositionsItem stockName={'Netflix'} userShares={0.19375} shareValue={88966.84} previousValue={97316.56} />
+        <PositionsLoop stocks={['Google','Netflix']} />
       </View>
     </>
     </NavigationContainer>
