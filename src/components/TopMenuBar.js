@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
       justifyContent: 'space-between',
       alignItems: 'center',
       backgroundColor: globalColors.others.black.color,
-      marginTop: 50,
+      //marginTop: 50, //is this necessary? On android it just creates a big gap at the top
     },
     iconContainer: {
       flexDirection: 'row',

@@ -20,7 +20,7 @@ export default function MyPositions() {
         <Image source={require('../assets/icons/UpDownArrow.png')} style={[styles.arrowsIcon, { marginLeft: 12}]} />
       </View>
     </View>
-    <GlobalLinearGradients color1={'#000'} color2={'transparent'} style={'verticalDownOverlap'} dimensionSize={10} />
+    <GlobalLinearGradients color1={globalColors.others.black.color} color2={'transparent'} style={'verticalDownOverlap'} dimensionSize={12} />
     </View>
   );
 }

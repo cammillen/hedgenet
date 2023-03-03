@@ -21,6 +21,7 @@ export default function PositionsLoop(params) {
         Netflix: {userShares:0.19375, shareValue:88966.84, previousValue:87316.56},
         'Coca-Cola': {userShares:20.69, shareValue:983.21, previousValue:964.03}, //use quotation mark notation if variable name doesn't compile
         Blackberry: {userShares:23.629, shareValue:936.34, previousValue:889.04},
+        
 
     };
     let positions = [];
