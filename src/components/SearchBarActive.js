@@ -47,6 +47,8 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: globalColors.primary._500.color,
         backgroundColor: '#020E06',
+        fontFamily: 'Urbanist-Regular',
+        fontSize: 16,
     },
     iconTextContainer: {
         flexDirection: 'row',
