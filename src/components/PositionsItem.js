@@ -56,12 +56,15 @@ export default function PositionsItem(params) {
     percentageGrowth = percentageGrowth.replace('-','').replace('+','-');
     growthColor = 'error';
   }
+  let stockName = params.stockName;
+  if (stockName.length > 10) { stockName = stockName.substring(0,9) + '...';
+  }
 
   return (
     <View style={styles.header}>
      <Image source={stockImage} style={[styles.logoIcon, { marginRight: 16 }]} />
       <View style={styles.subHeaderLeft}>
-        <Text style={globalFonts.H6(globalColors.others.white.color)}>{params.stockName}</Text>
+        <Text style={globalFonts.H6(globalColors.others.white.color)}>{stockName}</Text>
         <Text style={globalFonts.BodyMedium.semiBold(globalColors.others.white.color)}>{String(params.userShares.toPrecision(6)).substring(0,7)} shares</Text>
       </View>
       <Image source={graphImage} style={[styles.graphVisual, { marginLeft: 16, marginRight: 16 }]} />

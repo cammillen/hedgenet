@@ -18,6 +18,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import SearchBarInactive from './src/components/SearchBarInactive.js';
 import SearchBarActive from './src/components/SearchBarActive.js';
 import Background from './src/components/Background.js';
+import BoxWithButton from './src/components/BottomMenuBar.js';
+import IndexFundCard from './src/components/IndexFundCard.js';
+import BottomMenuBar from './src/components/BottomMenuBar.js';
+import BlurredRect from './src/components/BlurredRect.js'
 
 // Loading the custom fonts (you have to use this at the start of every screen): 
 
@@ -50,13 +54,17 @@ export default function App() {
         <View style={styles.container} onLayout={onLayoutRootView}>
           <TopMenuBar />
           <SearchBarInactive/>
-            <FundLabel name={fundName} />      
+          <FundLabel name={fundName} />      
           <ValueCard cashBalance={cash} delta={difference} />
-          <SliderBar />
+          <IndexFundCard/>
+          <SliderBar funds={['Personal Fund', 'UCL Fintech Fund', 'LSE Sustainable Finance Fund']}/>
           <MyPositions />
-          <PositionsLoop stocks={['Google','Blackberry','Coca-Cola','Netflix']} />
+          <PositionsLoop stocks={['Google','Blackberry','Coca-Cola','Netflix','Apple','Alibaba','Amazon','Advanced Micro Devices','Dell','LG','Meta','Microsoft','Sony','Spotify','Tesla','Twitter','Virgin']} />
+          <View style={styles.bottomMenuBarContainer}>
+            <BottomMenuBar/>
+          </View>
         </View>
-        </Background>
+      </Background>
     </NavigationContainer>
   );
 }
@@ -66,7 +74,14 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    //paddingTop: 55,
+  },
+  bottomMenuBarContainer:{
+    position: 'absolute',
+    bottom: 0,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: -5,
+    marginLeft: 5,
   },
 });
 

@@ -1,7 +1,7 @@
 // This is the top menu bar that contains all the top navigation componenets.
 // It needs to include the black background behind the menu bar (see figma file).
 import React from 'react';
-import { Image } from 'react-native';
+import { Image, Platform } from 'react-native';
 import { StyleSheet, Text, View } from 'react-native';
 import { globalColors } from '../styles/Colors.js';
 import { globalFonts } from '../styles/Fonts.js';
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
       justifyContent: 'space-between',
       alignItems: 'center',
       backgroundColor: globalColors.others.black.color,
-      //marginTop: 50, //is this necessary? On android it just creates a big gap at the top
+      marginTop: Platform.OS == 'ios' ? 50: 0, //is this necessary? On android it just creates a big gap at the top
     },
     iconContainer: {
       flexDirection: 'row',
