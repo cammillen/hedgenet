@@ -8,6 +8,8 @@ import { globalFonts } from '../styles/Fonts.js';
 
 const { width } = Dimensions.get('window');
 
+// Enter logic
+
 const BlurredRect = () => {
     return ( 
         // width needs to be equal to screen width of device
@@ -18,7 +20,7 @@ const BlurredRect = () => {
               source={require('../assets/icons/HomeGreen.png')} 
               style={[styles.Icon]}
             />
-            <Text style={globalFonts.BodySmall.Bold(globalColors.primary._500.color)}>Home</Text>
+            <Text style={styles.activeText}>Home</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.iconContainer} onPress={() => navigation.navigate('FundDashboard')}// NAVIGATION 
@@ -27,7 +29,7 @@ const BlurredRect = () => {
               source={require('../assets/icons/ChartGrey.png')} 
               style={[styles.Icon]}
             />
-            <Text style={globalFonts.BodySmall.Medium(globalColors.greyscale._500.color)}>Dashboard</Text>
+            <Text style={styles.inactiveText}>Dashboard</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.iconContainer} onPress={() => navigation.navigate('KeyActions')}// NAVIGATION 
@@ -44,7 +46,7 @@ const BlurredRect = () => {
               source={require('../assets/icons/Chat.png')} 
               style={[styles.Icon]}
             />
-            <Text style={globalFonts.BodySmall.Medium(globalColors.greyscale._500.color)}>Chat</Text>
+            <Text style={styles.inactiveText}>Chat</Text>
           </TouchableOpacity>
 
 
@@ -54,7 +56,7 @@ const BlurredRect = () => {
               source={require('../assets/icons/Menu.png')} 
               style={[styles.Icon]}
             />
-            <Text style={globalFonts.BodySmall.Medium(globalColors.greyscale._500.color)}>Menu</Text>
+            <Text style={styles.inactiveText}>Menu</Text>
           </TouchableOpacity>
 
       </BlurView>
@@ -88,6 +90,14 @@ const BlurredRect = () => {
       resizeMode: 'contain',
       marginBottom: 50,
     },
+    activeText:{
+      ...globalFonts.BodySmall.Bold(globalColors.primary._500.color),
+      paddingTop: 5,
+    },
+    inactiveText:{
+      ...globalFonts.BodySmall.Medium(globalColors.greyscale._500.color),
+      paddingTop: 5,
+    }
   });
   
   export default BlurredRect;
