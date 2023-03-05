@@ -8,6 +8,8 @@ import { globalFonts } from '../styles/Fonts.js';
 
 const { width } = Dimensions.get('window');
 
+// Enter logic
+
 const BlurredRect = () => {
     return ( 
         // width needs to be equal to screen width of device
