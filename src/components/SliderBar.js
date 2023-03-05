@@ -1,79 +1,58 @@
 // This is the slider bar that allows you to navigate through funds for example. 
-import React, { useState} from 'react';
-import { ScrollView,StyleSheet } from 'react-native';
-import { Text, View, TouchableOpacity } from 'react-native';
+import React, {Component} from 'react';
+import { Image, ScrollView, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { globalColors } from '../styles/Colors.js';
 import { globalFonts } from '../styles/Fonts.js';
-import { useNavigation } from '@react-navigation/native';
 
 
-export default function SliderBar(params) {
-    const navigation = useNavigation();
-    // Initialize state variable to keep track of selected button
-    const [selectedButton, setSelectedButton] = useState(null);
-    //Replace with backend calls
-    let nameOfFund  = params.nameOfFund.map((element, index) => (
-    <TouchableOpacity key={element} onPress={() => {navigation.navigate('Fund'); setSelectedButton(index)}}>
-      <View style={[styles.buttonContainer, selectedButton == index && styles.selectedButtonContainer, ]}>
-        <Text style={styles.buttonText}>{element}</Text>
-        {selectedButton == index && (
-        <View style={[styles.selectedLine, selectedButton == index && styles.selectedLineGreen]} />   
-        )}
-      </View>
-    </TouchableOpacity>
-    ));
-    let length = nameOfFund.length
-    if (length >0) {
-
-        return (         
-            <View style={styles.container}>
-                <View style={{ width: '100%', height: 24 }}>
-                    <ScrollView
-                        horizontal={true}
-                        alwaysBounceHorizontal={true}
-                        showsHorizontalScrollIndicator={true}
-                        contentContainerStyle={styles.scrollContentContainer}
-                    >
-                        {nameOfFund}
-                    </ScrollView>
-                </View>
-
-            </View>
+function SliderBar() {
+        return (
+            
+                //<View style={styles.header}>
+                    //<View style={{backgroundColor: globalColors.dark._2.color, width: 382, borderColor: globalColors.dark._3.color, borderWidth: 1, alignItems: 'center', padding: 10, borderRadius: 20}}>
+                        //<Text style={globalFonts.H2(globalColors.others.white.color)}>Title</Text>
+                            
+                        <View style={{height:24, marginTop: 20}}>
+                            <ScrollView
+                                horizontal={true}
+                            >
+                                <View style={{height:24, marginLeft: 24, borderWidth:0.5}}>
+                                    <View style={{ flex: 1 }}>
+                                        <Text style={globalFonts.BodyXLarge.semiBold(globalColors.others.white.color)}>Personal Fund</Text>
+                                    </View>
+                                </View>
+                                <View style={{height:24, marginLeft: 24, borderWidth:0.5}}>
+                                    <View style={{ flex: 1 }}>
+                                        <Text style={globalFonts.BodyXLarge.semiBold(globalColors.others.white.color)}>UCL Fintech Fund</Text>
+                                    </View>
+                                </View>
+                                <View style={{height:24, marginLeft: 20, marginRight: 24, borderWidth:0.5}}>
+                                    <View style={{ flex: 1 }}>
+                                        <Text style={globalFonts.BodyXLarge.semiBold(globalColors.others.white.color)}>LSE Sustainable Finance Fund</Text>
+                                    </View>
+                                </View>
+                            </ScrollView>
+                        </View>
+                    //</View>
+                //</View>
         );
     } //added marginRight to final column -- bring it in line w/ 24 pixel margin
-}
-const styles = StyleSheet.create({
-    buttonsdesign: {
-        marginRight: 24,
-        colour: globalFonts.BodyXLarge.semiBold(globalColors.others.white.color),
-    },
-    scrollContentContainer: {
-        flexGrow: 1,
-        flexDirection: 'row',
-        alignItems: 'center',
-        color: globalColors.status.success
-    },
-    container: {
-        height: 24,
-        marginTop: 20,
-    },
-    buttonContainer: {
-        height: 24,
-        marginLeft: 24,
-        borderWidth: 0.5,
-        marginRight: 24,
-        flexDirection: 'row',
-        alignItems: 'center',
-    },
-    selectedButtonContainer: {
-        color: globalColors.status.success
-    },
-    buttonText: {
-        ...globalFonts.BodyXLarge.semiBold(globalColors.others.white.color),
-        marginRight: 8,
-    },
-    selectedLine: {
-        height: 3,
-        backgroundColor: globalColors.status.success,
-    },
-  });
+
+    const styles = StyleSheet.create({
+        header: {
+          flewDirection: 'row',
+          justifyContent: 'center',
+          alignItems: 'center',
+          padding: 10,
+          backgroundColor: globalColors.others.black.color,
+        },
+        subHeader: {
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignItems: 'center',
+          padding: 10
+      }
+      });
+      
+export default SliderBar;
