@@ -34,7 +34,7 @@ function TopMenuBar(params) {
 
         </View>
 
-        <Text style={globalFonts.H4(globalColors.others.white.color)}>{params.screen}</Text>
+        <Text style={globalFonts.H5(globalColors.others.white.color)}>{params.screen}</Text>
          
         <View style={styles.iconContainer}>
 
@@ -51,7 +51,6 @@ function TopMenuBar(params) {
               style={[styles.messageIcon, { marginLeft: 26 }, { marginRight: 24 }]}
             />
           </TouchableOpacity>
-
         </View>
       </View>
     );
