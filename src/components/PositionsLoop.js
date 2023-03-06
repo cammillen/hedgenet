@@ -16,7 +16,7 @@ export default function PositionsLoop(params) {
 
     //Replace with backend calls!
     let temporaryStockValues = {
-      'Advanced Micro Devices': {userShares:23.629, shareValue:936.34, previousValue:889.04}, //use quotation mark notation if variable name doesn't compile
+      'Advanced Micro Devices': {userShares:23.629, shareValue:936.34, previousValue:889.04}, //use quotation mark notation if variable name invalid symbol
       Alibaba: {userShares:23.629, shareValue:936.34, previousValue:889.04},
       Amazon: {userShares:23.629, shareValue:936.34, previousValue:889.04},    
       Apple: {userShares:23.629, shareValue:936.34, previousValue:889.04},

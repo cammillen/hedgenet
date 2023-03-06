@@ -10,6 +10,7 @@ import { globalColors } from './src/styles/Colors.js';
 import { globalFonts } from './src/styles/Fonts.js';
 import TopMenuBar from './src/components/TopMenuBar.js';
 import ValueCard from './src/components/ValueCard.js';
+import IndexFundCard from './src/components/IndexFundCard.js';
 import FundLabel from './src/components/FundLabel.js';
 import MyPositions from './src/components/MyPositions.js';
 import PositionsLoop from './src/components/PositionsLoop.js';
@@ -50,15 +51,19 @@ export default function App() {
         <View style={styles.container} onLayout={onLayoutRootView}>
           <TopMenuBar />
           <SearchBarInactive/>
-            <FundLabel name={fundName} />      
+          <FundLabel name={fundName} />      
           <ValueCard cashBalance={cash} delta={difference} />
+          <IndexFundCard markets={[{marketName:'DOW',growth:0.0357}, {marketName:'S&P 500',growth:-0.0196}, {marketName:'NASDAQ',growth:0.0285}]} />
           <SliderBar funds={['Personal Fund', 'UCL Fintech Fund', 'LSE Sustainable Finance Fund']}/>
           <MyPositions />
-          <PositionsLoop stocks={['Google','Blackberry','Coca-Cola','Netflix','Alibaba','Apple','Amazon','Advanced Micro Devices','Dell','LG','Meta','Microsoft','Sony','Spotify','Tesla','Twitter','Virgin']} />        </View>
+          <PositionsLoop stocks={['Google','Blackberry','Coca-Cola','Netflix','Alibaba','Apple','Amazon','Advanced Micro Devices','Dell','LG','Meta','Microsoft','Sony','Spotify','Tesla','Twitter','Virgin']} />
+        </View>
         </Background>
     </NavigationContainer>
   );
 }
+//          <PositionsLoop stocks={['Google','Blackberry','Coca-Cola','Netflix','Alibaba','Apple','Amazon','Advanced Micro Devices','Dell','LG','Meta','Microsoft','Sony','Spotify','Tesla','Twitter','Virgin']} />        </View>
+
 
 // Style sheet with custom styles: 
 
