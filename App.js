@@ -13,7 +13,6 @@ import ValueCard from './src/components/ValueCard.js';
 import FundLabel from './src/components/FundLabel.js';
 import MyPositions from './src/components/MyPositions.js';
 import PositionsLoop from './src/components/PositionsLoop.js';
-import SliderBar from './src/components/SliderBar.js';
 import { NavigationContainer } from '@react-navigation/native';
 import SearchBarInactive from './src/components/SearchBarInactive.js';
 import SearchBarActive from './src/components/SearchBarActive.js';
@@ -21,7 +20,8 @@ import Background from './src/components/Background.js';
 import BoxWithButton from './src/components/BottomMenuBar.js';
 import IndexFundCard from './src/components/IndexFundCard.js';
 import BottomMenuBar from './src/components/BottomMenuBar.js';
-import BlurredRect from './src/components/BlurredRect.js'
+import BlurredRect from './src/components/BlurredRect.js';
+import TabNavigator from './src/components/SliderBar';
 
 // Loading the custom fonts (you have to use this at the start of every screen): 
 
@@ -48,6 +48,7 @@ export default function App() {
   // Custom fonts loaded, code below is for the screen: 
   //add following below inactive variant:        <SearchBarActive/>
   return (
+    
     <NavigationContainer>
       <Background>
           <StatusBar barStyle="light-content" backgroundColor="#000" />
@@ -57,9 +58,9 @@ export default function App() {
           <FundLabel name={fundName} />      
           <ValueCard cashBalance={cash} delta={difference} />
           <IndexFundCard/>
-          <SliderBar funds={['Personal Fund', 'UCL Fintech Fund', 'LSE Sustainable Finance Fund']}/>
           <MyPositions />
-          <PositionsLoop stocks={['Google','Blackberry','Coca-Cola','Netflix','Apple','Alibaba','Amazon','Advanced Micro Devices','Dell','LG','Meta','Microsoft','Sony','Spotify','Tesla','Twitter','Virgin']} />
+          <TabNavigator/>
+          {/* <PositionsLoop stocks={['Google','Blackberry','Coca-Cola','Netflix','Apple','Alibaba','Amazon','Advanced Micro Devices','Dell','LG','Meta','Microsoft','Sony','Spotify','Tesla','Twitter','Virgin']} /> */}
           <View style={styles.bottomMenuBarContainer}>
             <BottomMenuBar/>
           </View>
