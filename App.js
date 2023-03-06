@@ -59,7 +59,7 @@ export default function App() {
           <ValueCard cashBalance={cash} delta={difference} />
           {/* <IndexFundCard/> */}
           <MyPositions />
-          {/* <TabNavigator/> */}
+          <TabNavigator/>
           <View style={styles.bottomMenuBarContainer}>
             <BottomMenuBar/>
           </View>
