@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //Chat Screen
 
 import React from 'react';
@@ -64,3 +65,5 @@ export default function Chat () {
     </NavigationContainer>
   );
 };
+=======
+>>>>>>> 7e9fd9eb73e203a2e8f8dbd8439d048828291701
