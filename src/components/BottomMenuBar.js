@@ -6,33 +6,48 @@ import { BlurView } from 'expo-blur';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { globalColors } from '../styles/Colors.js';
 import { globalFonts } from '../styles/Fonts.js';
+import { useRoute } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
 const { width } = Dimensions.get('window');
 
 // This is the content that feeds into bottom menu bar: 
 
 const BottomMenuContent = () => {
+
+  const { name: currentRouteName } = useRoute();
+
+  const isActive = (routeName) => {
+    return currentRouteName === routeName;
+  }
+
+  const navigation = useNavigation();
+
   return ( 
       // width needs to be equal to screen width of device
     <BlurView intensity={30} tint="dark" width={width}  height={145} style={styles.container}>
+
+        {/* Profile Icon */}
         <TouchableOpacity style={styles.iconContainer} onPress={() => navigation.navigate('Home')}// NAVIGATION 
         >
-          <Image
-            source={require('../assets/icons/HomeGreen.png')} 
-            style={[styles.Icon]}
+          <Image 
+            source={isActive('Home') ? require('../assets/icons/HomeGreen.png') : require('../assets/icons/HomeGrey.png')}
+            style={[styles.Icon, isActive('Home') ? styles.Icon : styles.Icon]}
           />
-          <Text style={styles.activeText}>Home</Text>
+          <Text style={[styles.text, isActive('Home') ? styles.activeText : styles.inactiveText]}>Home</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.iconContainer} onPress={() => navigation.navigate('FundDashboard')}// NAVIGATION 
+        {/* Notifications Icon */}
+        <TouchableOpacity style={styles.iconContainer} onPress={() => navigation.navigate('Dashboard')}// NAVIGATION 
         >
           <Image
-            source={require('../assets/icons/ChartGrey.png')} 
-            style={[styles.Icon]}
+            source={isActive('Dashboard') ? require('../assets/icons/ChartGreen.png') : require('../assets/icons/ChartGrey.png')}
+            style={[styles.Icon, isActive('Dashboard') ? styles.Icon : styles.Icon]}
           />
-          <Text style={styles.inactiveText}>Dashboard</Text>
+          <Text style={[styles.text, isActive('Dashboard') ? styles.activeText : styles.inactiveText]}>Dashboard</Text>
         </TouchableOpacity>
 
+        {/* Key Actions Icon */}
         <TouchableOpacity style={styles.iconContainer} onPress={() => navigation.navigate('KeyActions')}// NAVIGATION 
         >
           <Image
@@ -41,23 +56,24 @@ const BottomMenuContent = () => {
           />
         </TouchableOpacity>
 
+        {/* Chat Icon */}
         <TouchableOpacity style={styles.iconContainer} onPress={() => navigation.navigate('Chat')}// NAVIGATION 
         >
           <Image
-            source={require('../assets/icons/Chat.png')} 
-            style={[styles.Icon]}
+            source={isActive('Chat') ? require('../assets/icons/ChatGreen.png') : require('../assets/icons/ChatGrey.png')}
+            style={[styles.Icon, isActive('Chat') ? styles.Icon : styles.Icon]}
           />
-          <Text style={styles.inactiveText}>Chat</Text>
+          <Text style={[styles.text, isActive('Chat') ? styles.activeText : styles.inactiveText]}>Chat</Text>
         </TouchableOpacity>
 
-
+        {/* Menu Icon */}
         <TouchableOpacity style={styles.iconContainer} onPress={() => navigation.navigate('Menu')}// NAVIGATION 
         >
           <Image
-            source={require('../assets/icons/Menu.png')} 
-            style={[styles.Icon]}
+            source={isActive('Menu') ? require('../assets/icons/MenuGreen.png') : require('../assets/icons/MenuGrey.png')}
+            style={[styles.Icon, isActive('Menu') ? styles.Icon : styles.Icon]}
           />
-          <Text style={styles.inactiveText}>Menu</Text>
+          <Text style={[styles.text, isActive('Menu') ? styles.activeText : styles.inactiveText]}>Menu</Text>
         </TouchableOpacity>
 
     </BlurView>

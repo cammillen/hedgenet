@@ -1,3 +1,5 @@
+//Dashboard Screen
+
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { StatusBar } from 'react-native';
@@ -5,12 +7,13 @@ import { useCallback } from 'react';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import TopMenuBar from '../components/TopMenuBar.js';
+import { NavigationContainer } from '@react-navigation/native';
 import Background from '../components/Background.js';
 import BottomMenuBar from '../components/BottomMenuBar.js';
 
-export default function Menu () {
+export default function Dashboard () {
 
-  const Screen = 'Menu';
+  const Screen = 'Dashboard';
 
   const [fontsLoaded] = useFonts({
     'Urbanist-Bold': require('../assets/fonts/Urbanist-Bold.ttf'),

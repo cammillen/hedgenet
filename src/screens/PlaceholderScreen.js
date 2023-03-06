@@ -1,3 +1,6 @@
+// PLaceholder Screen
+// Chnage everything with PLaceholder in, only 2 things to change. 
+
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { StatusBar } from 'react-native';
@@ -8,9 +11,9 @@ import TopMenuBar from '../components/TopMenuBar.js';
 import Background from '../components/Background.js';
 import BottomMenuBar from '../components/BottomMenuBar.js';
 
-export default function Menu () {
+export default function Placeholder () {
 
-  const Screen = 'Menu';
+  const Screen = 'Placeholder';
 
   const [fontsLoaded] = useFonts({
     'Urbanist-Bold': require('../assets/fonts/Urbanist-Bold.ttf'),
