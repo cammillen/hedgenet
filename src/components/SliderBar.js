@@ -1,72 +1,58 @@
-// This is the slider bar that allows you to navigate through funds for example. 
-import React, {useState} from 'react';
-import { ScrollView,StyleSheet } from 'react-native';
-import { Text, View, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { Dimensions, Text, View, StyleSheet } from 'react-native';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import SearchBarInactive from './SearchBarInactive.js';
+import PositionsLoop from './PositionsLoop.js';
 import { globalColors } from '../styles/Colors.js';
 import { globalFonts } from '../styles/Fonts.js';
-import { useNavigation } from '@react-navigation/native';
+import { BorderlessButton } from 'react-native-gesture-handler';
 
+const Tab = createMaterialTopTabNavigator()
 
-export default function SliderBar(props) {
-    const navigation = useNavigation();
-    const funds = props.funds;
-    console.log('funds:', funds);
-    //Replace with backend calls
-    let nameOfFund  = props.funds.map((element) => (
-    <TouchableOpacity key={element} onPress={() => {navigation.navigate('Fund') }}>
-      <View style={[styles.buttonContainer]}>
-        <View style={{ flex: 1 }}>
-            <Text style={styles.buttonText}>{element}</Text>
+const TabNavigator = () =>{
+    return (
+        <View style={styles.tabNavigator}>
+            <Tab.Navigator
+            sceneContainerStyle={{
+                backgroundColor: 'transparent',
+                marginLeft: -12,
+            }}
+            tabBarOptions={{
+                    scrollEnabled: true,
+                    backgroundColor: 'transparent',
+            }}
+            screenOptions={{
+                tabBarActiveTintColor: globalColors.primary._500.color,
+                tabBarInactiveTintColor: globalColors.greyscale._700.color,
+                tabBarStyle: { backgroundColor: 'transparent' },
+                tabBarLabelStyle: {
+                    fontFamily: 'Urbanist-SemiBold',
+                    fontSize: 18,
+                    textTransform: 'none',
+                },
+                tabBarItemStyle: {
+                    // flex: 1,
+                    width: 200,
+                    paddingLeft: 10,
+                    paddingRight: 10,
+                    height: 60
+                },
+                tabBarIndicatorStyle: {backgroundColor: globalColors.primary._500.color},
+                contentStyle: {paddingRight: 100},
+            }}>
+                <Tab.Screen name='Personal' component={() => <PositionsLoop stocks={['Tesla', 'Blackberry', 'Coca-Cola','Netflix','Apple']} />}/>
+                <Tab.Screen name='UCL FinTech Fund' component={() => <PositionsLoop stocks={['Amazon','Advanced Micro Devices','Dell','LG','Meta']} />}/>
+                <Tab.Screen name='LSE Sustainable Finance Fund' component={() => <PositionsLoop stocks={['Microsoft','Sony','Spotify','Tesla']} />}/>
+            </Tab.Navigator>
         </View>
-      </View>
-    </TouchableOpacity>
-    ));
-    let length = nameOfFund.length
-    if (length >0) {
+    );
+};
 
-        return (         
-            <View style={styles.container}>
-                <ScrollView
-                    horizontal={true}
-                    alwaysBounceHorizontal={true}
-                    showsHorizontalScrollIndicator={true}
-                >
-                    {nameOfFund}
-                </ScrollView>
-            </View>
-        );
-    } //added marginRight to final column -- bring it in line w/ 24 pixel margin
-}
 const styles = StyleSheet.create({
-    buttonsdesign: {
-        marginRight: 24,
-        colour: globalFonts.BodyXLarge.semiBold(globalColors.others.white.color),
-    },
-    scrollContentContainer: {
-        flexGrow: 1,
-        flexDirection: 'row',
-        alignItems: 'center',
-        color: globalColors.status.success
-    },
-    container: {
-        height: 24,
-        marginTop: 20,
-    },
-    buttonContainer: {
-        height: 24,
+    tabNavigator:{
+        height: 500,
         marginLeft: 24,
-        borderWidth: 0.5,
-        marginRight: 24,
-    },
-    selectedButtonContainer: {
-        color: globalColors.status.success
-    },
-    buttonText: {
-        ...globalFonts.BodyXLarge.semiBold(globalColors.others.white.color),
-        marginRight: 8,
-    },
-    selectedLine: {
-        height: 3,
-        backgroundColor: globalColors.status.success,
     },
   });
+
+export default TabNavigator;
