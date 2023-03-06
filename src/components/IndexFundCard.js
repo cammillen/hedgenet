@@ -16,8 +16,8 @@ const styles = StyleSheet.create({
         width: width,
         marginTop: 15,
         paddingBottom: 15,
-        marginRight: 24,
-        marginLeft: 24,
+        paddingRight: 24,
+        paddingLeft: 24,
     },
     box: {
         borderColor: globalColors.dark._3.color,
