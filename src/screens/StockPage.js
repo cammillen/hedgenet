@@ -6,14 +6,14 @@ import { StatusBar } from 'react-native';
 import { useCallback } from 'react';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
-import { globalColors } from './src/styles/Colors.js';
-import { globalFonts } from './src/styles/Fonts.js';
-import TopMenuBar from './src/components/TopMenuBar.js';
+import { globalColors } from '../styles/Colors.js';
+import { globalFonts } from '../styles/Fonts.js';
+import TopMenuBar from '../components/TopMenuBar.js';
 import { NavigationContainer } from '@react-navigation/native';
-import Background from './src/components/Background.js';
-import BottomMenuBar from './src/components/BottomMenuBar.js';
-import StockHeader from './src/components/StockHeader.js';
-import StockGraphVisual from './src/components/StockGraphVisual.js';
+import Background from '../components/Background.js';
+import BottomMenuBar from '../components/BottomMenuBar.js';
+import StockHeader from '../components/StockHeader.js';
+import StockGraphVisual from '../components/StockGraphVisual.js';
 
 
 export default function Chat () {
@@ -33,10 +33,10 @@ export default function Chat () {
   }
 
   const [fontsLoaded] = useFonts({
-    'Urbanist-Bold': require('./src/assets/fonts/Urbanist-Bold.ttf'),
-    'Urbanist-SemiBold': require('./src/assets/fonts/Urbanist-SemiBold.ttf'),
-    'Urbanist-Medium': require('./src/assets/fonts/Urbanist-Medium.ttf'),
-    'Urbanist-Regular': require('./src/assets/fonts/Urbanist-Regular.ttf'),
+    'Urbanist-Bold': require('../assets/fonts/Urbanist-Bold.ttf'),
+    'Urbanist-SemiBold': require('../assets/fonts/Urbanist-SemiBold.ttf'),
+    'Urbanist-Medium': require('../assets/fonts/Urbanist-Medium.ttf'),
+    'Urbanist-Regular': require('../assets/fonts/Urbanist-Regular.ttf'),
   });
 
   const styles = StyleSheet.create({

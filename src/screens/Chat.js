@@ -6,8 +6,7 @@ import { StatusBar } from 'react-native';
 import { useCallback } from 'react';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
-import { globalColors } from './src/styles/Colors.js';
-import { globalFonts } from './src/styles/Fonts.js';
+
 import TopMenuBar from './src/components/TopMenuBar.js';
 import { NavigationContainer } from '@react-navigation/native';
 import Background from './src/components/Background.js';
