@@ -57,7 +57,16 @@ const styles = StyleSheet.create({
       width: 28,
       height: 28,
       resizeMode: 'contain'
-    }
+    },
+
+    container: {
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
+      image: {
+        width: 200,
+        height: 200,
+      },
   });
 
   export default function StockHeader(params) {
@@ -101,3 +110,18 @@ const styles = StyleSheet.create({
         </View>
       );
     }
+
+
+
+
+    function MyImageContainer() {
+        return (
+          <View style={styles.container}>
+            <Image
+              source={require('../assets/graphs(delete)/StockPriceGraph.png')}
+              style={styles.image}
+            />
+          </View>
+        );
+      }
+    
