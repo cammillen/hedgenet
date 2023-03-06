@@ -60,7 +60,6 @@ export default function App() {
           {/* <IndexFundCard/> */}
           <MyPositions />
           <TabNavigator/>
-          {/* <PositionsLoop stocks={['Google','Blackberry','Coca-Cola','Netflix','Apple','Alibaba','Amazon','Advanced Micro Devices','Dell','LG','Meta','Microsoft','Sony','Spotify','Tesla','Twitter','Virgin']} /> */}
           <View style={styles.bottomMenuBarContainer}>
           </View>
         </View>

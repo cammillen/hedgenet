@@ -74,7 +74,7 @@ const BlurredRect = () => {
     },
     iconContainer: {
       width: 60,
-      flexDirection: 'coloumn',
+      flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
       justifyContent: 'space-between',
