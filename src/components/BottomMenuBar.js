@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
   }
 });
 
-// This is the Bottom Menu Bar Background: 
+// This is the Bottom Menu Bar Background Mask: 
 
 const BottomMenuBar = (props) => (
   <MaskedView
