@@ -57,7 +57,7 @@ export default function App() {
           <SearchBarInactive/>
           <FundLabel name={fundName} />      
           <ValueCard cashBalance={cash} delta={difference} />
-          {/* <IndexFundCard/> */}
+          <IndexFundCard markets={[{ marketName: 'DOW', growth: 0.0357 }, { marketName: 'S&P', growth: 0.0196 }, { marketName: 'NASDAQ', growth: 0.0285 }]} />
           <MyPositions />
           <TabNavigator/>
           <View style={styles.bottomMenuBarContainer}>

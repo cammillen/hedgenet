@@ -52,6 +52,7 @@ const TabNavigator = () =>{
 
 const styles = StyleSheet.create({
     container: {
+        paddingTop: 0,
         flex: 1,
         height: Dimensions.get('window').height + 1000, // adjust the height accordingly
     },

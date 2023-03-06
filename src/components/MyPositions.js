@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     height: 32,
-    marginTop: 24,
+    marginBottom: -5,
   },
   subHeaderLeft: {
     flexDirection: 'row',
