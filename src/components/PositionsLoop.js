@@ -1,14 +1,16 @@
 // This function loops over provided stocks and calls PositionsIte function
-
 import React from 'react';
-import { StyleSheet, View, ScrollView } from 'react-native';
+import { Text, StyleSheet, View, ScrollView } from 'react-native';
 import PositionsItem from './PositionsItem.js';
+import { globalColors } from '../styles/Colors.js';
+import { globalFonts } from '../styles/Fonts.js';
 
 const styles = StyleSheet.create({
   container: {
     justifyContent: 'flex-start',
     flexDirection: 'column',
     alignItems: 'center',
+    paddingBottom: 150, //This makes sure when they scroll all the way down the last stock isnt obstructed by the bottom menu bar.
   }
 });
 
@@ -44,6 +46,8 @@ export default function PositionsLoop(params) {
     <ScrollView alwaysBounceVertical={true}>
     <View style={styles.container}>
         {positions}
+        {/* TO DO: Need to add loop and logic to the see more botton below */}
+        <Text style={[globalFonts.BodyLarge.semiBold(globalColors.primary._500.color), {paddingTop: 20}]}>See More</Text>
     </View>
     </ScrollView>
     );

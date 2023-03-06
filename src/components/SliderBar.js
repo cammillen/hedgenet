@@ -10,9 +10,10 @@ import { BorderlessButton } from 'react-native-gesture-handler';
 const Tab = createMaterialTopTabNavigator()
 
 const TabNavigator = () =>{
+
     return (
-        <View style={styles.tabNavigator}>
-            <Tab.Navigator
+        <View style={styles.container}>
+            <Tab.Navigator style={styles.tabNavigator}
             sceneContainerStyle={{
                 backgroundColor: 'transparent',
                 marginLeft: -12,
@@ -31,15 +32,16 @@ const TabNavigator = () =>{
                     textTransform: 'none',
                 },
                 tabBarItemStyle: {
-                    // flex: 1,
-                    width: 200,
-                    paddingLeft: 10,
-                    paddingRight: 10,
+                    flex: 1,
+                    width: 'auto',
+                    paddingLeft: 20,
+                    paddingRight: 20,
                     height: 60
                 },
                 tabBarIndicatorStyle: {backgroundColor: globalColors.primary._500.color},
                 contentStyle: {paddingRight: 100},
             }}>
+               {/* TO DO: Need to create the loop to display each fund and then integrate stocks with the backend */}
                 <Tab.Screen name='Personal' component={() => <PositionsLoop stocks={['Tesla', 'Blackberry', 'Coca-Cola','Netflix','Apple']} />}/>
                 <Tab.Screen name='UCL FinTech Fund' component={() => <PositionsLoop stocks={['Amazon','Advanced Micro Devices','Dell','LG','Meta']} />}/>
                 <Tab.Screen name='LSE Sustainable Finance Fund' component={() => <PositionsLoop stocks={['Microsoft','Sony','Spotify','Tesla']} />}/>
@@ -49,8 +51,13 @@ const TabNavigator = () =>{
 };
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        height: Dimensions.get('window').height + 1000, // adjust the height accordingly
+    },
     tabNavigator:{
-        height: 500,
+        flex: 1,
+        overflow: 'scroll',
         marginLeft: 24,
     },
   });
