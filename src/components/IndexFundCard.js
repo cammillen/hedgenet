@@ -1,7 +1,7 @@
 // This is the card for the Index Funds used on the home screen.
 
 import React from 'react';
-import { Image } from 'react-native';
+import { Image, Dimensions } from 'react-native';
 import { StyleSheet, Text, View } from 'react-native';
 import { globalColors } from '../styles/Colors.js';
 import { globalFonts } from '../styles/Fonts.js';
