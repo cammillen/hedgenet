@@ -19,7 +19,7 @@ const Stack = createStackNavigator();
 
 const MainAppNavigator = () => {
   return (
-    <Stack.Navigator screenOptions={{ animationEnabled: false, gestureEnabled: false}}>
+    <Stack.Navigator initialRouteName="Home" screenOptions={{ animationEnabled: false, gestureEnabled: false}}>
       {/* Top Menu Bar screens: */}
       <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false}}/>
       <Stack.Screen name="Notifications" component={Notifications} options={{ headerShown: false}}/>
