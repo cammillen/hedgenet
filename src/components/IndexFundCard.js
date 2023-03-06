@@ -1,8 +1,7 @@
 // This is the card for the Index Funds used on the home screen.
-// This is the card for the Index Funds used on the home screen.
 
 import React from 'react';
-import { Image, Platform } from 'react-native';
+import { Image } from 'react-native';
 import { StyleSheet, Text, View } from 'react-native';
 import { globalColors } from '../styles/Colors.js';
 import { globalFonts } from '../styles/Fonts.js';
@@ -54,7 +53,7 @@ function DrawBox (marketName,marketGrowth) {//maybe add a market graph param?
     let graphImage = require('../assets/graphs(delete)/ExampleGraph.png'); //generalise once on graphing
 
     return (
-        <View style={styles.box}>
+        <View style={styles.box} key={marketName}>
             <View style={styles.textBox}>
                 <Text style={globalFonts.BodyLarge.Bold(globalColors.others.white.color)}>{marketName}</Text>
                 <Text style={globalFonts.BodyLarge.Bold(globalColors.status[growthColor].color)}>{growth}</Text>

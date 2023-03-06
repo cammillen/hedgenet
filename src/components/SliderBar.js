@@ -13,7 +13,7 @@ export default function SliderBar(params) {
     ));
 
   return (
-    <View style={{height:24, marginTop: 20}}>
+    <View style={{height:24}}>
         <ScrollView horizontal={true} alwaysBounceHorizontal={true} >{funds}</ScrollView>
     </View>
     );
