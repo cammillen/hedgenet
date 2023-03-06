@@ -12,7 +12,6 @@ import TopMenuBar from './src/components/TopMenuBar.js';
 import ValueCard from './src/components/ValueCard.js';
 import FundLabel from './src/components/FundLabel.js';
 import MyPositions from './src/components/MyPositions.js';
-import PositionsLoop from './src/components/PositionsLoop.js';
 import { NavigationContainer } from '@react-navigation/native';
 import SearchBarInactive from './src/components/SearchBarInactive.js';
 import SearchBarActive from './src/components/SearchBarActive.js';
@@ -57,7 +56,7 @@ export default function App() {
           <SearchBarInactive/>
           <FundLabel name={fundName} />      
           <ValueCard cashBalance={cash} delta={difference} />
-          {/* <IndexFundCard/> */}
+          <IndexFundCard markets={[{ marketName: 'DOW', growth: 0.0357 }, { marketName: 'S&P', growth: 0.0196 }, { marketName: 'NASDAQ', growth: 0.0285 }]} />
           <MyPositions />
           <TabNavigator/>
           {/* <PositionsLoop stocks={['Google','Blackberry','Coca-Cola','Netflix','Apple','Alibaba','Amazon','Advanced Micro Devices','Dell','LG','Meta','Microsoft','Sony','Spotify','Tesla','Twitter','Virgin']} /> */}
