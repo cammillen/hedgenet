@@ -6,11 +6,14 @@ import { StyleSheet, Text, View } from 'react-native';
 import { globalColors } from '../styles/Colors.js';
 import { globalFonts } from '../styles/Fonts.js';
 
+const { width } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
     container: {
         justifyContent: 'space-between',
         flexDirection: 'row',
         alignItems: 'center',
+        width: width,
         marginTop: 15,
         paddingBottom: 15,
         marginRight: 24,
@@ -41,6 +44,7 @@ const styles = StyleSheet.create({
       },
 })
 
+
 function DrawBox (marketName,marketGrowth) {//maybe add a market graph param?
 
     let growth = "+ " + String((100*marketGrowth).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -56,7 +60,7 @@ function DrawBox (marketName,marketGrowth) {//maybe add a market graph param?
         <View style={styles.box} key={marketName}>
             <View style={styles.textBox}>
                 <Text style={globalFonts.BodyLarge.Bold(globalColors.others.white.color)}>{marketName}</Text>
-                <Text style={globalFonts.BodyLarge.Bold(globalColors.status[growthColor].color)}>{growth}</Text>
+                <Text style={globalFonts.BodyLarge.Bold(globalColors.status[growthColor].color)}>{growth}%</Text>
             </View>
             <Image source={graphImage} style={styles.graph} />
         </View>

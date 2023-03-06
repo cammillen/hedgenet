@@ -19,6 +19,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import SearchBarInactive from './src/components/SearchBarInactive.js';
 import SearchBarActive from './src/components/SearchBarActive.js';
 import Background from './src/components/Background.js';
+import BottomMenuBar from './src/components/BottomMenuBar.js';
+import BlurredRect from './src/components/BlurredRect.js';
+
 
 // Loading the custom fonts (you have to use this at the start of every screen): 
 
@@ -57,6 +60,7 @@ export default function App() {
           <SliderBar funds={['Personal Fund', 'UCL Fintech Fund', 'LSE Sustainable Finance Fund']}/>
           <MyPositions />
           <PositionsLoop stocks={['Google','Blackberry','Coca-Cola','Netflix','Alibaba','Apple','Amazon','Advanced Micro Devices','Dell','LG','Meta','Microsoft','Sony','Spotify','Tesla','Twitter','Virgin']} />
+          <View style={styles.bottomMenuBarContainer}><BottomMenuBar /></View>
         </View>
         </Background>
     </NavigationContainer>
@@ -71,6 +75,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     //paddingTop: 55,
+  },
+  bottomMenuBarContainer:{
+    position: 'absolute',
+    bottom: 0,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: -5,
+    marginLeft: 5,
   },
 });
 
