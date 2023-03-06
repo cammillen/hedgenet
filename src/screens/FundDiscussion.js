@@ -1,4 +1,4 @@
-//Chat Screen
+//Fund Social/Discussion Board Screen
 
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
@@ -16,7 +16,7 @@ import BottomMenuBar from './src/components/BottomMenuBar.js';
 
 export default function Chat () {
 
-  const Screen = 'Chat';
+  const Screen = 'Social';
 
   SplashScreen.preventAutoHideAsync(); 
 

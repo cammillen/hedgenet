@@ -9,7 +9,8 @@ import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
-function TopMenuBar() {
+//functionalise to take in current screen as argument!
+function TopMenuBar(params) {
     const navigation = useNavigation();
     
     return (
@@ -33,7 +34,7 @@ function TopMenuBar() {
 
         </View>
 
-        <Text style={globalFonts.H4(globalColors.others.white.color)}>Home</Text>
+        <Text style={globalFonts.H4(globalColors.others.white.color)}>{params.screen}</Text>
          
         <View style={styles.iconContainer}>
 
