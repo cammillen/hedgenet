@@ -53,14 +53,16 @@ export default function App() {
       <Background>
           <StatusBar barStyle="light-content" backgroundColor="#000" />
         <View style={styles.container} onLayout={onLayoutRootView}>
-          <TopMenuBar />
+          <TopMenuBar screen = {'Home'}/>
           <SearchBarInactive/>
           <FundLabel name={fundName} />      
           <ValueCard cashBalance={cash} delta={difference} />
           {/* <IndexFundCard/> */}
           <MyPositions />
           <TabNavigator/>
+          {/* <PositionsLoop stocks={['Google','Blackberry','Coca-Cola','Netflix','Apple','Alibaba','Amazon','Advanced Micro Devices','Dell','LG','Meta','Microsoft','Sony','Spotify','Tesla','Twitter','Virgin']} /> */}
           <View style={styles.bottomMenuBarContainer}>
+            <BottomMenuBar/>
           </View>
         </View>
       </Background>
