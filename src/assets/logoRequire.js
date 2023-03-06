@@ -1,7 +1,5 @@
 //I hate this stupid fucking solution. But React Native does NOT allow dynamic requires
 
-// '','','','','Apple','Alibaba','Amazon','Advanced Micro Devices','Dell','LG','Meta','Microsoft','Sony','Spotify','Tesla','Twitter','Virgin'
-
 export default function LogoSelect (name) {
 
     switch (name) {
