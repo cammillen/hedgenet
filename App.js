@@ -57,7 +57,7 @@ export default function App() {
           <SearchBarInactive/>
           <FundLabel name={fundName} />      
           <ValueCard cashBalance={cash} delta={difference} />
-          <IndexFundCard/>
+          {/* <IndexFundCard/> */}
           <MyPositions />
           <TabNavigator/>
           {/* <PositionsLoop stocks={['Google','Blackberry','Coca-Cola','Netflix','Apple','Alibaba','Amazon','Advanced Micro Devices','Dell','LG','Meta','Microsoft','Sony','Spotify','Tesla','Twitter','Virgin']} /> */}
