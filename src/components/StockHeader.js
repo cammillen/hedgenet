@@ -6,10 +6,10 @@ import { Image, Platform } from 'react-native';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import { globalColors } from '../styles/Colors.js';
 import { globalFonts } from '../styles/Fonts.js';
-import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { useRoute } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import LogoSelect from '../assets/logoRequire.js';
-
 
 const screenWidth = Dimensions.get('window').width;
 
@@ -62,6 +62,14 @@ const styles = StyleSheet.create({
 
   export default function StockHeader(params) {
 
+    const { name: currentRouteName } = useRoute();
+
+    const isActive = (routeName) => {
+      return currentRouteName === routeName;
+    }
+  
+    const navigation = useNavigation();
+
     let stockImage = LogoSelect(params.stockName);
     
 
@@ -81,12 +89,14 @@ const styles = StyleSheet.create({
 
     let lastClose=stockInfo[params.stockName].lastClose.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
-
+ 
     return (
         <View style={{ width: screenWidth, paddingLeft: 24, paddingRight: 24 }}>
           <View style={styles.header}>
             <View style={styles.subHeaderLeft}>
+            <TouchableOpacity onPress={() => navigation.navigate('Home')}>
               <Image source={require('../assets/icons/ArrowLeft_Green.png')} style={[styles.arrowLeft, { marginRight: 16 }]} />
+            </TouchableOpacity>
               <Image source={stockImage} style={[styles.logoIcon, { marginRight: 16 }]} />
           <View style={styles.textHeaderLeft}>
               <Text style={globalFonts.H6(globalColors.others.white.color)}>{stockName}</Text>

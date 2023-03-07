@@ -16,6 +16,7 @@ import StockHeader from '../components/StockHeader.js';
 import StockGraphVisual from '../components/StockGraphVisual.js';
 import StockHeaderCard from '../components/StockHeaderCard.js';
 import StockPriceCard from '../components/StockPriceCard.js';
+import StockPosition from '../components/StockPosition.js';
 
 export default function StockPage (route) {
 
@@ -43,7 +44,7 @@ export default function StockPage (route) {
   }
   //replace all backend data calls with a single file for consistency
   const temporaryStockValues = {
-    Blackberry: {stockPrice: 7105, difference:217},
+    Blackberry: {stockPrice: 7105, difference:217, ticker:'BLCB'},
   };
 
   return ( 
@@ -51,12 +52,13 @@ export default function StockPage (route) {
       <StatusBar barStyle="light-content" backgroundColor="#000" />
       <View style={styles.container} onLayout={onLayoutRootView}>
         <TopMenuBar screen={Screen} />
-        <ScrollView alwaysBounceVertical={true}>
+        <ScrollView >
 
           <StockHeader stockName={stockName}/>
           <StockGraphVisual stockName={stockName} />
           <StockHeaderCard />
           <StockPriceCard delta={temporaryStockValues[stockName].difference} price={temporaryStockValues[stockName].stockPrice} />
+          <StockPosition ticker={temporaryStockValues[stockName].ticker} />
 
         </ ScrollView>
         <View style={styles.bottomMenuBarContainer}>
