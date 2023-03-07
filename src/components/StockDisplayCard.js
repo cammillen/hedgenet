@@ -1,1 +1,0 @@
-// This is the card that displays the stock with the stock name, number of shares that person owns, the total value of thier shares, and the % change with the graph in the middle. 

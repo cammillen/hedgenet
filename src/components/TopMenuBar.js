@@ -21,7 +21,7 @@ function TopMenuBar(params) {
           <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
             <Image
               source={require('../assets/icons/Avatar.png')} // BACKEND TO DO: backend integration with profile picture. 
-              style={[styles.avatarIcon, { marginRight: 19 },  { marginLeft: 24 }]}
+              style={[styles.profileIcon, { marginRight: 19 },  { marginLeft: 24 }]}
             />
           </TouchableOpacity>
 
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       alignItems: 'center',
     },
-    avatarIcon: {
+    profileIcon: {
         width: 33,
         height: 33,
         resizeMode: 'contain',

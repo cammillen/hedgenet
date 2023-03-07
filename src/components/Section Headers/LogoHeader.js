@@ -3,18 +3,18 @@
 import React from 'react';
 import { Image } from 'react-native';
 import { StyleSheet, Text, View } from 'react-native';
-import { globalColors } from '../styles/Colors.js';
-import { globalFonts } from '../styles/Fonts.js';
+import { globalColors } from '../../styles/Colors.js';
+import { globalFonts } from '../../styles/Fonts.js';
 
 export default function LogoHeader(param) {
 
   return (
     <View style={styles.header}>
       <View style={styles.subHeader}>
-        <Image source={require('../assets/icons/HedgenetWhite.png')} style={[styles.hedgenetIcon, { marginRight: 16, marginLeft: 24}]} />
+        <Image source={require('../../assets/icons/HedgenetWhite.png')} style={[styles.hedgenetIcon, { marginRight: 16, marginLeft: 24}]} />
         <Text style={globalFonts.H4(globalColors.others.white.color)}>{param.name}</Text>
       </View>
-      <Image source={require('../assets/icons/MoreIcon.png')} style={[styles.moreIcon, { marginRight: 24 }]} />
+      <Image source={require('../../assets/icons/MoreIcon.png')} style={[styles.moreIcon, { marginRight: 24 }]} />
     </View>
   );
 }

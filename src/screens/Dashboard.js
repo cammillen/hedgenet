@@ -10,7 +10,8 @@ import TopMenuBar from '../components/TopMenuBar.js';
 import Background from '../components/Background.js';
 import BottomMenuBar from '../components/BottomMenuBar.js';
 import SearchBarInactive from '../components/SearchBarInactive.js';
-import LogoHeader from '../components/LogoHeader.js';
+import LogoHeader from '../components/Section Headers/LogoHeader.js';
+import FundDashBoardContent from '../components/FundDashboardContent.js';
 
 export default function Dashboard () {
 
@@ -42,6 +43,7 @@ export default function Dashboard () {
         <TopMenuBar screen={Screen} />
         <SearchBarInactive/>
         <LogoHeader name={'My Funds'} />
+        <FundDashBoardContent/>
         <View style={styles.bottomMenuBarContainer}>
           <BottomMenuBar />
         </View>
