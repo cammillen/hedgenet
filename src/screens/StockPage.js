@@ -16,9 +16,9 @@ import StockHeader from '../components/StockHeader.js';
 import StockGraphVisual from '../components/StockGraphVisual.js';
 
 
-export default function Chat () {
+export default function StockPage () {
 
-  const Screen = 'Profile';
+  const Screen = 'Stock';
 
   SplashScreen.preventAutoHideAsync(); 
 
