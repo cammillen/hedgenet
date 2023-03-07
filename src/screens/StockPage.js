@@ -1,24 +1,34 @@
-//Individual Stock Screens. Must take stockname as parameter and make appropriate backend and api calls
+//Individual Stock Screens. Must make appropriate backend and api calls
 
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet, ScrollView } from 'react-native';
 import { StatusBar } from 'react-native';
 import { useCallback } from 'react';
 import { useFonts } from 'expo-font';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { useRoute } from '@react-navigation/native';
 import * as SplashScreen from 'expo-splash-screen';
-import { globalColors } from '../styles/Colors.js';
-import { globalFonts } from '../styles/Fonts.js';
 import TopMenuBar from '../components/TopMenuBar.js';
-import { NavigationContainer } from '@react-navigation/native';
 import Background from '../components/Background.js';
 import BottomMenuBar from '../components/BottomMenuBar.js';
+import { NavigationContainer } from '@react-navigation/native';
 import StockHeader from '../components/StockHeader.js';
 import StockGraphVisual from '../components/StockGraphVisual.js';
+import StockHeaderCard from '../components/StockHeaderCard.js';
+import StockPriceCard from '../components/StockPriceCard.js';
 
+export default function StockPage (route) {
 
-export default function Chat () {
+  const { params } = route.route;
+  const stockName = params?.stockName;
+  const Screen = 'StockPage';
 
-  const Screen = 'Profile';
+  const [fontsLoaded] = useFonts({
+    'Urbanist-Bold': require('../assets/fonts/Urbanist-Bold.ttf'),
+    'Urbanist-SemiBold': require('../assets/fonts/Urbanist-SemiBold.ttf'),
+    'Urbanist-Medium': require('../assets/fonts/Urbanist-Medium.ttf'),
+    'Urbanist-Regular': require('../assets/fonts/Urbanist-Regular.ttf'),
+  });
 
   SplashScreen.preventAutoHideAsync(); 
 
@@ -31,41 +41,42 @@ export default function Chat () {
   if (!fontsLoaded) {
     return null;
   }
-
-  const [fontsLoaded] = useFonts({
-    'Urbanist-Bold': require('../assets/fonts/Urbanist-Bold.ttf'),
-    'Urbanist-SemiBold': require('../assets/fonts/Urbanist-SemiBold.ttf'),
-    'Urbanist-Medium': require('../assets/fonts/Urbanist-Medium.ttf'),
-    'Urbanist-Regular': require('../assets/fonts/Urbanist-Regular.ttf'),
-  });
-
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-    },
-    bottomMenuBarContainer:{
-      position: 'absolute',
-      bottom: 0,
-      justifyContent: 'center',
-      alignItems: 'center',
-      marginBottom: -5,
-      marginLeft: 5,
-    },
-  });
+  //replace all backend data calls with a single file for consistency
+  const temporaryStockValues = {
+    Blackberry: {stockPrice: 7105, difference:217},
+  };
 
   return ( 
-    <NavigationContainer>
     <Background>
-        <StatusBar barStyle="light-content" backgroundColor="#000" />
+      <StatusBar barStyle="light-content" backgroundColor="#000" />
       <View style={styles.container} onLayout={onLayoutRootView}>
-        <TopMenuBar screen = {Screen}/>
-        <StockHeader stockName={'Blackberry'}/>
-        <StockGraphVisual stockName={'Blackverry'}/>
+        <TopMenuBar screen={Screen} />
+        <ScrollView alwaysBounceVertical={true}>
+
+          <StockHeader stockName={stockName}/>
+          <StockGraphVisual stockName={stockName} />
+          <StockHeaderCard />
+          <StockPriceCard delta={temporaryStockValues[stockName].difference} price={temporaryStockValues[stockName].stockPrice} />
+
+        </ ScrollView>
         <View style={styles.bottomMenuBarContainer}>
-          <BottomMenuBar/>
+          <BottomMenuBar />
         </View>
       </View>
     </Background>
-    </NavigationContainer>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  bottomMenuBarContainer: {
+    position: 'absolute',
+    bottom: 0,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: -5,
+    marginLeft: 5,
+  },
+});

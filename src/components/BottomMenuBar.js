@@ -145,5 +145,3 @@ const BottomMenuBar = (props) => (
 );
 
 export default BottomMenuBar;
-
-
