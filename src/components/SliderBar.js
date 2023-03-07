@@ -20,7 +20,7 @@ import { BorderlessButton } from 'react-native-gesture-handler';
 
 const Tab = createMaterialTopTabNavigator()
 
-const SliderBar = ({titles, screens}) =>{
+const SliderBar = ({ titles, screens}) =>{
 
     // This function creates the map from the titles of the screens and their associated pages: 
     const TabScreenList = screens.map((ScreenComponent, index) => {
@@ -72,6 +72,7 @@ const SliderBar = ({titles, screens}) =>{
 
 const styles = StyleSheet.create({
     container: {
+        marginTop: -5,
         paddingTop: 0,
         flex: 1,
         height: Dimensions.get('window').height + 1000, // adjust the height accordingly
