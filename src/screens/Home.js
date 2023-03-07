@@ -55,7 +55,6 @@ export default function Home() {
           <IndexFundCard markets={[{ marketName: 'DOW', growth: 0.0357 }, { marketName: 'S&P', growth: 0.0196 }, { marketName: 'NASDAQ', growth: 0.0285 }]} />
           <MyPositions />
           <SliderBar titles={titles} screens={screens} />
-          {/* <PositionsLoop stocks={['Google','Blackberry','Coca-Cola','Netflix','Apple','Alibaba','Amazon','Advanced Micro Devices','Dell','LG','Meta','Microsoft','Sony','Spotify','Tesla','Twitter','Virgin']} /> */}
           <View style={styles.bottomMenuBarContainer}>
             <BottomMenuBar/>
           </View>
@@ -78,17 +77,18 @@ const styles = StyleSheet.create({
   },
 });
 
-  //DUMMY VARIABLES
-  let cash = 19654850;
-  let difference = 6637849;
-  let fundName = "My Portfolio";
-
-  // Slider Bar Arguments: 
+  // Slider Bar Arguments (TO DO: Link to Backend): 
 
   const titles = ['Personal', 'UCL FinTech Fund', 'LSE Sustainable Finance Fund'];
   const screens = [
+    // TO DO: Link to backend
     () => <PositionsLoop stocks={['Tesla', 'Blackberry', 'Coca-Cola', 'Netflix', 'Apple']} />,
     () => <PositionsLoop stocks={['Amazon', 'Advanced Micro Devices', 'Dell', 'LG', 'Meta']} />,
     () => <PositionsLoop stocks={['Microsoft', 'Sony', 'Spotify', 'Tesla']} />,
   ];
+
+    // Value Card Arguments (TO DO: Link to Backend):
+    let cash = 19654850;
+    let difference = 6637849;
+    let fundName = "My Portfolio";
   
