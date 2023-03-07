@@ -1,4 +1,4 @@
-// Navigation Documentation: 
+// Navigation DOCUMENTATION: 
 // You need to create the placeholder screen using the code in PlaceholderScreen.js, change the code necessary for the new screen. 
 // You need to 1. import the new screen at the top e.g. "import Chat from '../screens/Chat.js';", 2. add new Stack.screen e.g. "<Stack.Screen name="Home" component={Home} options={{ headerShown: false}}/>"
 // You then need to make sure you can navigate to it via an On Press from another screen e.g. "<TouchableOpacity onPress={() => navigation.navigate('Chat')}"

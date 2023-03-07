@@ -1,5 +1,6 @@
 //Dashboard Screen
 
+//Imports
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { StatusBar } from 'react-native';
@@ -12,6 +13,8 @@ import BottomMenuBar from '../components/BottomMenuBar.js';
 import SearchBarInactive from '../components/SearchBarInactive.js';
 import LogoHeader from '../components/Section Headers/LogoHeader.js';
 import FundDashBoardContent from '../components/FundDashboardContent.js';
+import SliderBar from '../components/SliderBar';
+
 
 export default function Dashboard () {
 
@@ -42,8 +45,8 @@ export default function Dashboard () {
       <View style={styles.container} onLayout={onLayoutRootView}>
         <TopMenuBar screen={Screen} />
         <SearchBarInactive/>
-        <LogoHeader name={'My Funds'} />
-        <FundDashBoardContent/>
+        <LogoHeader name={'My Funds'} marginBottom={-5}/>
+        <SliderBar titles={titles} screens={screens} />
         <View style={styles.bottomMenuBarContainer}>
           <BottomMenuBar />
         </View>
@@ -65,3 +68,13 @@ const styles = StyleSheet.create({
     marginLeft: 5,
   },
 });
+
+  // Slider Bar Arguments (TO DO: Link to Backend): 
+
+  const titles = ['Personal', 'UCL FinTech Fund', 'LSE Sustainable Finance Fund'];
+  const screens = [
+    // TO DO: Link to backend
+    () => <FundDashBoardContent/>,
+    () => <FundDashBoardContent/>,
+    () => <FundDashBoardContent/>,
+  ];

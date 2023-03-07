@@ -10,10 +10,11 @@ import TopMenuBar from '../components/TopMenuBar.js';
 import ValueCard from '../components/ValueCard.js';
 import LogoHeader from '../components/Section Headers/LogoHeader.js';
 import MyPositions from '../components/MyPositions.js';
+import PositionsLoop from '../components/PositionsLoop.js';
 import SearchBarInactive from '../components/SearchBarInactive.js';
 import Background from '../components/Background.js';
 import BottomMenuBar from '../components/BottomMenuBar.js';
-import TabNavigator from '../components/SliderBar';
+import SliderBar from '../components/SliderBar';
 import IndexFundCard from '../components/IndexFundCard.js';
 
 // Loading the custom fonts (you have to use this at the start of every screen): 
@@ -41,7 +42,7 @@ export default function Home() {
   if (!fontsLoaded) {
     return null;
   }
-
+  
   // Custom fonts loaded, code below is for the screen: 
   return (
       <Background>
@@ -49,12 +50,11 @@ export default function Home() {
         <View style={styles.container} onLayout={onLayoutRootView}>
           <TopMenuBar screen = {'Home'}/>
           <SearchBarInactive/>
-          <LogoHeader name={'My Portfolio'} />      
+          <LogoHeader name={'My Portfolio'} marginBottom={15} />      
           <ValueCard cashBalance={cash} delta={difference} />
           <IndexFundCard markets={[{ marketName: 'DOW', growth: 0.0357 }, { marketName: 'S&P', growth: 0.0196 }, { marketName: 'NASDAQ', growth: 0.0285 }]} />
           <MyPositions />
-          <TabNavigator/>
-          {/* <PositionsLoop stocks={['Google','Blackberry','Coca-Cola','Netflix','Apple','Alibaba','Amazon','Advanced Micro Devices','Dell','LG','Meta','Microsoft','Sony','Spotify','Tesla','Twitter','Virgin']} /> */}
+          <SliderBar titles={titles} screens={screens} />
           <View style={styles.bottomMenuBarContainer}>
             <BottomMenuBar/>
           </View>
@@ -62,8 +62,6 @@ export default function Home() {
       </Background>
   );
 }
-
-// Style sheet with custom styles: 
 
 const styles = StyleSheet.create({
   container: {
@@ -79,10 +77,18 @@ const styles = StyleSheet.create({
   },
 });
 
-  //DUMMY VARIABLES
-  let cash = 19654850;
-  let difference = 6637849;
-  let fundName = "My Portfolio";
-  //let fundName = "MMMMMMMMMMM";
+  // Slider Bar Arguments (TO DO: Link to Backend): 
 
-  //REPLACE ALL WITH BACKEND CALLS
+  const titles = ['Personal', 'UCL FinTech Fund', 'LSE Sustainable Finance Fund'];
+  const screens = [
+    // TO DO: Link to backend
+    () => <PositionsLoop stocks={['Tesla', 'Blackberry', 'Coca-Cola', 'Netflix', 'Apple']} />,
+    () => <PositionsLoop stocks={['Amazon', 'Advanced Micro Devices', 'Dell', 'LG', 'Meta']} />,
+    () => <PositionsLoop stocks={['Microsoft', 'Sony', 'Spotify', 'Tesla']} />,
+  ];
+
+    // Value Card Arguments (TO DO: Link to Backend):
+    let cash = 19654850;
+    let difference = 6637849;
+    let fundName = "My Portfolio";
+  
