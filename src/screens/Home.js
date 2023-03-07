@@ -8,7 +8,7 @@ import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import TopMenuBar from '../components/TopMenuBar.js';
 import ValueCard from '../components/ValueCard.js';
-import LogoHeader from '../components/LogoHeader.js';
+import LogoHeader from '../components/Section Headers/LogoHeader.js';
 import MyPositions from '../components/MyPositions.js';
 import SearchBarInactive from '../components/SearchBarInactive.js';
 import Background from '../components/Background.js';
