@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'column',
         paddingLeft: 24,
-        paddingRight: 24,
+        paddingRight: 0,
         paddingBottom: 120,
     },
     verticalBox:{

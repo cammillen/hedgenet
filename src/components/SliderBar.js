@@ -39,7 +39,6 @@ const SliderBar = ({ titles, screens}) =>{
             <Tab.Navigator style={styles.tabNavigator}
             sceneContainerStyle={{
                 backgroundColor: 'transparent',
-                marginLeft: -12,
             }}
             tabBarOptions={{
                     scrollEnabled: true,
@@ -50,6 +49,7 @@ const SliderBar = ({ titles, screens}) =>{
                 tabBarInactiveTintColor: globalColors.greyscale._700.color,
                 tabBarStyle: { backgroundColor: 'transparent' },
                 tabBarLabelStyle: {
+                    marginLeft: 24,
                     fontFamily: 'Urbanist-SemiBold',
                     fontSize: 18,
                     textTransform: 'none',
@@ -57,12 +57,10 @@ const SliderBar = ({ titles, screens}) =>{
                 tabBarItemStyle: {
                     flex: 1,
                     width: 'auto',
-                    paddingLeft: 20,
-                    paddingRight: 20,
+                    paddingLeft: 35,
                     height: 60
                 },
-                tabBarIndicatorStyle: {backgroundColor: globalColors.primary._500.color},
-                contentStyle: {paddingRight: 100},
+                tabBarIndicatorStyle: { marginLeft: 24, backgroundColor: globalColors.primary._500.color},
             }}>
             {TabScreenList}
             </Tab.Navigator>
@@ -80,7 +78,6 @@ const styles = StyleSheet.create({
     tabNavigator:{
         flex: 1,
         overflow: 'scroll',
-        marginLeft: 24,
     },
   });
 

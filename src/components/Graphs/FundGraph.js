@@ -5,6 +5,8 @@ import { globalFonts } from '../../styles/Fonts.js';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
+const screenWidth = Dimensions.get('window').width;
+
 function FundGraph() {
     const navigation = useNavigation();
     
@@ -19,12 +21,10 @@ function FundGraph() {
 
 const styles = StyleSheet.create({
     container:{
-        marginLeft: -10,
         paddingBottom: 24
     },
     graph:{
-        marginLeft: 5,
-        width: 390,
+        width: screenWidth,
         height: 187,
         resizeMode: 'contain'
     }
