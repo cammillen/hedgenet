@@ -18,6 +18,7 @@ function FundDashBoardContent() {
             <TextRightArrowHeader leftTitle="Fund Analytics" rightTitle="View Members"/>
             <FundGraph/>
             <KeyStatistics/>
+            
             {/* Make sure to add padding to bottom of last component so you can scroll and see all.  */}
         </ScrollView>
     );
