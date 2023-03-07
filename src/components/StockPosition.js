@@ -6,6 +6,7 @@ import { globalColors } from '../styles/Colors.js';
 import { globalFonts } from '../styles/Fonts.js';
 
 export default function StockPosition(param) {
+
   return (
     <View><View style={styles.header}>
       <Text style={globalFonts.H5(globalColors.others.white.color)}>My {param.ticker} Position</Text>
@@ -18,7 +19,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     flexDirection: 'row',
     alignItems: 'center',
-    height: 32,
     paddingLeft: 24,
     paddingTop: 30
   },
