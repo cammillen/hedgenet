@@ -12,6 +12,7 @@ const Tab = createMaterialTopTabNavigator()
 const TabNavigator = () =>{
 
     return (
+        // These are the Tab Navigator Stylings
         <View style={styles.container}>
             <Tab.Navigator style={styles.tabNavigator}
             sceneContainerStyle={{

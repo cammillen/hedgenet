@@ -8,9 +8,8 @@ import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import TopMenuBar from '../components/TopMenuBar.js';
 import ValueCard from '../components/ValueCard.js';
-import FundLabel from '../components/FundLabel.js';
+import LogoHeader from '../components/LogoHeader.js';
 import MyPositions from '../components/MyPositions.js';
-import { NavigationContainer } from '@react-navigation/native';
 import SearchBarInactive from '../components/SearchBarInactive.js';
 import Background from '../components/Background.js';
 import BottomMenuBar from '../components/BottomMenuBar.js';
@@ -50,7 +49,7 @@ export default function Home() {
         <View style={styles.container} onLayout={onLayoutRootView}>
           <TopMenuBar screen = {'Home'}/>
           <SearchBarInactive/>
-          <FundLabel name={fundName} />      
+          <LogoHeader name={'My Portfolio'} />      
           <ValueCard cashBalance={cash} delta={difference} />
           <IndexFundCard markets={[{ marketName: 'DOW', growth: 0.0357 }, { marketName: 'S&P', growth: 0.0196 }, { marketName: 'NASDAQ', growth: 0.0285 }]} />
           <MyPositions />
