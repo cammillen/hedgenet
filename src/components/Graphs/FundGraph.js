@@ -20,10 +20,11 @@ function FundGraph() {
 const styles = StyleSheet.create({
     container:{
         marginLeft: -10,
+        paddingBottom: 24
     },
     graph:{
         marginLeft: 5,
-        width: 430,
+        width: 390,
         height: 187,
         resizeMode: 'contain'
     }

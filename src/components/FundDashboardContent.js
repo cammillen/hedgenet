@@ -1,22 +1,25 @@
 import React from 'react';
-import { StyleSheet, Text, View, Dimensions} from 'react-native';
+import { ScrollView, StyleSheet, Text, View, Dimensions} from 'react-native';
 import { globalColors } from '../styles/Colors.js';
 import { globalFonts } from '../styles/Fonts.js';
 import FundCard from './FundCard.js';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import TextRightArrowHeader from './Section Headers/TextRightArrowHeader.js';
-import FundGraph from './Graphs/FundGraph.js'
+import FundGraph from './Graphs/FundGraph.js';
+import KeyStatistics from './KeyStatistics.js'
 
 function FundDashBoardContent() {
     const navigation = useNavigation();
     
     return (
-        <View>
+        <ScrollView >
             <FundCard/>
             <TextRightArrowHeader leftTitle="Fund Analytics" rightTitle="View Members"/>
             <FundGraph/>
-        </View>
+            <KeyStatistics/>
+            {/* Make sure to add padding to bottom of last component so you can scroll and see all.  */}
+        </ScrollView>
     );
 }
 

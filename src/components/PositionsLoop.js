@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     flexDirection: 'column',
     alignItems: 'center',
-    paddingBottom: 150, //This makes sure when they scroll all the way down the last stock isnt obstructed by the bottom menu bar.
+    paddingBottom: 150, // This makes sure when they scroll all the way down the last stock isnt obstructed by the bottom menu bar.
   }
 });
 
