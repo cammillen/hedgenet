@@ -16,9 +16,12 @@ import StockHeader from '../components/StockHeader.js';
 import StockGraphVisual from '../components/StockGraphVisual.js';
 
 
-export default function StockPage () {
+export default function StockPage (route) {
 
-  const Screen = 'Stock';
+  const { params } = route.route;
+  const stockName = params?.stockName;
+
+  const Screen = 'StockPage';
 
   SplashScreen.preventAutoHideAsync(); 
 
@@ -54,18 +57,22 @@ export default function StockPage () {
   });
 
   return ( 
-    <NavigationContainer>
     <Background>
         <StatusBar barStyle="light-content" backgroundColor="#000" />
       <View style={styles.container} onLayout={onLayoutRootView}>
         <TopMenuBar screen = {Screen}/>
-        <StockHeader stockName={'Blackberry'}/>
-        <StockGraphVisual stockName={'Blackverry'}/>
+        <StockHeader stockName={stockName}/>
+        <StockGraphVisual stockName={stockName}/>
         <View style={styles.bottomMenuBarContainer}>
           <BottomMenuBar/>
         </View>
       </View>
     </Background>
-    </NavigationContainer>
   );
+
+  //return ( 
+  //  <Background>
+//
+  //  </Background>
+  //);
 };

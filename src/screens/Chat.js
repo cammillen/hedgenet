@@ -7,10 +7,10 @@ import { useCallback } from 'react';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 
-import TopMenuBar from './src/components/TopMenuBar.js';
+import TopMenuBar from '../components/TopMenuBar.js';
 import { NavigationContainer } from '@react-navigation/native';
-import Background from './src/components/Background.js';
-import BottomMenuBar from './src/components/BottomMenuBar.js';
+import Background from '../components/Background.js';
+import BottomMenuBar from '../components/BottomMenuBar.js';
 
 
 export default function Chat () {
@@ -30,10 +30,10 @@ export default function Chat () {
   }
 
   const [fontsLoaded] = useFonts({
-    'Urbanist-Bold': require('./src/assets/fonts/Urbanist-Bold.ttf'),
-    'Urbanist-SemiBold': require('./src/assets/fonts/Urbanist-SemiBold.ttf'),
-    'Urbanist-Medium': require('./src/assets/fonts/Urbanist-Medium.ttf'),
-    'Urbanist-Regular': require('./src/assets/fonts/Urbanist-Regular.ttf'),
+    'Urbanist-Bold': require('../assets/fonts/Urbanist-Bold.ttf'),
+    'Urbanist-SemiBold': require('../assets/fonts/Urbanist-SemiBold.ttf'),
+    'Urbanist-Medium': require('../assets/fonts/Urbanist-Medium.ttf'),
+    'Urbanist-Regular': require('../assets/fonts/Urbanist-Regular.ttf'),
   });
 
   const styles = StyleSheet.create({

@@ -14,6 +14,7 @@ import Dashboard from '../screens/Dashboard.js';
 import KeyActions from '../screens/KeyActions.js';
 import Chat from '../screens/Chat.js';
 import Menu from '../screens/Menu.js';
+import StockPage from '../screens/StockPage.js';
 
 const Stack = createStackNavigator();
 
@@ -31,6 +32,8 @@ const MainAppNavigator = () => {
       <Stack.Screen name="KeyActions" component={KeyActions} options={{ headerShown: false}}/>
       <Stack.Screen name="Chat" component={Chat} options={{ headerShown: false}}/>
       <Stack.Screen name="Menu" component={Menu} options={{ headerShown: false}}/>
+      {/* Individual Stock Navigation */}
+      <Stack.Screen name="StockPage" component={StockPage} options={{ headerShown: false}}/>
     </Stack.Navigator>
   );
 };
