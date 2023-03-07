@@ -47,9 +47,6 @@ function FundCard() {
                 {/* Need to endogenise the text below: */}
                 <Text style={[globalFonts.BodyMedium.Medium(globalColors.others.white.color), {marginBottom: 8}]}>1 Member • 12 Stocks</Text>
                 {/* Fund Tags: */}
-                {/* <View style={styles.fundTag}>
-                    <Text style={[globalFonts.BodyXSmall.semiBold(globalColors.primary._500.color)]}>UCL</Text>
-                </View> */}
             <View style={styles.tagContainer}>
                 {renderFundTags()}
             </View>
