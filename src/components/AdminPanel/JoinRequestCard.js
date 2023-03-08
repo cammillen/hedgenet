@@ -11,7 +11,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const screenWidth = Dimensions.get('window').width;
 
-function MemberCard(params) {
+function JoinRequestCard(params) {
     const navigation = useNavigation();
     const { width } = Dimensions.get('window');
     
@@ -25,14 +25,19 @@ function MemberCard(params) {
                 {/* Title and Tags Vertical Box:  */}
                 <View style={styles.textFlexBox}>
                     <Text style={[globalFonts.H6(globalColors.others.white.color), {marginBottom: 7}]}>{params.name}</Text>
-                    <Text style={[globalFonts.BodyMedium.Medium(globalColors.others.white.color), { lineHeight: 22 }]}>{params.admin ? 'Admin • ' : ''}{params.trades} Trades • {params.profitLoss}</Text>
+                    <Text style={[globalFonts.BodyMedium.Medium(globalColors.others.white.color), { lineHeight: 22 }]}>{params.university} • {params.daysAgoApplied} Days Ago</Text>
                 </View>
             </View>
             {/* Remove Button: */}
-            {/* TO DO NAVIGATION: to remove model */}
-            <TouchableOpacity style={styles.removeButton} onPress={() => navigation.navigate('RemoveMemberModel')}>
-                <Text style={[globalFonts.BodyMedium.semiBold(globalColors.others.white.color)]}>Remove</Text>
-            </TouchableOpacity>
+            {/* TO DO NAVIGATION and LOGIC for accept and reject*/}
+            <View>
+                <TouchableOpacity style={styles.rejectButton} onPress={() => navigation.navigate('Reject')}>
+                    <Text style={[globalFonts.BodyMedium.semiBold(globalColors.others.white.color)]}>Reject</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.acceptButton} onPress={() => navigation.navigate('Accept')}>
+                    <Text style={[globalFonts.BodyMedium.semiBold(globalColors.others.white.color)]}>Accept</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     );
 }
@@ -64,18 +69,32 @@ const styles = StyleSheet.create({
         height: 60,
         resizeMode: 'contain',
     },
-    removeButton:{
+    rejectButton:{
+        marginLeft: 10,
+        right: 0,
+        paddingLeft: 12,
+        paddingRight: 12,
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: 32,
+        backgroundColor: globalColors.others.red.color,
+        borderRadius: 100,
+        borderColor: globalColors.others.red.color,
+        borderWidth: 1,
+        marginBottom: 10,
+    },
+    acceptButton:{
         marginLeft: 10,
         right: 0,
         paddingLeft: 12,
         paddingRight: 12,
         justifyContent: 'center',
         height: 32,
-        backgroundColor: globalColors.others.red.color,
+        backgroundColor: globalColors.primary._500.color,
         borderRadius: 100,
-        borderColor: globalColors.others.red.color,
+        borderColor: globalColors.primary._500.color,
         borderWidth: 1,
     },
 });
 
-export default MemberCard;
+export default JoinRequestCard;
