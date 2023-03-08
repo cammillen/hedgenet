@@ -45,6 +45,7 @@ export default function Dashboard () {
       <View style={styles.container} onLayout={onLayoutRootView}>
         <TopMenuBar screen={Screen} />
         <SearchBarInactive/>
+        {/* TO DO: LOGIC Make sure logic is added for access to admin panel */}
         <LogoHeader name={'My Funds'} marginBottom={-5}  buttonnavigation={'AdminPanel'}/>
         <SliderBar titles={titles} screens={screens} />
         <View style={styles.bottomMenuBarContainer}>

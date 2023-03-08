@@ -11,6 +11,7 @@ import SliderBar from '../components/SliderBar';
 import FundMembers from '../components/AdminPanel/FundMembers.js';
 import FundSettings from '../components/AdminPanel/FundSettings.js';
 import JoinRequests from '../components/AdminPanel/JoinRequests.js';
+import AdminPanelHeader from '../components/AdminPanel/AdminPanelHeader.js'
 
 export default function AdminPanel () {
 
@@ -40,6 +41,7 @@ export default function AdminPanel () {
       <StatusBar barStyle="light-content" backgroundColor="#000" />
       <View style={styles.container} onLayout={onLayoutRootView}>
         <TopMenuBar screen={Screen} />
+        <AdminPanelHeader/>
         <SliderBar titles={titles} screens={screens} />
         <View style={styles.bottomMenuBarContainer}>
           <BottomMenuBar />
