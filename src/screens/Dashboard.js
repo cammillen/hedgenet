@@ -12,7 +12,7 @@ import Background from '../components/Background.js';
 import BottomMenuBar from '../components/BottomMenuBar.js';
 import SearchBarInactive from '../components/SearchBarInactive.js';
 import LogoHeader from '../components/Section Headers/LogoHeader.js';
-import FundDashBoardContent from '../components/Dashboard/FundDashboardContent';
+import FundDashboardSliderContent from '../components/Dashboard/FundDashboardSliderContent';
 import SliderBar from '../components/SliderBar';
 
 
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
   const titles = ['Personal', 'UCL FinTech Fund', 'LSE Sustainable Finance Fund'];
   const screens = [
     // TO DO: Link to backend
-    () => <FundDashBoardContent/>,
-    () => <FundDashBoardContent/>,
-    () => <FundDashBoardContent/>,
+    () => <FundDashboardSliderContent/>,
+    () => <FundDashboardSliderContent/>,
+    () => <FundDashboardSliderContent/>,
   ];

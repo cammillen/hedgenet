@@ -36,7 +36,7 @@ function KeyStatistics() {
                     {/* Data Point 2:  */}
                     <View style={styles.dataPoint}>
                         <Image
-                            source={require('../assets/icons/Stocks.png')}  
+                            source={require('../../assets/icons/Stocks.png')}  
                             style={[styles.icon]}
                         />
                          {/* Text flex box: */}

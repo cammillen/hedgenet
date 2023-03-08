@@ -9,7 +9,7 @@ import TextWithSort from '../Section Headers/TextWithSort.js';
 import MyPositions from '../MyPositions.js';
 // import MyTradingHistoryItem from './MyTradingHistoryItem.js';
 
-function FundDashBoardContent() {
+function FundDashboardSliderContent() {
     const navigation = useNavigation();
     
     return (
@@ -37,4 +37,4 @@ const styles = StyleSheet.create({
     },
 );
 
-export default FundDashBoardContent;
+export default FundDashboardSliderContent;
