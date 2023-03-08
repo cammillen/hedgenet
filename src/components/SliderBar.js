@@ -7,6 +7,7 @@
     //   () => <PageComponent4Tab2/>,
     //   () => <PageComponent4Tab3/>,
     // ];
+// Make sure your PageComponents are imported at the top of your page. 
 // 3. Once you have established titles and components you can then render the sliding bar: "<SliderBar titles={titles} screens={screens} />"
 // Make sure you have the library of titles and screens at the bottom of the page.
 

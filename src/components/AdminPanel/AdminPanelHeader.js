@@ -1,7 +1,3 @@
-// USAGE DOCUMENTATION:
-// it looks like: {  Fund Analytics        View Members ->   }
-// e.g. "<TextRightArrowHeader leftTitle="Fund Analytics" rightTitle="View Members"/>"
-
 import React from 'react';
 import { Image, StyleSheet, Text, View, Dimensions} from 'react-native';
 import { globalColors } from '../../styles/Colors.js';
@@ -9,7 +5,7 @@ import { globalFonts } from '../../styles/Fonts.js';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-export default function TextRightArrowHeader(params) {
+export default function AdminPanelHeader(params) {
     const navigation = useNavigation();
     
     return (

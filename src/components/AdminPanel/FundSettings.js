@@ -5,7 +5,7 @@ import { globalFonts } from '../../styles/Fonts.js';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-function JoinRequests() {
+function FundSettings() {
     const navigation = useNavigation();
     
     return (
@@ -18,4 +18,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default JoinRequests;
+export default FundSettings;

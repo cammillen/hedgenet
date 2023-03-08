@@ -7,6 +7,10 @@ import * as SplashScreen from 'expo-splash-screen';
 import TopMenuBar from '../components/TopMenuBar.js';
 import Background from '../components/Background.js';
 import BottomMenuBar from '../components/BottomMenuBar.js';
+import SliderBar from '../components/SliderBar';
+import FundMembers from '../components/AdminPanel/FundMembers.js';
+import FundSettings from '../components/AdminPanel/FundSettings.js';
+import JoinRequests from '../components/AdminPanel/JoinRequests.js';
 
 export default function AdminPanel () {
 
@@ -36,6 +40,7 @@ export default function AdminPanel () {
       <StatusBar barStyle="light-content" backgroundColor="#000" />
       <View style={styles.container} onLayout={onLayoutRootView}>
         <TopMenuBar screen={Screen} />
+        <SliderBar titles={titles} screens={screens} />
         <View style={styles.bottomMenuBarContainer}>
           <BottomMenuBar />
         </View>
@@ -57,3 +62,12 @@ const styles = StyleSheet.create({
     marginLeft: 5,
   },
 });
+
+// Slider Bar Data: 
+
+const titles = ['Members', 'Join Requests', 'Settings']; // No backend calls needed her
+const screens = [
+    () => <FundMembers/>,
+    () => <JoinRequests/>,
+    () => <FundSettings/>,
+];

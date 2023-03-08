@@ -1,4 +1,5 @@
 // Usage: 
+// it looks like: {  Logo  My Funds           (...)   }
 // e.g. <LogoHeader name={'My Portfolio'} marginBottom={10}  buttonnavigation={'Profile'}/>
 // the button navigation defines which page to navigate too if pressed, in the above example it is the profile page. 
 
@@ -20,6 +21,7 @@ export default function LogoHeader(props) {
         <Image source={require('../../assets/icons/HedgenetWhite.png')} style={[styles.hedgenetIcon, { marginRight: 16, marginLeft: 24}]} />
         <Text style={globalFonts.H4(globalColors.others.white.color)}>{props.name}</Text>
       </View>
+      {/* TO DO: NAVIGATION LOGIC: need to add the logic for what is triggered when the button is pressed depending on users access. */}
       <TouchableOpacity onPress={() => navigation.navigate(props.buttonnavigation)}>
         <Image source={require('../../assets/icons/MoreIcon.png')} style={[styles.moreIcon, { marginRight: 24 }]} />
       </TouchableOpacity>
