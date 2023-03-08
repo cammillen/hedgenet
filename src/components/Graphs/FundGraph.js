@@ -21,7 +21,7 @@ function FundGraph() {
 
 const styles = StyleSheet.create({
     container:{
-        paddingBottom: 24
+        paddingBottom: 30
     },
     graph:{
         width: screenWidth,

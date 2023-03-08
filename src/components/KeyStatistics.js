@@ -4,6 +4,7 @@ import { globalColors } from '../styles/Colors.js';
 import { globalFonts } from '../styles/Fonts.js';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { processFontFamily } from 'expo-font';
 
 function KeyStatistics() {
     const navigation = useNavigation();
@@ -152,6 +153,10 @@ function KeyStatistics() {
                 </View>
             </View>
             </ScrollView>
+            {/* TO DO: Add the navigation logic here:  */}
+            <TouchableOpacity onPress={() => navigation.navigate('TradingInsights')}>
+                <Text style={styles.moreDataText}>More Data From Hedgenet</Text>
+            </TouchableOpacity>
         </View>
     );
 }
@@ -161,11 +166,12 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         paddingLeft: 24,
         paddingRight: 0,
-        paddingBottom: 120,
+        paddingBottom: 30, 
     },
     verticalBox:{
         flexDirection: 'column',
         overflow: 'scroll',
+        paddingBottom: 6,
     },
     horizontalBox:{
         flexDirection: 'row',
@@ -188,6 +194,10 @@ const styles = StyleSheet.create({
         height: 60,
         resizeMode: 'contain',
         // marginRight: 20,
+    },
+    moreDataText: {
+        ...globalFonts.BodyMedium.semiBold(globalColors.primary._500.color),
+        textAlign: 'center'
     },
 });
 
