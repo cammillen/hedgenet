@@ -1,5 +1,3 @@
-// This is the card which shows either the portfolio value, or the stock price, and whether it is up or down and the % change.
-
 import React from 'react';
 import { Image } from 'react-native';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
@@ -9,45 +7,7 @@ import LogoSelect from '../assets/logoRequire.js';
 
 const screenWidth = Dimensions.get('window').width;
 
-const styles = StyleSheet.create({
-  header: {
-    // width: screenWidth,
-    // paddingLeft: 24,
-    // paddingRight: 24,
-    justifyContent: 'space-between',
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: 20,
-    paddingBottom: 20,
-    borderBottomColor: globalColors.dark._3.color,
-    borderBottomWidth: 1,
-    backgroundColor: 'rgba(27,172,75,0)',
-  },
-  subHeaderLeft: {
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-    justifyContent: 'space-around',
-    height: 55,
-  },
-  subHeaderRight: {
-    flexDirection: 'column',
-    alignItems: 'flex-end',
-    justifyContent: 'space-around',
-    height: 55
-  },
-  logoIcon: {
-    width: 60,
-    height: 60,
-    resizeMode: 'contain'
-  },
-  graphVisual: {
-    width: 63.99,
-    height: 27.58,
-    resizeMode: 'contain'
-  }
-});
-
-export default function PositionsItem(params) {
+export default function MyTradingHistoryItem(params) {
 
   let stockImage = LogoSelect(params.stockName);
   let graphImage = require('../assets/graphs(delete)/ExampleGraph.png'); //generalise once on graphing
@@ -80,3 +40,39 @@ export default function PositionsItem(params) {
     </View>
   );
 }
+
+
+const styles = StyleSheet.create({
+    header: {
+      justifyContent: 'space-between',
+      flexDirection: 'row',
+      alignItems: 'center',
+      marginTop: 20,
+      paddingBottom: 20,
+      borderBottomColor: globalColors.dark._3.color,
+      borderBottomWidth: 1,
+      backgroundColor: 'rgba(27,172,75,0)',
+    },
+    subHeaderLeft: {
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      justifyContent: 'space-around',
+      height: 55,
+    },
+    subHeaderRight: {
+      flexDirection: 'column',
+      alignItems: 'flex-end',
+      justifyContent: 'space-around',
+      height: 55
+    },
+    logoIcon: {
+      width: 60,
+      height: 60,
+      resizeMode: 'contain'
+    },
+    graphVisual: {
+      width: 63.99,
+      height: 27.58,
+      resizeMode: 'contain'
+    }
+  });

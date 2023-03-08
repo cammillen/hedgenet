@@ -7,14 +7,14 @@ import FundGraph from './Graphs/FundGraph.js';
 import KeyStatistics from './KeyStatistics.js'
 import TextWithSort from './Section Headers/TextWithSort.js';
 import MyPositions from './MyPositions.js';
-import { globalColors } from '../styles/Colors.js';
-import { globalFonts } from '../styles/Fonts.js';
+// import MyTradingHistoryItem from './MyTradingHistoryItem.js';
 
 function FundDashBoardContent() {
     const navigation = useNavigation();
     
     return (
         <ScrollView >
+            {/* <MyTradingHistoryItem/> */}
             <FundCard/>
             <TextRightArrowHeader leftTitle="Fund Analytics" rightTitle="View Members"/>
             <FundGraph/>

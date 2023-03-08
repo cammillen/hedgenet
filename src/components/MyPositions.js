@@ -4,14 +4,14 @@
 
 import React from 'react';
 import { Text, StyleSheet, View, ScrollView } from 'react-native';
-import PositionsItem from './PositionsItem.js';
+import MyPositionsItem from './MyPositionsItem.js';
 import { globalColors } from '../styles/Colors.js';
 import { globalFonts } from '../styles/Fonts.js';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useRoute } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/native';
 
-export default function PositionsLoop({ stocks, paddingBottom }) {
+export default function MyPositions({ stocks, paddingBottom }) {
 
   const { name: currentRouteName } = useRoute();
 
@@ -45,7 +45,7 @@ export default function PositionsLoop({ stocks, paddingBottom }) {
   let positions = [];
   stocks.forEach(element => positions.push(
   <TouchableOpacity key = {element} onPress={() => navigation.navigate('StockPage', {stockName: element})}>
-  <PositionsItem key = {element} stockName={element} userShares={temporaryStockValues[element].userShares} shareValue={temporaryStockValues[element].shareValue} previousValue={temporaryStockValues[element].previousValue} />
+  <MyPositionsItem key = {element} stockName={element} userShares={temporaryStockValues[element].userShares} shareValue={temporaryStockValues[element].shareValue} previousValue={temporaryStockValues[element].previousValue} />
   </TouchableOpacity>
   ));
 
