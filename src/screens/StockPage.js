@@ -24,7 +24,7 @@ export default function StockPage (route) {
 
   const { params } = route.route;
   const stockName = params?.stockName;
-  const Screen = 'StockPage';
+  const Screen = 'Stock Page';
 
   const [fontsLoaded] = useFonts({
     'Urbanist-Bold': require('../assets/fonts/Urbanist-Bold.ttf'),

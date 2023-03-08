@@ -45,7 +45,7 @@ export default function Dashboard () {
       <View style={styles.container} onLayout={onLayoutRootView}>
         <TopMenuBar screen={Screen} />
         <SearchBarInactive/>
-        <LogoHeader name={'My Funds'} marginBottom={-5}/>
+        <LogoHeader name={'My Funds'} marginBottom={-5}  buttonnavigation={'AdminPanel'}/>
         <SliderBar titles={titles} screens={screens} />
         <View style={styles.bottomMenuBarContainer}>
           <BottomMenuBar />
