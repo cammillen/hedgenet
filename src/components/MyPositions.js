@@ -1,6 +1,6 @@
 //USAGE: 
 // <PositionsLoop stocks={['Microsoft', 'Sony', 'Spotify', 'Tesla']} paddingBottom={150} />
-// Padd padding bottom through it to set padding bottom. 
+// Pass in padding bottom through it to set padding bottom, which is useful when you need to be able to see the stocks hidden by the bottom bar.
 
 import React from 'react';
 import { Text, StyleSheet, View, ScrollView } from 'react-native';

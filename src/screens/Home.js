@@ -82,6 +82,7 @@ const styles = StyleSheet.create({
   const titles = ['Personal', 'UCL FinTech Fund', 'LSE Sustainable Finance Fund'];
   const screens = [
     // TO DO: Link to backend
+    // paddingBottom is passed in so you can see the last stock - so it isnt covered by bottom menu bar.
     () => <MyPositions stocks={['Tesla', 'Blackberry', 'Coca-Cola', 'Netflix', 'Apple']} paddingBottom={150}/>,
     () => <MyPositions stocks={['Amazon', 'Advanced Micro Devices', 'Dell', 'LG', 'Meta']} paddingBottom={150}/>,
     () => <MyPositions stocks={['Microsoft', 'Sony', 'Spotify', 'Tesla']} paddingBottom={150} />,
