@@ -5,10 +5,6 @@ import { globalFonts } from '../styles/Fonts.js';
 import { globalColors } from '../styles/Colors.js';
 
 
-
-
-
-
 // const MyComponent = () => {
 //   const [estReturn, setEstReturn] = useState('+ 0%'); // default value
 
