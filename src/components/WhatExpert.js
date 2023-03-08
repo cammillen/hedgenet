@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { StyleSheet, View, StatusBar, Text, Image } from "react-native";
 import Svg, { Ellipse } from "react-native-svg";
-
+import { globalFonts } from '../styles/Fonts.js';
+import { globalColors } from '../styles/Colors.js';
 
 
 
@@ -154,8 +155,7 @@ const styles = StyleSheet.create({
     marginTop: 5
   },
   whatTheExpertsSay: {
-    fontFamily: "urbanist-700",
-    color: "rgba(255,255,255,1)",
+    ...globalFonts.H5(globalColors.others.white.color),
     fontSize: 20,
     marginLeft: 15
   },
@@ -192,8 +192,7 @@ const styles = StyleSheet.create({
     top: 22,
     left: 16,
     position: "absolute",
-    fontFamily: "roboto-700",
-    color: "rgba(255,255,255,1)",
+    ...globalFonts.H5(globalColors.others.white.color),
     fontSize: 22
   },
   ellipseStack: {
