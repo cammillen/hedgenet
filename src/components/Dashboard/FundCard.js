@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View, Dimensions} from 'react-native';
-import { globalColors } from '../styles/Colors.js';
-import { globalFonts } from '../styles/Fonts.js';
+import { globalColors } from '../../styles/Colors.js';
+import { globalFonts } from '../../styles/Fonts.js';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
@@ -36,7 +36,7 @@ function FundCard() {
             
             {/* This Fund Profile Image */}
             <Image
-              source={require('../assets/icons/ProfilePlaceholder.png')} // BACKEND TO DO: backend integration with profile picture. 
+              source={require('../../assets/icons/ProfilePlaceholder.png')} // BACKEND TO DO: backend integration with profile picture. 
               style={[styles.profileIcon]}
             />
 
@@ -47,9 +47,6 @@ function FundCard() {
                 {/* Need to endogenise the text below: */}
                 <Text style={[globalFonts.BodyMedium.Medium(globalColors.others.white.color), {marginBottom: 8}]}>1 Member • 12 Stocks</Text>
                 {/* Fund Tags: */}
-                {/* <View style={styles.fundTag}>
-                    <Text style={[globalFonts.BodyXSmall.semiBold(globalColors.primary._500.color)]}>UCL</Text>
-                </View> */}
             <View style={styles.tagContainer}>
                 {renderFundTags()}
             </View>
@@ -74,7 +71,7 @@ const styles = StyleSheet.create({
         alignItems: 'top',
         paddingLeft: 24,
         paddingRight: 24,
-        paddingBottom: 24,
+        paddingBottom: 30,
         paddingTop: 24,
       },
     profileIcon: {

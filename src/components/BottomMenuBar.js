@@ -1,3 +1,7 @@
+// Documentation: 
+// If you need the icon to stay active you need to add: isActive('Dashboard') || isActive('AdminPanel') instead of isActive('Dashboard')
+// Just make sure the name of the page matched up to what is in MainAppNavigator
+
 import * as React from "react";
 import Svg, { G, Path, Defs, Rect } from "react-native-svg";
 import MaskedView from '@react-native-community/masked-view';
@@ -37,14 +41,14 @@ const BottomMenuContent = () => {
           <Text style={[styles.text, isActive('Home') ? styles.activeText : styles.inactiveText]}>Home</Text>
         </TouchableOpacity>
 
-        {/* Notifications Icon */}
+        {/* Dashboard Icon */}
         <TouchableOpacity style={styles.iconContainer} onPress={() => navigation.navigate('Dashboard')}// NAVIGATION 
         >
           <Image
-            source={isActive('Dashboard') ? require('../assets/icons/ChartGreen.png') : require('../assets/icons/ChartGrey.png')}
-            style={[styles.Icon, isActive('Dashboard') ? styles.Icon : styles.Icon]}
+            source={isActive('Dashboard') || isActive('AdminPanel') ? require('../assets/icons/ChartGreen.png') : require('../assets/icons/ChartGrey.png')}
+            style={[styles.Icon, isActive('Dashboard') || isActive('AdminPanel') ? styles.Icon : styles.Icon]}
           />
-          <Text style={[styles.text, isActive('Dashboard') ? styles.activeText : styles.inactiveText]}>Dashboard</Text>
+          <Text style={[styles.text, isActive('Dashboard') || isActive('AdminPanel') ? styles.activeText : styles.inactiveText]}>Dashboard</Text>
         </TouchableOpacity>
 
         {/* Key Actions Icon */}

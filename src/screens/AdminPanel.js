@@ -1,6 +1,3 @@
-//Dashboard Screen
-
-//Imports
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { StatusBar } from 'react-native';
@@ -10,15 +7,15 @@ import * as SplashScreen from 'expo-splash-screen';
 import TopMenuBar from '../components/TopMenuBar.js';
 import Background from '../components/Background.js';
 import BottomMenuBar from '../components/BottomMenuBar.js';
-import SearchBarInactive from '../components/SearchBarInactive.js';
-import LogoHeader from '../components/Section Headers/LogoHeader.js';
-import FundDashboardSliderContent from '../components/Dashboard/FundDashboardSliderContent';
 import SliderBar from '../components/SliderBar';
+import FundMembers from '../components/AdminPanel/FundMembers.js';
+import FundSettings from '../components/AdminPanel/FundSettings.js';
+import JoinRequests from '../components/AdminPanel/JoinRequests.js';
+import AdminPanelHeader from '../components/AdminPanel/AdminPanelHeader.js'
 
+export default function AdminPanel () {
 
-export default function Dashboard () {
-
-  const Screen = 'Dashboard';
+  const Screen = 'Admin Panel';
 
   const [fontsLoaded] = useFonts({
     'Urbanist-Bold': require('../assets/fonts/Urbanist-Bold.ttf'),
@@ -44,9 +41,7 @@ export default function Dashboard () {
       <StatusBar barStyle="light-content" backgroundColor="#000" />
       <View style={styles.container} onLayout={onLayoutRootView}>
         <TopMenuBar screen={Screen} />
-        <SearchBarInactive/>
-        {/* TO DO: LOGIC Make sure logic is added for access to admin panel */}
-        <LogoHeader name={'My Funds'} marginBottom={-5}  buttonnavigation={'AdminPanel'}/>
+        <AdminPanelHeader/>
         <SliderBar titles={titles} screens={screens} />
         <View style={styles.bottomMenuBarContainer}>
           <BottomMenuBar />
@@ -70,12 +65,11 @@ const styles = StyleSheet.create({
   },
 });
 
-  // Slider Bar Arguments (TO DO: Link to Backend): 
+// Slider Bar Data: 
 
-  const titles = ['Personal', 'UCL FinTech Fund', 'LSE Sustainable Finance Fund'];
-  const screens = [
-    // TO DO: Link to backend
-    () => <FundDashboardSliderContent/>,
-    () => <FundDashboardSliderContent/>,
-    () => <FundDashboardSliderContent/>,
-  ];
+const titles = ['Members', 'Join Requests', 'Settings']; // No backend calls needed her
+const screens = [
+    () => <FundMembers/>,
+    () => <JoinRequests/>,
+    () => <FundSettings/>,
+];

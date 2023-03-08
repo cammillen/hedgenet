@@ -1,9 +1,10 @@
 import React from 'react';
 import { ScrollView, Image, StyleSheet, Text, View, Dimensions} from 'react-native';
-import { globalColors } from '../styles/Colors.js';
-import { globalFonts } from '../styles/Fonts.js';
+import { globalColors } from '../../styles/Colors.js';
+import { globalFonts } from '../../styles/Fonts.js';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { processFontFamily } from 'expo-font';
 
 function KeyStatistics() {
     const navigation = useNavigation();
@@ -22,7 +23,7 @@ function KeyStatistics() {
                     {/* Data Point 1:  */}
                     <View style={styles.dataPoint}>
                         <Image
-                            source={require('../assets/icons/Open.png')} 
+                            source={require('../../assets/icons/Open.png')} 
                             style={[styles.icon]}
                         />
                         {/* Text flex box: */}
@@ -35,7 +36,7 @@ function KeyStatistics() {
                     {/* Data Point 2:  */}
                     <View style={styles.dataPoint}>
                         <Image
-                            source={require('../assets/icons/Stocks.png')}  
+                            source={require('../../assets/icons/Stocks.png')}  
                             style={[styles.icon]}
                         />
                          {/* Text flex box: */}
@@ -48,7 +49,7 @@ function KeyStatistics() {
                     {/* Data Point 3:  */}
                     <View style={styles.dataPoint}>
                         <Image
-                            source={require('../assets/icons/Volume.png')}  
+                            source={require('../../assets/icons/Volume.png')}  
                             style={[styles.icon]}
                         />
                          {/* Text flex box: */}
@@ -66,7 +67,7 @@ function KeyStatistics() {
                     {/* Data Point 1:  */}
                     <View style={styles.dataPoint}>
                         <Image
-                            source={require('../assets/icons/High.png')} 
+                            source={require('../../assets/icons/High.png')} 
                             style={[styles.icon]}
                         />
                         {/* Text flex box: */}
@@ -79,7 +80,7 @@ function KeyStatistics() {
                     {/* Data Point 2:  */}
                     <View style={styles.dataPoint}>
                         <Image
-                            source={require('../assets/icons/ProfitLoss.png')} 
+                            source={require('../../assets/icons/ProfitLoss.png')} 
                             style={[styles.icon]}
                         />
                          {/* Text flex box: */}
@@ -93,7 +94,7 @@ function KeyStatistics() {
                     {/* Data Point 3:  */}
                     <View style={styles.dataPoint}>
                         <Image
-                            source={require('../assets/icons/Performance.png')}
+                            source={require('../../assets/icons/Performance.png')}
                             style={[styles.icon]}
                         />
                          {/* Text flex box: */}
@@ -113,7 +114,7 @@ function KeyStatistics() {
                     {/* Data Point 1:  */}
                     <View style={styles.dataPoint}>
                         <Image
-                            source={require('../assets/icons/Low.png')}  
+                            source={require('../../assets/icons/Low.png')}  
                             style={[styles.icon]}
                         />
                         {/* Text flex box: */}
@@ -126,7 +127,7 @@ function KeyStatistics() {
                     {/* Data Point 2:  */}
                     <View style={styles.dataPoint}>
                         <Image
-                            source={require('../assets/icons/TotalInvestment.png')}  
+                            source={require('../../assets/icons/TotalInvestment.png')}  
                             style={[styles.icon]}
                         />
                          {/* Text flex box: */}
@@ -139,7 +140,7 @@ function KeyStatistics() {
                     {/* Data Point 3:  */}
                     <View style={styles.dataPoint}>
                         <Image
-                            source={require('../assets/icons/Leaderboard.png')}  
+                            source={require('../../assets/icons/Leaderboard.png')}  
                             style={[styles.icon]}
                         />
                          {/* Text flex box: */}
@@ -152,6 +153,10 @@ function KeyStatistics() {
                 </View>
             </View>
             </ScrollView>
+            {/* TO DO: Add the navigation logic here:  */}
+            <TouchableOpacity onPress={() => navigation.navigate('TradingInsights')}>
+                <Text style={styles.moreDataText}>More Data From Hedgenet</Text>
+            </TouchableOpacity>
         </View>
     );
 }
@@ -161,11 +166,12 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         paddingLeft: 24,
         paddingRight: 0,
-        paddingBottom: 120,
+        paddingBottom: 30, 
     },
     verticalBox:{
         flexDirection: 'column',
         overflow: 'scroll',
+        paddingBottom: 6,
     },
     horizontalBox:{
         flexDirection: 'row',
@@ -188,6 +194,10 @@ const styles = StyleSheet.create({
         height: 60,
         resizeMode: 'contain',
         // marginRight: 20,
+    },
+    moreDataText: {
+        ...globalFonts.BodyMedium.semiBold(globalColors.primary._500.color),
+        textAlign: 'center'
     },
 });
 

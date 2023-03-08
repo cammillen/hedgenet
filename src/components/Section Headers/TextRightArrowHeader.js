@@ -1,3 +1,7 @@
+// USAGE DOCUMENTATION:
+// it looks like: {  Fund Analytics        View Members ->   }
+// e.g. "<TextRightArrowHeader leftTitle="Fund Analytics" rightTitle="View Members"/>"
+
 import React from 'react';
 import { Image, StyleSheet, Text, View, Dimensions} from 'react-native';
 import { globalColors } from '../../styles/Colors.js';
