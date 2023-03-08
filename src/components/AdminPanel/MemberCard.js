@@ -1,3 +1,7 @@
+// Documentation: 
+// This feeds into the FundMembers.js - there isnt anything to change or do on this page, all the backend integration is in Fund Members.
+// Just need to add logic for the remove button. 
+
 import React from 'react';
 import { Image, StyleSheet, Text, View, Dimensions} from 'react-native';
 import { globalColors } from '../../styles/Colors.js';
@@ -7,7 +11,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const screenWidth = Dimensions.get('window').width;
 
-function MemberCard() {
+function MemberCard(params) {
     const navigation = useNavigation();
     const { width } = Dimensions.get('window');
     
@@ -17,11 +21,11 @@ function MemberCard() {
             <View style={styles.imageTextFlexBox}>
                 {/* Image:  */}
                 {/* TO DO BACKEND: Connect to backend */}
-                <Image source={require('../../assets/icons/MockProfileImage.png')} style={styles.profilePicture} />
+                <Image source={params.profilePicture} style={styles.profilePicture} />
                 {/* Title and Tags Vertical Box:  */}
                 <View style={styles.textFlexBox}>
-                    <Text style={[globalFonts.H6(globalColors.others.white.color), {marginBottom: 7}]}>John Doe</Text>
-                    <Text style={globalFonts.BodyMedium.Medium(globalColors.others.white.color)}>Admin • 123 Trades • +£4,223</Text>
+                    <Text style={[globalFonts.H6(globalColors.others.white.color), {marginBottom: 7}]}>{params.name}</Text>
+                    <Text style={globalFonts.BodyMedium.Medium(globalColors.others.white.color)}>{params.admin ? 'Admin • ' : ''}{params.trades} Trades • {params.profitLoss}</Text>
                 </View>
             </View>
             {/* Remove Button: */}
