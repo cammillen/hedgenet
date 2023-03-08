@@ -50,7 +50,8 @@ export default function Home() {
         <View style={styles.container} onLayout={onLayoutRootView}>
           <TopMenuBar screen = {'Home'}/>
           <SearchBarInactive/>
-          <LogoHeader name={'My Portfolio'} marginBottom={15} />      
+          {/* TO DO: Need to make sure you have done the logout modal below:  */}
+          <LogoHeader name={'My Portfolio'} marginBottom={15} buttonnavigation={'LogoutModal'} />      
           <ValueCard cashBalance={cash} delta={difference} />
           <IndexFundCard markets={[{ marketName: 'DOW', growth: 0.0357 }, { marketName: 'S&P', growth: 0.0196 }, { marketName: 'NASDAQ', growth: 0.0285 }]} />
           <TextWithSort title='My Positions' />

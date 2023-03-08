@@ -1,5 +1,6 @@
 // Usage: 
 // e.g. <LogoHeader name={'My Portfolio'} marginBottom={10}  buttonnavigation={'Profile'}/>
+// the button navigation defines which page to navigate too if pressed, in the above example it is the profile page. 
 
 import React from 'react';
 import { Image } from 'react-native';
