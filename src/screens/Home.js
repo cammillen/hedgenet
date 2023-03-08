@@ -16,6 +16,8 @@ import Background from '../components/Background.js';
 import BottomMenuBar from '../components/BottomMenuBar.js';
 import SliderBar from '../components/SliderBar';
 import IndexFundCard from '../components/IndexFundCard.js';
+import LeftArrowTextHeader from '../components/Section Headers/LeftArrowTextHeader.js';
+
 
 // Loading the custom fonts (you have to use this at the start of every screen): 
 
@@ -50,6 +52,8 @@ export default function Home() {
         <View style={styles.container} onLayout={onLayoutRootView}>
           <TopMenuBar screen = {'Home'}/>
           <SearchBarInactive/>
+          <LeftArrowTextHeader lastPage={'Home'} leftTitle={'Browse Funds'}/>
+          
           {/* TO DO: Need to make sure you have done the logout modal below:  */}
           <LogoHeader name={'My Portfolio'} marginBottom={15} buttonnavigation={'LogoutModal'} />      
           <ValueCard cashBalance={cash} delta={difference} />
