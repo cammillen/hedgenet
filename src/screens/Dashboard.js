@@ -12,7 +12,7 @@ import Background from '../components/Background.js';
 import BottomMenuBar from '../components/BottomMenuBar.js';
 import SearchBarInactive from '../components/SearchBarInactive.js';
 import LogoHeader from '../components/Section Headers/LogoHeader.js';
-import FundDashBoardContent from '../components/FundDashboardContent.js';
+import FundDashBoardContent from '../components/Dashboard/FundDashboardContent';
 import SliderBar from '../components/SliderBar';
 
 

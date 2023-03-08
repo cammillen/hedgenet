@@ -2,11 +2,11 @@ import React from 'react';
 import { View, ScrollView, StyleSheet, Text} from 'react-native';
 import FundCard from './FundCard.js';
 import { useNavigation } from '@react-navigation/native';
-import TextRightArrowHeader from './Section Headers/TextRightArrowHeader.js';
-import FundGraph from './Graphs/FundGraph.js';
+import TextRightArrowHeader from '../Section Headers/TextRightArrowHeader.js';
+import FundGraph from '../Graphs/FundGraph.js';
 import KeyStatistics from './KeyStatistics.js'
-import TextWithSort from './Section Headers/TextWithSort.js';
-import MyPositions from './MyPositions.js';
+import TextWithSort from '../Section Headers/TextWithSort.js';
+import MyPositions from '../MyPositions.js';
 // import MyTradingHistoryItem from './MyTradingHistoryItem.js';
 
 function FundDashBoardContent() {
