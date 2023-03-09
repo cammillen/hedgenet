@@ -8,7 +8,7 @@ import TopMenuBar from '../TopMenuBar.js';
 import Background from '../Background.js';
 import BottomMenuBar from '../BottomMenuBar.js';
 import TextWithSortArrowBack from '../Section Headers/TextWithSortArrowBack.js';
-import MemberCard from './MemberCard.js';
+import CollectivePositionCard from './CollectivePositionCard.js';
 
 export default function TradingInsights () {
 
@@ -39,6 +39,21 @@ export default function TradingInsights () {
       <View style={styles.container} onLayout={onLayoutRootView}>
         <TopMenuBar screen={Screen} />
         <TextWithSortArrowBack title="Trading Insights" navigatePage="Dashboard" rightTitle="Asc. Order"/>
+        <ScrollView>
+        {stocks.map(stock => (
+            <CollectivePositionCard
+            key={stock.stock}
+            stock={stock.stock}
+            sharesOwned={stock.sharesOwned}
+            profitLoss={stock.profitLoss}
+            perfToDate={stock.perfToDate}
+            numMembers={stock.numMembers}
+            stockLogo={stock.stockLogo}
+            />
+            ))}
+        {/* Below prevents last element being hidden by the bottom menu bar: */}
+        <View style={{height: 150}}></View>
+        </ScrollView>
         <View style={styles.bottomMenuBarContainer}>
           <BottomMenuBar />
         </View>
@@ -61,63 +76,63 @@ const styles = StyleSheet.create({
   },
 });
 
-const members = [
-  {
-    name: 'John Doe',
-    admin: true,
-    trades: 12332314,
-    profitLoss: '+£4,223',
-    perfToDate: '+23.2',
-    profilePicture: require('../../assets/dummyprofilepictures/1.png')
-  },
-  {
-    name: 'Jane Smith',
-    admin: true,
-    trades: 20,
-    profitLoss: '-£1521',
-    perfToDate: '-13.2',
-    profilePicture: require('../../assets/dummyprofilepictures/2.png')
-  },
-  {
-      name: 'Drew Pepenase',
-      admin: false,
-      trades: 212,
+const stocks = [
+    {
+      stock: 'Apple Inc.',
+      sharesOwned: 1214,
+      profitLoss: '+£4,223',
+      perfToDate: '+23.2',
+      numMembers: 5,
+      stockLogo: require('../../assets/stocks/Apple.png')
+    },
+    {
+      stock: 'Microsoft Corporation',
+      sharesOwned: 20,
+      profitLoss: '-£1521',
+      perfToDate: '-13.2',
+      numMembers: 3,
+      stockLogo: require('../../assets/stocks/Microsoft.png')
+    },
+    {
+      stock: 'Amazon',
+      sharesOwned: 212,
       profitLoss: '-£2302',
       perfToDate: '-32.2',
-      profilePicture: require('../../assets/dummyprofilepictures/3.png'),
+      numMembers: 7,
+      stockLogo: require('../../assets/stocks/Amazon.png'),
     },
     {
-      name: 'Mark Johnson',
-      admin: false,
-      trades: 319,
+      stock: 'Tesla Inc.',
+      sharesOwned: 319,
       profitLoss: '+£12209',
       perfToDate: '+19.2',
-      profilePicture: require('../../assets/dummyprofilepictures/4.png')
+      numMembers: 4,
+      stockLogo: require('../../assets//stocks/Tesla.png')
     },
     {
-      name: 'Lena Park',
-      admin: true,
-      trades: 77,
+      stock: 'Alibaba Inc.',
+      sharesOwned: 77,
       profitLoss: '-£348',
       perfToDate: '+19.1',
-      profilePicture: require('../../assets/dummyprofilepictures/5.png')
+      numMembers: 2,
+      stockLogo: require('../../assets//stocks/Alibaba.png')
     },
     {
-      name: 'Adam Davis',
-      admin: false,
-      trades: 128,
+      stock: 'Meta',
+      sharesOwned: 128,
       profitLoss: '-£1967',
       perfToDate: '-22.3',
-      profilePicture: require('../../assets/dummyprofilepictures/6.png')
+      numMembers: 6,
+      stockLogo: require('../../assets/stocks/Meta.png')
     },
     {
-      name: 'Eva Chen',
-      admin: true,
-      trades: 244,
+      stock: 'LG',
+      sharesOwned: 244,
       profitLoss: '+£6432',
       perfToDate: '+19.2',
-      profilePicture: require('../../assets/dummyprofilepictures/7.png')
+      numMembers: 8,
+      stockLogo: require('../../assets/stocks/LG.png')
     }
-  // Add more members as needed...
-];
+  ];
+  
 

@@ -81,7 +81,7 @@ const members = [
   {
     name: 'John Doe',
     admin: true,
-    trades: 12332314,
+    trades: 1314,
     profitLoss: '+£4,223',
     perfToDate: '+23.2',
     profilePicture: require('../../assets/dummyprofilepictures/1.png')
