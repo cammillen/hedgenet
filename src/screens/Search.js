@@ -22,6 +22,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 export default function Search () {
 
   const Screen = 'Search';
+
   const navigation = useNavigation();
 
 
@@ -74,4 +75,3 @@ export default function Search () {
   );
 };
 
-const funds = ['Cambr Invest', 'Oxford Traders', 'UCL Fintech', 'StAnd Algo'];
