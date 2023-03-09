@@ -16,7 +16,7 @@ function FundDashboardSliderContent() {
         <ScrollView >
             {/* <MyTradingHistoryItem/> */}
             <FundCard/>
-            <TextRightArrowHeader leftTitle="Fund Analytics" rightTitle="View Members"/>
+            <TextRightArrowHeader leftTitle="Fund Analytics" rightTitle="View Members" navigatepage="FundMembers"/>
             <FundGraph/>
             <KeyStatistics/>
             <TextWithSort title="My Positions" />

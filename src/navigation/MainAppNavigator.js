@@ -21,6 +21,7 @@ import Chat from '../screens/Chat.js';
 import Menu from '../screens/Menu.js';
 import StockPage from '../screens/StockPage.js';
 import AdminPanel from '../screens/AdminPanel.js';
+import FundMembers from '../components/Dashboard/FundMembers.js';
 
 const Stack = createStackNavigator();
 
@@ -42,6 +43,7 @@ const MainAppNavigator = () => {
       <Stack.Screen name="StockPage" component={StockPage} options={{ headerShown: false}}/>
       {/* Other Navigation */}
       <Stack.Screen name="AdminPanel" component={AdminPanel} options={{ headerShown: false}}/>
+      <Stack.Screen name="FundMembers" component={FundMembers} options={{ headerShown: false}}/>
     </Stack.Navigator>
   );
 };
