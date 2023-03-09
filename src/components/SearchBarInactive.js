@@ -8,6 +8,9 @@ import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default function SearchBarInactive() {
+
+    const navigation = useNavigation();
+
     return(  
         <TouchableOpacity onPress={() => navigation.navigate('Search')} style={styles.searchBox}>
             {/* NAVIGATION Add code to redirect to Search.js (search page) when the box is pressed. */}
