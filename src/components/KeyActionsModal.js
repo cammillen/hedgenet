@@ -3,6 +3,7 @@ import { Modal, View, StyleSheet, TouchableOpacity, Text, Animated, Dimensions, 
 import { globalColors } from '../styles/Colors';
 
 const KeyActionsModal = ({ visible, onClose }) => {
+//This is all animation stuff: 
   const modalOpacity = useRef(new Animated.Value(0)).current;
   const modalTranslateY = useRef(new Animated.Value(Dimensions.get('screen').height)).current;
   const backgroundOpacity = useRef(new Animated.Value(0)).current;
@@ -57,11 +58,13 @@ const KeyActionsModal = ({ visible, onClose }) => {
     }
   }, [visible]);
 
+//This is all modal stuff: 
   return (
     <Modal transparent visible={visible} animationType="none" onRequestClose={onClose}>
       <TouchableWithoutFeedback onPress={() => onClose(false)}>
         <Animated.View style={[styles.modalBackground, { opacity: backgroundOpacity }]}>
           <TouchableWithoutFeedback>
+            {/* This is flex box with content:  */}
             <Animated.View {...panResponder.panHandlers} style={[styles.modalContainer, { opacity: modalOpacity, transform: [{ translateY: modalTranslateY }] }]}>
               <TouchableOpacity style={styles.closeButton} onPress={() => onClose(false)}>
                 <Text style={styles.closeButtonText}>Close</Text>
