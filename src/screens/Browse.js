@@ -11,7 +11,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import Background from '../components/Background.js';
 import BottomMenuBar from '../components/BottomMenuBar.js';
 import LeftArrowTextHeader from '../components/Section Headers/LeftArrowTextHeader.js';
-
+import TopPerformers from '../components/BrowseFundsTopPerformersHeaders.js';
+import BrowseFundsHeader from '../components/BrowseFundsHeader.js';
+import BrowseFunds from '../components/BrowseFunds.js';
 
 export default function Browse () {
 
@@ -57,9 +59,10 @@ export default function Browse () {
       <View style={styles.container} onLayout={onLayoutRootView}>
         <TopMenuBar screen = {Screen}/>
         <LeftArrowTextHeader lastPage={'Home'} leftTitle={'Browse Funds'}/>
-
-
-
+        <SearchBarInactive/>
+        <TopPerformers />
+        <BrowseFundsHeader category={'UCL'} />
+        <BrowseFunds funds={['Fintech Algo', 'UCL Agtech']} paddingBottom={150}/>
         <View style={styles.bottomMenuBarContainer}>
           <BottomMenuBar/>
         </View>

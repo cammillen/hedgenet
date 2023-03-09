@@ -4,10 +4,11 @@
 
 import React from 'react';
 import { Image, StyleSheet, Text, View, Dimensions} from 'react-native';
-import { globalColors } from '../styles/Colors.js';
-import { globalFonts } from '../styles/Fonts.js';
+import { globalColors } from '../../styles/Colors.js';
+import { globalFonts } from '../../styles/Fonts.js';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { LinearGradient } from 'react-native-svg';
 
 export default function LeftArrowTextHeader(params) {
     const navigation = useNavigation();
@@ -16,16 +17,17 @@ export default function LeftArrowTextHeader(params) {
         <View style={styles.container}>
             <View style={styles.subContainer}>
                 <TouchableOpacity onPress={() => navigation.navigate(params.lastPage)}>
-                    <Image source={require('../assets/icons/ArrowLeft_Green.png')} style={styles.icon} />
+                    <Image source={require('../../assets/icons/ArrowLeft_Green.png')} style={styles.leftIcon} />
                 </TouchableOpacity>
-            <Text style={globalFonts.BodyMedium.semiBold(globalColors.others.white.color)}>{params.leftTitle}</Text>
+            <Text style={globalFonts.H4(globalColors.others.white.color)}>{params.leftTitle}</Text>
             </View>
             <View style={styles.subContainer}>
-                <Text style={globalFonts.H5(globalColors.primary._500.color)}>Asc. Order{/*must change to be variable*/}</Text>
+                <Text style={globalFonts.H6(globalColors.primary._500.color)}>Asc. Order  {/*must change to be variable*/}</Text>
                 <TouchableOpacity style={styles.subContainer} onPress={{/*Must define some backend call to sort data*/}}>
-                    <Image source={require('../assets/icons/UpdDownArrow.png')} style={styles.icon} />
+                    <Image source={require('../../assets/icons/UpDownArrow.png')} style={styles.rightIcon} />
                 </TouchableOpacity>
             </View>
+            <LinearGradient colors={['#000','transparent']} style={{height: 24, marginBottom: -24, zIndex: 999}} />
         </View>
     );
 }
@@ -43,10 +45,15 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
     },
-    icon:{
-        marginLeft: 5,
-        width: 24,
-        height: 24,
-        resizeMode: 'contain'
+    leftIcon:{
+        width: 15.81,
+        height: 19.25,
+        resizeMode: 'contain',
+        marginRight: 16
+    },
+    rightIcon:{
+        width: 19.58,
+        height: 17.83,
+        resizeMode: 'contain',
     }
 });
