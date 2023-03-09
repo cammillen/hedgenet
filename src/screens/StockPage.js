@@ -17,6 +17,7 @@ import MarketStats from '../components/MarketStats.js';
 import StockGraphVisual from '../components/StockGraphVisual.js';
 import StockHeaderCard from '../components/StockHeaderCard.js';
 import WhatExpert from '../components/WhatExpert.js';
+import EarningShare from '../components/EarningShare.js';
 import StockPriceCard from '../components/StockPriceCard.js';
 import StockPosition from '../components/StockPosition.js';
 import MarketCap from '../components/MarketCap.js';
@@ -67,6 +68,7 @@ export default function StockPage (route) {
             <MarketStats ticker={temporaryStockValues[stockName].ticker}/>
             <MarketCap stockName={stockName} ticker={temporaryStockValues[stockName].ticker}/>
             <WhatExpert/>
+            <EarningShare/>
           </ ScrollView>
         <View style={styles.bottomMenuBarContainer}>
           <BottomMenuBar />

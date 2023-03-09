@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { StyleSheet, View, StatusBar, Text, Image } from "react-native";
 import Svg, { Ellipse } from "react-native-svg";
-import { globalFonts } from '../styles/Fonts.js';
-import { globalColors } from '../styles/Colors.js';
+
+
+
 
 
 // const MyComponent = () => {
@@ -151,7 +152,8 @@ const styles = StyleSheet.create({
     marginTop: 5
   },
   whatTheExpertsSay: {
-    ...globalFonts.H5(globalColors.others.white.color),
+    fontFamily: "urbanist-700",
+    color: "rgba(255,255,255,1)",
     fontSize: 20,
     marginLeft: 15
   },
@@ -188,7 +190,8 @@ const styles = StyleSheet.create({
     top: 22,
     left: 16,
     position: "absolute",
-    ...globalFonts.H5(globalColors.others.white.color),
+    fontFamily: "roboto-700",
+    color: "rgba(255,255,255,1)",
     fontSize: 22
   },
   ellipseStack: {
@@ -278,11 +281,11 @@ const styles = StyleSheet.create({
     marginLeft: 14
   },
   text3: {
-    fontFamily: "urbanist-600",
+    fontFamily: "urbanist-700",
     color: "rgba(255,193,7,1)"
   },
   hold: {
-    fontFamily: "urbanist-600",
+    fontFamily: "urbanist-700",
     color: "rgba(255,193,7,1)",
     marginLeft: 24
   },
@@ -337,11 +340,11 @@ const styles = StyleSheet.create({
     marginLeft: 15
   },
   text4: {
-    fontFamily: "urbanist-600",
+    fontFamily: "urbanist-700",
     color: "rgba(247,85,85,1)"
   },
   sell: {
-    fontFamily: "urbanist-600",
+    fontFamily: "urbanist-700",
     color: "rgba(247,85,85,1)",
     marginLeft: 32
   },
@@ -383,7 +386,7 @@ const styles = StyleSheet.create({
     marginTop: 8
   },
   targetPrice: {
-    fontFamily: "urbanist-600",
+    fontFamily: "urbanist-700",
     color: "rgba(255,255,255,1)"
   },
   targetPrice2: {
@@ -414,7 +417,7 @@ const styles = StyleSheet.create({
     marginTop: 8
   },
   estReturn: {
-    fontFamily: "urbanist-600",
+    fontFamily: "urbanist-700",
     color: "rgba(255,255,255,1)"
   },
   text5: {
@@ -445,7 +448,7 @@ const styles = StyleSheet.create({
     fontSize: 20
   },
   loremIpsum: {
-    fontFamily: "urbanist-500",
+    fontFamily: "urbanist-700",
     color: "rgba(255,255,255,1)",
     fontSize: 16,
     marginTop: 9
