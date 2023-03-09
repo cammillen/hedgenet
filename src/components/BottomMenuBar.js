@@ -12,12 +12,24 @@ import { globalColors } from '../styles/Colors.js';
 import { globalFonts } from '../styles/Fonts.js';
 import { useRoute } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/native';
+import KeyActionsModal from './KeyActionsModal';
+import { useState } from 'react';
 
 const { width } = Dimensions.get('window');
 
 // This is the content that feeds into bottom menu bar: 
 
 const BottomMenuContent = () => {
+
+  const [modalVisible, setModalVisible] = useState(false);
+
+  const openModal = () => {
+    setModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setModalVisible(false);
+  };
 
   const { name: currentRouteName } = useRoute();
 
@@ -52,13 +64,16 @@ const BottomMenuContent = () => {
         </TouchableOpacity>
 
         {/* Key Actions Icon */}
-        <TouchableOpacity style={styles.iconContainer} onPress={() => navigation.navigate('KeyActionsModal')}// NAVIGATION 
+        <TouchableOpacity style={styles.iconContainer} onPress={openModal}// NAVIGATION 
         >
           <Image
             source={require('../assets/icons/Switch.png')} 
             style={[styles.switchIcon]}
           />
         </TouchableOpacity>
+        <KeyActionsModal visible={modalVisible} onClose={closeModal}>
+          <Text>This is the content of the modal</Text>
+        </KeyActionsModal>
 
         {/* Chat Icon */}
         <TouchableOpacity style={styles.iconContainer} onPress={() => navigation.navigate('Chat')}// NAVIGATION 
