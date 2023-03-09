@@ -1,6 +1,6 @@
 // USAGE DOCUMENTATION:
 // it looks like: {  Fund Analytics        View Members ->   }
-// e.g. "<TextRightArrowHeader leftTitle="Fund Analytics" rightTitle="View Members"/>"
+// e.g. "<TextRightArrowHeader leftTitle="Fund Analytics" rightTitle="View Members" navigatepage="NavigatedPage"/>"
 
 import React from 'react';
 import { Image, StyleSheet, Text, View, Dimensions} from 'react-native';
@@ -15,7 +15,7 @@ export default function TextRightArrowHeader(params) {
     return (
         <View style={styles.container}>
             <Text style={globalFonts.H5(globalColors.others.white.color)}>{params.leftTitle}</Text>
-            <TouchableOpacity style={styles.rightContainer} onPress={() => navigation.navigate('ENTER PAGE')}>
+            <TouchableOpacity style={styles.rightContainer} onPress={() => navigation.navigate(params.navigatepage)}>
                 <Text style={globalFonts.BodyMedium.semiBold(globalColors.primary._500.color)}>{params.rightTitle}</Text>
                 <Image source={require('../../assets/icons/ArrowRightGreen.png')} style={styles.icon} />
             </TouchableOpacity>

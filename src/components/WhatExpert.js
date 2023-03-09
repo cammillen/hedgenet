@@ -2,12 +2,6 @@ import React, { Component } from "react";
 import { StyleSheet, View, StatusBar, Text, Image } from "react-native";
 import Svg, { Ellipse } from "react-native-svg";
 
-
-
-
-
-
-
 // const MyComponent = () => {
 //   const [estReturn, setEstReturn] = useState('+ 0%'); // default value
 
@@ -22,7 +16,6 @@ import Svg, { Ellipse } from "react-native-svg";
 
 //     fetchData();
 //   }, []); // run only once on component mount
-
 
 
 function WhatExpertSay(props) {
@@ -283,11 +276,11 @@ const styles = StyleSheet.create({
     marginLeft: 14
   },
   text3: {
-    fontFamily: "urbanist-600",
+    fontFamily: "urbanist-700",
     color: "rgba(255,193,7,1)"
   },
   hold: {
-    fontFamily: "urbanist-600",
+    fontFamily: "urbanist-700",
     color: "rgba(255,193,7,1)",
     marginLeft: 24
   },
@@ -342,11 +335,11 @@ const styles = StyleSheet.create({
     marginLeft: 15
   },
   text4: {
-    fontFamily: "urbanist-600",
+    fontFamily: "urbanist-700",
     color: "rgba(247,85,85,1)"
   },
   sell: {
-    fontFamily: "urbanist-600",
+    fontFamily: "urbanist-700",
     color: "rgba(247,85,85,1)",
     marginLeft: 32
   },
@@ -388,7 +381,7 @@ const styles = StyleSheet.create({
     marginTop: 8
   },
   targetPrice: {
-    fontFamily: "urbanist-600",
+    fontFamily: "urbanist-700",
     color: "rgba(255,255,255,1)"
   },
   targetPrice2: {
@@ -419,7 +412,7 @@ const styles = StyleSheet.create({
     marginTop: 8
   },
   estReturn: {
-    fontFamily: "urbanist-600",
+    fontFamily: "urbanist-700",
     color: "rgba(255,255,255,1)"
   },
   text5: {
@@ -450,7 +443,7 @@ const styles = StyleSheet.create({
     fontSize: 20
   },
   loremIpsum: {
-    fontFamily: "urbanist-500",
+    fontFamily: "urbanist-700",
     color: "rgba(255,255,255,1)",
     fontSize: 16,
     marginTop: 9

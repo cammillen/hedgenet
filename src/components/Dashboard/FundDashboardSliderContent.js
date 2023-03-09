@@ -16,12 +16,12 @@ function FundDashboardSliderContent() {
         <ScrollView >
             {/* <MyTradingHistoryItem/> */}
             <FundCard/>
-            <TextRightArrowHeader leftTitle="Fund Analytics" rightTitle="View Members"/>
+            <TextRightArrowHeader leftTitle="Fund Analytics" rightTitle="View Members" navigatepage="FundMembers"/>
             <FundGraph/>
             <KeyStatistics/>
             <TextWithSort title="My Positions" />
             {/* TO DO BACKEND: Add logic for which positions are shown here:  */}
-            <MyPositions stocks={['Microsoft', 'Sony', 'Spotify', 'Tesla']} paddingBottom={30}/>
+            <MyPositions stocks={['Microsoft', 'Sony', 'Spotify', 'Tesla']} paddingBottom={30} bottomText={'See More'}/>
             <TextWithSort title="My Trading History" />
             {/* Delete when done:  */}
             <Text> </Text>

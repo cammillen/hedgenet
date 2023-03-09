@@ -1,3 +1,5 @@
+// TO DO: need to link the selected private/public otpion with the backend. 
+
 import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { globalColors } from '../../styles/Colors.js';
@@ -18,29 +20,22 @@ function FundSettings() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Voting Strategy</Text>
+      <Text style={styles.title}>Investment Permissions</Text>
       <ToggleOption
-        title={"Daily Poll"}
-        text={"A poll is created daily to decide fund investment strategy."}
-        icon={require('../../assets/icons/DailyPoll.png')}
-        selected={selectedOption === 'daily'}
-        onSelect={() => handleOptionSelect('daily')}
-      />
-      <ToggleOption
-        title={"Weekly Poll"}
-        text={"A poll is created weekly to decide fund investment strategy."}
-        icon={require('../../assets/icons/WeeklyPoll.png')}
-        selected={selectedOption === 'weekly'}
-        onSelect={() => handleOptionSelect('weekly')}
-      />
-      <ToggleOption
-        title={"Free For All"}
+        title={"Private Fund"}
         text={"No investment strategy, everyone is free to trade under the fund."}
-        icon={require('../../assets/icons/FreeForAll.png')}
-        selected={selectedOption === 'freeForAll'}
-        onSelect={() => handleOptionSelect('freeForAll')}
+        icon={require('../../assets/icons/PrivateFund.png')}
+        selected={selectedOption === 'Private'}
+        onSelect={() => handleOptionSelect('Private')}
       />
-      <Text style={[styles.title, {paddingTop: 24}]}>Investment Permissions</Text>
+      <ToggleOption
+        title={"Public Fund"}
+        text={"No investment strategy, everyone is free to trade under the fund."}
+        icon={require('../../assets/icons/PublicFund.png')}
+        selected={selectedOption === 'Public'}
+        onSelect={() => handleOptionSelect('Public')}
+      />
+      <Text style={styles.selectedOptionText}>Your Fund Is {selectedOption}</Text>
     </View>
   );
 }
@@ -52,6 +47,11 @@ const styles = StyleSheet.create({
   title:{
     paddingLeft: 24,
     ...globalFonts.H5(globalColors.others.white.color),
+  },
+  selectedOptionText: {
+    paddingTop: 12,
+    paddingLeft: 24,
+    ...globalFonts.BodyXSmall.Medium(globalColors.others.white.color),
   }
 });
 

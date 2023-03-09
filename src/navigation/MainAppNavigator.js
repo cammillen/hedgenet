@@ -16,11 +16,13 @@ import Notifications from '../screens/Notifications.js';
 import Leaderboard from '../screens/Leaderboard.js';
 import Newsfeed from '../screens/Newsfeed.js';
 import Dashboard from '../screens/Dashboard.js';
-import KeyActions from '../screens/KeyActions.js';
 import Chat from '../screens/Chat.js';
 import Menu from '../screens/Menu.js';
 import StockPage from '../screens/StockPage.js';
 import AdminPanel from '../screens/AdminPanel.js';
+import FundMembers from '../components/Dashboard/FundMembers.js';
+import TradingInsights from '../components/Dashboard/TradingInsights.js';
+// import KeyActionsModal from '../components/KeyActionsModal.js';
 
 const Stack = createStackNavigator();
 
@@ -35,13 +37,15 @@ const MainAppNavigator = () => {
       {/* Bottom Menu Bar Screens */}
       <Stack.Screen name="Home" component={Home} options={{ headerShown: false}}/>
       <Stack.Screen name="Dashboard" component={Dashboard} options={{ headerShown: false}}/>
-      <Stack.Screen name="KeyActions" component={KeyActions} options={{ headerShown: false}}/>
+      {/* <Stack.Screen name="KeyActionsModal" component={KeyActionsModal} options={{ headerShown: false}}/> */}
       <Stack.Screen name="Chat" component={Chat} options={{ headerShown: false}}/>
       <Stack.Screen name="Menu" component={Menu} options={{ headerShown: false}}/>
       {/* Individual Stock Navigation */}
       <Stack.Screen name="StockPage" component={StockPage} options={{ headerShown: false}}/>
       {/* Other Navigation */}
       <Stack.Screen name="AdminPanel" component={AdminPanel} options={{ headerShown: false}}/>
+      <Stack.Screen name="FundMembers" component={FundMembers} options={{ headerShown: false}}/>
+      <Stack.Screen name="TradingInsights" component={TradingInsights} options={{ headerShown: false}}/>
     </Stack.Navigator>
   );
 };
