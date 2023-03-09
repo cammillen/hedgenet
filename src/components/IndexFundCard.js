@@ -1,4 +1,5 @@
 // This is the card for the Index Funds used on the home screen.
+// TO DO: GRAPH BACKEND LOGIC
 
 import React from 'react';
 import { Image } from 'react-native';

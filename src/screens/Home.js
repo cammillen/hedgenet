@@ -9,8 +9,8 @@ import * as SplashScreen from 'expo-splash-screen';
 import TopMenuBar from '../components/TopMenuBar.js';
 import ValueCard from '../components/ValueCard.js';
 import LogoHeader from '../components/Section Headers/LogoHeader.js';
+import TextWithSort from '../components/Section Headers/TextWithSort.js';
 import MyPositions from '../components/MyPositions.js';
-import PositionsLoop from '../components/PositionsLoop.js';
 import SearchBarInactive from '../components/SearchBarInactive.js';
 import Background from '../components/Background.js';
 import BottomMenuBar from '../components/BottomMenuBar.js';
@@ -50,11 +50,12 @@ export default function Home() {
         <View style={styles.container} onLayout={onLayoutRootView}>
           <TopMenuBar screen = {'Home'}/>
           <SearchBarInactive/>
-          <LogoHeader name={'My Portfolio'} marginBottom={15} />      
+          {/* TO DO: Need to make sure you have done the logout modal below:  */}
+          <LogoHeader name={'My Portfolio'} marginBottom={15} buttonnavigation={'LogoutModal'} />      
           <ValueCard cashBalance={cash} delta={difference} />
           <IndexFundCard markets={[{ marketName: 'DOW', growth: 0.0357 }, { marketName: 'S&P', growth: 0.0196 }, { marketName: 'NASDAQ', growth: 0.0285 }]} />
-          <MyPositions />
-          <SliderBar titles={titles} screens={screens} />
+          <TextWithSort title='My Positions' />
+          <SliderBar bottomspacing={150} titles={titles} screens={screens} />
           <View style={styles.bottomMenuBarContainer}>
             <BottomMenuBar/>
           </View>
@@ -82,9 +83,10 @@ const styles = StyleSheet.create({
   const titles = ['Personal', 'UCL FinTech Fund', 'LSE Sustainable Finance Fund'];
   const screens = [
     // TO DO: Link to backend
-    () => <PositionsLoop stocks={['Tesla', 'Blackberry', 'Coca-Cola', 'Netflix', 'Apple']} />,
-    () => <PositionsLoop stocks={['Amazon', 'Advanced Micro Devices', 'Dell', 'LG', 'Meta']} />,
-    () => <PositionsLoop stocks={['Microsoft', 'Sony', 'Spotify', 'Tesla']} />,
+    // paddingBottom is passed in so you can see the last stock - so it isnt covered by bottom menu bar.
+    () => <MyPositions stocks={['Tesla', 'Blackberry', 'Coca-Cola', 'Netflix', 'Apple']} paddingBottom={150} bottomText={'See More'}/>,
+    () => <MyPositions stocks={['Amazon', 'Advanced Micro Devices', 'Dell', 'LG', 'Meta']} paddingBottom={150} bottomText={'See More'}/>,
+    () => <MyPositions stocks={['Microsoft', 'Sony', 'Spotify', 'Tesla']} paddingBottom={150} bottomText={'See More'} />,
   ];
 
     // Value Card Arguments (TO DO: Link to Backend):

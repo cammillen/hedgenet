@@ -13,10 +13,15 @@ import Background from '../components/Background.js';
 import BottomMenuBar from '../components/BottomMenuBar.js';
 import { NavigationContainer } from '@react-navigation/native';
 import StockHeader from '../components/StockHeader.js';
+import MarketStats from '../components/MarketStats.js';
 import StockGraphVisual from '../components/StockGraphVisual.js';
 import StockHeaderCard from '../components/StockHeaderCard.js';
+import WhatExpert from '../components/WhatExpert.js';
+import EarningShare from '../components/EarningShare.js';
 import StockPriceCard from '../components/StockPriceCard.js';
 import StockPosition from '../components/StockPosition.js';
+import MarketCap from '../components/MarketCap.js';
+
 import SliderBar from '../components/SliderBar.js';
 
 
@@ -24,7 +29,7 @@ export default function StockPage (route) {
 
   const { params } = route.route;
   const stockName = params?.stockName;
-  const Screen = 'StockPage';
+  const Screen = 'Stock Page';
 
   const [fontsLoaded] = useFonts({
     'Urbanist-Bold': require('../assets/fonts/Urbanist-Bold.ttf'),
@@ -60,8 +65,10 @@ export default function StockPage (route) {
             <StockHeaderCard />
             <StockPriceCard delta={temporaryStockValues[stockName].difference} price={temporaryStockValues[stockName].stockPrice} />
             <StockPosition ticker={temporaryStockValues[stockName].ticker} />
-            <SliderBar titles={titles} screens={screens} />
-
+            <MarketStats ticker={temporaryStockValues[stockName].ticker}/>
+            <MarketCap stockName={stockName} ticker={temporaryStockValues[stockName].ticker}/>
+            <WhatExpert/>
+            <EarningShare/>
           </ ScrollView>
         <View style={styles.bottomMenuBarContainer}>
           <BottomMenuBar />

@@ -12,7 +12,7 @@ import Background from '../components/Background.js';
 import BottomMenuBar from '../components/BottomMenuBar.js';
 import SearchBarInactive from '../components/SearchBarInactive.js';
 import LogoHeader from '../components/Section Headers/LogoHeader.js';
-import FundDashBoardContent from '../components/FundDashboardContent.js';
+import FundDashboardSliderContent from '../components/Dashboard/FundDashboardSliderContent';
 import SliderBar from '../components/SliderBar';
 
 
@@ -45,7 +45,8 @@ export default function Dashboard () {
       <View style={styles.container} onLayout={onLayoutRootView}>
         <TopMenuBar screen={Screen} />
         <SearchBarInactive/>
-        <LogoHeader name={'My Funds'} marginBottom={-5}/>
+        {/* TO DO: LOGIC Make sure logic is added for access to admin panel */}
+        <LogoHeader name={'My Funds'} marginBottom={-5}  buttonnavigation={'AdminPanel'}/>
         <SliderBar titles={titles} screens={screens} />
         <View style={styles.bottomMenuBarContainer}>
           <BottomMenuBar />
@@ -74,7 +75,7 @@ const styles = StyleSheet.create({
   const titles = ['Personal', 'UCL FinTech Fund', 'LSE Sustainable Finance Fund'];
   const screens = [
     // TO DO: Link to backend
-    () => <FundDashBoardContent/>,
-    () => <FundDashBoardContent/>,
-    () => <FundDashBoardContent/>,
+    () => <FundDashboardSliderContent/>,
+    () => <FundDashboardSliderContent/>,
+    () => <FundDashboardSliderContent/>,
   ];

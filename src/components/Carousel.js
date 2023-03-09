@@ -74,19 +74,22 @@ const styles = StyleSheet.create({
         marginBottom: 16,
         marginRight: 24,
         marginLeft: 24,
+        height: 525,
 
     },
     image: {
-        width: '100%',
-        height: '100%',
+        //width: '100%',
+        //height: '100%',
         resizeMode: 'cover',
+        height: 525,
     },
     pagination: {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        gap: 8,
+        paddingTop: 32,
+        paddingBottom: 32
     }
 });
 
