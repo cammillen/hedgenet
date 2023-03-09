@@ -20,8 +20,10 @@ import Chat from '../screens/Chat.js';
 import Menu from '../screens/Menu.js';
 import StockPage from '../screens/StockPage.js';
 import AdminPanel from '../screens/AdminPanel.js';
+import Browse from '../screens/Browse.js';
 import FundMembers from '../components/Dashboard/FundMembers.js';
 import TradingInsights from '../components/Dashboard/TradingInsights.js';
+
 // import KeyActionsModal from '../components/KeyActionsModal.js';
 
 const Stack = createStackNavigator();
@@ -46,6 +48,8 @@ const MainAppNavigator = () => {
       <Stack.Screen name="AdminPanel" component={AdminPanel} options={{ headerShown: false}}/>
       <Stack.Screen name="FundMembers" component={FundMembers} options={{ headerShown: false}}/>
       <Stack.Screen name="TradingInsights" component={TradingInsights} options={{ headerShown: false}}/>
+      {/* Adding Browse */}
+      <Stack.Screen name="Browse" component={Browse} options={{ headerShown: false}}/>
     </Stack.Navigator>
   );
 };

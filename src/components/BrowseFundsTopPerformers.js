@@ -91,6 +91,9 @@ const styles = StyleSheet.create({
         marginLeft: 20,
     },
     icon: {
+        borderColor: globalColors.primary._500.color,
+        borderWidth: 4,
+        borderRadius: 100,
         width: 80,
         height: 80,
         resizeMode: 'contain',

@@ -60,7 +60,7 @@ export default function Browse () {
         <TopMenuBar screen = {Screen}/>
         <LeftArrowTextHeader lastPage={'Home'} leftTitle={'Browse Funds'}/>
         <SearchBarInactive/>
-        <TopPerformers />
+        <TopPerformers funds={funds}/>
         <BrowseFundsHeader category={'UCL'} />
         <BrowseFunds funds={['Fintech Algo', 'UCL Agtech']} paddingBottom={150}/>
         <View style={styles.bottomMenuBarContainer}>
@@ -71,3 +71,5 @@ export default function Browse () {
     </NavigationContainer>
   );
 };
+
+const funds = ['Cambr Invest', 'Oxford Traders', 'UCL Fintech', 'StAnd Algo'];
