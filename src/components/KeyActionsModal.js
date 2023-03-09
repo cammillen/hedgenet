@@ -86,6 +86,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   modalContainer: {
+    flex: 'column',
     backgroundColor: globalColors.dark._1.color,
     borderColor: globalColors.dark._3.color,
     borderWidth: 1,
