@@ -21,7 +21,7 @@ function FundDashboardSliderContent() {
             <KeyStatistics/>
             <TextWithSort title="My Positions" />
             {/* TO DO BACKEND: Add logic for which positions are shown here:  */}
-            <MyPositions stocks={['Microsoft', 'Sony', 'Spotify', 'Tesla']} paddingBottom={30}/>
+            <MyPositions stocks={['Microsoft', 'Sony', 'Spotify', 'Tesla']} paddingBottom={30} bottomText={'See More'}/>
             <TextWithSort title="My Trading History" />
             {/* Delete when done:  */}
             <Text> </Text>

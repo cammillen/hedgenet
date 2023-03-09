@@ -155,7 +155,7 @@ function KeyStatistics() {
             </ScrollView>
             {/* TO DO: Add the navigation logic here:  */}
             <TouchableOpacity onPress={() => navigation.navigate('TradingInsights')}>
-                <Text style={styles.moreDataText}>More Data From Hedgenet</Text>
+                <Text style={styles.moreDataText}>View Collective Positions</Text>
             </TouchableOpacity>
         </View>
     );

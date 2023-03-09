@@ -2,10 +2,6 @@ import React, { Component } from "react";
 import { StyleSheet, View, StatusBar, Text, Image } from "react-native";
 import Svg, { Ellipse } from "react-native-svg";
 
-
-
-
-
 // const MyComponent = () => {
 //   const [estReturn, setEstReturn] = useState('+ 0%'); // default value
 
@@ -20,7 +16,6 @@ import Svg, { Ellipse } from "react-native-svg";
 
 //     fetchData();
 //   }, []); // run only once on component mount
-
 
 
 function WhatExpertSay(props) {

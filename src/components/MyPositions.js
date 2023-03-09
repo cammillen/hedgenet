@@ -11,7 +11,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useRoute } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/native';
 
-export default function MyPositions({ stocks, paddingBottom }) {
+export default function MyPositions({ stocks, paddingBottom, bottomText }) {
 
   const { name: currentRouteName } = useRoute();
 
@@ -54,7 +54,7 @@ export default function MyPositions({ stocks, paddingBottom }) {
     <View style={styles(paddingBottom).container}>
         {positions}
         {/* TO DO: Need to add loop and logic to the see more botton below */}
-        <Text style={[globalFonts.BodyLarge.semiBold(globalColors.primary._500.color), {paddingTop: 30}]}>See More</Text>
+        <Text style={[globalFonts.BodyLarge.semiBold(globalColors.primary._500.color), {paddingTop: 30}]}>{bottomText}</Text>
     </View>
     </ScrollView>
     );
