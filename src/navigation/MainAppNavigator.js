@@ -21,6 +21,7 @@ import Menu from '../screens/Menu.js';
 import StockPage from '../screens/StockPage.js';
 import AdminPanel from '../screens/AdminPanel.js';
 import Browse from '../screens/Browse.js';
+import Search from '../screens/Search.js';
 import FundMembers from '../components/Dashboard/FundMembers.js';
 import TradingInsights from '../components/Dashboard/TradingInsights.js';
 
@@ -36,6 +37,8 @@ const MainAppNavigator = () => {
       <Stack.Screen name="Notifications" component={Notifications} options={{ headerShown: false}}/>
       <Stack.Screen name="Leaderboard" component={Leaderboard} options={{ headerShown: false}}/>
       <Stack.Screen name="Newsfeed" component={Newsfeed} options={{ headerShown: false}}/>
+      {/* Search bar to search page navigation */}
+      <Stack.Screen name="Search" component={Search} options={{ headerShown: false}}/>
       {/* Bottom Menu Bar Screens */}
       <Stack.Screen name="Home" component={Home} options={{ headerShown: false}}/>
       <Stack.Screen name="Dashboard" component={Dashboard} options={{ headerShown: false}}/>
