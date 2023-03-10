@@ -67,9 +67,9 @@ export default function StockPage (route) {
             <StockPosition ticker={temporaryStockValues[stockName].ticker} />
             <MarketStats ticker={temporaryStockValues[stockName].ticker}/>
             <MarketCap stockName={stockName} ticker={temporaryStockValues[stockName].ticker}/>
-            <WhatExpert/>
+            <WhatExpert analystBuy={"70%"}/>
             <EarningShare/>
-          </ ScrollView>
+          </ ScrollView >
         <View style={styles.bottomMenuBarContainer}>
           <BottomMenuBar />
         </View>

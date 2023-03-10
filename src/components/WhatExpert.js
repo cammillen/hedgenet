@@ -6,7 +6,7 @@ import Svg, { Ellipse } from "react-native-svg";
 import { globalColors } from '../styles/Colors.js';
 import { globalFonts } from '../styles/Fonts.js';
 
-function WhatExpertSay(props) {
+function WhatExpertSay(params) {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" />
@@ -45,7 +45,7 @@ function WhatExpertSay(props) {
                   </View>
                   <View style={styles.group13}>
                     <View style={styles.text2Row}>
-                      <Text style={styles.text2}>70%</Text>
+                      <Text style={styles.text2}>{params.analystBuy}</Text>
                       <Text style={styles.buy4}>Buy</Text>
                     </View>
                   </View>
