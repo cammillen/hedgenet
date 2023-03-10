@@ -11,7 +11,7 @@ import TopMenuBar from '../components/TopMenuBar.js';
 import Background from '../components/Background.js';
 import BottomMenuBar from '../components/BottomMenuBar.js';
 import SearchBarInactive from '../components/SearchBarInactive.js';
-import LogoHeader from '../components/Section Headers/LogoHeader.js';
+import LogoHeader from '../components/SectionHeaders/LogoHeader.js';
 import FundDashboardSliderContent from '../components/Dashboard/FundDashboardSliderContent';
 import SliderBar from '../components/SliderBar';
 
