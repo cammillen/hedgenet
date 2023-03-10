@@ -60,7 +60,7 @@ const KeyActionsModal = ({ visible, onClose }) => {
     }
   }, [visible]);
 
-//This is all modal stuff: 
+//This is all modal specific stuff: 
 const navigation = useNavigation();
   return (
     <Modal transparent visible={visible} animationType="none" onRequestClose={onClose}>
@@ -86,7 +86,6 @@ const navigation = useNavigation();
                             style={[styles.arrowIcon]}
                     />
                 </TouchableOpacity>
-
                 {/* Browse Funds: */}
                 <TouchableOpacity style={[ styles.horizontalOuterBox, {paddingTop: 24}]} onPress={() => navigation.navigate('BrowseFunds')}>
                     <View style={styles.horizontalInnerBox}>
@@ -101,7 +100,6 @@ const navigation = useNavigation();
                             style={[styles.arrowIcon]}
                     />
                 </TouchableOpacity>
-
                 {/* Create a Post: */}
                 <TouchableOpacity style={[ styles.horizontalOuterBox, {paddingTop: 24}]} onPress={() => navigation.navigate('CreateAPost')}>
                     <View style={styles.horizontalInnerBox}>
@@ -116,9 +114,9 @@ const navigation = useNavigation();
                             style={[styles.arrowIcon]}
                     />
                 </TouchableOpacity>
-
               </View>
             </Animated.View>
+            {/* This is end of flex box with content.*/}
           </TouchableWithoutFeedback>
         </Animated.View>
       </TouchableWithoutFeedback>
@@ -141,11 +139,12 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderTopLeftRadius: 44,
     borderTopRightRadius: 44,
-    height: '41%',
+    height: 'auto',
     width: '100%',
     position: 'absolute',
     bottom: 0,
     left: 0,
+    paddingBottom: 40,
   },
   tabBar: {
     alignContent: 'center',
