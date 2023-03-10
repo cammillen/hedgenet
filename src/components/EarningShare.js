@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import { StyleSheet, View, Text, ScrollView } from "react-native";
 import Svg, { Ellipse } from "react-native-svg";
 
+
+import { globalColors } from '../styles/Colors.js';
+import { globalFonts } from '../styles/Fonts.js';
+
 function EarningShare(props) {
   return (
     <View style={styles.container}>
@@ -207,14 +211,14 @@ function EarningShare(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingLeft: 24,
   },
   top1: {
-    height: 28,
-    marginTop: 30
+    height: 27,
+    marginTop: 55
   },
   earningsPerShare: {
-    fontFamily: "urbanist-700",
-    color: "rgba(255,255,255,1)",
+    ...globalFonts.H5(globalColors.others.white.color),    color: "rgba(255,255,255,1)",
     fontSize: 20,
     marginLeft: 15
   },
@@ -235,7 +239,7 @@ const styles = StyleSheet.create({
     height: 127,
     paddingTop: 0,
     margin: 0,
-    marginTop: 48,
+    marginTop: 30,
     marginBottom: 48,
     flexDirection: "row"
   },
@@ -279,7 +283,7 @@ const styles = StyleSheet.create({
     marginTop: 1
   },
   text3: {
-    fontFamily: "urbanist-600",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 14,
     marginLeft: 6
@@ -290,7 +294,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   q3Fy212: {
-    fontFamily: "urbanist-700",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 16,
     marginTop: 35
@@ -317,7 +321,7 @@ const styles = StyleSheet.create({
     marginTop: 1
   },
   text4: {
-    fontFamily: "urbanist-600",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     marginLeft: 6
   },
@@ -339,7 +343,7 @@ const styles = StyleSheet.create({
     marginTop: 1
   },
   text5: {
-    fontFamily: "urbanist-600",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 14,
     marginLeft: 6
@@ -350,7 +354,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   q3Fy213: {
-    fontFamily: "urbanist-700",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 16,
     marginTop: 63
@@ -375,7 +379,7 @@ const styles = StyleSheet.create({
     marginTop: 1
   },
   text8: {
-    fontFamily: "urbanist-600",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     marginLeft: 6
   },
@@ -396,7 +400,7 @@ const styles = StyleSheet.create({
     marginTop: 1
   },
   text9: {
-    fontFamily: "urbanist-600",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 14,
     marginLeft: 6
@@ -408,7 +412,7 @@ const styles = StyleSheet.create({
     marginRight: 3
   },
   q3Fy215: {
-    fontFamily: "urbanist-700",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 16,
     marginTop: 35
@@ -433,7 +437,7 @@ const styles = StyleSheet.create({
     marginTop: 1
   },
   text6: {
-    fontFamily: "urbanist-600",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     marginLeft: 6
   },
@@ -454,7 +458,7 @@ const styles = StyleSheet.create({
     marginTop: 1
   },
   text7: {
-    fontFamily: "urbanist-600",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 14,
     marginLeft: 6
@@ -465,7 +469,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   q3Fy214: {
-    fontFamily: "urbanist-700",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 16,
     marginTop: 35
@@ -490,7 +494,7 @@ const styles = StyleSheet.create({
     marginTop: 1
   },
   loremIpsum: {
-    fontFamily: "urbanist-600",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     marginLeft: 6
   },
@@ -511,8 +515,7 @@ const styles = StyleSheet.create({
     marginTop: 1
   },
   text: {
-    fontFamily: "urbanist-600",
-    color: "rgba(255,255,255,1)",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),    color: "rgba(255,255,255,1)",
     fontSize: 14,
     marginLeft: 6
   },
@@ -522,8 +525,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   q3Fy21: {
-    fontFamily: "urbanist-700",
-    color: "rgba(255,255,255,1)",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),    color: "rgba(255,255,255,1)",
     fontSize: 16,
     marginTop: 35
   },
@@ -540,8 +542,7 @@ const styles = StyleSheet.create({
     marginLeft: 13
   },
   loremIpsum2: {
-    fontFamily: "urbanist-500",
-    color: "rgba(255,255,255,1)",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),    color: "rgba(255,255,255,1)",
     fontSize: 16,
     width: 400
   }

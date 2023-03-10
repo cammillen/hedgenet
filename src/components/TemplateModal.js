@@ -1,10 +1,17 @@
+// Template Modal Documentation:
+// Replace "PlaceholderModal" with the name of your modal. 
+// Enter content where it says {/* Enter content for modal here:  */}.
+// Import the modal to where it is triggered: e.g. "import KeyActionsModal from './KeyActionsModal';"
+// Import React Native navigation package: "import { useNavigation } from '@react-navigation/native';"
+// Create the onPress function triggering the model with openModal, e.g. "<TouchableOpacity onPress={openModal}>"
+
 import React, { useRef, useEffect } from 'react';
 import { Image, Modal, View, StyleSheet, TouchableOpacity, Text, Animated, Dimensions, TouchableWithoutFeedback, PanResponder } from 'react-native';
 import { globalColors } from '../styles/Colors';
 import { globalFonts } from '../styles/Fonts';
 import { useNavigation } from '@react-navigation/native';
 
-const KeyActionsModal = ({ visible, onClose }) => {
+const PlaceholderModal = ({ visible, onClose }) => {
 //This is all animation stuff: 
   const modalOpacity = useRef(new Animated.Value(0)).current;
   const modalTranslateY = useRef(new Animated.Value(Dimensions.get('screen').height)).current;
@@ -59,6 +66,7 @@ const KeyActionsModal = ({ visible, onClose }) => {
       ]).start();
     }
   }, [visible]);
+// End of animation code.
 
 //This is all modal specific stuff: 
 const navigation = useNavigation();
@@ -67,56 +75,12 @@ const navigation = useNavigation();
       <TouchableWithoutFeedback onPress={() => onClose(false)}>
         <Animated.View style={[styles.modalBackground, { opacity: backgroundOpacity }]}>
           <TouchableWithoutFeedback>
-            {/* This is flex box with content:  */}
             <Animated.View {...panResponder.panHandlers} style={[styles.modalContainer, { opacity: modalOpacity, transform: [{ translateY: modalTranslateY }] }]}>
               <View style={styles.tabBar}/>
-              <Text style={styles.text}>Key Actions</Text>
-              <View style={styles.verticalBox}>
-                {/* Create a Fund: */}
-                <TouchableOpacity style={[ styles.horizontalOuterBox, {paddingTop: 24}]} onPress={() => navigation.navigate('CreateAFund')}>
-                    <View style={styles.horizontalInnerBox}>
-                        <Image
-                            source={require('../assets/icons/CreateAFund.png')}  
-                            style={[styles.icon]}
-                        />
-                        <Text style={globalFonts.H6(globalColors.others.white.color)}>Create a Fund</Text>
-                    </View>
-                    <Image
-                            source={require('../assets/icons/ArrowRightWhite.png')}  
-                            style={[styles.arrowIcon]}
-                    />
-                </TouchableOpacity>
-                {/* Browse Funds: */}
-                <TouchableOpacity style={[ styles.horizontalOuterBox, {paddingTop: 24}]} onPress={() => navigation.navigate('BrowseFunds')}>
-                    <View style={styles.horizontalInnerBox}>
-                        <Image
-                            source={require('../assets/icons/BrowseFunds.png')}  
-                            style={[styles.icon]}
-                        />
-                        <Text style={globalFonts.H6(globalColors.others.white.color)}>Browse Funds</Text>
-                    </View>
-                    <Image
-                            source={require('../assets/icons/ArrowRightWhite.png')}  
-                            style={[styles.arrowIcon]}
-                    />
-                </TouchableOpacity>
-                {/* Create a Post: */}
-                <TouchableOpacity style={[ styles.horizontalOuterBox, {paddingTop: 24}]} onPress={() => navigation.navigate('CreateAPost')}>
-                    <View style={styles.horizontalInnerBox}>
-                        <Image
-                            source={require('../assets/icons/CreateAPost.png')}  
-                            style={[styles.icon]}
-                        />
-                        <Text style={globalFonts.H6(globalColors.others.white.color)}>Create a Post</Text>
-                    </View>
-                    <Image
-                            source={require('../assets/icons/ArrowRightWhite.png')}  
-                            style={[styles.arrowIcon]}
-                    />
-                </TouchableOpacity>
-              </View>
+              {/* Enter content for modal here:  */}
+
+              {/* This is end of flex box with content.*/}
             </Animated.View>
-            {/* This is end of flex box with content.*/}
           </TouchableWithoutFeedback>
         </Animated.View>
       </TouchableWithoutFeedback>
@@ -155,36 +119,6 @@ const styles = StyleSheet.create({
     backgroundColor: globalColors.dark._3.color,
     borderRadius: 8,
   },
-  text:{
-    ...globalFonts.H5(globalColors.others.white.color),
-    marginLeft: 24,
-    marginTop: 20,
-  },
-  verticalBox:{
-    flex: 'column',
-    marginLeft: 24, 
-    marginRight: 24, 
-  },
-  horizontalOuterBox: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  horizontalInnerBox: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  icon: {
-    width: 60,
-    height: 60,
-    resizeMode: 'contain',
-    marginRight: 20,
-},
-arrowIcon: {
-    width: 25,
-    height: 25,
-    resizeMode: 'contain',
-},
 });
 
-export default KeyActionsModal;
+export default PlaceholderModal;
