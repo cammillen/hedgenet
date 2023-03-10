@@ -129,6 +129,8 @@ function WhatExpertSay(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingLeft: 24, 
+    paddinRight: 24,
   },
   top1: {
     height: 59,
