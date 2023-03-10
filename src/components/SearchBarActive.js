@@ -8,18 +8,23 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default function SearchBarActive() {
     const inputRef = useRef(null);
+
     useEffect(() => {
         if (inputRef.current) {
             inputRef.current.focus();
         }
     }, [inputRef]);
+
+    const navigation = useNavigation();
+
     return(
         <View style={styles.fullComp}>
-
-            <Image
-                source={require('../assets/icons/ArrowLeft_Green.png')}
-                style={styles.ArrowLeft_GreenIcon}
-            />      
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+                <Image
+                    source={require('../assets/icons/ArrowLeft_Green.png')}
+                    style={styles.ArrowLeft_GreenIcon}
+                />      
+            </TouchableOpacity>
 
             <View style={styles.textInput} >
                 <Image
