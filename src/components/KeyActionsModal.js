@@ -1,6 +1,8 @@
 import React, { useRef, useEffect } from 'react';
-import { Modal, View, StyleSheet, TouchableOpacity, Text, Animated, Dimensions, TouchableWithoutFeedback, PanResponder } from 'react-native';
+import { Image, Modal, View, StyleSheet, TouchableOpacity, Text, Animated, Dimensions, TouchableWithoutFeedback, PanResponder } from 'react-native';
 import { globalColors } from '../styles/Colors';
+import { globalFonts } from '../styles/Fonts';
+import { useNavigation } from '@react-navigation/native';
 
 const KeyActionsModal = ({ visible, onClose }) => {
 //This is all animation stuff: 
@@ -59,6 +61,7 @@ const KeyActionsModal = ({ visible, onClose }) => {
   }, [visible]);
 
 //This is all modal stuff: 
+const navigation = useNavigation();
   return (
     <Modal transparent visible={visible} animationType="none" onRequestClose={onClose}>
       <TouchableWithoutFeedback onPress={() => onClose(false)}>
@@ -66,10 +69,55 @@ const KeyActionsModal = ({ visible, onClose }) => {
           <TouchableWithoutFeedback>
             {/* This is flex box with content:  */}
             <Animated.View {...panResponder.panHandlers} style={[styles.modalContainer, { opacity: modalOpacity, transform: [{ translateY: modalTranslateY }] }]}>
-              <TouchableOpacity style={styles.closeButton} onPress={() => onClose(false)}>
-                <Text style={styles.closeButtonText}>Close</Text>
-              </TouchableOpacity>
-              <Text>Hello Modal</Text>
+              <View style={styles.tabBar}/>
+              <Text style={styles.text}>Key Actions</Text>
+              <View style={styles.verticalBox}>
+                {/* Create a Fund: */}
+                <TouchableOpacity style={[ styles.horizontalOuterBox, {paddingTop: 24}]} onPress={() => navigation.navigate('CreateAFund')}>
+                    <View style={styles.horizontalInnerBox}>
+                        <Image
+                            source={require('../assets/icons/CreateAFund.png')}  
+                            style={[styles.icon]}
+                        />
+                        <Text style={globalFonts.H6(globalColors.others.white.color)}>Create a Fund</Text>
+                    </View>
+                    <Image
+                            source={require('../assets/icons/ArrowRightWhite.png')}  
+                            style={[styles.arrowIcon]}
+                    />
+                </TouchableOpacity>
+
+                {/* Browse Funds: */}
+                <TouchableOpacity style={[ styles.horizontalOuterBox, {paddingTop: 24}]} onPress={() => navigation.navigate('BrowseFunds')}>
+                    <View style={styles.horizontalInnerBox}>
+                        <Image
+                            source={require('../assets/icons/BrowseFunds.png')}  
+                            style={[styles.icon]}
+                        />
+                        <Text style={globalFonts.H6(globalColors.others.white.color)}>Browse Funds</Text>
+                    </View>
+                    <Image
+                            source={require('../assets/icons/ArrowRightWhite.png')}  
+                            style={[styles.arrowIcon]}
+                    />
+                </TouchableOpacity>
+
+                {/* Create a Post: */}
+                <TouchableOpacity style={[ styles.horizontalOuterBox, {paddingTop: 24}]} onPress={() => navigation.navigate('CreateAPost')}>
+                    <View style={styles.horizontalInnerBox}>
+                        <Image
+                            source={require('../assets/icons/CreateAPost.png')}  
+                            style={[styles.icon]}
+                        />
+                        <Text style={globalFonts.H6(globalColors.others.white.color)}>Create a Post</Text>
+                    </View>
+                    <Image
+                            source={require('../assets/icons/ArrowRightWhite.png')}  
+                            style={[styles.arrowIcon]}
+                    />
+                </TouchableOpacity>
+
+              </View>
             </Animated.View>
           </TouchableWithoutFeedback>
         </Animated.View>
@@ -86,33 +134,58 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   modalContainer: {
-    flex: 'column',
+    flex: 1,
+    flexDirection: 'column',
     backgroundColor: globalColors.dark._1.color,
     borderColor: globalColors.dark._3.color,
     borderWidth: 1,
-    borderTopLeftRadius: 40,
-    borderTopRightRadius: 40,
-    height: '30%',
+    borderTopLeftRadius: 44,
+    borderTopRightRadius: 44,
+    height: '41%',
     width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
     position: 'absolute',
     bottom: 0,
     left: 0,
   },
-  closeButton: {
-    alignSelf: 'flex-end',
-    paddingVertical: 8,
-    paddingHorizontal: 12,
-    backgroundColor: '#ccc',
+  tabBar: {
+    alignContent: 'center',
+    marginTop: 10,
+    marginLeft: 170,
+    marginRight: 170,
+    paddingVertical: 2,
+    backgroundColor: globalColors.dark._3.color,
     borderRadius: 8,
-    marginHorizontal: 16,
-    marginTop: 16,
   },
-  closeButtonText: {
-    color: '#fff',
-    fontWeight: 'bold',
+  text:{
+    ...globalFonts.H5(globalColors.others.white.color),
+    marginLeft: 24,
+    marginTop: 20,
   },
+  verticalBox:{
+    flex: 'column',
+    marginLeft: 24, 
+    marginRight: 24, 
+  },
+  horizontalOuterBox: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  horizontalInnerBox: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  icon: {
+    width: 60,
+    height: 60,
+    resizeMode: 'contain',
+    marginRight: 20,
+},
+arrowIcon: {
+    width: 25,
+    height: 25,
+    resizeMode: 'contain',
+},
 });
 
 export default KeyActionsModal;

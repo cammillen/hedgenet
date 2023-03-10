@@ -2,21 +2,9 @@ import React, { Component } from "react";
 import { StyleSheet, View, StatusBar, Text, Image } from "react-native";
 import Svg, { Ellipse } from "react-native-svg";
 
-// const MyComponent = () => {
-//   const [estReturn, setEstReturn] = useState('+ 0%'); // default value
 
-//   useEffect(() => {
-//     // fetch data from database
-//     // you can replace this with your own code to fetch data from your database
-//     const fetchData = async () => {
-//       const response = await fetch('https://my-database.com/est-return');
-//       const data = await response.json();
-//       setEstReturn(`+ ${data.value}%`);
-//     };
-
-//     fetchData();
-//   }, []); // run only once on component mount
-
+import { globalColors } from '../styles/Colors.js';
+import { globalFonts } from '../styles/Fonts.js';
 
 function WhatExpertSay(props) {
   return (
@@ -147,13 +135,13 @@ const styles = StyleSheet.create({
     marginTop: 5
   },
   whatTheExpertsSay: {
-    fontFamily: "urbanist-700",
+    ...globalFonts.H5(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 20,
     marginLeft: 15
   },
   whatTheExpertsSay2: {
-    fontFamily: "urbanist-600",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 14,
     marginTop: 9,
@@ -183,9 +171,9 @@ const styles = StyleSheet.create({
   },
   buy: {
     top: 22,
-    left: 16,
+    left: 15,
     position: "absolute",
-    fontFamily: "roboto-700",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 22
   },
@@ -228,11 +216,11 @@ const styles = StyleSheet.create({
     marginLeft: 14
   },
   text2: {
-    fontFamily: "urbanist-600",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(18,209,142,1)"
   },
   buy4: {
-    fontFamily: "urbanist-600",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(18,209,142,1)",
     marginLeft: 24
   },
@@ -276,11 +264,11 @@ const styles = StyleSheet.create({
     marginLeft: 14
   },
   text3: {
-    fontFamily: "urbanist-700",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,193,7,1)"
   },
   hold: {
-    fontFamily: "urbanist-700",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,193,7,1)",
     marginLeft: 24
   },
@@ -335,11 +323,11 @@ const styles = StyleSheet.create({
     marginLeft: 15
   },
   text4: {
-    fontFamily: "urbanist-700",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(247,85,85,1)"
   },
   sell: {
-    fontFamily: "urbanist-700",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(247,85,85,1)",
     marginLeft: 32
   },
@@ -375,17 +363,17 @@ const styles = StyleSheet.create({
     height: 60
   },
   group19: {
-    width: 75,
+    width: 200,
     height: 45,
     marginLeft: 14,
     marginTop: 8
   },
   targetPrice: {
-    fontFamily: "urbanist-700",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)"
   },
   targetPrice2: {
-    fontFamily: "urbanist-700",
+    ...globalFonts.H5(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 18,
     marginTop: 6
@@ -399,7 +387,8 @@ const styles = StyleSheet.create({
     width: 149,
     height: 60,
     flexDirection: "row",
-    marginLeft: 37
+    marginLeft: 37,
+    marginTop: 0
   },
   image5: {
     width: 60,
@@ -412,11 +401,11 @@ const styles = StyleSheet.create({
     marginTop: 8
   },
   estReturn: {
-    fontFamily: "urbanist-700",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)"
   },
   text5: {
-    fontFamily: "urbanist-700",
+    ...globalFonts.H5(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 18,
     marginTop: 6
@@ -438,12 +427,12 @@ const styles = StyleSheet.create({
     marginTop: 30
   },
   risk: {
-    fontFamily: "urbanist-700",
+    ...globalFonts.H5(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 20
   },
   loremIpsum: {
-    fontFamily: "urbanist-700",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 16,
     marginTop: 9
