@@ -64,8 +64,7 @@ const BottomMenuContent = () => {
         </TouchableOpacity>
 
         {/* Key Actions Icon */}
-        <TouchableOpacity style={styles.iconContainer} onPress={openModal}// NAVIGATION 
-        >
+        <TouchableOpacity style={styles.iconContainer} onPress={openModal}>
           <Image
             source={require('../assets/icons/Switch.png')} 
             style={[styles.switchIcon]}
