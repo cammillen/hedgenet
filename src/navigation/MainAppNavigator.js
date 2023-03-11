@@ -23,6 +23,7 @@ import AdminPanel from '../screens/AdminPanel.js';
 import Browse from '../screens/Browse.js';
 import Search from '../screens/Search.js';
 import CategorySearch from '../screens/CategorySearch.js';
+import TopMoversSearch from '../screens/TopMoversSearch .js';
 import FundMembers from '../components/Dashboard/FundMembers.js';
 import TradingInsights from '../components/Dashboard/TradingInsights.js';
 
@@ -41,6 +42,7 @@ const MainAppNavigator = () => {
       {/* Search bar with category screens */}
       <Stack.Screen name="Search" component={Search} options={{ headerShown: false}}/>
       <Stack.Screen name="CategorySearch" component={CategorySearch} options={{ headerShown: false}}/>
+      <Stack.Screen name="TopMoversSearch" component={TopMoversSearch} options={{ headerShown: false}}/>
       {/* Bottom Menu Bar Screens */}
       <Stack.Screen name="Home" component={Home} options={{ headerShown: false}}/>
       <Stack.Screen name="Dashboard" component={Dashboard} options={{ headerShown: false}}/>

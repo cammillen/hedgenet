@@ -10,12 +10,23 @@ import * as SplashScreen from 'expo-splash-screen';
 import TopMenuBar from '../components/TopMenuBar.js';
 import Background from '../components/Background.js';
 import BottomMenuBar from '../components/BottomMenuBar.js';
+import TextWithSort from '../components/SectionHeaders/TextWithSort.js';
+import TopMoversHeader from '../components/TopMoversHeader';
+import GlobalLinearGradients from '../components/LinearGradients.js';
+import MyPositions from '../components/MyPositions.js';
 
-export default function CategorySearch (route) {
+import DummyStocks from '../assets/stocks/dummyStockData.js';
 
-    console.log(route.route.params.element.substring(3));
+export default function TopMoversSearch (route) {
 
-  const Screen = 'CategorySearch';
+  const Screen = 'Search';
+
+  const sortedStocks = Object.entries(DummyStocks).sort((a, b) => {
+    const aChange = Math.abs((a[1].shareValue - a[1].previousValue) / a[1].previousValue);
+    const bChange = Math.abs((b[1].shareValue - b[1].previousValue) / b[1].previousValue);
+    return bChange - aChange;
+  });
+  const filteredStocks = sortedStocks.slice(0,topMoversNum).map(stock => stock[0]);
 
   const [fontsLoaded] = useFonts({
     'Urbanist-Bold': require('../assets/fonts/Urbanist-Bold.ttf'),
@@ -41,6 +52,10 @@ export default function CategorySearch (route) {
       <StatusBar barStyle="light-content" backgroundColor="#000" />
       <View style={styles.container} onLayout={onLayoutRootView}>
         <TopMenuBar screen={Screen} />
+        <TopMoversHeader />
+        <TextWithSort title={topMoversNum + ' Companies'} rightTitle={'Asc. Order'}/>
+        <GlobalLinearGradients color1={'#000'} color2={'transparent'} style={'verticalDownOverlap'} dimensionSize={10} />
+        <MyPositions stocks={filteredStocks} paddingBottom={150} bottomText={'See More'}/>
         <View style={styles.bottomMenuBarContainer}>
           <BottomMenuBar />
         </View>
@@ -62,3 +77,5 @@ const styles = StyleSheet.create({
     marginLeft: 5,
   },
 });
+
+const topMoversNum = 25; //IMPORTANT -- WE NEED TO DECIDE HOW MANY STOCKS ARE CONSIDERED TOP MOVERS

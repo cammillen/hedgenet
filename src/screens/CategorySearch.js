@@ -11,13 +11,18 @@ import { globalColors } from '../styles/Colors.js';
 import TopMenuBar from '../components/TopMenuBar.js';
 import Background from '../components/Background.js';
 import BottomMenuBar from '../components/BottomMenuBar.js';
-import TextWithSort from '../components/SectionHeaders/TextWithSortArrowBack.js';
+import CategorySearchHeader from '../components/CategorySearchHeader.js';
+import MyPositions from '../components/MyPositions.js';
+import GlobalLinearGradients from '../components/LinearGradients.js';
+
+import DummyStocks from '../assets/stocks/dummyStockData.js';
 
 export default function CategorySearch (route) {
 
-    console.log(route.route.params.element.substring(3));
-
   const Screen = 'CategorySearch';
+  let category = route.route.params.element;
+  const filteredStocks = route.route.params.element != '✅ All Stocks' ? Object.entries(DummyStocks).filter(([key, value]) =>
+    value.tags.includes(category)).map(([key, value]) => key) : Object.entries(DummyStocks).map(([key, value]) => key);
 
   const [fontsLoaded] = useFonts({
     'Urbanist-Bold': require('../assets/fonts/Urbanist-Bold.ttf'),
@@ -43,8 +48,9 @@ export default function CategorySearch (route) {
       <StatusBar barStyle="light-content" backgroundColor="#000" />
       <View style={styles.container} onLayout={onLayoutRootView}>
       <TopMenuBar screen={'Search'} />
-      <TextWithSort title={route.route.params.element} rightTitle={'Asc. Order'}/>
-
+      <CategorySearchHeader category={category}/>
+      <GlobalLinearGradients color1={'#000'} color2={'transparent'} style={'verticalDownOverlap'} dimensionSize={10} />
+      <MyPositions stocks={filteredStocks} paddingBottom={150} bottomText={'See More'}/>
         <View style={styles.bottomMenuBarContainer}>
           <BottomMenuBar />
         </View>

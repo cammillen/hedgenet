@@ -17,10 +17,19 @@ import SearchBarActive from '../components/SearchBarActive.js';
 import CategorySearchScroller from '../components/CategorySearchScroller.js';
 import TopMovers from '../components/TopMoversScroller.js';
 
+import DummyStocks from '../assets/stocks/dummyStockData.js';
+
 
 export default function Search () {
 
   const Screen = 'Search';
+
+  const sortedStocks = Object.entries(DummyStocks).sort((a, b) => {
+    const aChange = Math.abs((a[1].shareValue - a[1].previousValue) / a[1].previousValue);
+    const bChange = Math.abs((b[1].shareValue - b[1].previousValue) / b[1].previousValue);
+    return bChange - aChange;
+  });
+  const filteredStocks = sortedStocks.slice(0,10).map(stock => stock[0]);
 
   const [fontsLoaded] = useFonts({
     'Urbanist-Bold': require('../assets/fonts/Urbanist-Bold.ttf'),
@@ -49,8 +58,8 @@ export default function Search () {
         <SearchBarActive />
         <View style={{height:24 /* Generic spacing */}}/>
         <ScrollView horizontal={false}>
-            <CategorySearchScroller categories={['✅ All Stocks','🚀 Visionary','🍔 Food & Drink','😎 Lifestyle','🎇 Entertainment','💻 Tech Giants','📺 Social Media','🚗 Car & Bikes','🦠 Covid-19','🚀 Recommended Buys','🎮 Games','🖥 Electronics']}/>
-            <TopMovers stocks={stocklist}/>
+            <CategorySearchScroller categories={['✅ All Stocks','🚀 Visionary','🍔 Food & Drink','😎 Lifestyle','🎇 Entertainment','💻 Tech Giants','📺 Social Media','👗 Fashion & Apparel','🚗 Car & Bikes','🦠 Covid-19','🚀 Recommended Buys','🎮 Games','🖥 Electronics','💡 Sustainable Energy','💼 Finance & Banking', '🏭 Manufacturing & Industry', '🛢️ Oil & Gas', '🏠 Real Estate']}/>
+            <TopMovers stocks={filteredStocks}/>
         </ScrollView>
         <View style={styles.bottomMenuBarContainer}>
           <BottomMenuBar />
@@ -73,11 +82,3 @@ const styles = StyleSheet.create({
     marginLeft: 5,
   },
 });
-
-const stocklist = [
-    {name: 'Spotify', ticker: 'SPTF', growth: 12.37},
-    {name: 'Twitter', ticker: 'TWTR', growth: -9.29},
-    {name: 'Apple', ticker: 'AAPL', growth: 8.16},
-    {name: 'Netflix', ticker: 'NFLX', growth: -7.55},
-    {name: 'Amazon', ticker: 'AMZN', growth: 6.11}
-];//important that this is an array!
