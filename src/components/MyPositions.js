@@ -22,13 +22,6 @@ export default function MyPositions({ stocks, paddingBottom, bottomText }) {
   }
 
   const navigation = useNavigation();
-  console.log(DummyStocks);
-  console.log(stocks);
-  stocks.forEach(element => console.log(DummyStocks[element]));
-  //console.log(DummyStocks[])
-
-
-  //Replace with backend and api calls!
 
   let positions = [];
   stocks.forEach(element => positions.push(

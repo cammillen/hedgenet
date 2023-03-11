@@ -13,11 +13,14 @@ function CategorySearchScroller({categories}) {
     //add navigation to category search
     let categorieslist = [];
 
+
+    //        <TouchableOpacity key={element.name} style={styles.column} onPress={() => navigation.navigate('StockPage',{stockName: element.name})}>
+
     //group categories into sets of 3
     for(let i=0; i<categories.length; i+=3) {
         const categorySet = categories.slice(i, i+3);
         const categoryRow = categorySet.map((element, index) => (
-            <TouchableOpacity key={index}>
+            <TouchableOpacity key={index} onPress={() => navigation.navigate('CategorySearch',{element})}>
                 <Text style={styles.textBox}>{element}</Text>
             </TouchableOpacity>
         ));
