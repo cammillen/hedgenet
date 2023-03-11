@@ -8,7 +8,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import TopMenuBar from '../TopMenuBar.js';
 import Background from '../Background.js';
 import BottomMenuBar from '../BottomMenuBar.js';
-import TextWithSortArrowBack from '../Section Headers/TextWithSortArrowBack.js';
+import TextWithSortArrowBack from '../SectionHeaders/TextWithSortArrowBack.js';
 import MemberCard from './MemberCard.js';
 
 export default function FundMembers () {

@@ -65,7 +65,7 @@ export default function StockPage (route) {
             <MarketCap stockName={stockName} ticker={DummyStocks[stockName].ticker}/>
             <WhatExpert/>
             <EarningShare/>
-          </ ScrollView>
+          </ ScrollView >
         <View style={styles.bottomMenuBarContainer}>
           <BottomMenuBar />
         </View>
