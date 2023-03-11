@@ -1,4 +1,4 @@
-//Chat Screen
+//Browse Screen
 
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
@@ -19,6 +19,13 @@ export default function Browse () {
 
   const Screen = 'Browse';
 
+  const [fontsLoaded] = useFonts({
+    'Urbanist-Bold': require('../assets/fonts/Urbanist-Bold.ttf'),
+    'Urbanist-SemiBold': require('../assets/fonts/Urbanist-SemiBold.ttf'),
+    'Urbanist-Medium': require('../assets/fonts/Urbanist-Medium.ttf'),
+    'Urbanist-Regular': require('../assets/fonts/Urbanist-Regular.ttf'),
+  });
+
   SplashScreen.preventAutoHideAsync(); 
 
   const onLayoutRootView = useCallback(async () => {
@@ -30,27 +37,6 @@ export default function Browse () {
   if (!fontsLoaded) {
     return null;
   }
-
-  const [fontsLoaded] = useFonts({
-    'Urbanist-Bold': require('../assets/fonts/Urbanist-Bold.ttf'),
-    'Urbanist-SemiBold': require('../assets/fonts/Urbanist-SemiBold.ttf'),
-    'Urbanist-Medium': require('../assets/fonts/Urbanist-Medium.ttf'),
-    'Urbanist-Regular': require('../assets/fonts/Urbanist-Regular.ttf'),
-  });
-
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-    },
-    bottomMenuBarContainer:{
-      position: 'absolute',
-      bottom: 0,
-      justifyContent: 'center',
-      alignItems: 'center',
-      marginBottom: -5,
-      marginLeft: 5,
-    },
-  });
 
   return ( 
     <NavigationContainer>
@@ -71,5 +57,19 @@ export default function Browse () {
     </NavigationContainer>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  bottomMenuBarContainer: {
+    position: 'absolute',
+    bottom: 0,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: -5,
+    marginLeft: 5,
+  },
+});
 
 const funds = ['Cambr Invest', 'Oxford Traders', 'UCL Fintech', 'StAnd Algo'];

@@ -6,6 +6,8 @@ import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import fundImageSelect from '../assets/fundImageRequire.js';
 
+import DummyFunds from '../assets/funds/dummyFundData.js';
+
 
 function Funds({fundName, performance}) {
     let name = fundName;
@@ -32,17 +34,10 @@ function Funds({fundName, performance}) {
 function TopPerformers({funds}) {
     const navigation = useNavigation();
 
-    const dummy = {
-        'Cambr Invest': {performance: 8.16},
-        'Oxford Traders': {performance: 7.55},
-        'UCL Fintech': {performance: 5.37},
-        'StAnd Algo':{performance: 4.30}
-    };
-
     let fundlist = [];
     funds.forEach(element => fundlist.push(
     <TouchableOpacity key = {element} onPress={{/* Redirect to fund page */}}>
-        <Funds key = {element} fundName={element} performance={dummy[element].performance} />
+        <Funds key = {element} fundName={element} performance={DummyFunds[element].performance} />
     </TouchableOpacity>
     ));
     

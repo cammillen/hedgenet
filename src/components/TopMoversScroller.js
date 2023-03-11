@@ -13,7 +13,7 @@ function TopMovers({stocks}) {
 
     let stocklist = [];
     stocks.forEach(element => stocklist.push(
-        <TouchableOpacity key={element.name} style={styles.column}>
+        <TouchableOpacity key={element.name} style={styles.column} onPress={() => navigation.navigate('StockPage',{stockName: element.name})}>
             <Image source={LogoSelect(element.name)} style={[styles.logoIcon]} />
             <Text style={globalFonts.H6(globalColors.others.white.color)}>{element.ticker}</Text>
             <Text style={globalFonts.H6(globalColors.status[element.growth > 0 ? 'success' : 'error'].color)}>

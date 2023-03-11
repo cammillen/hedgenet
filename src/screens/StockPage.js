@@ -21,9 +21,9 @@ import EarningShare from '../components/EarningShare.js';
 import StockPriceCard from '../components/StockPriceCard.js';
 import StockPosition from '../components/StockPosition.js';
 import MarketCap from '../components/MarketCap.js';
-
 import SliderBar from '../components/SliderBar.js';
 
+import DummyStocks from '../assets/stocks/dummyStockData.js';
 
 export default function StockPage (route) {
 
@@ -49,10 +49,6 @@ export default function StockPage (route) {
   if (!fontsLoaded) {
     return null;
   }
-  //replace all backend data calls with a single file for consistency
-  const temporaryStockValues = {
-    Blackberry: {stockPrice: 7105, difference:217, ticker:'BLCB'},
-  };
 
   return ( 
     <Background>
@@ -63,10 +59,10 @@ export default function StockPage (route) {
           <ScrollView alwaysBounceVertical={true}>
             <StockGraphVisual stockName={stockName} />
             <StockHeaderCard />
-            <StockPriceCard delta={temporaryStockValues[stockName].difference} price={temporaryStockValues[stockName].stockPrice} />
-            <StockPosition ticker={temporaryStockValues[stockName].ticker} />
-            <MarketStats ticker={temporaryStockValues[stockName].ticker}/>
-            <MarketCap stockName={stockName} ticker={temporaryStockValues[stockName].ticker}/>
+            <StockPriceCard delta={DummyStocks[stockName].shareValue - DummyStocks[stockName].previousValue} price={DummyStocks[stockName].shareValue} />
+            <StockPosition ticker={DummyStocks[stockName].ticker} />
+            <MarketStats ticker={DummyStocks[stockName].ticker}/>
+            <MarketCap stockName={stockName} ticker={DummyStocks[stockName].ticker}/>
             <WhatExpert/>
             <EarningShare/>
           </ ScrollView>

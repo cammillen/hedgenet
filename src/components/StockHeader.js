@@ -11,6 +11,8 @@ import { useRoute } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/native';
 import LogoSelect from '../assets/logoRequire.js';
 
+import DummyStocks from '../assets/stocks/dummyStockData.js';
+
 const screenWidth = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
@@ -70,37 +72,24 @@ const styles = StyleSheet.create({
   
     const navigation = useNavigation();
 
-    let stockImage = LogoSelect(params.stockName);
-    
+    const stockImage = LogoSelect(params.stockName);
+    const lastClose=DummyStocks[params.stockName].lastClose.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
     let stockName = params.stockName;
     if (stockName.length > 10) { stockName = stockName.substring(0,9) + '...';
     }
-    const stockInfo={
-        Blackberry:{
-            ticker:"BLCB",
-            lastClose:83.33,},
-
-        "Coca-Cola":{
-            ticker:"KO",
-            lastClose:213.34,
-        }
-    };//replace with backend calls
-
-    let lastClose=stockInfo[params.stockName].lastClose.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
- 
+    
     return (
         <View style={{ width: screenWidth, paddingLeft: 24, paddingRight: 24 }}>
           <View style={styles.header}>
             <View style={styles.subHeaderLeft}>
-            <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+            <TouchableOpacity onPress={() => navigation.goBack()}>
               <Image source={require('../assets/icons/ArrowLeft_Green.png')} style={[styles.arrowLeft, { marginRight: 16 }]} />
             </TouchableOpacity>
               <Image source={stockImage} style={[styles.logoIcon, { marginRight: 16 }]} />
           <View style={styles.textHeaderLeft}>
               <Text style={globalFonts.H6(globalColors.others.white.color)}>{stockName}</Text>
-              <Text style={globalFonts.BodyMedium.Medium(globalColors.others.white.color)}>{stockInfo[params.stockName].ticker}</Text>
+              <Text style={globalFonts.BodyMedium.Medium(globalColors.others.white.color)}>{DummyStocks[params.stockName].ticker}</Text>
             </View> 
             </View>
             <View style={styles.subHeaderRight}>

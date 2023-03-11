@@ -16,7 +16,6 @@ import Background from '../components/Background.js';
 import BottomMenuBar from '../components/BottomMenuBar.js';
 import SliderBar from '../components/SliderBar';
 import IndexFundCard from '../components/IndexFundCard.js';
-import TopPerformers from '../components/BrowseFundsTopPerformers.js';
 
 // Loading the custom fonts (you have to use this at the start of every screen): 
 
@@ -90,8 +89,8 @@ const styles = StyleSheet.create({
     () => <MyPositions stocks={['Microsoft', 'Sony', 'Spotify', 'Tesla']} paddingBottom={150} bottomText={'See More'} />,
   ];
 
-    // Value Card Arguments (TO DO: Link to Backend):
-    let cash = 19654850;
-    let difference = 6637849;
-    let fundName = "My Portfolio";
+// Value Card Arguments (TO DO: Link to Backend):
+const cash = 19654850;
+const difference = 6637849;
+const fundName = "My Portfolio";
   
