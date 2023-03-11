@@ -1,17 +1,12 @@
-// USAGE: 
-// it looks like: {  <-   My Positions            ^Recently }
-// e.g. "<TextWithSortArrowBack title="My Positions" />"
-
 import React from 'react';
 import { Image } from 'react-native';
 import { StyleSheet, Text, View } from 'react-native';
-import { globalColors } from '../../styles/Colors.js';
-import { globalFonts } from '../../styles/Fonts.js';
-import GlobalLinearGradients from '../LinearGradients.js';
+import { globalColors } from '../styles/Colors.js';
+import { globalFonts } from '../styles/Fonts.js';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-export default function TextWithSort(params) {
+export default function TextWithSort({category}) {
     const navigation = useNavigation();
 
   return (
@@ -20,10 +15,10 @@ export default function TextWithSort(params) {
         <TouchableOpacity onPress={() => navigation.goBack()}>
             <Image source={require('../../assets/icons/ArrowLeft_Green.png')} style={[styles.arrowIcon, { marginRight: 16}]} />
         </TouchableOpacity>
-        <Text style={globalFonts.H5(globalColors.others.white.color)}>{params.title}</Text>
+        <Text style={textBox}>{category}</Text>
       </View>
       <View style={styles.subHeaderRight}>
-        <Text style={globalFonts.H6(globalColors.status.success.color)}>{params.rightTitle}</Text>
+        <Text style={globalFonts.H6(globalColors.status.success.color)}>Asc. Order</Text>
         <Image source={require('../../assets/icons/UpDownArrow.png')} style={[styles.arrowsIcon, { marginLeft: 12}]} />
       </View>
     </View>
@@ -59,5 +54,15 @@ arrowIcon: {
     width: 28,
     height: 28,
     resizeMode: 'contain'
-}
+},
+textBox:{
+  ...globalFonts.BodyLarge.semiBold(globalColors.primary._500.color),
+  paddingRight:20,
+  paddingLeft:20,
+  padding:8,
+  borderColor:globalColors.primary._500.color,
+  borderWidth:0.2,
+  borderRadius:100,
+  minWidth: 100, //minimum width to fit content
+},
 });
