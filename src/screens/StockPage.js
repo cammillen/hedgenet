@@ -12,16 +12,17 @@ import TopMenuBar from '../components/TopMenuBar.js';
 import Background from '../components/Background.js';
 import BottomMenuBar from '../components/BottomMenuBar.js';
 import { NavigationContainer } from '@react-navigation/native';
-import StockHeader from '../components/StockHeader.js';
-import MarketStats from '../components/MarketStats.js';
-import StockGraphVisual from '../components/StockGraphVisual.js';
-import StockHeaderCard from '../components/StockHeaderCard.js';
-import WhatExpert from '../components/WhatExpert.js';
-import EarningShare from '../components/EarningShare.js';
-import StockPriceCard from '../components/StockPriceCard.js';
-import StockPosition from '../components/StockPosition.js';
-import MarketCap from '../components/MarketCap.js';
-import SliderBar from '../components/SliderBar.js';
+import StockHeader from '../components/StockPage/StockHeader.js';
+import MarketStats from '../components/StockPage/MarketStats.js';
+import StockGraphVisual from '../components/StockPage/StockGraphVisual.js';
+import StockHeaderCard from '../components/StockPage/StockHeaderCard.js';
+import WhatExpert from '../components/StockPage/WhatExpert.js';
+import EarningShare from '../components/StockPage/EarningShare.js';
+import StockPriceCard from '../components/StockPage/StockPriceCard.js';
+import StockPosition from '../components/StockPage/StockPosition.js';
+import NewsSection from '../components/StockPage/NewsSection';
+import MarketCap from '../components/StockPage/MarketCap.js';
+import SliderBar from '../components/StockPage/SliderBar.js';
 
 import DummyStocks from '../assets/stocks/dummyStockData.js';
 
@@ -65,6 +66,7 @@ export default function StockPage (route) {
             <MarketCap stockName={stockName} ticker={DummyStocks[stockName].ticker}/>
             <WhatExpert/>
             <EarningShare/>
+            <NewsSection/>
           </ ScrollView >
         <View style={styles.bottomMenuBarContainer}>
           <BottomMenuBar />

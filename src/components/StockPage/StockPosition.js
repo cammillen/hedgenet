@@ -2,8 +2,8 @@
 
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { globalColors } from '../styles/Colors.js';
-import { globalFonts } from '../styles/Fonts.js';
+import { globalColors } from '../../styles/Colors.js';
+import { globalFonts } from '../../styles/Fonts.js';
 
 export default function StockPosition(param) {
 

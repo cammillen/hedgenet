@@ -3,17 +3,18 @@
 import React from 'react';
 import { Image } from 'react-native';
 import { StyleSheet, Text, View } from 'react-native';
-import { globalColors } from '../styles/Colors.js';
-import { globalFonts } from '../styles/Fonts.js';
+import { globalColors } from '../../styles/Colors.js';
+import { globalFonts } from '../../styles/Fonts.js';
 
-export default function MarketStats(params) {
+export default function StockHeaderCard() {
 
   return (
     <View style={styles.header}>
-      <Text style={globalFonts.H5(globalColors.others.white.color)}>{params.ticker} Market Stats</Text>
+      <Text style={globalFonts.H5(globalColors.others.white.color)}>Stock Price</Text>
 
       <View style={styles.subHeader}>
-        <Image source={require('../assets/icons/ArrowRightGreen.png')} style={[styles.arrowIcon, {marginRight: 24}]} />
+        <Text style={globalFonts.BodyMedium.semiBold(globalColors.status.success.color)}>More Info </Text>
+        <Image source={require('../../assets/icons/ArrowRightGreen.png')} style={[styles.arrowIcon, {marginRight: 24}]} />
       </View>
     </View>
   );
