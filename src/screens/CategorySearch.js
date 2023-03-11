@@ -65,16 +65,4 @@ const styles = StyleSheet.create({
     marginBottom: -5,
     marginLeft: 5,
   },
-  textBox:{
-    ...globalFonts.BodyLarge.semiBold(globalColors.others.white.color),
-    marginLeft:8,
-    marginRight:8,
-    paddingRight:20,
-    paddingLeft:20,
-    padding:8,
-    borderColor:globalColors.others.white.color,
-    borderWidth:0.2,
-    borderRadius:100,
-    minWidth: 100, //minimum width to fit content
-},
 });
