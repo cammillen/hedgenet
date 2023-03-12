@@ -22,6 +22,8 @@ import StockPriceCard from '../components/StockPage/StockPriceCard.js';
 import StockPosition from '../components/StockPage/StockPosition.js';
 import NewsSection from '../components/StockPage/NewsSection';
 import MarketCap from '../components/StockPage/MarketCap.js';
+import StoryBlocks from '../components/StockPage/StoryBlocks.js';
+import MarketStatsDetails from '../components/StockPage/MarketStatsDetails.js';
 import SliderBar from '../components/StockPage/SliderBar.js';
 
 import DummyStocks from '../assets/stocks/dummyStockData.js';
@@ -67,7 +69,9 @@ export default function StockPage (route) {
             <WhatExpert/>
             <EarningShare/>
             <NewsSection/>
-          </ ScrollView >
+            <StoryBlocks/>
+          </ScrollView >
+          
         <View style={styles.bottomMenuBarContainer}>
           <BottomMenuBar />
         </View>
