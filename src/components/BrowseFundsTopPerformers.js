@@ -9,11 +9,13 @@ import fundImageSelect from '../assets/fundImageRequire.js';
 import DummyFunds from '../assets/funds/dummyFundData.js';
 
 
-function Funds({fundName, performance}) {
+function Funds({fundName}) {
     let name = fundName;
     if (name.length > 20) { name = name.substring(0,19) + '...';}
 
-    let percentageGrowth = "+ " + performance.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    const growth = ((DummyFunds[fundName].fundValue - DummyStocks[fundName].previousValue) / DummyStocks[fundName].previousValue) * 100;
+
+    let percentageGrowth = "+ " + growth.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     let growthColor = 'success';
     if (percentageGrowth[2] == '-') {
       percentageGrowth = percentageGrowth.replace('-','').replace('+','-');
@@ -37,7 +39,7 @@ function TopPerformers({funds}) {
     let fundlist = [];
     funds.forEach(element => fundlist.push(
     <TouchableOpacity key = {element} onPress={{/* Redirect to fund page */}}>
-        <Funds key = {element} fundName={element} performance={DummyFunds[element].performance} />
+        <Funds key = {element} fundName={element} />
     </TouchableOpacity>
     ));
     

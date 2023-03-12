@@ -58,7 +58,7 @@ export default function Search () {
         <SearchBarActive />
         <View style={{height:24 /* Generic spacing */}}/>
         <ScrollView horizontal={false}>
-            <CategorySearchScroller categories={['✅ All Stocks','🚀 Visionary','🍔 Food & Drink','😎 Lifestyle','🎇 Entertainment','💻 Tech Giants','📺 Social Media','👗 Fashion & Apparel','🚗 Car & Bikes','🦠 Covid-19','🚀 Recommended Buys','🎮 Games','🖥 Electronics','💡 Sustainable Energy','💼 Finance & Banking', '🏭 Manufacturing & Industry', '🛢️ Oil & Gas', '🏠 Real Estate']}/>
+            <CategorySearchScroller categories={['✅ All Stocks','🚀 Visionary','🍔 Food & Drink','😎 Lifestyle','🎇 Entertainment','💻 Tech Giants','📺 Social Media','👗 Fashion & Apparel','🚗 Car & Bikes','🦠 Covid-19','🚀 Recommended Buys','🎮 Games','🖥 Electronics','🌱 Sustainable Energy','💼 Finance & Banking', '🏭 Manufacturing & Industry', '🛢️ Oil & Gas', '🏠 Real Estate','💉 Medicine']}/>
             <TopMovers stocks={filteredStocks}/>
         </ScrollView>
         <View style={styles.bottomMenuBarContainer}>
