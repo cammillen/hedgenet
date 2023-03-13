@@ -97,14 +97,14 @@ const navigation = useNavigation();
               <View style={styles.tabBar}/>
               {/* Enter content for modal here:  */}
               {/* Header: */}
-              <PopupHeader numberOfBars={5} activeBars={2} popupHeaderText="Create Fund" onClose={onClose} />
+              <PopupHeader numberOfBars={6} activeBars={2} popupHeaderText="Create Fund" onClose={onClose} />
               {/* Content: */}
               <View style={styles.contentVerticalContainer} >
                 <Text style={[globalFonts.H3(globalColors.others.white.color), {paddingBottom: 24}]}>Enter affiliated university and icon. 🚀</Text>
                 <ScrollView showsVerticalScrollIndicator={false} ref={scrollViewRef}>
                   <TextEntry title="Affiliated University" placeholder="e.g. LSE" showCharacterCount={false} maxLength={200} value={text1} onChangeText={handleTextChange1} />
                   <Text style={[globalFonts.BodyLarge.Bold(globalColors.others.white.color),{marginBottom:16}]}>Fund Icon</Text>
-                  <Text style={[globalFonts.BodyXLarge.Regular(globalColors.others.white.color),{marginBottom:16}]}>Please upload an icon that is related to the fund you are setting up.</Text>
+                  <Text style={[globalFonts.BodyXLarge.Regular(globalColors.others.white.color),{marginBottom:24}]}>Please upload an icon that is related to the fund you are setting up.</Text>
                   <UploadImage/>
                   {/* You need this to make sure keyboard doesnt cover the text: */}
                   <Text style={{paddingTop: 100}}>  </Text>  

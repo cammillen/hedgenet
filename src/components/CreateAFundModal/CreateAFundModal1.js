@@ -100,7 +100,7 @@ const navigation = useNavigation();
               <View style={styles.tabBar}/>
               {/* Enter content for modal here:  */}
               {/* Header: */}
-              <PopupHeader numberOfBars={5} activeBars={1} popupHeaderText="Create Fund" onClose={onClose} />
+              <PopupHeader numberOfBars={6} activeBars={1} popupHeaderText="Create Fund" onClose={onClose} />
               {/* Content: */}
               <View style={styles.contentVerticalContainer} >
                 <Text style={[globalFonts.H3(globalColors.others.white.color), {paddingBottom: 24}]}>Enter your funds name and biography. 🏛️</Text>

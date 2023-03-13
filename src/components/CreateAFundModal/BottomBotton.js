@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
         borderTopWidth: 1,
         paddingTop: 24,
         borderTopColor: globalColors.dark._3.color,
+        backgroundColor: globalColors.dark._1.color,
     },
     button: {
         width: screenWidth-48,

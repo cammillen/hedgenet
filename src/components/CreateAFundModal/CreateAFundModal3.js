@@ -8,6 +8,7 @@ import TextEntry from './TextEntry.js';
 import { ScrollView } from 'react-native-gesture-handler';
 import BottomButton from './BottomBotton';
 import CreateAFundModal2 from './CreateAFundModal2.js';
+import Friends from './Friends.js';
 
 const screenHeight = Dimensions.get('window').height;
 
@@ -100,12 +101,14 @@ const navigation = useNavigation();
               <View style={styles.tabBar}/>
               {/* Enter content for modal here:  */}
               {/* Header: */}
-              <PopupHeader numberOfBars={5} activeBars={3} popupHeaderText="Create Fund" onClose={onClose} />
+              <PopupHeader numberOfBars={6} activeBars={3} popupHeaderText="Create Fund" onClose={onClose} />
               {/* Content: */}
               <View style={styles.contentVerticalContainer} >
                 <Text style={[globalFonts.H3(globalColors.others.white.color), {paddingBottom: 24}]}>Add your friends to your new fund! 🧑🏾‍🤝‍🧑🏻</Text>
+                <Text style={[globalFonts.BodyXLarge.Regular(globalColors.others.white.color),{marginBottom:16}]}>Don’t worry, you can add more friends later and share a joining link amongst your friends.</Text>
                 <ScrollView showsVerticalScrollIndicator={false} ref={scrollViewRef}>
-                    <Text style={[globalFonts.BodyXLarge.Regular(globalColors.others.white.color),{marginBottom:16}]}>Don’t worry, you can add more friends later and share a joining link amongst your friends.</Text>
+                    <Friends/>
+                    <Text style={{paddingTop: 200}}>  </Text>  
                 </ScrollView>
               </View>
               {/* TO DO: BACKEND need to send text1 and text2 to the backend storing the new fund name and bio */}
