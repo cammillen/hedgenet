@@ -11,13 +11,24 @@ import { NavigationContainer } from '@react-navigation/native';
 import Background from '../components/Background.js';
 import BottomMenuBar from '../components/BottomMenuBar.js';
 import LeftArrowTextHeader from '../components/SectionHeaders/LeftArrowTextHeader.js';
-import TopPerformers from '../components/BrowseFundsTopPerformersHeaders.js';
 import BrowseFundsHeader from '../components/BrowseFundsHeader.js';
 import BrowseFunds from '../components/BrowseFunds.js';
+import SearchBarInactive from '../components/SearchBarInactive.js';
+import TextRightArrowHeader from '../components/SectionHeaders/TextRightArrowHeader.js';
+import TopPerformers from '../components/BrowseFundsTopPerformers.js';
+
+import DummyFunds from '../assets/funds/dummyFundData.js';
 
 export default function Browse () {
 
   const Screen = 'Browse';
+
+  const sortedFunds = Object.entries(DummyFunds).sort((a, b) => {
+    const aChange = (a[1].fundValue - a[1].previousValue) / a[1].previousValue;
+    const bChange = (b[1].fundValue - b[1].previousValue) / b[1].previousValue;
+    return bChange - aChange;
+  });
+  const filteredFunds = sortedFunds.slice(0,5).map(fund => fund[0]);
 
   const [fontsLoaded] = useFonts({
     'Urbanist-Bold': require('../assets/fonts/Urbanist-Bold.ttf'),
@@ -39,14 +50,16 @@ export default function Browse () {
   }
 
   return ( 
-    <NavigationContainer>
     <Background>
         <StatusBar barStyle="light-content" backgroundColor="#000" />
       <View style={styles.container} onLayout={onLayoutRootView}>
         <TopMenuBar screen = {Screen}/>
         <LeftArrowTextHeader lastPage={'Home'} leftTitle={'Browse Funds'}/>
         <SearchBarInactive/>
-        <TopPerformers funds={funds}/>
+        <View style={{height:24}}/>
+        <TextRightArrowHeader leftTitle={'Top Performers'} rightTitle={''} navigatePage={'Leaderboard'} />
+        <View style={{height:20}}/>
+        <TopPerformers funds={filteredFunds} />
         <BrowseFundsHeader category={'UCL'} />
         <BrowseFunds funds={['Fintech Algo', 'UCL Agtech']} paddingBottom={150}/>
         <View style={styles.bottomMenuBarContainer}>
@@ -54,8 +67,8 @@ export default function Browse () {
         </View>
       </View>
     </Background>
-    </NavigationContainer>
   );
+
 };
 
 const styles = StyleSheet.create({
@@ -71,5 +84,3 @@ const styles = StyleSheet.create({
     marginLeft: 5,
   },
 });
-
-const funds = ['Cambr Invest', 'Oxford Traders', 'UCL Fintech', 'StAnd Algo'];
