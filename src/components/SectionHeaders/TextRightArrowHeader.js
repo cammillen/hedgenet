@@ -11,11 +11,12 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default function TextRightArrowHeader(params) {
     const navigation = useNavigation();
+    const toPassOn = params.params;
     
     return (
         <View style={styles.container}>
             <Text style={globalFonts.H5(globalColors.others.white.color)}>{params.leftTitle}</Text>
-            <TouchableOpacity style={styles.rightContainer} onPress={() => navigation.navigate(params.navigatePage)}>
+            <TouchableOpacity style={styles.rightContainer} onPress={() => navigation.navigate(params.navigatePage,{toPassOn})}>
                 <Text style={globalFonts.BodyMedium.semiBold(globalColors.primary._500.color)}>{params.rightTitle}</Text>
                 <Image source={require('../../assets/icons/ArrowRightGreen.png')} style={styles.icon} />
             </TouchableOpacity>

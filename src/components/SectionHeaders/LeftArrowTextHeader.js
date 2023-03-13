@@ -7,8 +7,8 @@ import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default function LeftArrowTextHeader({leftTitle}) {
+  
   const navigation = useNavigation();
-
 
   return (
     <View style={styles.header}>

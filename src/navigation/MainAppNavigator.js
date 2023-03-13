@@ -14,11 +14,13 @@ import Home from '../screens/Home.js';
 import Profile from '../screens/Profile.js';
 import Notifications from '../screens/Notifications.js';
 import Leaderboard from '../screens/Leaderboard.js';
+import CountryLeaderboard from '../screens/CountryLeaderboard.js';
 import Newsfeed from '../screens/Newsfeed.js';
 import Dashboard from '../screens/Dashboard.js';
 import Chat from '../screens/Chat.js';
 import Menu from '../screens/Menu.js';
 import StockPage from '../screens/StockPage.js';
+import MarketStatsDetails from '../components/StockPage/MarketStatsDetails.js';
 import AdminPanel from '../screens/AdminPanel.js';
 import Browse from '../screens/Browse.js';
 import Search from '../screens/Search.js';
@@ -39,6 +41,8 @@ const MainAppNavigator = () => {
       <Stack.Screen name="Notifications" component={Notifications} options={{ headerShown: false}}/>
       <Stack.Screen name="Leaderboard" component={Leaderboard} options={{ headerShown: false}}/>
       <Stack.Screen name="Newsfeed" component={Newsfeed} options={{ headerShown: false}}/>
+      {/* Derivative Leaderboard screen */}
+      <Stack.Screen name="CountryLeaderboard" component={CountryLeaderboard} options={{ headerShown: false}}/>
       {/* Search bar with category screens */}
       <Stack.Screen name="Search" component={Search} options={{ headerShown: false}}/>
       <Stack.Screen name="CategorySearch" component={CategorySearch} options={{ headerShown: false}}/>
@@ -51,6 +55,7 @@ const MainAppNavigator = () => {
       <Stack.Screen name="Menu" component={Menu} options={{ headerShown: false}}/>
       {/* Individual Stock Navigation */}
       <Stack.Screen name="StockPage" component={StockPage} options={{ headerShown: false}}/>
+      <Stack.Screen name="MarketStatsDetails" component={MarketStatsDetails} options={{ headerShown: false}}/>
       {/* Other Navigation */}
       <Stack.Screen name="AdminPanel" component={AdminPanel} options={{ headerShown: false}}/>
       <Stack.Screen name="FundMembers" component={FundMembers} options={{ headerShown: false}}/>
