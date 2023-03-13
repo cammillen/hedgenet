@@ -4,6 +4,7 @@ import { globalColors } from '../../styles/Colors.js';
 import { globalFonts } from '../../styles/Fonts.js';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Modal } from 'react-native';
 
 const screenWidth = Dimensions.get('window').width;
 
@@ -28,7 +29,7 @@ function PopupHeader(props) {
             }} />
         );
     }
-    
+
     return (
         <View>
             {/* This is the icons and text and the top: */}
