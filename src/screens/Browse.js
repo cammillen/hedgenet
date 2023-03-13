@@ -11,15 +11,17 @@ import { NavigationContainer } from '@react-navigation/native';
 import Background from '../components/Background.js';
 import BottomMenuBar from '../components/BottomMenuBar.js';
 import LeftArrowTextHeader from '../components/SectionHeaders/LeftArrowTextHeader.js';
-import BrowseFundsHeader from '../components/BrowseFundsHeader.js';
 import BrowseFunds from '../components/BrowseFunds.js';
 import SearchBarInactive from '../components/SearchBarInactive.js';
 import TextRightArrowHeader from '../components/SectionHeaders/TextRightArrowHeader.js';
 import TopPerformers from '../components/BrowseFundsTopPerformers.js';
+import TextWithSort from '../components/SectionHeaders/TextWithSort.js';
 
 import DummyFunds from '../assets/funds/dummyFundData.js';
 
 export default function Browse () {
+
+  const category = 'UCL'; //make interactive and backend compatible
 
   const Screen = 'Browse';
 
@@ -28,7 +30,7 @@ export default function Browse () {
     const bChange = (b[1].fundValue - b[1].previousValue) / b[1].previousValue;
     return bChange - aChange;
   });
-  const filteredFunds = sortedFunds.slice(0,5).map(fund => fund[0]);
+  const filteredFunds = sortedFunds.slice(0,10).map(fund => fund[0]);
 
   const [fontsLoaded] = useFonts({
     'Urbanist-Bold': require('../assets/fonts/Urbanist-Bold.ttf'),
@@ -60,7 +62,7 @@ export default function Browse () {
         <TextRightArrowHeader leftTitle={'Top Performers'} rightTitle={''} navigatePage={'Leaderboard'} />
         <View style={{height:20}}/>
         <TopPerformers funds={filteredFunds} />
-        <BrowseFundsHeader category={'UCL'} />
+        <TextWithSort title={category+' Funds'} rightTitle={'Asc. Order'} />
         <BrowseFunds funds={['Fintech Algo', 'UCL Agtech']} paddingBottom={150}/>
         <View style={styles.bottomMenuBarContainer}>
           <BottomMenuBar/>

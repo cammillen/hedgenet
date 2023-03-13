@@ -8,6 +8,9 @@ import { globalFonts } from '../styles/Fonts.js';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
+const country = 'UK'; //MUST CHANGE TO USER.COUNTRY BACKEND CALL
+const uni = 'UCL'; //DITTO
+
 
 //functionalise to take in current screen as argument!
 function TopMenuBar(params) {
@@ -38,7 +41,7 @@ function TopMenuBar(params) {
          
         <View style={styles.iconContainer}>
 
-          <TouchableOpacity onPress={() => navigation.navigate('Leaderboard')}>
+          <TouchableOpacity onPress={() => navigation.navigate('Leaderboard',{country:country, uni:uni})}>
             <Image
               source={require('../assets/icons/Star.png')}
               style={styles.starIcon}
