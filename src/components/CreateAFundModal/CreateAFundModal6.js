@@ -7,8 +7,7 @@ import PopupHeader from '../SectionHeaders/PopupHeader.js';
 import TextEntry from './TextEntry.js';
 import { ScrollView } from 'react-native-gesture-handler';
 import BottomButton from './BottomBotton';
-import CreateAFundModal6 from './CreateAFundModal6.js';
-import ToggleOption from '../AdminPanel/ToggleOption';
+import CreateAFundModal2 from './CreateAFundModal2.js';
 
 const screenHeight = Dimensions.get('window').height;
 
@@ -110,31 +109,15 @@ const navigation = useNavigation();
               <View style={styles.tabBar}/>
               {/* Enter content for modal here:  */}
               {/* Header: */}
-              <PopupHeader numberOfBars={6} activeBars={5} popupHeaderText="Create Fund" onClose={onClose} />
+              <PopupHeader numberOfBars={6} activeBars={6} popupHeaderText="Create Fund" onClose={onClose} />
               {/* Content: */}
               <View style={styles.contentVerticalContainer} >
-                <Text style={[globalFonts.H3(globalColors.others.white.color), {paddingBottom: 24}]}>Please select the funds privacy settings. 🔒</Text>
-                <Text style={[globalFonts.BodyXLarge.Regular(globalColors.others.white.color),{marginBottom:5}]}>You can chose between private and public, anyone can join your public fund.</Text>
-                <Text style={styles.title}>Investment Permissions</Text>
-                <ToggleOption
-                    title={"Private Fund"}
-                    text={"No investment strategy, everyone is free to trade under the fund."}
-                    icon={require('../../assets/icons/PrivateFund.png')}
-                    selected={selectedOption === 'Private'}
-                    onSelect={() => handleOptionSelect('Private')}
-                />
-                      <ToggleOption
-                    title={"Public Fund"}
-                    text={"No investment strategy, everyone is free to trade under the fund."}
-                    icon={require('../../assets/icons/PublicFund.png')}
-                    selected={selectedOption === 'Public'}
-                    onSelect={() => handleOptionSelect('Public')}
-                />
-                <Text style={styles.selectedOptionText}>Your Fund Is {selectedOption}</Text>
+                <Text style={[globalFonts.H3(globalColors.others.white.color), {paddingBottom: 24}]}>Your fund is ready, please review. 🚀</Text>
+                {/* Enter content here: */}
                     <Text style={{paddingTop: 200}}>  </Text>  
               </View>
               {/* TO DO: BACKEND need to send text1 and text2 to the backend storing the new fund name and bio */}
-              <BottomButton texts={[]} modal={<CreateAFundModal6 visible={modalVisible} onClose={closeModal}/>} onPress={openModal}/>
+              <BottomButton texts={[]} modal={<CreateAFundModal2 visible={modalVisible} onClose={closeModal}/>} onPress={openModal}/>
               {/* This is end of flex box with content.*/}
             </Animated.View>
           </TouchableWithoutFeedback>

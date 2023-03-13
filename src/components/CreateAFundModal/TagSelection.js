@@ -10,6 +10,7 @@ function TagSelection() {
     
     return (
         <View>
+            <Text>HELLO</Text>
         </View>
     );
 }
