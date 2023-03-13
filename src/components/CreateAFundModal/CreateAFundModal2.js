@@ -7,20 +7,19 @@ import PopupHeader from '../SectionHeaders/PopupHeader.js';
 import TextEntry from './TextEntry.js';
 import { ScrollView } from 'react-native-gesture-handler';
 import BottomButton from './BottomBotton';
-import CreateAFundModal2 from './CreateAFundModal2.js'
 
 const screenHeight = Dimensions.get('window').height;
 
-const CreateAFundModal1 = ({ visible, onClose }) => {
-  // This is to open next modal: 
-  const [modalVisible, setModalVisible] = useState(false);
-  const openModal = () => {
-    setModalVisible(true);
-  };
-  const closeModal = () => {
-    setModalVisible(false);
-  };
-//This is all animation stuff: 
+const CreateAFundModal2 = ({ visible, onClose }) => {
+// This is to open next modal: 
+    const [modalVisible, setModalVisible] = useState(false);
+    const openModal = () => {
+      setModalVisible(true);
+    };
+    const closeModal = () => {
+      setModalVisible(false);
+    };
+//This is all animation stuff, duartion set to 0 for everything for this popup as we want it to be instantaneous: 
   const modalOpacity = useRef(new Animated.Value(0)).current;
   const modalTranslateY = useRef(new Animated.Value(Dimensions.get('screen').height)).current;
   const backgroundOpacity = useRef(new Animated.Value(0)).current;
@@ -40,17 +39,17 @@ const CreateAFundModal1 = ({ visible, onClose }) => {
       Animated.parallel([
         Animated.timing(modalOpacity, {
           toValue: 1,
-          duration: 500,
+          duration: 0,
           useNativeDriver: true,
         }),
         Animated.timing(modalTranslateY, {
           toValue: 0,
-          duration: 500,
+          duration: 0,
           useNativeDriver: true,
         }),
         Animated.timing(backgroundOpacity, {
           toValue: 1,
-          duration: 500,
+          duration: 0,
           useNativeDriver: true,
         }),
       ]).start();
@@ -58,17 +57,17 @@ const CreateAFundModal1 = ({ visible, onClose }) => {
       Animated.parallel([
         Animated.timing(modalOpacity, {
           toValue: 0,
-          duration: 500,
+          duration: 0,
           useNativeDriver: true,
         }),
         Animated.timing(modalTranslateY, {
           toValue: Dimensions.get('screen').height,
-          duration: 500,
+          duration: 0,
           useNativeDriver: true,
         }),
         Animated.timing(backgroundOpacity, {
           toValue: 0,
-          duration: 500,
+          duration: 0,
           useNativeDriver: true,
         }),
       ]).start();
@@ -80,13 +79,9 @@ const CreateAFundModal1 = ({ visible, onClose }) => {
 const scrollViewRef = useRef();
 
 const [text1, setText1] = useState('');
-const [text2, setText2] = useState('');
 const handleTextChange1 = (value) => {
     setText1(value);
-};
-const handleTextChange2 = (value) => {
-  setText2(value);
-  scrollViewRef.current.scrollToEnd({ animated: true });
+    scrollViewRef.current.scrollToEnd({ animated: true });
 };
 
 //This is all modal specific stuff: 
@@ -100,19 +95,18 @@ const navigation = useNavigation();
               <View style={styles.tabBar}/>
               {/* Enter content for modal here:  */}
               {/* Header: */}
-              <PopupHeader numberOfBars={5} activeBars={1} popupHeaderText="My Popup Header" onClose={onClose} />
+              <PopupHeader numberOfBars={5} activeBars={2} popupHeaderText="My Popup Header" onClose={onClose} />
               {/* Content: */}
               <View style={styles.contentVerticalContainer} >
-                <Text style={[globalFonts.H3(globalColors.others.white.color), {paddingBottom: 24}]}>Enter your funds name and biography. 🏛️</Text>
+                <Text style={[globalFonts.H3(globalColors.others.white.color), {paddingBottom: 24}]}>Enter affiliated university and icon. 🚀</Text>
                 <ScrollView showsVerticalScrollIndicator={false} ref={scrollViewRef}>
-                  <TextEntry title="Fund Name" placeholder="e.g. UCL Shorting Fund" showCharacterCount={true} maxLength={20} value={text1} onChangeText={handleTextChange1} />
-                  <TextEntry title="Fund Biography" placeholder="Please enter a small fund bio." showCharacterCount={true} maxLength={150} value={text2} onChangeText={handleTextChange2} />
+                  <TextEntry title="Affiliated University" placeholder="e.g. LSE" showCharacterCount={false} maxLength={200} value={text1} onChangeText={handleTextChange1} />
                   {/* You need this to make sure keyboard doesnt cover the text: */}
                   <Text style={{paddingTop: 460}}>  </Text>  
                 </ScrollView>
               </View>
               {/* TO DO: BACKEND need to send text1 and text2 to the backend storing the new fund name and bio */}
-              <BottomButton texts={[text1, text2]} modal={<CreateAFundModal2 visible={modalVisible} onClose={closeModal}/>} onPress={openModal}/>
+              <BottomButton texts={[text1]} modal={<CreateAFundModal2 visible={modalVisible} onClose={closeModal}/>} onPress={openModal}/>
               {/* This is end of flex box with content.*/}
             </Animated.View>
           </TouchableWithoutFeedback>
@@ -160,4 +154,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CreateAFundModal1;
+export default CreateAFundModal2;
