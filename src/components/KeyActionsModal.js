@@ -3,7 +3,7 @@ import { Image, Modal, View, StyleSheet, TouchableOpacity, Text, Animated, Dimen
 import { globalColors } from '../styles/Colors';
 import { globalFonts } from '../styles/Fonts';
 import { useNavigation } from '@react-navigation/native';
-import CreateAFundModal1 from './CreateAFundModal/CreateAFundModal1.js';
+import CreateAFundModal1 from './CreateAFundFlow/CreateAFundModal1';
 import { useState } from 'react';
 
 const KeyActionsModal = ({ visible, onClose }) => {
