@@ -37,7 +37,6 @@ function CategorySearchScroller({categories}) {
     );
 }
 
-
 const styles = StyleSheet.create({
     textBox:{
         ...globalFonts.BodyLarge.semiBold(globalColors.others.white.color),

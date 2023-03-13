@@ -43,14 +43,14 @@ function FundSettings() {
 const styles = StyleSheet.create({
   container: {
     marginTop: 20,
+    marginLeft: 24, 
+    marginRight: 24,
   },
   title:{
-    paddingLeft: 24,
     ...globalFonts.H5(globalColors.others.white.color),
   },
   selectedOptionText: {
     paddingTop: 12,
-    paddingLeft: 24,
     ...globalFonts.BodyXSmall.Medium(globalColors.others.white.color),
   }
 });

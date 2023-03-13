@@ -15,9 +15,10 @@ function TopPerformers({funds}) {
 
     funds.forEach(element => {
       const name = element.length < 13 ? element : element.substring(0,12) + '...';
+      const left = element == funds[0] ? 24 : 0
       const growth = ((DummyFunds[element].fundValue - DummyFunds[element].previousValue) / DummyFunds[element].previousValue) * 100;
       fundlist.push(
-        <TouchableOpacity key={element} style={styles.column} onPress={() => {/* Individual Fund Page */}}>
+        <TouchableOpacity key={element} style={styles.column(left)} onPress={() => {/* Individual Fund Page */}}>
           <Image source={fundImageSelect(element)} style={{...styles.logoIcon, borderColor: globalColors.status[growth > 0 ? 'success' : 'error'].color}} />
           <Text style={styles.topText}>{name}</Text>
           <Text style={globalFonts.BodyMedium.semiBold(globalColors.status[growth > 0 ? 'success' : 'error'].color)}>
@@ -47,15 +48,16 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         textAlignVertical: 'center',
         width: 80,
-        lineHeight: 25,
+        //lineHeight: 25,
     },
-    column: {
+    column: (left) =>({
         flexDirection: 'column',
         justifyContent: 'space-between',
         alignItems: 'center',
         height: 145,
         marginRight:24,
-    },
+        marginLeft:left
+    }),
     header: {
         flexDirection: 'row',
         justifyContent: 'space-between',

@@ -12,28 +12,37 @@ import CreateAFundModal2 from './CreateAFundModal2.js';
 const screenHeight = Dimensions.get('window').height;
 
 const CreateAFundModal4 = ({ visible, onClose }) => {
-  // This is to open next modal: 
-  const [modalVisible, setModalVisible] = useState(false);
-  const openModal = () => {
-    setModalVisible(true);
-  };
-  const closeModal = () => {
-    setModalVisible(false);
-  };
+//This is for toggle option: 
+    const [selectedOption, setSelectedOption] = useState(null);
+    const handleOptionSelect = (option) => {
+    if (option !== selectedOption) {
+        setSelectedOption(option);
+    } else {
+        setSelectedOption(null);
+    }
+    }
+// This is to open next modal: 
+    const [modalVisible, setModalVisible] = useState(false);
+    const openModal = () => {
+        setModalVisible(true);
+    };
+    const closeModal = () => {
+        setModalVisible(false);
+    };
 //This is all animation stuff: 
-  const modalOpacity = useRef(new Animated.Value(0)).current;
-  const modalTranslateY = useRef(new Animated.Value(Dimensions.get('screen').height)).current;
-  const backgroundOpacity = useRef(new Animated.Value(0)).current;
-  const panResponder = useRef(
+    const modalOpacity = useRef(new Animated.Value(0)).current;
+    const modalTranslateY = useRef(new Animated.Value(Dimensions.get('screen').height)).current;
+    const backgroundOpacity = useRef(new Animated.Value(0)).current;
+    const panResponder = useRef(
     PanResponder.create({
-      onMoveShouldSetPanResponderCapture: (_, gestureState) => gestureState.dy > 0,
-      onPanResponderRelease: (_, gestureState) => {
+        onMoveShouldSetPanResponderCapture: (_, gestureState) => gestureState.dy > 0,
+        onPanResponderRelease: (_, gestureState) => {
         if (gestureState.dy > 50) {
-          onClose(false);
+            onClose(false);
         }
-      },
+        },
     })
-  ).current;
+    ).current;
 
   useEffect(() => {
     if (visible) {
@@ -100,14 +109,12 @@ const navigation = useNavigation();
               <View style={styles.tabBar}/>
               {/* Enter content for modal here:  */}
               {/* Header: */}
-              <PopupHeader numberOfBars={6} activeBars={5} popupHeaderText="Create Fund" onClose={onClose} />
+              <PopupHeader numberOfBars={6} activeBars={6} popupHeaderText="Create Fund" onClose={onClose} />
               {/* Content: */}
               <View style={styles.contentVerticalContainer} >
-                <Text style={[globalFonts.H3(globalColors.others.white.color), {paddingBottom: 24}]}>Please select the funds investment strategy. 🎯</Text>
-                <Text style={[globalFonts.BodyXLarge.Regular(globalColors.others.white.color),{marginBottom:5}]}>You can chose between daily polls, weekly polls, or a free for all.</Text>
-                <ScrollView showsVerticalScrollIndicator={false} ref={scrollViewRef}>
+                <Text style={[globalFonts.H3(globalColors.others.white.color), {paddingBottom: 24}]}>Your fund is ready, please review. 🚀</Text>
+                {/* Enter content here: */}
                     <Text style={{paddingTop: 200}}>  </Text>  
-                </ScrollView>
               </View>
               {/* TO DO: BACKEND need to send text1 and text2 to the backend storing the new fund name and bio */}
               <BottomButton texts={[]} modal={<CreateAFundModal2 visible={modalVisible} onClose={closeModal}/>} onPress={openModal}/>
@@ -155,6 +162,15 @@ const styles = StyleSheet.create({
     paddingTop: 34,
     paddingLeft: 24, 
     paddingRight:24,
+  },
+  selectedOptionText: {
+    paddingTop: 12,
+    ...globalFonts.BodyXSmall.Medium(globalColors.others.white.color),
+  },
+  title:{
+    paddingTop: 24,
+    // paddingBottom: 24,
+    ...globalFonts.H5(globalColors.others.white.color),
   },
 });
 
