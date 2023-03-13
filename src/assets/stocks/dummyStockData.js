@@ -14,7 +14,7 @@ export default DummyStocks = {
   'Netflix': {userShares:0.19375, shareValue:511.34, previousValue:510.24, lastClose:516.41, tags:['✅ All Stocks','💻 Tech Giants'], ticker:'NFLX'},
   'Sony': {userShares:23.629, shareValue:107.27, previousValue:106.11, lastClose:107.57, tags:['✅ All Stocks','💻 Tech Giants'], ticker:'SONY'},
   'Spotify': {userShares:23.629, shareValue:235.36, previousValue:236.33, lastClose:232.67, tags:['✅ All Stocks','💻 Tech Giants'], ticker:'SPTF'},
-  'Tesla': {userShares:15.782, shareValue:731.07, previousValue:740.84, lastClose:734.81, tags:['✅ All Stocks','🚗 Automotive','💡 Sustainable Energy'], ticker:'TSLA'},
+  'Tesla': {userShares:15.782, shareValue:731.07, previousValue:740.84, lastClose:734.81, tags:['✅ All Stocks',,'🚗 Car & Bikes','🌱 Sustainable Energy'], ticker:'TSLA'},
   'Twitter': {userShares:23.629, shareValue:936.34, previousValue:889.04, lastClose:83.33, tags:['✅ All Stocks','💻 Tech Giants','📺 Social Media'], ticker:'TWTR'},
   'Virgin': {userShares:23.629, shareValue:936.34, previousValue:889.04, lastClose:83.33, tags:['✅ All Stocks'], ticker:'VMUK'},
 };

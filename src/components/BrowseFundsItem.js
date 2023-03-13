@@ -12,7 +12,6 @@ const screenWidth = Dimensions.get('window').width;
 export default function MyPositionsItem(params) {
 
   const fundImage = fundImageSelect(params.fundName);
-  let graphImage = require('../assets/graphs(delete)/ExampleGraph.png'); //generalise once on graphing
   let fundValue = (params.fundValue/100).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   
   let percentageGrowth = "+ " + (100*(params.fundValue - params.previousValue)/params.previousValue).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -24,6 +23,8 @@ export default function MyPositionsItem(params) {
   let fundName = params.fundName;
   if (fundName.length > 20) { fundName = fundName.substring(0,19) + '...';
   }
+
+  const graphImage = growthColor == 'success' ? require('../assets/graphs(delete)/ExampleGraphGreen.png') : require('../assets/graphs(delete)/ExampleGraphRed.png'); //generalise once on graphing
 
   return (
     <View style={{ width: screenWidth, paddingLeft: 24, paddingRight: 24 }}>
