@@ -7,21 +7,20 @@ import PopupHeader from '../SectionHeaders/PopupHeader.js';
 import TextEntry from './TextEntry.js';
 import { ScrollView } from 'react-native-gesture-handler';
 import BottomButton from './BottomBotton';
-import UploadImage from './UploadImage.js';
-import CreateAFundModal3 from './CreateAFundModal3.js'
+import CreateAFundModal2 from './CreateAFundModal2.js';
 
 const screenHeight = Dimensions.get('window').height;
 
-const CreateAFundModal2 = ({ visible, onClose }) => {
-// This is to open next modal: 
-    const [modalVisible, setModalVisible] = useState(false);
-    const openModal = () => {
-      setModalVisible(true);
-    };
-    const closeModal = () => {
-      setModalVisible(false);
-    };
-//This is all animation stuff, duartion set to 0 for everything for this popup as we want it to be instantaneous: 
+const CreateAFundModal3 = ({ visible, onClose }) => {
+  // This is to open next modal: 
+  const [modalVisible, setModalVisible] = useState(false);
+  const openModal = () => {
+    setModalVisible(true);
+  };
+  const closeModal = () => {
+    setModalVisible(false);
+  };
+//This is all animation stuff: 
   const modalOpacity = useRef(new Animated.Value(0)).current;
   const modalTranslateY = useRef(new Animated.Value(Dimensions.get('screen').height)).current;
   const backgroundOpacity = useRef(new Animated.Value(0)).current;
@@ -81,9 +80,13 @@ const CreateAFundModal2 = ({ visible, onClose }) => {
 const scrollViewRef = useRef();
 
 const [text1, setText1] = useState('');
+const [text2, setText2] = useState('');
 const handleTextChange1 = (value) => {
     setText1(value);
-    // scrollViewRef.current.scrollToEnd({ animated: true }); this has been commented out because its not needed for Modal 2. 
+};
+const handleTextChange2 = (value) => {
+  setText2(value);
+  scrollViewRef.current.scrollToEnd({ animated: true });
 };
 
 //This is all modal specific stuff: 
@@ -97,21 +100,16 @@ const navigation = useNavigation();
               <View style={styles.tabBar}/>
               {/* Enter content for modal here:  */}
               {/* Header: */}
-              <PopupHeader numberOfBars={5} activeBars={2} popupHeaderText="Create Fund" onClose={onClose} />
+              <PopupHeader numberOfBars={5} activeBars={3} popupHeaderText="Create Fund" onClose={onClose} />
               {/* Content: */}
               <View style={styles.contentVerticalContainer} >
-                <Text style={[globalFonts.H3(globalColors.others.white.color), {paddingBottom: 24}]}>Enter affiliated university and icon. 🚀</Text>
+                <Text style={[globalFonts.H3(globalColors.others.white.color), {paddingBottom: 24}]}>Add your friends to your new fund! 🧑🏾‍🤝‍🧑🏻</Text>
                 <ScrollView showsVerticalScrollIndicator={false} ref={scrollViewRef}>
-                  <TextEntry title="Affiliated University" placeholder="e.g. LSE" showCharacterCount={false} maxLength={200} value={text1} onChangeText={handleTextChange1} />
-                  <Text style={[globalFonts.BodyLarge.Bold(globalColors.others.white.color),{marginBottom:16}]}>Fund Icon</Text>
-                  <Text style={[globalFonts.BodyXLarge.Regular(globalColors.others.white.color),{marginBottom:16}]}>Please upload an icon that is related to the fund you are setting up.</Text>
-                  <UploadImage/>
-                  {/* You need this to make sure keyboard doesnt cover the text: */}
-                  <Text style={{paddingTop: 100}}>  </Text>  
+                    <Text style={[globalFonts.BodyXLarge.Regular(globalColors.others.white.color),{marginBottom:16}]}>Don’t worry, you can add more friends later and share a joining link amongst your friends.</Text>
                 </ScrollView>
               </View>
               {/* TO DO: BACKEND need to send text1 and text2 to the backend storing the new fund name and bio */}
-              <BottomButton texts={[text1]} modal={<CreateAFundModal3 visible={modalVisible} onClose={closeModal}/>} onPress={openModal}/>
+              <BottomButton texts={[text1, text2]} modal={<CreateAFundModal2 visible={modalVisible} onClose={closeModal}/>} onPress={openModal}/>
               {/* This is end of flex box with content.*/}
             </Animated.View>
           </TouchableWithoutFeedback>
@@ -159,4 +157,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CreateAFundModal2;
+export default CreateAFundModal3;

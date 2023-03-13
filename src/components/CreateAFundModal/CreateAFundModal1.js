@@ -7,7 +7,7 @@ import PopupHeader from '../SectionHeaders/PopupHeader.js';
 import TextEntry from './TextEntry.js';
 import { ScrollView } from 'react-native-gesture-handler';
 import BottomButton from './BottomBotton';
-import CreateAFundModal2 from './CreateAFundModal2.js'
+import CreateAFundModal2 from './CreateAFundModal2.js';
 
 const screenHeight = Dimensions.get('window').height;
 
@@ -100,7 +100,7 @@ const navigation = useNavigation();
               <View style={styles.tabBar}/>
               {/* Enter content for modal here:  */}
               {/* Header: */}
-              <PopupHeader numberOfBars={5} activeBars={1} popupHeaderText="My Popup Header" onClose={onClose} />
+              <PopupHeader numberOfBars={5} activeBars={1} popupHeaderText="Create Fund" onClose={onClose} />
               {/* Content: */}
               <View style={styles.contentVerticalContainer} >
                 <Text style={[globalFonts.H3(globalColors.others.white.color), {paddingBottom: 24}]}>Enter your funds name and biography. 🏛️</Text>
