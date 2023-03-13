@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
         width: '100%',
         position: 'absolute',
         alignItems: 'center',
-        bottom: 0,
+        bottom: -1,
         borderTopWidth: 1,
         paddingTop: 24,
         borderTopColor: globalColors.dark._3.color,
