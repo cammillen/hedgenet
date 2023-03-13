@@ -1,29 +1,15 @@
-// Template Modal Documentation:
-// Replace "PlaceholderModal" with the name of your modal. 
-// Enter content where it says {/* Enter content for modal here:  */}.
-// Import React Native navigation package: "import { useNavigation } from '@react-navigation/native';" and "import { useState } from 'react';"
-// add the following to your function:
-// const [modalVisible, setModalVisible] = useState(false);
-
-// const openModal = () => {
-//   setModalVisible(true);
-// };
-
-// const closeModal = () => {
-//   setModalVisible(false);
-// };
-// Create the onPress function triggering the model with openModal, e.g. "<TouchableOpacity onPress={openModal}>"
-// Finally, Add this below the touchable opacity section: 
-// </TouchableOpacity>
-// <CreateAFundModal visible={modalVisible} onClose={closeModal}/>
-
-import React, { useRef, useEffect } from 'react';
-import { Image, Modal, View, StyleSheet, TouchableOpacity, Text, Animated, Dimensions, TouchableWithoutFeedback, PanResponder } from 'react-native';
-import { globalColors } from '../styles/Colors';
-import { globalFonts } from '../styles/Fonts';
+import React, { useRef, useEffect, useState } from 'react';
+import { Image, Modal, View, StyleSheet, TouchableOpacity, Text, Animated, Dimensions, TouchableWithoutFeedback, PanResponder, KeyboardAvoidingView } from 'react-native';
+import { globalColors } from '../../styles/Colors';
+import { globalFonts } from '../../styles/Fonts';
 import { useNavigation } from '@react-navigation/native';
+import PopupHeader from '../SectionHeaders/PopupHeader.js';
+import TextEntry from './TextEntry.js';
+import { ScrollView } from 'react-native-gesture-handler';
 
-const PlaceholderModal = ({ visible, onClose }) => {
+const screenHeight = Dimensions.get('window').height;
+
+const CreateAFundModal1 = ({ visible, onClose }) => {
 //This is all animation stuff: 
   const modalOpacity = useRef(new Animated.Value(0)).current;
   const modalTranslateY = useRef(new Animated.Value(Dimensions.get('screen').height)).current;
@@ -80,6 +66,19 @@ const PlaceholderModal = ({ visible, onClose }) => {
   }, [visible]);
 // End of animation code.
 
+//Code for text entry: 
+const scrollViewRef = useRef();
+
+const [text1, setText1] = useState('');
+const [text2, setText2] = useState('');
+const handleTextChange1 = (value) => {
+    setText1(value);
+};
+const handleTextChange2 = (value) => {
+  setText2(value);
+  scrollViewRef.current.scrollToEnd({ animated: false });
+};
+
 //This is all modal specific stuff: 
 const navigation = useNavigation();
   return (
@@ -91,6 +90,18 @@ const navigation = useNavigation();
               <View style={styles.tabBar}/>
               {/* Enter content for modal here:  */}
 
+              {/* Header: */}
+              <PopupHeader numberOfBars={5} activeBars={1} popupHeaderText="My Popup Header" onClose={onClose} />
+              {/* Content: */}
+              <View style={styles.contentVerticalContainer} >
+                <Text style={[globalFonts.H3(globalColors.others.white.color), {paddingBottom: 24}]}>Enter your funds name and biography. 🏛️</Text>
+                <ScrollView showsVerticalScrollIndicator={false} ref={scrollViewRef}>
+                  <TextEntry title="Fund Name" placeholder="e.g. UCL Shorting Fund" showCharacterCount={true} maxLength={20} value={text1} onChangeText={handleTextChange1} />
+                  <TextEntry title="Fund Biography" placeholder="Please enter a small fund bio." showCharacterCount={true} maxLength={150} value={text2} onChangeText={handleTextChange2} />
+                  {/* You need this to make sure keyboard doesnt cover the text: */}
+                  <Text style={{paddingTop: 460}}>  </Text>  
+                </ScrollView>
+              </View>
               {/* This is end of flex box with content.*/}
             </Animated.View>
           </TouchableWithoutFeedback>
@@ -115,7 +126,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderTopLeftRadius: 44,
     borderTopRightRadius: 44,
-    height: 'auto',
+    height: screenHeight-45,
     width: '100%',
     position: 'absolute',
     bottom: 0,
@@ -131,6 +142,11 @@ const styles = StyleSheet.create({
     backgroundColor: globalColors.dark._3.color,
     borderRadius: 8,
   },
+  contentVerticalContainer:{
+    paddingTop: 34,
+    paddingLeft: 24, 
+    paddingRight:24,
+  },
 });
 
-export default PlaceholderModal;
+export default CreateAFundModal1;
