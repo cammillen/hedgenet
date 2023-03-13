@@ -3,7 +3,7 @@
 // The BottomBotton takes as input text1 and text2 and only turns green when the user has entered text into them.
 // It also takes an onPress prop to allow you to add custom navigation once the button has been pressed. 
 // Example implementation: 
-        // <BottomButton texts={['text1', 'text2']} onPress={enter navigation code here} />
+        // <BottomButton texts={[text1, text2]} onPress={enter navigation code here} />
         // see CreateAFundModal1 for full implementation. 
 // It also takes a modal argument of the modal you want to show after the next is pressed: 
 // FULL E.g.: <BottomButton texts={[text1, text2]} modal={<CreateAFundModal2 visible={modalVisible} onClose={closeModal}/>} onPress={openModal}/>
