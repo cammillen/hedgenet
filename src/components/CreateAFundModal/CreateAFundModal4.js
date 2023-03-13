@@ -7,12 +7,11 @@ import PopupHeader from '../SectionHeaders/PopupHeader.js';
 import TextEntry from './TextEntry.js';
 import { ScrollView } from 'react-native-gesture-handler';
 import BottomButton from './BottomBotton';
-import CreateAFundModal4 from './CreateAFundModal4.js';
-import Friends from './Friends.js';
+import CreateAFundModal2 from './CreateAFundModal2.js';
 
 const screenHeight = Dimensions.get('window').height;
 
-const CreateAFundModal3 = ({ visible, onClose }) => {
+const CreateAFundModal4 = ({ visible, onClose }) => {
   // This is to open next modal: 
   const [modalVisible, setModalVisible] = useState(false);
   const openModal = () => {
@@ -101,18 +100,17 @@ const navigation = useNavigation();
               <View style={styles.tabBar}/>
               {/* Enter content for modal here:  */}
               {/* Header: */}
-              <PopupHeader numberOfBars={6} activeBars={3} popupHeaderText="Create Fund" onClose={onClose} />
+              <PopupHeader numberOfBars={6} activeBars={4} popupHeaderText="Create Fund" onClose={onClose} />
               {/* Content: */}
               <View style={styles.contentVerticalContainer} >
-                <Text style={[globalFonts.H3(globalColors.others.white.color), {paddingBottom: 24}]}>Add your friends to your new fund! 🧑🏾‍🤝‍🧑🏻</Text>
-                <Text style={[globalFonts.BodyXLarge.Regular(globalColors.others.white.color),{marginBottom:5}]}>Don’t worry, you can add more friends later and share a joining link amongst your friends.</Text>
+                <Text style={[globalFonts.H3(globalColors.others.white.color), {paddingBottom: 24}]}>Please select the funds investment areas. 📈</Text>
+                <Text style={[globalFonts.BodyXLarge.Regular(globalColors.others.white.color),{marginBottom:5}]}>You can select up to 3 investment areas from the options, you can change them later.</Text>
                 <ScrollView showsVerticalScrollIndicator={false} ref={scrollViewRef}>
-                    <Friends/>
                     <Text style={{paddingTop: 200}}>  </Text>  
                 </ScrollView>
               </View>
               {/* TO DO: BACKEND need to send text1 and text2 to the backend storing the new fund name and bio */}
-              <BottomButton texts={[]} modal={<CreateAFundModal4 visible={modalVisible} onClose={closeModal}/>} onPress={openModal}/>
+              <BottomButton texts={[]} modal={<CreateAFundModal2 visible={modalVisible} onClose={closeModal}/>} onPress={openModal}/>
               {/* This is end of flex box with content.*/}
             </Animated.View>
           </TouchableWithoutFeedback>
@@ -160,4 +158,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CreateAFundModal3;
+export default CreateAFundModal4;
