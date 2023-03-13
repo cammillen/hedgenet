@@ -11,14 +11,15 @@ import FriendsCard from './FriendsCard.js';
 
 function Friends() {
     const navigation = useNavigation();
+
+    const sortedMembers = members.sort((a, b) => a.name.localeCompare(b.name));
     
     return (
         <ScrollView>
-        {members.map(member => (
+        {sortedMembers.map(member => (
             <FriendsCard
             key={member.name}
             name={member.name}
-            admin={member.admin}
             trades={member.trades}
             profitLoss={member.profitLoss}
             profilePicture={member.profilePicture}
@@ -84,5 +85,3 @@ const members = [
       }
     // Add more members as needed...
   ];
-
-  

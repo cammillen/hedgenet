@@ -1,8 +1,4 @@
-// Documentation: 
-// This feeds into the FundMembers.js - there isnt anything to change or do on this page, all the backend integration is in Fund Members.
-// Just need to add logic for the remove button. 
-
-import React from 'react';
+import React, { useState } from 'react';
 import { Image, StyleSheet, Text, View, Dimensions} from 'react-native';
 import { globalColors } from '../../styles/Colors.js';
 import { globalFonts } from '../../styles/Fonts.js';
@@ -14,6 +10,12 @@ const screenWidth = Dimensions.get('window').width;
 function FriendsCard(params) {
     const navigation = useNavigation();
     const { width } = Dimensions.get('window');
+    const [invited, setInvited] = useState(false);
+    
+    const handleInvite = () => {
+        setInvited(!invited);
+        // TODO: add code to send invite link to friends
+    };
     
     return (
         <View style={styles.container}>
@@ -30,8 +32,15 @@ function FriendsCard(params) {
             </View>
             {/* Invite Button: */}
             {/* TO DO BACKEND: to send invite link to friends */}
-            <TouchableOpacity style={styles.inviteButton} onPress={() => navigation.navigate('pass')}>
-                <Text style={[globalFonts.BodyMedium.semiBold(globalColors.others.white.color)]}>Invite</Text>
+            <TouchableOpacity style={[styles.inviteButton, invited ? styles.invitedButton : null]} onPress={handleInvite}>
+                {invited ? (
+                    <>
+                        <Image source={require('../../assets/icons/InviteTick.png')} style={{ width: 20, height: 20 }} /> 
+                        <Text style={[globalFonts.BodyMedium.semiBold(globalColors.primary._500.color), {marginLeft: 5}]}>Invited</Text>
+                    </>
+                ) : (
+                    <Text style={[globalFonts.BodyMedium.semiBold(globalColors.others.white.color)]}>Invite</Text>
+                )}
             </TouchableOpacity>
         </View>
     );
@@ -65,14 +74,20 @@ const styles = StyleSheet.create({
     inviteButton:{
         marginLeft: 10,
         right: 0,
-        paddingLeft: 16,
-        paddingRight: 16,
+        paddingLeft: 10,
+        paddingRight: 10,
+        flexDirection: 'row',
+        alignItems: 'center',
         justifyContent: 'center',
         height: 32,
         backgroundColor: globalColors.primary._500.color,
         borderRadius: 100,
         borderColor: globalColors.primary._500.color,
         borderWidth: 1,
+    },
+    invitedButton: {
+        backgroundColor: globalColors.others.white.color,
+        borderColor: globalColors.others.white.color,
     },
 });
 
