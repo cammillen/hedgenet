@@ -20,27 +20,18 @@ import BrowseFunds from '../components/BrowseFunds.js';
 
 import DummyFunds from '../assets/funds/dummyFundData.js';
 
+export default function CountryLeaderboard () {
 
-
-export default function Leaderboard () {
-
-  const Screen = 'Leaderboard';
+  const Screen = 'CountryLeaderboard';
   const route = useRoute();
-  const { country, uni } = route.params;
+  const country = route.params.toPassOn;
 
   const sortedFundsCountry = Object.entries(DummyFunds).filter(([, fund]) => fund.country === country).sort((a, b) => {
     const aChange = (a[1].fundValue - a[1].previousValue) / a[1].previousValue;
     const bChange = (b[1].fundValue - b[1].previousValue) / b[1].previousValue;
     return bChange - aChange;
   });
-  const filteredFundsCountry = sortedFundsCountry.slice(0, 10).map(fund => fund[0]);
-
-  const sortedFundsUni = Object.entries(DummyFunds).filter(([, fund]) => fund.uni === uni).sort((a, b) => {
-    const aChange = (a[1].fundValue - a[1].previousValue) / a[1].previousValue;
-    const bChange = (b[1].fundValue - b[1].previousValue) / b[1].previousValue;
-    return bChange - aChange;
-  });
-  const filteredFundsUni = sortedFundsUni.slice(0, 10).map(fund => fund[0]);
+  const filteredFundsCountry = sortedFundsCountry.slice(0, 25).map(fund => fund[0]);
 
   const [fontsLoaded] = useFonts({
     'Urbanist-Bold': require('../assets/fonts/Urbanist-Bold.ttf'),
@@ -65,15 +56,16 @@ export default function Leaderboard () {
     <Background>
       <StatusBar barStyle="light-content" backgroundColor="#000" />
       <View style={styles.container} onLayout={onLayoutRootView}>
-        <TopMenuBar screen={'Home'} />
-        <LeftArrowTextHeader leftTitle={Screen} />
-        <SearchBarInactive />
-        <View style={{height:24}}/>
-        <TextRightArrowHeader leftTitle={'Top '+country+' Performers'} rightTitle={''} navigatePage={'CountryLeaderboard'} params={country} />
-        <View style={{height:20}}/>
-        <TopPerformers funds={filteredFundsCountry} />
-        <TextWithSort title={'Top '+uni+' Funds'} rightTitle={'Asc. Order'} />
-        <BrowseFunds funds={filteredFundsUni} paddingBottom={150}/>
+        <TopMenuBar screen={Screen} />
+        <LeftArrowTextHeader leftTitle={country+' Leaderboard'} />
+        <View style={styles.header}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+              <Image source={require('../assets/icons/ArrowLeft_Green.png')} style={[styles.arrowIcon, { marginRight: 16}]} />
+          </TouchableOpacity>  
+          <Text style={globalFonts.H4(globalColors.others.white.color)}>{country+' Leaderboard'}</Text>
+        </View>
+        <View style={{height:7}}/>
+        <BrowseFunds funds={filteredFundsCountry} paddingBottom={150}/>
         <View style={styles.bottomMenuBarContainer}>
           <BottomMenuBar />
         </View>
@@ -94,4 +86,26 @@ const styles = StyleSheet.create({
     marginBottom: -5,
     marginLeft: 5,
   },
+  header: {
+    justifyContent: 'flex-start',
+    flexDirection: 'row',
+    alignItems: 'center',
+    height: 38,
+    marginTop: 26,
+  },
+arrowIcon: {
+    width: 28,
+    height: 28,
+    resizeMode: 'contain'
+},
+textBox:{
+  ...globalFonts.BodyLarge.semiBold(globalColors.primary._500.color),
+  paddingRight:20,
+  paddingLeft:20,
+  padding:8,
+  borderColor:globalColors.primary._500.color,
+  borderWidth:1,
+  borderRadius:100,
+  minWidth: 100, //minimum width to fit content
+},
 });
