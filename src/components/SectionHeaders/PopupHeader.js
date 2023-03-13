@@ -33,7 +33,9 @@ function PopupHeader(props) {
         <View>
             {/* This is the icons and text and the top: */}
             <View style={styles.topHorizontalBox}>
-                <Image source={require('../../assets/icons/BackGreen.png')} style={styles.icon} />
+                <TouchableOpacity onPress={onClose}>
+                    <Image source={require('../../assets/icons/BackGreen.png')} style={styles.icon} />
+                </TouchableOpacity>
                 <View style={styles.headerBox}>
                     <Image source={require('../../assets/icons/3UserWhite.png')} style={styles.topIcon} />
                     <Text style={globalFonts.H5(globalColors.others.white.color)}>{popupHeaderText}</Text>

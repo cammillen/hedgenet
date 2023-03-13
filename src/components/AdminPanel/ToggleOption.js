@@ -32,13 +32,13 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: 20,
+    marginTop: 24,
     paddingBottom: 20,
     borderBottomColor: globalColors.dark._3.color,
     borderBottomWidth: 1,
     backgroundColor: 'rgba(27,172,75,0)',
-    marginLeft: 24,
-    marginRight: 24
+    // marginLeft: 24,
+    // marginRight: 24
   },
   iconTextFlexBox:{
     flex: 1,

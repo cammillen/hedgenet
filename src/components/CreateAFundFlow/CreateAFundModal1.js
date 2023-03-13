@@ -6,10 +6,20 @@ import { useNavigation } from '@react-navigation/native';
 import PopupHeader from '../SectionHeaders/PopupHeader.js';
 import TextEntry from './TextEntry.js';
 import { ScrollView } from 'react-native-gesture-handler';
+import BottomButton from './BottomBotton';
+import CreateAFundModal2 from './CreateAFundModal2.js';
 
 const screenHeight = Dimensions.get('window').height;
 
 const CreateAFundModal1 = ({ visible, onClose }) => {
+  // This is to open next modal: 
+  const [modalVisible, setModalVisible] = useState(false);
+  const openModal = () => {
+    setModalVisible(true);
+  };
+  const closeModal = () => {
+    setModalVisible(false);
+  };
 //This is all animation stuff: 
   const modalOpacity = useRef(new Animated.Value(0)).current;
   const modalTranslateY = useRef(new Animated.Value(Dimensions.get('screen').height)).current;
@@ -66,7 +76,7 @@ const CreateAFundModal1 = ({ visible, onClose }) => {
   }, [visible]);
 // End of animation code.
 
-//Code for text entry: 
+//Code for text entry: - TO DO BACKEND: the text entry is stored in text1 and text2, you need to send this entry to the backend when the user presses the next button. 
 const scrollViewRef = useRef();
 
 const [text1, setText1] = useState('');
@@ -76,7 +86,7 @@ const handleTextChange1 = (value) => {
 };
 const handleTextChange2 = (value) => {
   setText2(value);
-  scrollViewRef.current.scrollToEnd({ animated: false });
+  scrollViewRef.current.scrollToEnd({ animated: true });
 };
 
 //This is all modal specific stuff: 
@@ -89,9 +99,8 @@ const navigation = useNavigation();
             <Animated.View {...panResponder.panHandlers} style={[styles.modalContainer, { opacity: modalOpacity, transform: [{ translateY: modalTranslateY }] }]}>
               <View style={styles.tabBar}/>
               {/* Enter content for modal here:  */}
-
               {/* Header: */}
-              <PopupHeader numberOfBars={5} activeBars={1} popupHeaderText="My Popup Header" onClose={onClose} />
+              <PopupHeader numberOfBars={6} activeBars={1} popupHeaderText="Create Fund" onClose={onClose} />
               {/* Content: */}
               <View style={styles.contentVerticalContainer} >
                 <Text style={[globalFonts.H3(globalColors.others.white.color), {paddingBottom: 24}]}>Enter your funds name and biography. 🏛️</Text>
@@ -102,6 +111,8 @@ const navigation = useNavigation();
                   <Text style={{paddingTop: 460}}>  </Text>  
                 </ScrollView>
               </View>
+              {/* TO DO: BACKEND need to send text1 and text2 to the backend storing the new fund name and bio */}
+              <BottomButton texts={[text1, text2]} modal={<CreateAFundModal2 visible={modalVisible} onClose={closeModal}/>} onPress={openModal}/>
               {/* This is end of flex box with content.*/}
             </Animated.View>
           </TouchableWithoutFeedback>
