@@ -2,7 +2,7 @@
 // Chnage everything with PLaceholder in, only 2 things to change. 
 
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { Image, Text, View, StyleSheet } from 'react-native';
 import { StatusBar } from 'react-native';
 import { useCallback } from 'react';
 import { useFonts } from 'expo-font';
@@ -11,36 +11,30 @@ import { useRoute } from '@react-navigation/native';
 import TopMenuBar from '../components/TopMenuBar.js';
 import Background from '../components/Background.js';
 import BottomMenuBar from '../components/BottomMenuBar.js';
-import LeftArrowTextHeader from '../components/SectionHeaders/LeftArrowTextHeader';
-import SearchBarInactive from '../components/SearchBarInactive.js';
-import TextRightArrowHeader from '../components/SectionHeaders/TextRightArrowHeader.js';
-import TopPerformers from '../components/BrowseFundsTopPerformers.js';
-import TextWithSort from '../components/SectionHeaders/TextWithSort.js';
+import { useNavigation } from '@react-navigation/native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import BrowseFunds from '../components/BrowseFunds.js';
+import { globalColors } from '../styles/Colors.js';
+import { globalFonts } from '../styles/Fonts.js';
+import GlobalLinearGradients from '../components/LinearGradients.js';
+
 
 import DummyFunds from '../assets/funds/dummyFundData.js';
 
+export default function CountryLeaderboard () {
 
-
-export default function Leaderboard () {
+  const navigation = useNavigation();
 
   const Screen = 'Leaderboard';
   const route = useRoute();
-  const { country, uni } = route.params;
+  const country = route.params.toPassOn;
 
   const sortedFundsCountry = Object.entries(DummyFunds).filter(([, fund]) => fund.country === country).sort((a, b) => {
     const aChange = (a[1].fundValue - a[1].previousValue) / a[1].previousValue;
     const bChange = (b[1].fundValue - b[1].previousValue) / b[1].previousValue;
     return bChange - aChange;
   });
-  const filteredFundsCountry = sortedFundsCountry.slice(0, 10).map(fund => fund[0]);
-
-  const sortedFundsUni = Object.entries(DummyFunds).filter(([, fund]) => fund.uni === uni).sort((a, b) => {
-    const aChange = (a[1].fundValue - a[1].previousValue) / a[1].previousValue;
-    const bChange = (b[1].fundValue - b[1].previousValue) / b[1].previousValue;
-    return bChange - aChange;
-  });
-  const filteredFundsUni = sortedFundsUni.slice(0, 10).map(fund => fund[0]);
+  const filteredFundsCountry = sortedFundsCountry.slice(0, 25).map(fund => fund[0]);
 
   const [fontsLoaded] = useFonts({
     'Urbanist-Bold': require('../assets/fonts/Urbanist-Bold.ttf'),
@@ -65,15 +59,16 @@ export default function Leaderboard () {
     <Background>
       <StatusBar barStyle="light-content" backgroundColor="#000" />
       <View style={styles.container} onLayout={onLayoutRootView}>
-        <TopMenuBar screen={'Home'} />
-        <LeftArrowTextHeader leftTitle={Screen} />
-        <SearchBarInactive />
-        <View style={{height:24}}/>
-        <TextRightArrowHeader leftTitle={'Top '+country+' Performers'} rightTitle={''} navigatePage={'CountryLeaderboard'} params={country} />
-        <View style={{height:20}}/>
-        <TopPerformers funds={filteredFundsCountry} />
-        <TextWithSort title={'Top '+uni+' Funds'} rightTitle={'Asc. Order'} />
-        <BrowseFunds funds={filteredFundsUni} paddingBottom={150}/>
+        <TopMenuBar screen={Screen} />
+        <View style={styles.header}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+              <Image source={require('../assets/icons/ArrowLeft_Green.png')} style={[styles.arrowIcon, { marginRight: 16}]} />
+          </TouchableOpacity>  
+          <Text style={globalFonts.H4(globalColors.others.white.color)}>{country+' Leaderboard'}</Text>
+        </View>
+        <View style={{height:7}}/>
+        <GlobalLinearGradients color1={'#000'} color2={'transparent'} style={'verticalDownOverlap'} dimensionSize={10} />
+        <BrowseFunds funds={filteredFundsCountry} paddingBottom={150}/>
         <View style={styles.bottomMenuBarContainer}>
           <BottomMenuBar />
         </View>
@@ -94,4 +89,17 @@ const styles = StyleSheet.create({
     marginBottom: -5,
     marginLeft: 5,
   },
+  header: {
+    justifyContent: 'flex-start',
+    flexDirection: 'row',
+    alignItems: 'center',
+    height: 38,
+    marginTop: 26,
+    marginLeft:24
+  },
+arrowIcon: {
+    width: 28,
+    height: 28,
+    resizeMode: 'contain'
+},
 });

@@ -7,7 +7,6 @@ import { useCallback } from 'react';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import TopMenuBar from '../components/TopMenuBar.js';
-import { NavigationContainer } from '@react-navigation/native';
 import Background from '../components/Background.js';
 import BottomMenuBar from '../components/BottomMenuBar.js';
 import LeftArrowTextHeader from '../components/SectionHeaders/LeftArrowTextHeader.js';

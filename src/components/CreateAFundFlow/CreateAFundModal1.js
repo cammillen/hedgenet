@@ -40,7 +40,7 @@ const CreateAFundModal1 = ({ visible, onClose }) => {
       Animated.parallel([
         Animated.timing(modalOpacity, {
           toValue: 1,
-          duration: 500,
+          duration: 0,
           useNativeDriver: true,
         }),
         Animated.timing(modalTranslateY, {
@@ -58,7 +58,7 @@ const CreateAFundModal1 = ({ visible, onClose }) => {
       Animated.parallel([
         Animated.timing(modalOpacity, {
           toValue: 0,
-          duration: 500,
+          duration: 0,
           useNativeDriver: true,
         }),
         Animated.timing(modalTranslateY, {

@@ -14,6 +14,7 @@ import Home from '../screens/Home.js';
 import Profile from '../screens/Profile.js';
 import Notifications from '../screens/Notifications.js';
 import Leaderboard from '../screens/Leaderboard.js';
+import CountryLeaderboard from '../screens/CountryLeaderboard.js';
 import Newsfeed from '../screens/Newsfeed.js';
 import Dashboard from '../screens/Dashboard.js';
 import Chat from '../screens/Chat.js';
@@ -40,6 +41,8 @@ const MainAppNavigator = () => {
       <Stack.Screen name="Notifications" component={Notifications} options={{ headerShown: false}}/>
       <Stack.Screen name="Leaderboard" component={Leaderboard} options={{ headerShown: false}}/>
       <Stack.Screen name="Newsfeed" component={Newsfeed} options={{ headerShown: false}}/>
+      {/* Derivative Leaderboard screen */}
+      <Stack.Screen name="CountryLeaderboard" component={CountryLeaderboard} options={{ headerShown: false}}/>
       {/* Search bar with category screens */}
       <Stack.Screen name="Search" component={Search} options={{ headerShown: false}}/>
       <Stack.Screen name="CategorySearch" component={CategorySearch} options={{ headerShown: false}}/>

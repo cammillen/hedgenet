@@ -1,6 +1,6 @@
 // HOW TO USE IN ANOTHER FILE: 
 // At the top of your file import globalLinearGradients: "import globalLinearGradients from './src/components/LinearGradients.js';" (make sure you have the right file path)
-// Then define gradient properties using e.g.: "<GlobalLinearGradients color1={'#000'} color2={'transparent} style={'verticalDownOverlap'} dimensionSize={10} />"
+// Then define gradient properties using e.g.: "<GlobalLinearGradients color1={'#000'} color2={'transparent'} style={'verticalDownOverlap'} dimensionSize={10} />"
 
 import React from 'react';
 import { StyleSheet } from 'react-native';
