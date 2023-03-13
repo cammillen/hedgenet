@@ -13,9 +13,10 @@ function FundDashboardSliderContent() {
     const navigation = useNavigation();
     
     return (
-        <ScrollView >
+        <ScrollView style={styles.container}>
             {/* <MyTradingHistoryItem/> */}
-            <FundCard/>
+            {/* TO DO: BACKEND Need to link the fund card data with the backend:  */}
+            <FundCard fundTitle={"Personal Fund"} members={"12"} stocks={"6"} marketCap={"£12,290,97"} fundTags={['UCL', 'FinTech', 'S&P 500']}/>
             <TextRightArrowHeader leftTitle="Fund Analytics" rightTitle="View Members" navigatepage="FundMembers"/>
             <FundGraph/>
             <KeyStatistics/>
@@ -33,7 +34,10 @@ function FundDashboardSliderContent() {
 }
 
 const styles = StyleSheet.create({
-   
+    container:{
+        // paddingLeft: 24, 
+        // paddingRight: 24,
+    },
     },
 );
 

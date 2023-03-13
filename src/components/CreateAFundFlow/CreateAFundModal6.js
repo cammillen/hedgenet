@@ -8,6 +8,7 @@ import TextEntry from './TextEntry.js';
 import { ScrollView } from 'react-native-gesture-handler';
 import BottomButton from './BottomBotton';
 import CreateAFundModal2 from './CreateAFundModal2.js';
+import FundCard from '../Dashboard/FundCard';
 
 const screenHeight = Dimensions.get('window').height;
 
@@ -112,7 +113,9 @@ const navigation = useNavigation();
               <PopupHeader numberOfBars={6} activeBars={6} popupHeaderText="Create Fund" onClose={onClose} />
               {/* Content: */}
               <View style={styles.contentVerticalContainer} >
-                <Text style={[globalFonts.H3(globalColors.others.white.color), {paddingBottom: 24}]}>Your fund is ready, please review. 🚀</Text>
+                <Text style={[globalFonts.H3(globalColors.others.white.color), {paddingHorizontal: 24}]}>Your fund is ready, please review. 🚀</Text>
+                {/* TO DO: Need to link this with what has been entered and stored in the form:  */}
+                <FundCard fundTitle={"Personal Fund"} members={"0"} stocks={"0"} marketCap={"£0.00"} fundTags={['UCL', 'FinTech', 'S&P 500']}/>
                 {/* Enter content here: */}
                     <Text style={{paddingTop: 200}}>  </Text>  
               </View>
@@ -160,8 +163,8 @@ const styles = StyleSheet.create({
   },
   contentVerticalContainer:{
     paddingTop: 34,
-    paddingLeft: 24, 
-    paddingRight:24,
+    // paddingLeft: 24, 
+    // paddingRight:24,
   },
   selectedOptionText: {
     paddingTop: 12,

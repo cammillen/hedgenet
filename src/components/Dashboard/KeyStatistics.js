@@ -12,7 +12,7 @@ function KeyStatistics() {
     return (
         <View style={styles.container}>
             {/* This is the title:  */}
-            <Text style={[globalFonts.H5(globalColors.others.white.color), {paddingBottom: 24}]}>Key Statistics</Text>
+            <Text style={[globalFonts.H5(globalColors.others.white.color), {paddingBottom: 24}, {paddingLeft: 24}]}>Key Statistics</Text>
             
             {/* This is the vertical flex box with all the data:  */}
             <ScrollView horizontal={true}>
@@ -164,7 +164,8 @@ function KeyStatistics() {
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'column',
-        paddingLeft: 24,
+        // paddingLeft: 24,
+        // marginLeft: 24,
         paddingRight: 0,
         paddingBottom: 30, 
     },
@@ -174,6 +175,7 @@ const styles = StyleSheet.create({
         paddingBottom: 6,
     },
     horizontalBox:{
+        paddingLeft: 24,
         flexDirection: 'row',
         marginBottom: 24,
         justifyContent: 'space-between',
