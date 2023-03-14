@@ -92,6 +92,8 @@ const handleTextChange2 = (value) => {
 
 //This is all modal specific stuff: 
 const navigation = useNavigation();
+const [selectedCategories, setSelected] = useState([]);
+
   return (
     <Modal transparent visible={visible} animationType="none" onRequestClose={onClose}>
       <TouchableWithoutFeedback onPress={() => onClose(false)}>
@@ -104,13 +106,13 @@ const navigation = useNavigation();
               <PopupHeader numberOfBars={6} activeBars={4} popupHeaderText="Create Fund" onClose={onClose} />
               {/* Content: */}
               <View style={styles.contentVerticalContainer} >
-                <Text style={[globalFonts.H3(globalColors.others.white.color), {paddingBottom: 24}]}>Please select the funds investment areas. 📈</Text>
-                <Text style={[globalFonts.BodyXLarge.Regular(globalColors.others.white.color),{marginBottom:5}]}>You can select up to 3 investment areas from the options, you can change them later.</Text>
-                <ScrollView showsVerticalScrollIndicator={false} ref={scrollViewRef}>
-                    {/* Uncomment this when the tag selection component is done: */}
-                    <TagSelection/>
+                <Text style={[globalFonts.H3(globalColors.others.white.color), {paddingBottom: 24}]}>Please select the fund's investment areas. 📈</Text>
+                <Text style={[globalFonts.BodyXLarge.Regular(globalColors.others.white.color), {marginBottom: 24}]}>
+                You can select up to 3 investment areas from the following options (you can change them later). <Text style={globalFonts.BodyXLarge.Regular(globalColors.primary._500.color)}>
+                ({selectedCategories.length}/3)</Text>
+                </Text>
+                    <TagSelection selected={selectedCategories} setSelected={setSelected} />
                     <Text style={{paddingTop: 200}}>  </Text>  
-                </ScrollView>
               </View>
               {/* TO DO: BACKEND need to send text1 and text2 to the backend storing the new fund name and bio */}
               <BottomButton texts={[]} modal={<CreateAFundModal5 visible={modalVisible} onClose={closeModal}/>} onPress={openModal}/>

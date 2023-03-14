@@ -8,4 +8,4 @@ export default categoryList = ['✅ All Stocks', '🚀 Visionary', '🍔 Food & 
 '🛍️ Retail', '📚 Education', '📦 Transportation & Logistics', '🌳 Forestry & Agriculture', '🎭 Arts & Culture', '🎨 Creative Industries', '🎤 Music & Audio',
 '🎬 Film & Video Production','📡 Telecommunications', '📈 Growth ETFs', '📉 Value ETFs', '💰 Index Funds', '🌐 Emerging Market ETFs', '📈 S&P 500 Index Funds',
 '📉 Bond Funds','🏭 Manufacturing ETFs', '📊 Sector ETFs', '📈 Small Cap ETFs', '📉 Large Cap ETFs', '💰 Growth Mutual Funds', '📉 Value Mutual Funds', '📈 Balanced Mutual Funds',
-'📊 Target Date Funds', '📈 Small Cap Mutual Funds', '📉 Large Cap Mutual Funds', '💰 Index Mutual Funds', '🌐 International Mutual Funds', '📉 Bond Mutual Funds']
+'📊 Target Date Funds', '📈 Small Cap Mutual Funds', '📉 Large Cap Mutual Funds', '💰 Index Mutual Funds', '🌐 International Mutual Funds', '📉 Bond Mutual Funds','❤️ Healthcare']

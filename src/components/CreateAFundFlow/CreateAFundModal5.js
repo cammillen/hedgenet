@@ -107,8 +107,8 @@ const navigation = useNavigation();
               <PopupHeader numberOfBars={6} activeBars={5} popupHeaderText="Create Fund" onClose={onClose} />
               {/* Content: */}
               <View style={styles.contentVerticalContainer} >
-                <Text style={[globalFonts.H3(globalColors.others.white.color), {paddingBottom: 24}]}>Please select the funds privacy settings. 🔒</Text>
-                <Text style={[globalFonts.BodyXLarge.Regular(globalColors.others.white.color),{marginBottom:5}]}>You can chose between private and public, anyone can join your public fund.</Text>
+                <Text style={[globalFonts.H3(globalColors.others.white.color), {paddingBottom: 24}]}>Please select the fund's privacy settings. 🔒</Text>
+                <Text style={[globalFonts.BodyXLarge.Regular(globalColors.others.white.color),{marginBottom:5}]}>You can choose between private and public; anyone can join your public fund.</Text>
                 <Text style={styles.title}>Investment Permissions</Text>
                 <ToggleOption
                     title={"Private Fund"}
