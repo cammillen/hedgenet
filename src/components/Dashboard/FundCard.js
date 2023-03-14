@@ -47,9 +47,9 @@ function FundCard(props) {
             {/* This is the vertical flex box for Fund title, members, stocks and tags */}
             <View style={styles.leftVerticalFlex}>
                 {/* Need to endogenise the title: */}
-                <Text style={[globalFonts.H6(globalColors.others.white.color), {marginBottom: 8}]}>{fundTitle}</Text>
+                <Text style={[globalFonts.H6(globalColors.others.white.color), {marginBottom: 5}]}>{fundTitle}</Text>
                 {/* Need to endogenise the text below: */}
-                <Text style={[globalFonts.BodyMedium.Medium(globalColors.others.white.color), {marginBottom: 8}]}>{members} Members • {stocks} Stocks</Text>
+                <Text style={[globalFonts.BodyMedium.Medium(globalColors.others.white.color), {marginBottom: 10}]}>{members} Members • {stocks} Stocks</Text>
                 {/* Fund Tags: */}
             <View style={styles.tagContainer}>
                 {renderFundTags()}

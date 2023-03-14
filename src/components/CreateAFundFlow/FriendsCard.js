@@ -31,7 +31,7 @@ function FriendsCard(params) {
                 </View>
             </View>
             {/* Invite Button: */}
-            {/* TO DO BACKEND: to send invite link to friends */}
+            {/* TO DO BACKEND: to send invite link to friends and create a list of those that have been ticked to join the group */}
             <TouchableOpacity style={[styles.inviteButton, invited ? styles.invitedButton : null]} onPress={handleInvite}>
                 {invited ? (
                     <>
