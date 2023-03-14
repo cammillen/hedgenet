@@ -1,1 +1,0 @@
-// Needs to take as props the company name, price 

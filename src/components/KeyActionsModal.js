@@ -3,9 +3,25 @@ import { Image, Modal, View, StyleSheet, TouchableOpacity, Text, Animated, Dimen
 import { globalColors } from '../styles/Colors';
 import { globalFonts } from '../styles/Fonts';
 import { useNavigation } from '@react-navigation/native';
+import CreateAFundModal1 from './CreateAFundFlow/CreateAFundModal1';
+import { useState } from 'react';
 
-const KeyActionsModal = ({ visible, onClose }) => {
+const KeyActionsModal = ({ visible, onClose}) => {
 //This is all animation stuff: 
+  const [modalVisible, setModalVisible] = useState(false);
+
+  const openModal = () => {
+    setModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setModalVisible(false);
+  };
+
+  const onCloseAllModals = () => {
+    setModalVisible(false);
+  };
+
   const modalOpacity = useRef(new Animated.Value(0)).current;
   const modalTranslateY = useRef(new Animated.Value(Dimensions.get('screen').height)).current;
   const backgroundOpacity = useRef(new Animated.Value(0)).current;
@@ -73,7 +89,7 @@ const navigation = useNavigation();
               <Text style={styles.text}>Key Actions</Text>
               <View style={styles.verticalBox}>
                 {/* Create a Fund: */}
-                <TouchableOpacity style={[ styles.horizontalOuterBox, {paddingTop: 24}]} onPress={() => navigation.navigate('CreateAFund')}>
+                <TouchableOpacity style={[ styles.horizontalOuterBox, {paddingTop: 24}]} onPress={openModal}>
                     <View style={styles.horizontalInnerBox}>
                         <Image
                             source={require('../assets/icons/CreateAFund.png')}  
@@ -86,6 +102,7 @@ const navigation = useNavigation();
                             style={[styles.arrowIcon]}
                     />
                 </TouchableOpacity>
+                <CreateAFundModal1 visible={modalVisible} onClose={closeModal}/>
                 {/* Browse Funds: */}
                 <TouchableOpacity style={[ styles.horizontalOuterBox, {paddingTop: 24}]} onPress={() => navigation.navigate('BrowseFunds')}>
                     <View style={styles.horizontalInnerBox}>

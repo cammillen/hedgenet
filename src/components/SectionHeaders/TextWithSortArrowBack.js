@@ -17,7 +17,7 @@ export default function TextWithSort(params) {
   return (
     <View style={styles.header}>
       <View style={styles.subHeaderLeft}>
-        <TouchableOpacity onPress={() => navigation.navigate(params.navigatePage)}>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
             <Image source={require('../../assets/icons/ArrowLeft_Green.png')} style={[styles.arrowIcon, { marginRight: 16}]} />
         </TouchableOpacity>
         <Text style={globalFonts.H5(globalColors.others.white.color)}>{params.title}</Text>

@@ -12,18 +12,21 @@ import TopMenuBar from '../components/TopMenuBar.js';
 import Background from '../components/Background.js';
 import BottomMenuBar from '../components/BottomMenuBar.js';
 import { NavigationContainer } from '@react-navigation/native';
-import StockHeader from '../components/StockHeader.js';
-import MarketStats from '../components/MarketStats.js';
-import StockGraphVisual from '../components/StockGraphVisual.js';
-import StockHeaderCard from '../components/StockHeaderCard.js';
-import WhatExpert from '../components/WhatExpert.js';
-import EarningShare from '../components/EarningShare.js';
-import StockPriceCard from '../components/StockPriceCard.js';
-import StockPosition from '../components/StockPosition.js';
-import MarketCap from '../components/MarketCap.js';
+import StockHeader from '../components/StockPage/StockHeader.js';
+import MarketStats from '../components/StockPage/MarketStats.js';
+import StockGraphVisual from '../components/StockPage/StockGraphVisual.js';
+import StockHeaderCard from '../components/StockPage/StockHeaderCard.js';
+import WhatExpert from '../components/StockPage/WhatExpert.js';
+import EarningShare from '../components/StockPage/EarningShare.js';
+import StockPriceCard from '../components/StockPage/StockPriceCard.js';
+import StockPosition from '../components/StockPage/StockPosition.js';
+import NewsSection from '../components/StockPage/NewsSection';
+import MarketCap from '../components/StockPage/MarketCap.js';
+import StoryBlocks from '../components/StockPage/StoryBlocks.js';
+import MarketStatsDetails from '../components/StockPage/MarketStatsDetails.js';
+import SliderBar from '../components/StockPage/SliderBar.js';
 
-import SliderBar from '../components/SliderBar.js';
-
+import DummyStocks from '../assets/stocks/dummyStockData.js';
 
 export default function StockPage (route) {
 
@@ -49,10 +52,6 @@ export default function StockPage (route) {
   if (!fontsLoaded) {
     return null;
   }
-  //replace all backend data calls with a single file for consistency
-  const temporaryStockValues = {
-    Blackberry: {stockPrice: 7105, difference:217, ticker:'BLCB'},
-  };
 
   return ( 
     <Background>
@@ -63,13 +62,16 @@ export default function StockPage (route) {
           <ScrollView alwaysBounceVertical={true}>
             <StockGraphVisual stockName={stockName} />
             <StockHeaderCard />
-            <StockPriceCard delta={temporaryStockValues[stockName].difference} price={temporaryStockValues[stockName].stockPrice} />
-            <StockPosition ticker={temporaryStockValues[stockName].ticker} />
-            <MarketStats ticker={temporaryStockValues[stockName].ticker}/>
-            <MarketCap stockName={stockName} ticker={temporaryStockValues[stockName].ticker}/>
-            <WhatExpert analystBuy={"70%"}/>
+            <StockPriceCard delta={DummyStocks[stockName].shareValue - DummyStocks[stockName].previousValue} price={DummyStocks[stockName].shareValue} />
+            <StockPosition ticker={DummyStocks[stockName].ticker} />
+            <MarketStats ticker={DummyStocks[stockName].ticker}/>
+            <MarketCap stockName={stockName} ticker={DummyStocks[stockName].ticker}/>
+            <WhatExpert/>
             <EarningShare/>
-          </ ScrollView >
+            <NewsSection/>
+            <StoryBlocks/>
+          </ScrollView >
+          
         <View style={styles.bottomMenuBarContainer}>
           <BottomMenuBar />
         </View>

@@ -10,9 +10,7 @@ const screenWidth = Dimensions.get('window').width;
 export default function MyTradingHistoryItem(params) {
 
   let stockImage = LogoSelect(params.stockName);
-  let graphImage = require('../assets/graphs(delete)/ExampleGraph.png'); //generalise once on graphing
   let stockValue = (params.userShares * params.shareValue).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  
   let percentageGrowth = "+ " + (100*(params.shareValue - params.previousValue)/params.previousValue).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   let growthColor = 'success';
   if (percentageGrowth[2] == '-') {
@@ -22,6 +20,9 @@ export default function MyTradingHistoryItem(params) {
   let stockName = params.stockName;
   if (stockName.length > 10) { stockName = stockName.substring(0,9) + '...';
   }
+
+  const graphImage = growthColor == 'success' ? require('../assets/graphs(delete)/ExampleGraphGreen.png') : require('../assets/graphs(delete)/ExampleGraphRed.png'); //generalise once on graphing
+
 
   return (
     <View style={{ width: screenWidth, paddingLeft: 24, paddingRight: 24 }}>

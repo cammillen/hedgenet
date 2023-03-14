@@ -1,9 +1,21 @@
 // Template Modal Documentation:
 // Replace "PlaceholderModal" with the name of your modal. 
 // Enter content where it says {/* Enter content for modal here:  */}.
-// Import the modal to where it is triggered: e.g. "import KeyActionsModal from './KeyActionsModal';"
-// Import React Native navigation package: "import { useNavigation } from '@react-navigation/native';"
+// Import React Native navigation package: "import { useNavigation } from '@react-navigation/native';" and "import { useState } from 'react';"
+// add the following to your function:
+// const [modalVisible, setModalVisible] = useState(false);
+
+// const openModal = () => {
+//   setModalVisible(true);
+// };
+
+// const closeModal = () => {
+//   setModalVisible(false);
+// };
 // Create the onPress function triggering the model with openModal, e.g. "<TouchableOpacity onPress={openModal}>"
+// Finally, Add this below the touchable opacity section: 
+// </TouchableOpacity>
+// <CreateAFundModal visible={modalVisible} onClose={closeModal}/>
 
 import React, { useRef, useEffect } from 'react';
 import { Image, Modal, View, StyleSheet, TouchableOpacity, Text, Animated, Dimensions, TouchableWithoutFeedback, PanResponder } from 'react-native';

@@ -19,7 +19,7 @@ function DrawBox (marketName,marketGrowth) {//maybe add a market graph param?
       growthColor = 'error';
     }
 
-    let graphImage = require('../assets/graphs(delete)/ExampleGraph.png'); //generalise once on graphing
+    const graphImage = growthColor == 'success' ? require('../assets/graphs(delete)/ExampleGraphGreen.png') : require('../assets/graphs(delete)/ExampleGraphRed.png'); //generalise once on graphing
 
     return (
         <View style={styles.box} key={marketName}>

@@ -6,54 +6,30 @@ import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import fundImageSelect from '../assets/fundImageRequire.js';
 
-
-function Funds({fundName, performance}) {
-    let name = fundName;
-    if (name.length > 20) { name = name.substring(0,19) + '...';}
-
-    let percentageGrowth = "+ " + performance.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    let growthColor = 'success';
-    if (percentageGrowth[2] == '-') {
-      percentageGrowth = percentageGrowth.replace('-','').replace('+','-');
-      growthColor = 'error';
-    }
-
-    return (
-          <View style={styles.verticalBox}>
-            <Image source={fundImageSelect(fundName)} style={[styles.icon, {marginBottom:5}]} />
-            <Text style={styles.topText}>{name}</Text>
-            <Text style={globalFonts.BodyMedium.semiBold(globalColors.status[growthColor].color)}>{percentageGrowth}%</Text>
-          </View>
-
-      );
-
-};
+import DummyFunds from '../assets/funds/dummyFundData.js';
 
 function TopPerformers({funds}) {
     const navigation = useNavigation();
 
-    const dummy = {
-        'Cambr Invest': {performance: 8.16},
-        'Oxford Traders': {performance: 7.55},
-        'UCL Fintech': {performance: 5.37},
-        'StAnd Algo':{performance: 4.30}
-    };
-
     let fundlist = [];
-    funds.forEach(element => fundlist.push(
-    <TouchableOpacity key = {element} onPress={{/* Redirect to fund page */}}>
-        <Funds key = {element} fundName={element} performance={dummy[element].performance} />
-    </TouchableOpacity>
-    ));
+
+    funds.forEach(element => {
+      const name = element.length < 13 ? element : element.substring(0,12) + '...';
+      const left = element == funds[0] ? 24 : 0
+      const growth = ((DummyFunds[element].fundValue - DummyFunds[element].previousValue) / DummyFunds[element].previousValue) * 100;
+      fundlist.push(
+        <TouchableOpacity key={element} style={styles.column(left)} onPress={() => {/* Individual Fund Page */}}>
+          <Image source={fundImageSelect(element)} style={{...styles.logoIcon, borderColor: globalColors.status[growth > 0 ? 'success' : 'error'].color}} />
+          <Text style={styles.topText}>{name}</Text>
+          <Text style={globalFonts.BodyMedium.semiBold(globalColors.status[growth > 0 ? 'success' : 'error'].color)}>
+            {growth > 0 ? `+${growth.toFixed(2)}` : `${growth.toFixed(2)}`}%
+          </Text>
+        </TouchableOpacity>
+      );
+    });
     
     return (
         <View style={styles.container}>
-            <View style={styles.header}>
-                <Text style={[globalFonts.H5(globalColors.others.white.color)]}>Top Performers</Text>
-                <TouchableOpacity onPress={{/*Must define some backend call to sort data*/}}>
-                    <Image source={require('../assets/icons/ArrowRightGreen.png')} style={styles.rightIcon} />
-                </TouchableOpacity>
-            </View>
             {/* This is the vertical flex box with all the data:  */}
             <ScrollView horizontal={true}>
             {fundlist}
@@ -63,46 +39,44 @@ function TopPerformers({funds}) {
 }
 
 const styles = StyleSheet.create({
-    header: {
-        marginTop: 24,
-        marginBottom: 24,
-        paddingLeft: 24,
-        paddingRight: 24,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
+    container: {
+        flexDirection: 'column',
+        paddingBottom: 23, 
     },
     topText:{
         ...globalFonts.H6(globalColors.others.white.color),
         textAlign: 'center',
         textAlignVertical: 'center',
         width: 80,
-        lineHeight: 25,
+        //lineHeight: 25,
     },
-    container: {
+    column: (left) =>({
         flexDirection: 'column',
-        paddingBottom: 30, 
-    },
-    verticalBox:{
-        overflow: 'scroll',
-        paddingBottom: 6,
-        maxWidth: 80,
+        justifyContent: 'space-between',
         alignItems: 'center',
-        marginLeft: 20,
+        height: 145,
+        marginRight:24,
+        marginLeft:left
+    }),
+    header: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginLeft:24,
+        marginRight:24,
+        paddingBottom:16
     },
-    icon: {
-        borderColor: globalColors.primary._500.color,
-        borderWidth: 4,
-        borderRadius: 100,
-        width: 80,
-        height: 80,
-        resizeMode: 'contain',
-    },
-    rightIcon:{
+    arrowIcon: {
         width: 24,
         height: 24,
         resizeMode: 'contain',
-        marginRight: 24
+    },
+    logoIcon: {
+        width: 80,
+        height: 80,
+        resizeMode: 'contain',
+        borderRadius:100,
+        borderWidth:4,
     }
 });
 

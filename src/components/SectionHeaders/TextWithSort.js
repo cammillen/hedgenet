@@ -11,6 +11,8 @@ import GlobalLinearGradients from '../LinearGradients.js';
 
 export default function TextWithSort(param) {
 
+  const rightTitle = param.rightTitle ? param.rightTitle : 'Recently';
+
   return (
     <View>
     <View style={styles.header}>
@@ -18,7 +20,7 @@ export default function TextWithSort(param) {
         <Text style={globalFonts.H5(globalColors.others.white.color)}>{param.title}</Text>
       </View>
       <View style={styles.subHeaderRight}>
-        <Text style={globalFonts.H6(globalColors.status.success.color)}>Recently</Text>
+        <Text style={globalFonts.H6(globalColors.status.success.color)}>{rightTitle}</Text>
         <Image source={require('../../assets/icons/UpDownArrow.png')} style={[styles.arrowsIcon, { marginLeft: 12}]} />
       </View>
     </View>

@@ -13,11 +13,11 @@ function CategorySearchScroller({categories}) {
     //add navigation to category search
     let categorieslist = [];
 
-    //group categories into sets of 3
-    for(let i=0; i<categories.length; i+=3) {
-        const categorySet = categories.slice(i, i+3);
+    //group categories into sets of 4
+    for(let i=0; i<categories.length; i+=Math.ceil(categories.length/4)) {
+        const categorySet = categories.slice(i, i+Math.ceil(categories.length/4));
         const categoryRow = categorySet.map((element, index) => (
-            <TouchableOpacity key={index}>
+            <TouchableOpacity key={index} onPress={() => navigation.navigate('CategorySearch',{element})}>
                 <Text style={styles.textBox}>{element}</Text>
             </TouchableOpacity>
         ));
@@ -36,7 +36,6 @@ function CategorySearchScroller({categories}) {
         </View>
     );
 }
-
 
 const styles = StyleSheet.create({
     textBox:{

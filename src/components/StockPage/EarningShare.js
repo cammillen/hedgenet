@@ -3,8 +3,8 @@ import { StyleSheet, View, Text, ScrollView } from "react-native";
 import Svg, { Ellipse } from "react-native-svg";
 
 
-import { globalColors } from '../styles/Colors.js';
-import { globalFonts } from '../styles/Fonts.js';
+import { globalColors } from '../../styles/Colors.js';
+import { globalFonts } from '../../styles/Fonts.js';
 
 function EarningShare(props) {
   return (

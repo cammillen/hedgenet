@@ -1,13 +1,17 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Image } from 'react-native';
 import { StyleSheet, TextInput, View } from 'react-native';
 import { globalColors } from '../styles/Colors.js';
-import { globalFonts } from '../styles/Fonts.js';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default function SearchBarActive() {
     const inputRef = useRef(null);
+    const [inputText, setInputText] = useState(''); // pass as variable in navigation
+
+    const handleInputChange = (text) => {
+        setInputText(text);
+    }
 
     useEffect(() => {
         if (inputRef.current) {
@@ -39,7 +43,9 @@ export default function SearchBarActive() {
                     placeholder=""
                     placeholderTextColor = {globalColors.others.white.color}
                     color = {globalColors.others.white.color}
-                    />
+                    onChangeText={handleInputChange}
+                    value={inputText}
+                />
                 {/* NAVIGATION Add code for the filter popup when the filter icon is pressed. */}
                 <TouchableOpacity onPress={() => navigation.navigate('FilterSearch')}>
                 <Image

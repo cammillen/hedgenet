@@ -1,5 +1,6 @@
 // Documentation: 
 // All of this works, you just need to link const = members at the bottom up witht he backend database and add some logic. 
+//TO DO: add an alphabetical sort (very easy)
 
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View, Dimensions} from 'react-native';

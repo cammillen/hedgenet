@@ -3,20 +3,22 @@
 import React from 'react';
 import { Image } from 'react-native';
 import { StyleSheet, Text, View } from 'react-native';
-import { globalColors } from '../styles/Colors.js';
-import { globalFonts } from '../styles/Fonts.js';
+import { globalColors } from '../../styles/Colors.js';
+import { globalFonts } from '../../styles/Fonts.js';
 
 export default function StockPriceCard(param) {
 
+  console.log(param);
+
   let performance = (param.delta/param.price).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","); //comma & decimal place formatting
   let textColor = 'success';
-  let imageRequire = require('../assets/icons/ArrowUpSquare.png');
+  let imageRequire = require('../../assets/icons/ArrowUpSquare.png');
   if (param.delta < 0) {
     textColor = 'error';
-    imageRequire = require('../assets/icons/ArrowDownSquare.png');
+    imageRequire = require('../../assets/icons/ArrowDownSquare.png');
   }
-  let price = (param.price/100).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  let delta = (param.delta/100).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  let price = param.price.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  let delta = param.delta.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
   return (
     <View style={styles.rect}>

@@ -3,8 +3,8 @@ import { StyleSheet, View, StatusBar, Text, Image } from "react-native";
 import Svg, { Ellipse } from "react-native-svg";
 
 
-import { globalColors } from '../styles/Colors.js';
-import { globalFonts } from '../styles/Fonts.js';
+import { globalColors } from '../../styles/Colors.js';
+import { globalFonts } from '../../styles/Fonts.js';
 
 function WhatExpertSay(params) {
   return (
@@ -90,7 +90,7 @@ function WhatExpertSay(params) {
             <View style={styles.group20}>
               <View style={styles.image3Row}>
                 <Image
-                  source={require("../assets/icons/target-price.png")}
+                  source={require("../../assets/icons/target-price.png")}
                   resizeMode="contain"
                   style={styles.image3}
                 ></Image>
@@ -103,7 +103,7 @@ function WhatExpertSay(params) {
             <View style={styles.group21}>
               <View style={styles.image5Row}>
                 <Image
-                  source={require("../assets/icons/ext-return.png")}
+                  source={require("../../assets/icons/ext-return.png")}
                   resizeMode="contain"
                   style={styles.image5}
                 ></Image>

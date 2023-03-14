@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text, Image, ScrollView } from "react-native";
+import { globalColors } from '../../styles/Colors.js';
+import { globalFonts } from '../../styles/Fonts.js';
 
 function Untitled(props) {
   return (
@@ -15,7 +17,7 @@ function Untitled(props) {
               <View style={styles.rect}>
                 <View style={styles.image10Row}>
                   <Image
-                    source={require("../assets/icons/market-cap.png")}
+                    source={require("../../assets/icons/market-cap.png")}
                     resizeMode="contain"
                     style={styles.image10}
                   ></Image>
@@ -33,7 +35,7 @@ function Untitled(props) {
                   <Text style={styles.nA}>N/A</Text>
                 </View>
                 <Image
-                  source={require("../assets/icons/ratio.png")}
+                  source={require("../../assets/icons/ratio.png")}
                   resizeMode="contain"
                   style={styles.image11}
                 ></Image>
@@ -43,7 +45,7 @@ function Untitled(props) {
               <View style={styles.rect3}>
                 <View style={styles.image12Row}>
                   <Image
-                    source={require("../assets/icons/divident.png")}
+                    source={require("../../assets/icons/divident.png")}
                     resizeMode="contain"
                     style={styles.image12}
                   ></Image>
@@ -71,7 +73,7 @@ const styles = StyleSheet.create({
     marginTop: 30
   },
   blcbMarketStats: {
-    fontFamily: "urbanist-700",
+    ...globalFonts.H5(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 20
   },
@@ -114,7 +116,7 @@ const styles = StyleSheet.create({
     height: 60
   },
   marketCap: {
-    fontFamily: "urbanist-700",
+    ...globalFonts.H6(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 16,
     marginLeft: 14,
@@ -127,7 +129,7 @@ const styles = StyleSheet.create({
     marginTop: -20
   },
   text3: {
-    fontFamily: "urbanist-700",
+    ...globalFonts.H6(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 16,
     textAlign: "right",
@@ -150,13 +152,13 @@ const styles = StyleSheet.create({
     flexDirection: "row"
   },
   priceEarningsRatio: {
-    fontFamily: "urbanist-700",
+    ...globalFonts.H6(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 16,
     marginLeft: 15
   },
   nA: {
-    fontFamily: "urbanist-700",
+    ...globalFonts.H6(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 16,
     textAlign: "right",
@@ -193,7 +195,7 @@ const styles = StyleSheet.create({
     height: 60
   },
   dividendYield: {
-    fontFamily: "urbanist-700",
+    ...globalFonts.H6(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 16,
     marginLeft: 14,
@@ -206,7 +208,7 @@ const styles = StyleSheet.create({
     marginTop: -20
   },
   nA2: {
-    fontFamily: "urbanist-700",
+    ...globalFonts.H6(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 16,
     textAlign: "right",
@@ -215,7 +217,7 @@ const styles = StyleSheet.create({
     marginLeft: 93
   },
   showMore: {
-    fontFamily: "urbanist-600",
+    ...globalFonts.H6(globalColors.others.white.color),
     color: "rgba(18,209,142,1)",
     fontSize: 16,
     marginBottom: 20,
