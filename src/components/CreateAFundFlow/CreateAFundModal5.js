@@ -10,9 +10,11 @@ import BottomButton from './BottomBotton';
 import CreateAFundModal6 from './CreateAFundModal6.js';
 import ToggleOption from '../AdminPanel/ToggleOption';
 
+let option = '';
+
 const screenHeight = Dimensions.get('window').height;
 
-const CreateAFundModal4 = ({ visible, onClose }) => {
+const CreateAFundModal5 = ({ visible, onClose }) => {
 //This is for toggle option: 
     const [selectedOption, setSelectedOption] = useState(null);
     const handleOptionSelect = (option) => {
@@ -86,18 +88,10 @@ const CreateAFundModal4 = ({ visible, onClose }) => {
   }, [visible]);
 // End of animation code.
 
+option = selectedOption;
+
 //Code for text entry: - TO DO BACKEND: the text entry is stored in text1 and text2, you need to send this entry to the backend when the user presses the next button. 
 const scrollViewRef = useRef();
-
-const [text1, setText1] = useState('');
-const [text2, setText2] = useState('');
-const handleTextChange1 = (value) => {
-    setText1(value);
-};
-const handleTextChange2 = (value) => {
-  setText2(value);
-  scrollViewRef.current.scrollToEnd({ animated: true });
-};
 
 //This is all modal specific stuff: 
 const navigation = useNavigation();
@@ -191,4 +185,5 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CreateAFundModal4;
+export default CreateAFundModal5;
+export { option };

@@ -13,19 +13,13 @@ import FundCard from '../Dashboard/FundCard';
 import { text1Value } from './CreateAFundModal1'; // Fund name data.
 import { text2Value } from './CreateAFundModal1'; // Fund Bio Data
 import { text3Value } from './CreateAFundModal2'; // University Data
+import CreateFundButton from './CreateFundButton.js';
+import FundSettings from './FundSettings';
 
 const screenHeight = Dimensions.get('window').height;
 
-const CreateAFundModal4 = ({ visible, onClose }) => {
-//This is for toggle option: 
-    const [selectedOption, setSelectedOption] = useState(null);
-    const handleOptionSelect = (option) => {
-    if (option !== selectedOption) {
-        setSelectedOption(option);
-    } else {
-        setSelectedOption(null);
-    }
-    }
+const CreateAFundModal6 = ({ visible, onClose }) => {
+
 // This is to open next modal: 
     const [modalVisible, setModalVisible] = useState(false);
     const openModal = () => {
@@ -107,6 +101,7 @@ const handleTextChange3 = (value3) => {
 };
 
 
+
 //This is all modal specific stuff: 
 const navigation = useNavigation();
   return (
@@ -123,18 +118,19 @@ const navigation = useNavigation();
               <View style={styles.contentVerticalContainer} >
                 <Text style={[globalFonts.H3(globalColors.others.white.color), {paddingHorizontal: 24}]}>Your fund is ready, please review. 🚀</Text>
                 {/* TO DO: Need to link this with what has been entered and stored in the form:  */}
-                <FundCard fundTitle={"Personal Fund"} members={"0"} stocks={"0"} marketCap={"£0.00"} fundTags={['UCL', 'FinTech', 'S&P 500']}/>
-                <View style={styles.paddingContainer}>
-                  <TextEntryFinalSlide title="Fund Name" placeholder={text1Value} showCharacterCount={false} maxLength={20} value={text1} onChangeText={handleTextChange1} />
-                  <TextEntryFinalSlide title="Fund Biography" placeholder={text2Value} showCharacterCount={false} maxLength={20} value={text2} onChangeText={handleTextChange2} />
-                  <TextEntryFinalSlide title="Affiliated University" placeholder={text3Value} showCharacterCount={false} maxLength={20} value={text3} onChangeText={handleTextChange3} />
-                </View>
-                {/* Enter content here: */}
-                    <Text style={{paddingTop: 200}}>  </Text>  
+                <ScrollView showsVerticalScrollIndicator={false} ref={scrollViewRef}>
+                  <FundCard fundTitle={"Personal Fund"} members={"0"} stocks={"0"} marketCap={"£0.00"} fundTags={['UCL', 'FinTech', 'S&P 500']}/>
+                  <View style={styles.paddingContainer}>
+                    <TextEntryFinalSlide title="Fund Name" placeholder={text1Value} showCharacterCount={false} maxLength={20} value={text1} onChangeText={handleTextChange1} />
+                    <TextEntryFinalSlide title="Fund Biography" placeholder={text2Value} showCharacterCount={false} maxLength={20} value={text2} onChangeText={handleTextChange2} />
+                    <TextEntryFinalSlide title="Affiliated University" placeholder={text3Value} showCharacterCount={false} maxLength={20} value={text3} onChangeText={handleTextChange3} />
+                    {/* ENTER FUND TAGS HERE */}
+                    <FundSettings/>
+                    <Text style={{paddingTop: 250}}>  </Text>  
+                  </View>
+                </ScrollView>
               </View>
-              {/* TO DO: BACKEND need to send text1 and text2 to the backend storing the new fund name and bio */}
-              {/* <BottomButton texts={[]} modal={<CreateAFundModal2 visible={modalVisible} onClose={closeModal}/>} onPress={openModal}/> */}
-              {/* This is end of flex box with content.*/}
+              <CreateFundButton/>
             </Animated.View>
           </TouchableWithoutFeedback>
         </Animated.View>
@@ -194,6 +190,6 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CreateAFundModal4;
+export default CreateAFundModal6;
 
 
