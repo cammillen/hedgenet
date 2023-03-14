@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { Image, Modal, View, StyleSheet, TouchableOpacity, Text, Animated, Dimensions, TouchableWithoutFeedback, PanResponder, KeyboardAvoidingView } from 'react-native';
+import { Text, Image, Modal, View, StyleSheet, TouchableOpacity, Animated, Dimensions, TouchableWithoutFeedback, PanResponder, KeyboardAvoidingView } from 'react-native';
 import { globalColors } from '../../styles/Colors';
 import { globalFonts } from '../../styles/Fonts';
 import { useNavigation } from '@react-navigation/native';
@@ -18,7 +18,7 @@ import FundSettings from './FundSettings';
 
 const screenHeight = Dimensions.get('window').height;
 
-function fundTags(c) {
+function FundTags({c}) {
   let a = [];
   c.forEach(element => a.push(<Text style={styles.textBox}>{element}</Text>));
   return (
@@ -136,7 +136,7 @@ const navigation = useNavigation();
                     <TextEntryFinalSlide title="Fund Name" placeholder={text1Value} showCharacterCount={false} maxLength={20} value={text1} onChangeText={handleTextChange1} />
                     <TextEntryFinalSlide title="Fund Biography" placeholder={text2Value} showCharacterCount={false} maxLength={20} value={text2} onChangeText={handleTextChange2} />
                     <TextEntryFinalSlide title="Affiliated University" placeholder={text3Value} showCharacterCount={false} maxLength={20} value={text3} onChangeText={handleTextChange3} />
-                      <FundTags c={categoryList}/>
+                    <FundTags c={categoryList}/>
                     <FundSettings/>
                     <Text style={{paddingTop: 250}}>  </Text>  
                   </View>

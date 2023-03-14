@@ -28,7 +28,6 @@ import CategorySearch from '../screens/CategorySearch.js';
 import TopMoversSearch from '../screens/TopMoversSearch .js';
 import FundMembers from '../components/Dashboard/FundMembers.js';
 import TradingInsights from '../components/Dashboard/TradingInsights.js';
-
 // import KeyActionsModal from '../components/KeyActionsModal.js';
 
 const Stack = createStackNavigator();
