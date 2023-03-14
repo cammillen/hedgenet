@@ -1,6 +1,6 @@
-//Dashboard Screen
+// PLaceholder Screen
+// Chnage everything with PLaceholder in, only 2 things to change. 
 
-//Imports
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { StatusBar } from 'react-native';
@@ -10,15 +10,10 @@ import * as SplashScreen from 'expo-splash-screen';
 import TopMenuBar from '../components/TopMenuBar.js';
 import Background from '../components/Background.js';
 import BottomMenuBar from '../components/BottomMenuBar.js';
-import SearchBarInactive from '../components/SearchBarInactive.js';
-import LogoHeader from '../components/SectionHeaders/LogoHeader.js';
-import FundDashboardSliderContent from '../components/Dashboard/FundDashboardSliderContent';
-import SliderBar from '../components/SliderBar';
 
+export default function Placeholder () {
 
-export default function Dashboard () {
-
-  const Screen = 'Dashboard';
+  const Screen = 'Placeholder';
 
   const [fontsLoaded] = useFonts({
     'Urbanist-Bold': require('../assets/fonts/Urbanist-Bold.ttf'),
@@ -44,10 +39,6 @@ export default function Dashboard () {
       <StatusBar barStyle="light-content" backgroundColor="#000" />
       <View style={styles.container} onLayout={onLayoutRootView}>
         <TopMenuBar screen={Screen} />
-        <SearchBarInactive/>
-        {/* TO DO: LOGIC Make sure logic is added for access to admin panel */}
-        <LogoHeader name={'My Funds'} marginBottom={-5}  buttonnavigation={'AdminPanel'}/>
-        <SliderBar titles={titles} screens={screens} />
         <View style={styles.bottomMenuBarContainer}>
           <BottomMenuBar />
         </View>
@@ -69,13 +60,3 @@ const styles = StyleSheet.create({
     marginLeft: 5,
   },
 });
-
-  // Slider Bar Arguments (TO DO: Link to Backend): 
-
-  const titles = ['Personal', 'UCL FinTech Fund', 'LSE Sustainable Finance Fund'];
-  const screens = [
-    // TO DO: Link to backend
-    () => <FundDashboardSliderContent/>,
-    () => <FundDashboardSliderContent/>,
-    () => <FundDashboardSliderContent/>,
-  ];

@@ -10,7 +10,7 @@ import TopMenuBar from '../components/TopMenuBar.js';
 import { NavigationContainer } from '@react-navigation/native';
 import Background from '../components/Background.js';
 import BottomMenuBar from '../components/BottomMenuBar.js';
-import LeftArrowTextHeader from '../components/Section Headers/LeftArrowTextHeader.js';
+import LeftArrowTextHeader from '../components/SectionHeaders/LeftArrowTextHeader.js';
 import TopPerformers from '../components/BrowseFundsTopPerformersHeaders.js';
 import BrowseFundsHeader from '../components/BrowseFundsHeader.js';
 import BrowseFunds from '../components/BrowseFunds.js';

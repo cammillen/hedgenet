@@ -1,7 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet, View } from 'react-native';
-import { globalColors } from '../styles/Colors.js';
-import { globalFonts } from '../styles/Fonts.js';
+import { globalColors } from '../../styles/Colors.js';
+import { globalFonts } from '../../styles/Fonts.js';
 
 const Button = (props) => {
   const { color, title } = props;
@@ -15,13 +15,22 @@ const Button = (props) => {
 const styles = StyleSheet.create({
   button: {
     display: 'flex',
-    flexDirection: 'column',
-    //justifyContent: 'center',
+    flexDirection: 'row',
+    justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 100,
-    padding: 18,
+    paddingTop: 18,
+    paddingLeft:16,
+    paddingRight: 16,
+    paddingBottom: 18,
     width: 382,
-    height: 60,
+    height: 58,
+    gap: 10,
+    marginTop: 24,
+    marginLeft: 24,
+    marginRight: 24,
+    width: 382,
+    height: 58
   },
 });
 
