@@ -19,8 +19,7 @@ import IndexFundCard from '../components/IndexFundCard.js';
 
 // Loading the custom fonts (you have to use this at the start of every screen): 
 
-SplashScreen.preventAutoHideAsync(); 
-
+SplashScreen.preventAutoHideAsync();
 
 export default function Home() {
 
