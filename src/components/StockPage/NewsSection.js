@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Text, Image, ScrollView } from "react-native";
-import { globalColors } from '../../styles/Colors.js';
-import { globalFonts } from '../../styles/Fonts.js';
+import { StyleSheet, View, Text, Image, ScrollView, TouchableOpacity } from "react-native";
+import { useNavigation } from '@react-navigation/native';
+import { Link } from "@react-navigation/native";
 import MaterialChipBasic from "../../components/Chips/MaterialChipBasic";
 import MaterialChipBasic1 from "../../components/Chips/MaterialChipBasic1";
 import MaterialChipBasic2 from "../../components/Chips/MaterialChipBasic2";
@@ -10,16 +10,22 @@ import MaterialChipBasic4 from "../../components/Chips/MaterialChipBasic4";
 import MaterialChipBasic5 from "../../components/Chips/MaterialChipBasic5";
 
 function News(props) {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <View style={styles.group}>
         <View style={styles.textRow}>
           <Text style={styles.text}>News</Text>
+          <TouchableOpacity onPress={() => navigation.navigate('NewsSectionDetails')}>
           <Image
             source={require("../../assets/icons/ArrowRightGreen.png")}
             resizeMode="contain"
             style={styles.image}
           ></Image>
+
+             
+            </TouchableOpacity>
+         
         </View>
       </View>
       <View style={styles.newsareaStack}>
@@ -61,7 +67,9 @@ function News(props) {
             </Text>
             <View style={styles.rect5}></View>
           </View>
+          <Link style={styles.showMore} to={{ screen: 'NewsSectionDetails' }}>
           <Text style={styles.showMore}>Show More</Text>
+          </Link>
         </View>
         <View style={styles.group20}>
           <View style={styles.group6}>
@@ -197,7 +205,7 @@ const styles = StyleSheet.create({
     width: 336,
     height: 14,
     flexDirection: "row",
-    marginLeft: 2
+    marginLeft: 24
   },
   forbes: {
     fontFamily: "urbanist-500",
@@ -223,7 +231,7 @@ const styles = StyleSheet.create({
     width: 336,
     fontSize: 17,
     marginTop: 10,
-    marginLeft: 2
+    marginLeft: 24
   },
   rect: {
     width: 336,
@@ -244,7 +252,8 @@ const styles = StyleSheet.create({
   seekingAlpha: {
     fontFamily: "urbanist-500",
     color: "rgba(255,255,255,1)",
-    fontSize: 12
+    fontSize: 12,
+    marginLeft: 24
   },
   text2: {
     fontFamily: "urbanist-500",
@@ -265,6 +274,7 @@ const styles = StyleSheet.create({
     fontFamily: "urbanist-600",
     color: "rgba(255,255,255,1)",
     height: 60,
+    marginLeft: 24,
     width: 336,
     fontSize: 17
   },
@@ -295,7 +305,8 @@ const styles = StyleSheet.create({
   theMotleyFool: {
     fontFamily: "urbanist-500",
     color: "rgba(255,255,255,1)",
-    fontSize: 12
+    fontSize: 12,
+    marginLeft: 24
   },
   text4: {
     fontFamily: "urbanist-500",
@@ -316,7 +327,7 @@ const styles = StyleSheet.create({
     width: 336,
     fontSize: 17,
     marginTop: 10,
-    marginLeft: 2
+    marginLeft: 24
   },
   rect5: {
     width: 336,
@@ -432,7 +443,8 @@ const styles = StyleSheet.create({
   group19: {
     width: 455,
     height: 124,
-    flexDirection: "row"
+    flexDirection: "row",
+
   },
   group11: {
     width: 70,
