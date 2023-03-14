@@ -4,8 +4,7 @@ import { globalColors } from '../../styles/Colors.js';
 import { globalFonts } from '../../styles/Fonts.js';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-
-import categoryList from '../assets/categories.js';
+import categoryList from '../../assets/categories.js';
 
 function selectDeselect(e, s, ss) {
     if (s.includes(e)) {
@@ -16,7 +15,7 @@ function selectDeselect(e, s, ss) {
     ss([...s, e]);
 };
 
-function TagSelection({selected, setSelected}) {
+function TagSelection({c1,c2,w,selected, setSelected}) {
     const navigation = useNavigation();
 
     let categories = [];
@@ -27,8 +26,8 @@ function TagSelection({selected, setSelected}) {
         const categoryRow = categorySet.map((element, index) => (
             <TouchableOpacity key={index} onPress={() => selectDeselect(element, selected, setSelected)}>
                 <Text style={styles.textBox(
-                    c1 = selected.includes(element) ? 'primary' : 'others',
-                    c2 = selected.includes(element) ? '_500' : 'white',
+                    c1 = selected.includes(element) ? 'primary' : 'dark',
+                    c2 = selected.includes(element) ? '_500' : '_3',
                     w = selected.includes(element) ? 0.5 : 0.2
                 )}>{element}</Text>
             </TouchableOpacity>
@@ -51,14 +50,14 @@ function TagSelection({selected, setSelected}) {
 
 const styles = StyleSheet.create({
     textBox: (c1,c2,w) => ({
-        ...globalFonts.BodyLarge.semiBold(globalColors[c1][c2].color),
+        ...globalFonts.BodyLarge.semiBold(globalColors.others.white.color),
         marginRight:16,
         paddingRight:20,
         paddingLeft:20,
         padding:8,
         borderColor:globalColors[c1][c2].color,
-        borderWidth:w,
-        borderRadius:100,
+        borderWidth: 1,
+        borderRadius: 18,
         minWidth: 100, //minimum width to fit content
     }),
     container: {

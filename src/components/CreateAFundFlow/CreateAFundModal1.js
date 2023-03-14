@@ -12,15 +12,9 @@ import CreateAFundModal2 from './CreateAFundModal2.js';
 let text1Value = '';
 let text2Value = '';
 
-// Global variable for popup visbility. 
-const ModalContext = React.createContext({
-  modalVisible: false,
-  setModalVisible: () => {},
-});
-
 const screenHeight = Dimensions.get('window').height;
 
-const CreateAFundModal1 = ({ visible, onClose }) => {
+const CreateAFundModal1 = ({ visible, onClose}) => {
   // This is to open next modal: 
   const [modalVisible, setModalVisible] = useState(false);
   const openModal = () => {
