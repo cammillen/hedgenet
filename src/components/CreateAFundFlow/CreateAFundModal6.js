@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { Image, Modal, View, StyleSheet, TouchableOpacity, Text, Animated, Dimensions, TouchableWithoutFeedback, PanResponder, KeyboardAvoidingView } from 'react-native';
+import { Text, Image, Modal, View, StyleSheet, TouchableOpacity, Text, Animated, Dimensions, TouchableWithoutFeedback, PanResponder, KeyboardAvoidingView, ScrollView } from 'react-native';
 import { globalColors } from '../../styles/Colors';
 import { globalFonts } from '../../styles/Fonts';
 import { useNavigation } from '@react-navigation/native';
@@ -18,7 +18,19 @@ import FundSettings from './FundSettings';
 
 const screenHeight = Dimensions.get('window').height;
 
-const CreateAFundModal6 = ({ visible, onClose }) => {
+function fundTags(c) {
+  let a = [];
+  c.forEach(element => a.push(<Text style={styles.textBox}>{element}</Text>));
+  return (
+    <View style={styles.container}>
+      <ScrollView horizontal={true} alwaysBounceHorizontal={true} >
+        <View style={{flexDirection:'column'}}>{a}</View>
+      </ScrollView>
+    </View >
+    );
+};
+
+const CreateAFundModal6 = ({ visible, onClose, categoryList }) => {
 
 // This is to open next modal: 
     const [modalVisible, setModalVisible] = useState(false);
@@ -124,7 +136,7 @@ const navigation = useNavigation();
                     <TextEntryFinalSlide title="Fund Name" placeholder={text1Value} showCharacterCount={false} maxLength={20} value={text1} onChangeText={handleTextChange1} />
                     <TextEntryFinalSlide title="Fund Biography" placeholder={text2Value} showCharacterCount={false} maxLength={20} value={text2} onChangeText={handleTextChange2} />
                     <TextEntryFinalSlide title="Affiliated University" placeholder={text3Value} showCharacterCount={false} maxLength={20} value={text3} onChangeText={handleTextChange3} />
-                    {/* ENTER FUND TAGS HERE */}
+                      <FundTags c={categoryList}/>
                     <FundSettings/>
                     <Text style={{paddingTop: 250}}>  </Text>  
                   </View>
@@ -187,6 +199,20 @@ const styles = StyleSheet.create({
   },
   paddingContainer:{
     paddingHorizontal: 24,
+  },
+  textBox:{
+    ...globalFonts.BodyLarge.semiBold(globalColors.others.white.color),
+    marginRight:16,
+    paddingRight:20,
+    paddingLeft:20,
+    padding:8,
+    borderColor:globalColors.others.white.color,
+    borderWidth: 1,
+    borderRadius: 18,
+    minWidth: 100, //minimum width to fit content
+  },
+  textBoxContainer: {
+    flexDirection: 'column',
   },
 });
 

@@ -92,6 +92,8 @@ const handleTextChange2 = (value) => {
 
 //This is all modal specific stuff: 
 const navigation = useNavigation();
+
+
 const [selectedCategories, setSelected] = useState([]);
 
   return (
@@ -115,7 +117,7 @@ const [selectedCategories, setSelected] = useState([]);
                     <Text style={{paddingTop: 200}}>  </Text>  
               </View>
               {/* TO DO: BACKEND need to send text1 and text2 to the backend storing the new fund name and bio */}
-              <BottomButton texts={[]} modal={<CreateAFundModal5 visible={modalVisible} onClose={closeModal}/>} onPress={openModal}/>
+              <BottomButton texts={[]} modal={<CreateAFundModal5 visible={modalVisible} onClose={closeModal}/>} onPress={openModal} categoryList={selectedCategories}/>
               {/* This is end of flex box with content.*/}
             </Animated.View>
           </TouchableWithoutFeedback>
