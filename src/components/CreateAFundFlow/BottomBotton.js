@@ -30,11 +30,15 @@ const BottomButton = ({ texts, onPress, modal }) => {
     }
   }, [texts]);
 
-  
+  const handlePress = () => {
+    if (buttonColor === globalColors.primary._500.color) {
+      onPress(); // navigate to the next screen
+    }
+  };
 
   return (
     <View style={styles.container}>
-        <TouchableOpacity onPress={onPress} style={[styles.button, { backgroundColor: buttonColor }]}>
+        <TouchableOpacity onPress={handlePress} style={[styles.button, { backgroundColor: buttonColor }]}>
         <Text style={[globalFonts.BodyLarge.Bold(globalColors.others.white.color), styles.buttonText]}>{buttonText}</Text>
         </TouchableOpacity>
       {modal}
