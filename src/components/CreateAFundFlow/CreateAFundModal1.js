@@ -12,6 +12,12 @@ import CreateAFundModal2 from './CreateAFundModal2.js';
 let text1Value = '';
 let text2Value = '';
 
+// Global variable for popup visbility. 
+const ModalContext = React.createContext({
+  modalVisible: false,
+  setModalVisible: () => {},
+});
+
 const screenHeight = Dimensions.get('window').height;
 
 const CreateAFundModal1 = ({ visible, onClose }) => {
@@ -23,7 +29,8 @@ const CreateAFundModal1 = ({ visible, onClose }) => {
   const closeModal = () => {
     setModalVisible(false);
   };
-//This is all animation stuff: 
+
+  //This is all animation stuff: 
   const modalOpacity = useRef(new Animated.Value(0)).current;
   const modalTranslateY = useRef(new Animated.Value(Dimensions.get('screen').height)).current;
   const backgroundOpacity = useRef(new Animated.Value(0)).current;
@@ -104,7 +111,6 @@ const navigation = useNavigation();
           <TouchableWithoutFeedback>
             <Animated.View {...panResponder.panHandlers} style={[styles.modalContainer, { opacity: modalOpacity, transform: [{ translateY: modalTranslateY }] }]}>
               <View style={styles.tabBar}/>
-              {/* Enter content for modal here:  */}
               {/* Header: */}
               <PopupHeader numberOfBars={6} activeBars={1} popupHeaderText="Create Fund" onClose={onClose} />
               {/* Content: */}

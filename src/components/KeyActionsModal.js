@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import CreateAFundModal1 from './CreateAFundFlow/CreateAFundModal1';
 import { useState } from 'react';
 
-const KeyActionsModal = ({ visible, onClose }) => {
+const KeyActionsModal = ({ visible, onClose}) => {
 //This is all animation stuff: 
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -15,6 +15,10 @@ const KeyActionsModal = ({ visible, onClose }) => {
   };
 
   const closeModal = () => {
+    setModalVisible(false);
+  };
+
+  const onCloseAllModals = () => {
     setModalVisible(false);
   };
 
