@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
         width: '100%',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'top',
+        alignItems: 'flex-start',
         paddingLeft: 24,
         paddingRight: 24,
         paddingBottom: 15,
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
         marginRight: 8,
     },
     tagContainer: {
-        alignItems: 'left',
+        alignItems: 'flex-start',
         justifyContent: 'space-between',
       },
       fundTagRow: {
