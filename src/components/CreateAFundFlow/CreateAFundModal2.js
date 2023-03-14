@@ -8,7 +8,9 @@ import TextEntry from './TextEntry.js';
 import { ScrollView } from 'react-native-gesture-handler';
 import BottomButton from './BottomBotton';
 import UploadImage from './UploadImage.js';
-import CreateAFundModal3 from './CreateAFundModal3.js'
+import CreateAFundModal3 from './CreateAFundModal3.js';
+
+let text3Value = '';
 
 const screenHeight = Dimensions.get('window').height;
 
@@ -80,10 +82,10 @@ const CreateAFundModal2 = ({ visible, onClose }) => {
 //Code for text entry: - TO DO BACKEND: the text entry is stored in text1 and text2, you need to send this entry to the backend when the user presses the next button. 
 const scrollViewRef = useRef();
 
-const [text1, setText1] = useState('');
-const handleTextChange1 = (value) => {
-    setText1(value);
-    // scrollViewRef.current.scrollToEnd({ animated: true }); this has been commented out because its not needed for Modal 2. 
+const [text3, setText3] = useState('');
+const handleTextChange3 = (value3) => {
+    setText3(value3);
+    text3Value = value3;
 };
 
 //This is all modal specific stuff: 
@@ -102,7 +104,7 @@ const navigation = useNavigation();
               <View style={styles.contentVerticalContainer} >
                 <Text style={[globalFonts.H3(globalColors.others.white.color), {paddingBottom: 24}]}>Enter affiliated university and icon. 🚀</Text>
                 <ScrollView showsVerticalScrollIndicator={false} ref={scrollViewRef}>
-                  <TextEntry title="Affiliated University" placeholder="e.g. LSE" showCharacterCount={false} maxLength={200} value={text1} onChangeText={handleTextChange1} />
+                  <TextEntry title="Affiliated University" placeholder="e.g. LSE" showCharacterCount={false} maxLength={200} value3={text3} onChangeText={handleTextChange3} />
                   <Text style={[globalFonts.BodyLarge.Bold(globalColors.others.white.color),{marginBottom:16}]}>Fund Icon</Text>
                   <Text style={[globalFonts.BodyXLarge.Regular(globalColors.others.white.color),{marginBottom:24}]}>Please upload an icon that is related to the fund you are setting up.</Text>
                   <UploadImage/>
@@ -111,7 +113,7 @@ const navigation = useNavigation();
                 </ScrollView>
               </View>
               {/* TO DO: BACKEND need to send text1 and text2 to the backend storing the new fund name and bio */}
-              <BottomButton texts={[text1]} modal={<CreateAFundModal3 visible={modalVisible} onClose={closeModal}/>} onPress={openModal}/>
+              <BottomButton texts={[text3]} modal={<CreateAFundModal3 visible={modalVisible} onClose={closeModal}/>} onPress={openModal}/>
               {/* This is end of flex box with content.*/}
             </Animated.View>
           </TouchableWithoutFeedback>
@@ -160,3 +162,4 @@ const styles = StyleSheet.create({
 });
 
 export default CreateAFundModal2;
+export { text3Value };

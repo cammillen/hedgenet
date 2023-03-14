@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
         alignItems: 'top',
         paddingLeft: 24,
         paddingRight: 24,
-        paddingBottom: 30,
+        paddingBottom: 15,
         paddingTop: 24,
       },
     profileIcon: {

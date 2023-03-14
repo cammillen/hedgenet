@@ -5,10 +5,14 @@ import { globalFonts } from '../../styles/Fonts';
 import { useNavigation } from '@react-navigation/native';
 import PopupHeader from '../SectionHeaders/PopupHeader.js';
 import TextEntry from './TextEntry.js';
+import TextEntryFinalSlide from './TextEntryFinalSlide.js';
 import { ScrollView } from 'react-native-gesture-handler';
 import BottomButton from './BottomBotton';
 import CreateAFundModal2 from './CreateAFundModal2.js';
 import FundCard from '../Dashboard/FundCard';
+import { text1Value } from './CreateAFundModal1'; // Fund name data.
+import { text2Value } from './CreateAFundModal1'; // Fund Bio Data
+import { text3Value } from './CreateAFundModal2'; // University Data
 
 const screenHeight = Dimensions.get('window').height;
 
@@ -90,14 +94,18 @@ const CreateAFundModal4 = ({ visible, onClose }) => {
 const scrollViewRef = useRef();
 
 const [text1, setText1] = useState('');
+const handleTextChange1 = (value1) => {
+    setText1(value1);
+};
 const [text2, setText2] = useState('');
-const handleTextChange1 = (value) => {
-    setText1(value);
+const handleTextChange2 = (value2) => {
+    setText2(value2);
 };
-const handleTextChange2 = (value) => {
-  setText2(value);
-  scrollViewRef.current.scrollToEnd({ animated: true });
+const [text3, setText3] = useState('');
+const handleTextChange3 = (value3) => {
+    setText3(value3);
 };
+
 
 //This is all modal specific stuff: 
 const navigation = useNavigation();
@@ -116,18 +124,24 @@ const navigation = useNavigation();
                 <Text style={[globalFonts.H3(globalColors.others.white.color), {paddingHorizontal: 24}]}>Your fund is ready, please review. 🚀</Text>
                 {/* TO DO: Need to link this with what has been entered and stored in the form:  */}
                 <FundCard fundTitle={"Personal Fund"} members={"0"} stocks={"0"} marketCap={"£0.00"} fundTags={['UCL', 'FinTech', 'S&P 500']}/>
+                <View style={styles.paddingContainer}>
+                  <TextEntryFinalSlide title="Fund Name" placeholder={text1Value} showCharacterCount={false} maxLength={20} value={text1} onChangeText={handleTextChange1} />
+                  <TextEntryFinalSlide title="Fund Biography" placeholder={text2Value} showCharacterCount={false} maxLength={20} value={text2} onChangeText={handleTextChange2} />
+                  <TextEntryFinalSlide title="Affiliated University" placeholder={text3Value} showCharacterCount={false} maxLength={20} value={text3} onChangeText={handleTextChange3} />
+                </View>
                 {/* Enter content here: */}
                     <Text style={{paddingTop: 200}}>  </Text>  
               </View>
               {/* TO DO: BACKEND need to send text1 and text2 to the backend storing the new fund name and bio */}
-              <BottomButton texts={[]} modal={<CreateAFundModal2 visible={modalVisible} onClose={closeModal}/>} onPress={openModal}/>
+              {/* <BottomButton texts={[]} modal={<CreateAFundModal2 visible={modalVisible} onClose={closeModal}/>} onPress={openModal}/> */}
               {/* This is end of flex box with content.*/}
             </Animated.View>
           </TouchableWithoutFeedback>
         </Animated.View>
       </TouchableWithoutFeedback>
     </Modal>
-  );
+    
+  );  
 };
 
 const styles = StyleSheet.create({
@@ -175,6 +189,11 @@ const styles = StyleSheet.create({
     // paddingBottom: 24,
     ...globalFonts.H5(globalColors.others.white.color),
   },
+  paddingContainer:{
+    paddingHorizontal: 24,
+  },
 });
 
 export default CreateAFundModal4;
+
+

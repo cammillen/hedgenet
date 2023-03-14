@@ -9,6 +9,9 @@ import { ScrollView } from 'react-native-gesture-handler';
 import BottomButton from './BottomBotton';
 import CreateAFundModal2 from './CreateAFundModal2.js';
 
+let text1Value = '';
+let text2Value = '';
+
 const screenHeight = Dimensions.get('window').height;
 
 const CreateAFundModal1 = ({ visible, onClose }) => {
@@ -81,16 +84,19 @@ const scrollViewRef = useRef();
 
 const [text1, setText1] = useState('');
 const [text2, setText2] = useState('');
-const handleTextChange1 = (value) => {
-    setText1(value);
+const handleTextChange1 = (value1) => {
+    setText1(value1);
+    text1Value = value1;
 };
-const handleTextChange2 = (value) => {
-  setText2(value);
+const handleTextChange2 = (value2) => {
+  text2Value = value2
+  setText2(value2);
   scrollViewRef.current.scrollToEnd({ animated: true });
 };
 
 //This is all modal specific stuff: 
 const navigation = useNavigation();
+
   return (
     <Modal transparent visible={visible} animationType="none" onRequestClose={onClose}>
       <TouchableWithoutFeedback onPress={() => onClose(false)}>
@@ -105,8 +111,8 @@ const navigation = useNavigation();
               <View style={styles.contentVerticalContainer} >
                 <Text style={[globalFonts.H3(globalColors.others.white.color), {paddingBottom: 24}]}>Enter your funds name and biography. 🏛️</Text>
                 <ScrollView showsVerticalScrollIndicator={false} ref={scrollViewRef}>
-                  <TextEntry title="Fund Name" placeholder="e.g. UCL Shorting Fund" showCharacterCount={true} maxLength={20} value={text1} onChangeText={handleTextChange1} />
-                  <TextEntry title="Fund Biography" placeholder="Please enter a small fund bio." showCharacterCount={true} maxLength={150} value={text2} onChangeText={handleTextChange2} />
+                  <TextEntry title="Fund Name" placeholder="e.g. UCL Shorting Fund" showCharacterCount={true} maxLength={20} value1={text1} onChangeText={handleTextChange1} />
+                  <TextEntry title="Fund Biography" placeholder="Please enter a small fund bio." showCharacterCount={true} maxLength={150} value2={text2} onChangeText={handleTextChange2} />
                   {/* You need this to make sure keyboard doesnt cover the text: */}
                   <Text style={{paddingTop: 460}}>  </Text>  
                 </ScrollView>
@@ -161,3 +167,8 @@ const styles = StyleSheet.create({
 });
 
 export default CreateAFundModal1;
+export { text1Value };
+export { text2Value };
+
+
+
