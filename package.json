@@ -51,7 +51,8 @@
     "react-native-tab-view": "^3.5.1",
     "react-native-web": "~0.18.9",
     "react-navigation": "^4.4.4",
-    "reanimated": "^0.0.1-alpha"
+    "reanimated": "^0.0.1-alpha",
+    "expo-app-loading": "~2.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
