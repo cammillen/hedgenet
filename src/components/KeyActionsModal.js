@@ -7,7 +7,7 @@ import CreateAFundModal1 from './CreateAFundFlow/CreateAFundModal1';
 import { useState } from 'react';
 
 const KeyActionsModal = ({ visible, onClose}) => {
-//This is all animation stuff: 
+
   const [modalVisible, setModalVisible] = useState(false);
 
   const openModal = () => {
@@ -22,6 +22,7 @@ const KeyActionsModal = ({ visible, onClose}) => {
     setModalVisible(false);
   };
 
+  //This is all animation stuff: 
   const modalOpacity = useRef(new Animated.Value(0)).current;
   const modalTranslateY = useRef(new Animated.Value(Dimensions.get('screen').height)).current;
   const backgroundOpacity = useRef(new Animated.Value(0)).current;
