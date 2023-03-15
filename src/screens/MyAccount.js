@@ -1,5 +1,4 @@
-// PLaceholder Screen
-// Chnage everything with PLaceholder in, only 2 things to change. 
+//My Account Screen
 //Navigation for buttons need to be added here.
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Image, Text} from 'react-native';
@@ -15,7 +14,7 @@ import { globalColors } from '../styles/Colors.js';
 import { globalFonts } from '../styles/Fonts.js';
 import { ScrollView } from 'react-native-gesture-handler';
 
-export default function Language () {
+export default function MyAccount () {
 
   const Screen = 'My Account';
 
@@ -93,11 +92,22 @@ export default function Language () {
                     style={styles.ArrowLeft_GreenIcon}
                 />      
           </TouchableOpacity>
-          <Text style={[globalFonts.H4(globalColors.others.white.color), {marginLeft:16}]}> Language</Text>
+          <Text style={[globalFonts.H4(globalColors.others.white.color), {marginLeft:16}]}> Settings</Text>
         </View>   
         <View style={styles.bigbox}>
           <View style={styles.scrollbox}>
             <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+            <View style={styles.containerfreestock}>
+            <Image 
+              source={require('../assets/PictureSettings1.png')}
+              style={styles.image1}
+            />
+            <View style={styles.textbox}>
+              <Text style={globalFonts.H5(globalColors.others.white.color)}>Get free stock 💰</Text>
+              <Text style={[globalFonts.BodyMedium.Medium(globalColors.others.white.color), {marginTop:4}]}>Refer your friends & unlock up to </Text>
+              <Text style={[globalFonts.BodyMedium.Medium(globalColors.others.white.color)]}>$100 of free stock per friend</Text>
+            </View>
+          </View>
               {renderButton({
                 image: require('../assets/PictureSettings2.png'),
                 text: 'Account Details',

@@ -29,8 +29,6 @@ const styles = StyleSheet.create({
     marginTop: 24,
     marginLeft: 24,
     marginRight: 24,
-    width: 382,
-    height: 58
   },
 });
 
