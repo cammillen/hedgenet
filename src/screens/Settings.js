@@ -212,8 +212,7 @@ const styles = StyleSheet.create({
     marginRight:24
   },
   scrollbox: {
-    height: 500,
-    paddingBottom: 24,
+    height: 'auto',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center'
