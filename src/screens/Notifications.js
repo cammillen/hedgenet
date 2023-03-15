@@ -14,6 +14,10 @@ import TextWithFilter from '../components/SectionHeaders/TextWithFilterArrowBack
 import SliderBar from '../components/SliderBar';
 import MyNotifications from '../components/MyNotifications.js';
 
+import MyPositions from '../components/MyPositions.js';
+
+
+
 const notifications = [
   {fund:'Daily Review',date:'2023-03-14',performance:0.075},
   {fund:'UCL Fintech',stock:'Google',userShares:0.0014,date:'2023-03-14'},
@@ -29,7 +33,6 @@ const notifications = [
 
 //backend call to notifications -- treat Daily Review as the fund!
 const uniqueFunds = [...new Set(notifications.filter(notification => notification.fund !== 'Daily Review').map(notification => notification.fund))].filter(Boolean);  
-const titles = ['All',...uniqueFunds];
 let screens = [() => <MyNotifications notifications={notifications} paddingBottom={150} bottomText={'See More'}/>]
 
 export default function Notifications () {
@@ -55,9 +58,12 @@ export default function Notifications () {
     return null;
   }
 
-  uniqueFunds.forEach(element => screens.push(
-    () => <MyNotifications notifications={notifications.filter(notification => notification.fund == element)} paddingBottom={150} bottomText={'See More'} />
-  ));
+  if (screens.length <= uniqueFunds.length) { //why on god's green earth does this loop run multiple times?
+    uniqueFunds.forEach(element => 
+      screens.push(
+      () => <MyNotifications key={element} notifications={notifications.filter(notification => notification.fund == element)} paddingBottom={150} bottomText={'See More'} />
+    ));
+  }
 
   return ( 
     <Background>
@@ -65,7 +71,7 @@ export default function Notifications () {
       <View style={styles.container} onLayout={onLayoutRootView}>
         <TopMenuBar screen={'Social'} />
         <TextWithFilter title={'Notifications'} rightTitle={'Filter'} />
-        <SliderBar bottomspacing={150} titles={titles} screens={screens} />
+        <SliderBar bottomspacing={150} titles={['All',...uniqueFunds]} screens={screens} />
         <View style={styles.bottomMenuBarContainer}>
           <BottomMenuBar />
         </View>
@@ -88,3 +94,11 @@ const styles = StyleSheet.create({
   },
 });
 
+const titles = ['Personal', 'UCL FinTech Fund', 'LSE Sustainable Finance Fund'];
+const screens2 = [
+  // TO DO: Link to backend
+  // paddingBottom is passed in so you can see the last stock - so it isnt covered by bottom menu bar.
+  () => <MyPositions stocks={['Tesla', 'Blackberry', 'Coca-Cola', 'Netflix', 'Apple']} paddingBottom={150} bottomText={'See More'}/>,
+  () => <MyPositions stocks={['Amazon', 'Advanced Micro Devices', 'Dell', 'LG', 'Meta']} paddingBottom={150} bottomText={'See More'}/>,
+  () => <MyPositions stocks={['Microsoft', 'Sony', 'Spotify', 'Tesla']} paddingBottom={150} bottomText={'See More'} />,
+];

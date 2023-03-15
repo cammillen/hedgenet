@@ -1,17 +1,18 @@
-import React, { ScrollView, View } from 'react';
+import React from 'react';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useRoute } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/native';
 import NotificationPositions from './NotificationPositions.js';
+import { globalFonts } from '../styles/Fonts.js';
+import { globalColors } from '../styles/Colors.js';
 
-
-export default function MyNotifications({ notifications }) {
-
+export default function MyNotifications({ notifications, paddingBottom, bottomText }) {
 
   //need to introduce some sort of sorting!
   let allNotifications = [];
   notifications.forEach(element => allNotifications.push(
-    <TouchableOpacity key = {element} onPress={{/* Stock Page or Fund Page? */}}>
+    <TouchableOpacity key = {element.fund+element.date} onPress={{/* Stock Page or Fund Page? */}}>
       <NotificationPositions notification={element} />
     </TouchableOpacity>
   ));
