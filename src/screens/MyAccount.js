@@ -11,9 +11,9 @@ import TopMenuBar from '../components/TopMenuBar.js';
 import Background from '../components/Background.js';
 import BottomMenuBar from '../components/BottomMenuBar.js';
 
-export default function Profile () {
+export default function MyAccount () {
 
-  const Screen = 'Profile';
+  const Screen = 'MyAccount';
 
   const [fontsLoaded] = useFonts({
     'Urbanist-Bold': require('../assets/fonts/Urbanist-Bold.ttf'),

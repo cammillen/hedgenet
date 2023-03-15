@@ -15,6 +15,7 @@ const MainDrawerNavigator = () => {
 
   const navigation = useNavigation();
   const DrawerContent = () => {
+    
     return (
       <View style={styles.drawerContent}>
         <View style={styles.logoText}>

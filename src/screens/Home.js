@@ -1,7 +1,7 @@
 // Import all packages: 
 
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { ScrollView, View, StyleSheet } from 'react-native';
 import { StatusBar } from 'react-native';
 import { useCallback } from 'react';
 import { useFonts } from 'expo-font';
@@ -50,11 +50,11 @@ export default function Home() {
           <TopMenuBar screen = {'Home'}/>
           <SearchBarInactive/>
           {/* TO DO: Need to make sure you have done the logout modal below:  */}
-          <LogoHeader name={'My Portfolio'} marginBottom={15} buttonnavigation={'LogoutModal'} />      
-          <ValueCard cashBalance={cash} delta={difference} />
-          <IndexFundCard markets={[{ marketName: 'DOW', growth: 0.0357 }, { marketName: 'S&P', growth: 0.0196 }, { marketName: 'NASDAQ', growth: 0.0285 }]} />
-          <TextWithSort title='My Positions' />
-          <SliderBar bottomspacing={150} titles={titles} screens={screens} />
+          <LogoHeader name={'My Portfolio'} marginBottom={15} buttonnavigation={'LogoutModal'} />  
+            <ValueCard cashBalance={cash} delta={difference} />
+            <IndexFundCard markets={[{ marketName: 'DOW', growth: 0.0357 }, { marketName: 'S&P', growth: 0.0196 }, { marketName: 'NASDAQ', growth: 0.0285 }]} />
+            <TextWithSort title='My Positions' />
+            <SliderBar bottomspacing={150} titles={titles} screens={screens} />
           <View style={styles.bottomMenuBarContainer}>
             <BottomMenuBar/>
           </View>

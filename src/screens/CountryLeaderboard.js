@@ -67,7 +67,7 @@ export default function CountryLeaderboard () {
           <Text style={globalFonts.H4(globalColors.others.white.color)}>{country+' Leaderboard'}</Text>
         </View>
         <View style={{height:7}}/>
-        <GlobalLinearGradients color1={'#000'} color2={'transparent'} style={'verticalDownOverlap'} dimensionSize={10} />
+        {/* <GlobalLinearGradients color1={'#000'} color2={'transparent'} style={'verticalDownOverlap'} dimensionSize={10} /> */}
         <BrowseFunds funds={filteredFundsCountry} paddingBottom={150}/>
         <View style={styles.bottomMenuBarContainer}>
           <BottomMenuBar />
