@@ -29,6 +29,7 @@ import CategorySearch from '../screens/CategorySearch.js';
 import TopMoversSearch from '../screens/TopMoversSearch .js';
 import FundMembers from '../components/Dashboard/FundMembers.js';
 import TradingInsights from '../components/Dashboard/TradingInsights.js';
+import Settings from '../screens/Settings.js';
 // import KeyActionsModal from '../components/KeyActionsModal.js';
 
 const Stack = createStackNavigator();
@@ -61,6 +62,7 @@ const MainAppNavigator = () => {
       <Stack.Screen name="AdminPanel" component={AdminPanel} options={{ headerShown: false}}/>
       <Stack.Screen name="FundMembers" component={FundMembers} options={{ headerShown: false}}/>
       <Stack.Screen name="TradingInsights" component={TradingInsights} options={{ headerShown: false}}/>
+      <Stack.Screen name="Settings" component={Settings} options={{ headerShown: false}}/>
       {/* Adding Browse */}
       <Stack.Screen name="Browse" component={Browse} options={{ headerShown: false}}/>
     </Stack.Navigator>
