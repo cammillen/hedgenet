@@ -117,7 +117,7 @@ const [selectedCategories, setSelected] = useState([]);
                     <Text style={{paddingTop: 200}}>  </Text>  
               </View>
               {/* TO DO: BACKEND need to send text1 and text2 to the backend storing the new fund name and bio */}
-              <BottomButton texts={[]} modal={<CreateAFundModal5 visible={modalVisible} onClose={closeModal}/>} onPress={openModal} categoryList={selectedCategories}/>
+              <BottomButton texts={[]} modal={<CreateAFundModal5 visible={modalVisible} onClose={closeModal} categoryList={selectedCategories} />} onPress={openModal} categoryList={selectedCategories}/>
               {/* This is end of flex box with content.*/}
             </Animated.View>
           </TouchableWithoutFeedback>

@@ -15,6 +15,9 @@ let option = '';
 const screenHeight = Dimensions.get('window').height;
 
 const CreateAFundModal5 = ({ visible, onClose, categoryList }) => {
+
+  console.log(categoryList);
+
 //This is for toggle option: 
     const [selectedOption, setSelectedOption] = useState(null);
     const handleOptionSelect = (option) => {
@@ -128,7 +131,7 @@ const navigation = useNavigation();
                     <Text style={{paddingTop: 200}}>  </Text>  
               </View>
               {/* TO DO: BACKEND need to send text1 and text2 to the backend storing the new fund name and bio */}
-              <BottomButton texts={[]} modal={<CreateAFundModal6 visible={modalVisible} onClose={closeModal}/>} onPress={openModal} categoryList={categoryList}/>
+              <BottomButton texts={[]} modal={<CreateAFundModal6 visible={modalVisible} onClose={closeModal} categoryList={categoryList} />} onPress={openModal} categoryList={categoryList}/>
               {/* This is end of flex box with content.*/}
             </Animated.View>
           </TouchableWithoutFeedback>

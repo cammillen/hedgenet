@@ -32,6 +32,8 @@ function FundTags({categoryList}) {
 
 const CreateAFundModal6 = ({ visible, onClose, categoryList }) => {
 
+  console.log(categoryList);
+
 // This is to open next modal: 
     const [modalVisible, setModalVisible] = useState(false);
     const openModal = () => {
@@ -129,7 +131,7 @@ const navigation = useNavigation();
                 <Text style={[globalFonts.H3(globalColors.others.white.color), {paddingHorizontal: 24}]}>Your fund is ready, please review. 🚀</Text>
                 {/* TO DO: Need to link this with what has been entered and stored in the form:  */}
                 <ScrollView showsVerticalScrollIndicator={false} ref={scrollViewRef}>
-                  <FundCard fundTitle={"Personal Fund"} members={"0"} stocks={"0"} marketCap={"£0.00"} fundTags={['UCL', 'FinTech', 'S&P 500']}/>
+                  <FundCard fundTitle={"Personal Fund"} members={"0"} stocks={"0"} marketCap={"£0.00"} fundTags={categoryList}/>
                   <View style={styles.paddingContainer}>
                     <TextEntryFinalSlide title="Fund Name" placeholder={text1Value} showCharacterCount={false} maxLength={20} value={text1} onChangeText={handleTextChange1} />
                     <TextEntryFinalSlide title="Fund Biography" placeholder={text2Value} showCharacterCount={false} maxLength={20} value={text2} onChangeText={handleTextChange2} />
