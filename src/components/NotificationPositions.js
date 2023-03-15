@@ -14,35 +14,38 @@ const screenWidth = Dimensions.get('window').width;
 
 export default function NotificationPositions({notification}) {
 
-  const fund = notification.fund;
-  const date = notification.date;
+  let fund = notification.fund;
+  fund = fund.length > 13 ? fund.substring(0,11)+'...' : fund;
+  let date = notification.date;
   date = new Date(date);
   const today = new Date();
   const millisecondsPerDay = 24 * 60 * 60 * 1000;
   const daysPassed = Math.floor((today - date) / millisecondsPerDay);
-  const performance = notification?.performance;
 
   if (fund == 'Daily Review') {
 
+    let performance = notification.performance;
     const message = `Total value is ${performance > 0 ? 'up' : 'down'}!`;
     const timeElapsed = `Daily Review • ${daysPassed} day ago `;
-    const growthMessage = 'Fund ' + performance > 0 ? 'Growth' : 'Shrinkage';
+    const growthMessage = 'Fund ' + (performance > 0 ? 'Growth' : 'Shrinkage');
     const boxColor = performance > 0 ? 'success' : 'error';
     const image = performance > 0 ? require('../assets/icons/ActivityGreen.png') : require('../assets/icons/ActivityRed.png');
-    performance = performance > 0 ? '+'+object.performance : object.performance;
+    performance = performance > 0 ? '+'+performance : performance;
 
     return (
       <View style={{ width: screenWidth, paddingLeft: 24, paddingRight: 24 }}>
         <View style={styles.header}>
-        <View style={styles.performanceIconContainer}>
-          <Image source={image} style={[styles.performanceIcon, { marginRight: 16 }]} />
-        </View>
-          <View style={styles.subHeaderLeft}>
-            <Text style={globalFonts.H6(globalColors.others.white.color)}>{message}</Text>
-            <Text style={globalFonts.BodyMedium.semiBold(globalColors.others.white.color)}>{timeElapsed}</Text>
+          <View style={styles.leftContainer}>
+            <View style={styles.performanceIconContainer}>
+              <Image source={image} style={[styles.performanceIcon]} />
+            </View>
+            <View style={[styles.subHeaderLeft, {marginLeft: 16}]}>
+              <Text style={globalFonts.H6(globalColors.others.white.color)}>{message}</Text>
+              <Text style={globalFonts.BodyMedium.semiBold(globalColors.others.white.color)}>{timeElapsed}</Text>
+            </View>
           </View>
           <View style={styles.subHeaderRight}>
-            <Text style={globalFonts.H6(globalColors.others.white.color)}>{performance}</Text>{/* 4 sig fig */}
+            <Text style={globalFonts.H6(globalColors.others.white.color)}>{performance}%</Text>{/* 4 sig fig */}
             <Text style={styles.textBox(boxColor)}>{growthMessage}</Text>
           </View>
         </View>
@@ -50,24 +53,26 @@ export default function NotificationPositions({notification}) {
     );
   }
 
-  const stock = notification?.stock;
-  const userShares = notification?.userShares;
+  let stock = notification.stock;
+  const userShares = notification.userShares;
   const stockImage = LogoSelect(stock);
-  fund = fund > 13 ? fund.substring(0,11)+'...' : fund;
   const userCurrent = userShares*DummyStocks[stock].shareValue;
   const userPrevious = userShares*DummyStocks[stock].previousValue;
   const delta = userCurrent - userPrevious > 0 ? '$+'+(userCurrent - userPrevious).toFixed(2) : '$-'+(userPrevious - userCurrent).toFixed(2);
   const growth = ((DummyStocks[stock].shareValue - DummyStocks[stock].previousValue) / DummyStocks[stock].previousValue) * 100;
   stock = stock.length > 10 ? stock.substring(0,9) + '...' : stock;
+  const growthColor = growth > 0 ? 'success' : 'error';
   const graphImage = growthColor == 'success' ? require('../assets/graphs(delete)/ExampleGraphGreen.png') : require('../assets/graphs(delete)/ExampleGraphRed.png'); //generalise once on graphing
 
   return (
     <View style={{ width: screenWidth, paddingLeft: 24, paddingRight: 24 }}>
       <View style={styles.header}>
+      <View style={styles.leftContainer}>
       <Image source={stockImage} style={[styles.logoIcon, { marginRight: 16 }]} />
         <View style={styles.subHeaderLeft}>
           <Text style={globalFonts.H6(globalColors.others.white.color)}>{stock}</Text>
           <Text style={globalFonts.BodyMedium.semiBold(globalColors.others.white.color)}>{fund}</Text>
+        </View>
         </View>
         <Image source={graphImage} style={[styles.graphVisual, { marginLeft: 16, marginRight: 16 }]} />
         <View style={styles.subHeaderRight}>
@@ -89,6 +94,11 @@ const styles = StyleSheet.create({
     borderBottomColor: globalColors.dark._3.color,
     borderBottomWidth: 1,
     backgroundColor: 'rgba(27,172,75,0)',
+  },
+  leftContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start'
   },
   subHeaderLeft: {
     flexDirection: 'column',

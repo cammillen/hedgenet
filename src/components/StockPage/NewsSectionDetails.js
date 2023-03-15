@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { useNavigation } from '@react-navigation/native';
+import { Link } from "@react-navigation/native";
 import {
   StyleSheet,
   View,
@@ -8,6 +10,9 @@ import {
   ScrollView
 } from "react-native";
 
+
+import { globalColors } from '../../styles/Colors.js';
+import { globalFonts } from '../../styles/Fonts.js';
 function NewsSectionDetails(props) {
   return (
     <View style={styles.container}>
@@ -17,7 +22,7 @@ function NewsSectionDetails(props) {
           style={styles.button}
         >
           <Image
-            source={require("../../assets/icons/ArrowLeftgreen.png")}
+            source={require("../../assets/icons/ArrowLeft_Green.png")}
             resizeMode="contain"
             style={styles.image1}
           ></Image>
@@ -150,6 +155,7 @@ function NewsSectionDetails(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "rgba(0,0,0,1)"
   },
   button: {
     width: 14,
@@ -166,7 +172,7 @@ const styles = StyleSheet.create({
     ]
   },
   news: {
-    fontFamily: "urbanist-700",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 20,
     marginLeft: 13
@@ -204,12 +210,12 @@ const styles = StyleSheet.create({
     marginLeft: 2
   },
   forbes1: {
-    fontFamily: "urbanist-500",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 12
   },
   text1: {
-    fontFamily: "urbanist-500",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(224,224,224,1)",
     fontSize: 12,
     textAlign: "right",
@@ -221,7 +227,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   text2: {
-    fontFamily: "urbanist-600",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     height: 60,
     width: 336,
@@ -245,12 +251,12 @@ const styles = StyleSheet.create({
     marginLeft: 2
   },
   seekingAlpha1: {
-    fontFamily: "urbanist-500",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 12
   },
   text3: {
-    fontFamily: "urbanist-500",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(224,224,224,1)",
     fontSize: 12,
     textAlign: "right",
@@ -265,7 +271,7 @@ const styles = StyleSheet.create({
     top: 0,
     left: 2,
     position: "absolute",
-    fontFamily: "urbanist-600",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     height: 60,
     width: 336,
@@ -295,12 +301,12 @@ const styles = StyleSheet.create({
     marginLeft: 2
   },
   theMotleyFool1: {
-    fontFamily: "urbanist-500",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 12
   },
   text4: {
-    fontFamily: "urbanist-500",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(224,224,224,1)",
     fontSize: 12,
     textAlign: "right",
@@ -312,7 +318,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   text5: {
-    fontFamily: "urbanist-600",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     height: 60,
     width: 336,
@@ -336,12 +342,12 @@ const styles = StyleSheet.create({
     marginLeft: 2
   },
   theMotleyFool3: {
-    fontFamily: "urbanist-500",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 12
   },
   text8: {
-    fontFamily: "urbanist-500",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(224,224,224,1)",
     fontSize: 12,
     textAlign: "right",
@@ -353,7 +359,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   text9: {
-    fontFamily: "urbanist-600",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     height: 60,
     width: 336,
@@ -377,12 +383,12 @@ const styles = StyleSheet.create({
     marginLeft: 2
   },
   theMotleyFool4: {
-    fontFamily: "urbanist-500",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 12
   },
   text10: {
-    fontFamily: "urbanist-500",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(224,224,224,1)",
     fontSize: 12,
     textAlign: "right",
@@ -394,7 +400,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   text11: {
-    fontFamily: "urbanist-600",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     height: 60,
     width: 336,
@@ -418,12 +424,12 @@ const styles = StyleSheet.create({
     marginLeft: 2
   },
   theMotleyFool5: {
-    fontFamily: "urbanist-500",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 12
   },
   text12: {
-    fontFamily: "urbanist-500",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(224,224,224,1)",
     fontSize: 12,
     textAlign: "right",
@@ -435,7 +441,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   text13: {
-    fontFamily: "urbanist-600",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     height: 60,
     width: 336,
@@ -459,12 +465,12 @@ const styles = StyleSheet.create({
     marginLeft: 2
   },
   theMotleyFool6: {
-    fontFamily: "urbanist-500",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 12
   },
   text14: {
-    fontFamily: "urbanist-500",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(224,224,224,1)",
     fontSize: 12,
     textAlign: "right",
@@ -476,7 +482,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   text15: {
-    fontFamily: "urbanist-600",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     height: 60,
     width: 336,
@@ -500,12 +506,12 @@ const styles = StyleSheet.create({
     marginLeft: 2
   },
   theMotleyFool7: {
-    fontFamily: "urbanist-500",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 12
   },
   text16: {
-    fontFamily: "urbanist-500",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(224,224,224,1)",
     fontSize: 12,
     textAlign: "right",
@@ -517,7 +523,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   text17: {
-    fontFamily: "urbanist-600",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     height: 60,
     width: 336,
@@ -541,12 +547,12 @@ const styles = StyleSheet.create({
     marginLeft: 2
   },
   theMotleyFool8: {
-    fontFamily: "urbanist-500",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 12
   },
   text18: {
-    fontFamily: "urbanist-500",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(224,224,224,1)",
     fontSize: 12,
     textAlign: "right",
@@ -558,7 +564,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   text19: {
-    fontFamily: "urbanist-600",
+    ...globalFonts.BodyMedium.Medium(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     height: 60,
     width: 336,

@@ -85,7 +85,7 @@ const BottomMenuContent = () => {
         </TouchableOpacity>
 
         {/* Menu Icon */}
-        <TouchableOpacity style={styles.iconContainer} onPress={() => navigation.navigate('Menu')}// NAVIGATION 
+        <TouchableOpacity style={styles.iconContainer} onPress={() => navigation.openDrawer()}// NAVIGATION 
         >
           <Image
             source={isActive('Menu') ? require('../assets/icons/MenuGreen.png') : require('../assets/icons/MenuGrey.png')}
