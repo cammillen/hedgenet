@@ -14,6 +14,18 @@ import TextWithFilter from '../components/SectionHeaders/TextWithFilterArrowBack
 import SliderBar from '../components/SliderBar';
 import MyNotifications from '../components/MyNotifications.js';
 
+const notifications = [
+  {fund:'Daily Review',date:'2023-03-14',performance:0.075},
+  {fund:'UCL Fintech',stock:'Google',userShares:0.0014,date:'2023-03-14'},
+  {fund:'Personal',stock:'Blackberry',userShares:0.2,date:'2023-03-14'},
+  {fund:'Daily Review',date:'2023-03-13',performance:-0.005},
+  {fund:'UCL Fintech',stock:'Virgin',userShares:0.13,date:'2023-03-13'},
+  {fund:'LSE Sustainable Finance',stock:'Amazon',userShares:0.009,date:'2023-03-13'},
+  {fund:'Personal',stock:'Apple',userShares:0.04,date:'2023-03-13'},
+  {fund:'Daily Review',date:'2023-03-12',performance:0.130},
+  {fund:'LSE Sustainable Finance',stock:'Amazon',userShares:0.009,date:'2023-03-12'},
+  {fund:'Personal',stock:'Apple',userShares:0.03,date:'2023-03-12'},
+]//in actual, pass time in, too. Can calculate value thus; performance calculated from current value
 
 //backend call to notifications -- treat Daily Review as the fund!
 const uniqueFunds = [...new Set(notifications.filter(notification => notification.fund !== 'Daily Review').map(notification => notification.fund))].filter(Boolean);  
@@ -76,15 +88,3 @@ const styles = StyleSheet.create({
   },
 });
 
-const notifications = [
-  {fund:'Daily Review',date:'2023-03-14',performance:0.075},
-  {fund:'UCL Fintech',stock:'Google',userShares:0.0014,date:'2023-03-14'},
-  {fund:'Personal',stock:'Blackberry',userShares:0.2,date:'2023-03-14'},
-  {fund:'Daily Review',date:'2023-03-13',performance:-0.005},
-  {fund:'UCL Fintech',stock:'Virgin',userShares:0.13,date:'2023-03-13'},
-  {fund:'LSE Sustainable Finance',stock:'Amazon',userShares:0.009,date:'2023-03-13'},
-  {fund:'Personal',stock:'Apple',userShares:0.04,date:'2023-03-13'},
-  {fund:'Daily Review',date:'2023-03-12',performance:0.130},
-  {fund:'LSE Sustainable Finance',stock:'Amazon',userShares:0.009,date:'2023-03-12'},
-  {fund:'Personal',stock:'Apple',userShares:0.03,date:'2023-03-12'},
-]//in actual, pass time in, too. Can calculate value thus; performance calculated from current value
