@@ -21,6 +21,7 @@ import Chat from '../screens/Chat.js';
 import Menu from '../screens/Menu.js';
 import StockPage from '../screens/StockPage.js';
 import MarketStatsDetails from '../components/StockPage/MarketStatsDetails.js';
+import NewsSectionDetails from '../components/StockPage/NewsSectionDetails.js';
 import AdminPanel from '../screens/AdminPanel.js';
 import Browse from '../screens/Browse.js';
 import Search from '../screens/Search.js';
@@ -55,6 +56,7 @@ const MainAppNavigator = () => {
       {/* Individual Stock Navigation */}
       <Stack.Screen name="StockPage" component={StockPage} options={{ headerShown: false}}/>
       <Stack.Screen name="MarketStatsDetails" component={MarketStatsDetails} options={{ headerShown: false}}/>
+      <Stack.Screen name="NewsSectionDetails" component={NewsSectionDetails} options={{ headerShown: false}}/>
       {/* Other Navigation */}
       <Stack.Screen name="AdminPanel" component={AdminPanel} options={{ headerShown: false}}/>
       <Stack.Screen name="FundMembers" component={FundMembers} options={{ headerShown: false}}/>
