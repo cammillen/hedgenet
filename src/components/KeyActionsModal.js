@@ -80,8 +80,6 @@ const KeyActionsModal = ({ visible, onClose}) => {
 // END OF ANIMATION
 
 //This is all modal specific stuff: 
-const navigation = useNavigation();
-
 
   return (
   <Modal transparent visible={visible} animationType="none" onRequestClose={onClose}>
