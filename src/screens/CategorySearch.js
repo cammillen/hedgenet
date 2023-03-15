@@ -49,7 +49,7 @@ export default function CategorySearch (route) {
       <View style={styles.container} onLayout={onLayoutRootView}>
       <TopMenuBar screen={'Search'} />
       <CategorySearchHeader category={category}/>
-      <GlobalLinearGradients color1={'#000'} color2={'transparent'} style={'verticalDownOverlap'} dimensionSize={10} />
+      {/* <GlobalLinearGradients color1={'#000'} color2={'transparent'} style={'verticalDownOverlap'} dimensionSize={10} /> */}
       <MyPositions stocks={filteredStocks} paddingBottom={150} bottomText={'See More'}/>
         <View style={styles.bottomMenuBarContainer}>
           <BottomMenuBar />

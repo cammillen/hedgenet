@@ -54,7 +54,7 @@ export default function TopMoversSearch (route) {
         <TopMenuBar screen={Screen} />
         <TopMoversHeader />
         <TextWithSort title={topMoversNum + ' Companies'} rightTitle={'Asc. Order'}/>
-        <GlobalLinearGradients color1={'#000'} color2={'transparent'} style={'verticalDownOverlap'} dimensionSize={10} />
+        {/* <GlobalLinearGradients color1={'#000'} color2={'transparent'} style={'verticalDownOverlap'} dimensionSize={10} /> */}
         <MyPositions stocks={filteredStocks} paddingBottom={150} bottomText={'See More'}/>
         <View style={styles.bottomMenuBarContainer}>
           <BottomMenuBar />

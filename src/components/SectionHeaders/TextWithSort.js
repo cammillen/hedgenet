@@ -24,7 +24,7 @@ export default function TextWithSort(param) {
         <Image source={require('../../assets/icons/UpDownArrow.png')} style={[styles.arrowsIcon, { marginLeft: 12}]} />
       </View>
     </View>
-    <GlobalLinearGradients color1={globalColors.others.black.color} color2={'transparent'} style={'verticalDownOverlap'} dimensionSize={12} />
+    {/* <GlobalLinearGradients color1={globalColors.others.black.color} color2={'transparent'} style={'verticalDownOverlap'} dimensionSize={12} /> */}
     </View>
   );
 }
