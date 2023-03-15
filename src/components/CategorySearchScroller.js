@@ -46,8 +46,8 @@ const styles = StyleSheet.create({
         paddingLeft:20,
         padding:8,
         borderColor:globalColors.others.white.color,
-        borderWidth:0.2,
-        borderRadius:100,
+        borderWidth:0.5,
+        borderRadius:15,
         minWidth: 100, //minimum width to fit content
     },
     container: {

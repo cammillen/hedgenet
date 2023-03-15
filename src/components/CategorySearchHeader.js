@@ -63,10 +63,11 @@ textBox:{
   ...globalFonts.BodyLarge.semiBold(globalColors.primary._500.color),
   paddingRight:20,
   paddingLeft:20,
-  padding:8,
+  paddingBottom:10,
+  paddingTop:4,
   borderColor:globalColors.primary._500.color,
   borderWidth:1,
-  borderRadius:100,
+  borderRadius:12,
   minWidth: 100, //minimum width to fit content
 },
 });
