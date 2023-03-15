@@ -8,7 +8,7 @@ import MaterialChipBasic2 from "../../components/Chips/MaterialChipBasic2";
 import MaterialChipBasic3 from "../../components/Chips/MaterialChipBasic3";
 import MaterialChipBasic4 from "../../components/Chips/MaterialChipBasic4";
 import MaterialChipBasic5 from "../../components/Chips/MaterialChipBasic5";
-
+import NewsSectionDetails from '../../components/StockPage/MarketStatsDetails.js';
 function News(props) {
   const navigation = useNavigation();
   return (
@@ -22,6 +22,7 @@ function News(props) {
             resizeMode="contain"
             style={styles.image}
           ></Image>
+
 
              
             </TouchableOpacity>
@@ -205,7 +206,7 @@ const styles = StyleSheet.create({
     width: 336,
     height: 14,
     flexDirection: "row",
-    marginLeft: 24
+    marginLeft: 2
   },
   forbes: {
     fontFamily: "urbanist-500",
@@ -231,7 +232,7 @@ const styles = StyleSheet.create({
     width: 336,
     fontSize: 17,
     marginTop: 10,
-    marginLeft: 24
+    marginLeft: 2
   },
   rect: {
     width: 336,
@@ -252,8 +253,7 @@ const styles = StyleSheet.create({
   seekingAlpha: {
     fontFamily: "urbanist-500",
     color: "rgba(255,255,255,1)",
-    fontSize: 12,
-    marginLeft: 24
+    fontSize: 12
   },
   text2: {
     fontFamily: "urbanist-500",
@@ -274,7 +274,6 @@ const styles = StyleSheet.create({
     fontFamily: "urbanist-600",
     color: "rgba(255,255,255,1)",
     height: 60,
-    marginLeft: 24,
     width: 336,
     fontSize: 17
   },
@@ -305,8 +304,7 @@ const styles = StyleSheet.create({
   theMotleyFool: {
     fontFamily: "urbanist-500",
     color: "rgba(255,255,255,1)",
-    fontSize: 12,
-    marginLeft: 24
+    fontSize: 12
   },
   text4: {
     fontFamily: "urbanist-500",
@@ -327,7 +325,7 @@ const styles = StyleSheet.create({
     width: 336,
     fontSize: 17,
     marginTop: 10,
-    marginLeft: 24
+    marginLeft: 2
   },
   rect5: {
     width: 336,
@@ -443,8 +441,7 @@ const styles = StyleSheet.create({
   group19: {
     width: 455,
     height: 124,
-    flexDirection: "row",
-
+    flexDirection: "row"
   },
   group11: {
     width: 70,

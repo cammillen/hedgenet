@@ -2,19 +2,26 @@
 // This feeds into the FundMembers.js - there isnt anything to change or do on this page, all the backend integration is in Fund Members.
 // Just need to add logic for the remove button. 
 
-import React from 'react';
+import React, {useState} from 'react';
 import { Image, StyleSheet, Text, View, Dimensions} from 'react-native';
 import { globalColors } from '../../styles/Colors.js';
 import { globalFonts } from '../../styles/Fonts.js';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import SquareModal from '../SquareModal.js';
 
 const screenWidth = Dimensions.get('window').width;
 
 function MemberCard(params) {
     const navigation = useNavigation();
     const { width } = Dimensions.get('window');
-    
+    const [modalVisible, setModalVisible] = useState(false);
+    const openModal = () => {
+      setModalVisible(true);
+    };
+    const closeModal = () => {
+      setModalVisible(false);
+    };
     return (
         <View style={styles.container}>
 
@@ -30,9 +37,25 @@ function MemberCard(params) {
             </View>
             {/* Remove Button: */}
             {/* TO DO NAVIGATION: to remove model */}
-            <TouchableOpacity style={styles.removeButton} onPress={() => navigation.navigate('RemoveMemberModel')}>
+            <TouchableOpacity style={styles.removeButton} onPress={openModal}>
                 <Text style={[globalFonts.BodyMedium.semiBold(globalColors.others.white.color)]}>Remove</Text>
             </TouchableOpacity>
+            <SquareModal
+                visible={modalVisible}
+                mainIconSource={require('../../assets/icons/BinRed.png')}
+                title='Remove Group Member.'
+                titleColor= {globalColors.status.error.color}
+                text='Removing a member from the fund will prevent them from trading.'
+                button1Color= {globalColors.dark._3.color}
+                button1Text='Cancel'
+                button2Color=  {globalColors.status.error.color}
+                button2Text='Remove'
+                onButton1Press={() => setModalVisible(false)}
+                onButton2Press={() => {
+                // TO DO: BACKEND add the code that removes the person from the fund. 
+                setModalVisible(false);
+                }}
+            />
         </View>
     );
 }
