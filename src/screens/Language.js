@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { View, StyleSheet, TouchableOpacity, Image, Text} from 'react-native';
 import { StatusBar } from 'react-native';
-import { useCallback } from 'react';
+import { Dimensions } from 'react-native';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import TopMenuBar from '../components/TopMenuBar.js';
@@ -10,78 +10,35 @@ import { useNavigation } from '@react-navigation/native';
 import BottomMenuBar from '../components/BottomMenuBar.js';
 import { globalColors } from '../styles/Colors.js';
 import { globalFonts } from '../styles/Fonts.js';
+import { RadioButton } from 'react-native-paper';
 import { ScrollView } from 'react-native-gesture-handler';
 
-export default function Language () {
 
+export default function Language () {
+  
   const Screen = 'Language';
 
-  const [fontsLoaded] = useFonts({
-    'Urbanist-Bold': require('../assets/fonts/Urbanist-Bold.ttf'),
-    'Urbanist-SemiBold': require('../assets/fonts/Urbanist-SemiBold.ttf'),
-    'Urbanist-Medium': require('../assets/fonts/Urbanist-Medium.ttf'),
-    'Urbanist-Regular': require('../assets/fonts/Urbanist-Regular.ttf'),
-  });
-
+  
   SplashScreen.preventAutoHideAsync(); 
 
-  const onLayoutRootView = useCallback(async () => {
-    if (fontsLoaded) {
-      await SplashScreen.hideAsync();
-    }
-  }, [fontsLoaded]);
-
-  if (!fontsLoaded) {
-    return null;
-  }
-
   const navigation = useNavigation();
-
-  const renderButton = ({ image, text }) => (
-    <TouchableOpacity onPress={() => console.log(text)}>
-      <View style={styles.buttonContainer}>
-        <Image source={image} style={styles.buttonImage} />
-        <Text style={[globalFonts.H5(globalColors.others.white.color), {marginLeft:20}]}>{text}</Text>
-        <Image
-            source={require('../assets/icons/ArrowRightWhite.png')}
-            style={styles.ArrowRightWhite}
-        />   
-      </View>
-    </TouchableOpacity>
-  );
-
-  const renderButton2 = ({ image, text, text2 }) => (
-    <TouchableOpacity onPress={() => console.log(text)}>
-      <View style={styles.buttonContainer}>
-        <Image source={image} style={styles.buttonImage} />
-        <Text style={[globalFonts.H5(globalColors.others.white.color), {marginLeft:20}]}>{text}</Text>
-        <Text style={[globalFonts.BodyXLarge.semiBold(globalColors.others.white.color), {marginLeft: 50}]}>{text2}</Text>
-        <Image
-            source={require('../assets/icons/ArrowRightWhite.png')}
-            style={styles.ArrowRightWhite}
-        />   
-      </View>
-    </TouchableOpacity>
-  );
-
-  const renderButton3 = ({ image, text, text2 }) => (
-    <TouchableOpacity onPress={() => console.log(text)}>
-      <View style={styles.buttonContainer}>
-        <Image source={image} style={styles.buttonImage} />
-        <Text style={[globalFonts.H5(globalColors.others.white.color), {marginLeft:20}]}>{text}</Text>
-        <Text style={[globalFonts.BodyXLarge.semiBold(globalColors.others.white.color), {marginLeft: 90}]}>{text2}</Text>
-        <Image
-            source={require('../assets/icons/ArrowRightWhite.png')}
-            style={styles.ArrowRightWhite}
-        />   
-      </View>
-    </TouchableOpacity>
-  );
-
+  const windowHeight = Dimensions.get('window').height;
+  const languages = [
+    { label: 'English (US)', value: 'en-us' },
+    { label: 'English (US)', value: 'en-uk' },
+    { label: 'Mandarin', value: 'zh-cn' },
+    { label: 'Hindi', value: 'hi-in' },
+    { label: 'Spanish', value: 'es-es' },
+    { label: 'French', value: 'fr-fr' },
+    { label: 'Arabic', value: 'ar-sa' },
+    { label: 'Bengali', value: 'bn-bd' },
+    { label: 'Russian', value: 'ru-ru' },
+  ];
+  const [language, setLanguage] = useState('en-uk');
   return ( 
     <Background>
       <StatusBar barStyle="light-content" backgroundColor="#000" />
-      <View style={styles.container} onLayout={onLayoutRootView}>
+      <View style={styles.container} >
         <TopMenuBar screen={Screen} />
         <View style={styles.fullComp}>
           <TouchableOpacity  onPress={() => navigation.goBack()}>
@@ -90,56 +47,45 @@ export default function Language () {
                     style={styles.ArrowLeft_GreenIcon}
                 />      
           </TouchableOpacity>
-          <Text style={[globalFonts.H4(globalColors.others.white.color), {marginLeft:16}]}> Language</Text>
-        </View>   
-        <View style={styles.bigbox}>
-          <View style={styles.scrollbox}>
-            <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-              {renderButton({
-                image: require('../assets/PictureSettings2.png'),
-                text: 'Account Details',
-              })}
-              {renderButton({
-                image: require('../assets/PictureSettings3.png'),
-                text: 'Notifications',
-              })}
-              {renderButton({
-                image: require('../assets/PictureSettings4.png'),
-                text: 'Security',
-              })}
-              {renderButton2({
-                image: require('../assets/PictureSettings5.png'),
-                text: 'Language',
-                text2: 'English (US)'
-              })}
-              {renderButton3({
-                image: require('../assets/PictureSettings6.png'),
-                text: 'Currency',
-                text2: '$ (USD)'
-              })}
-              {renderButton({
-                image: require('../assets/PictureSettings7.png'),
-                text: 'Help Center',
-              })}
-              {renderButton({
-                image: require('../assets/PictureSettings8.png'),
-                text: 'Legal',
-              })}
-              {renderButton({
-                image: require('../assets/PictureSettings9.png'),
-                text: 'About Hedgenet',
-              })}
-              {renderButton({
-                image: require('../assets/PictureSettings10.png'),
-                text: 'Close Your Account',
-              })}
-              {renderButton({
-                image: require('../assets/PictureSettings11.png'),
-                text: 'Logout',
-              })}
-            </ScrollView>
-          </View>  
-          </View>   
+          <Text style={[globalFonts.H4(globalColors.others.white.color), {marginLeft:16}]}>Language</Text>
+        </View>
+        <View style={styles.toptextbox}>
+        <Text style={[globalFonts.H5(globalColors.others.white.color)]}>Suggested</Text>
+        <View style={{ display: 'flex', flexDirection: 'column' }}>
+        {languages.slice(0, 2).map((item) => (
+        <View key={item.value} style={[styles.radioButton]}>
+          <Text style={globalFonts.BodyMedium.Medium(globalColors.others.white.color)}>{item.label}</Text>
+          <RadioButton
+            value={item.value}
+            color= {globalColors.status.success.color}
+            status={language === item.value ? 'checked' : 'unchecked'}
+            onPress={() => setLanguage(item.value)}
+            borderColor= {globalColors.status.success.color}
+            uncheckedColor = {globalColors.status.success.color}
+          />
+        </View>
+          ))}
+          </View> 
+          <Text style={[globalFonts.H5(globalColors.others.white.color), { marginTop: 48 }]}>Languages</Text>
+          <View style={{ height: 380,display: 'flex', flexDirection: 'row' }}>
+          <ScrollView contentContainerStyle={{ flexGrow: 1, paddingBottom:100 }}> 
+          {languages.slice(2).map((item) => (
+            <View key={item.value} style={styles.radioButton}>
+              <Text style={globalFonts.BodyMedium.Medium(globalColors.others.white.color)}>{item.label}</Text>
+              <RadioButton
+                value={item.value}
+                color={globalColors.status.success.color}
+                status={language === item.value ? 'checked' : 'unchecked'}
+                onPress={() => setLanguage(item.value)}
+                borderColor={globalColors.status.success.color}
+                uncheckedColor={globalColors.status.success.color}
+                style={{ flexDirection: 'row',alignSelf: 'flex-end' }}
+              />
+            </View>
+          ))}
+          </ScrollView>
+          </View>
+        </View>  
         <View style={styles.bottomMenuBarContainer}>
           <BottomMenuBar />
         </View> 
@@ -164,13 +110,6 @@ const styles = StyleSheet.create({
     height: 28,
     resizeMode: 'contain',
   },
-  ArrowRightWhite: {
-    position: 'absolute',
-    width: 20,
-    height: 20,
-    resizeMode: 'contain',
-    right: 0,
-  },
   bottomMenuBarContainer: {
     position: 'absolute',
     bottom: 0,
@@ -182,39 +121,19 @@ const styles = StyleSheet.create({
   toptextbox: {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'flex-start',
-    gap: 15,
-    position: 'absolute',
-    width: 382,
-    height: 48,
+    gap: 40,
+    marginTop: 24,
+    marginLeft: 24,
+    height: 162,
     //paddingTop: 26,
-    top: 119,
   },
-  bigbox:{
+  bottombox:{
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     marginTop: 24,
     marginLeft: 24,
     marginRight:24
-  },
-  scrollbox: {
-    height: 500,
-    paddingBottom: 24,
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center'
-  },
-  containerfreestock: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    //width: 382,
-    height: 116,
-    marginTop: 24,
-    backgroundColor: globalColors.dark._2.color,
-    borderColor: globalColors.dark._3.color,
-    borderRadius: 24,
   },
   buttonContainer: {
     display: 'flex',
@@ -245,4 +164,11 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     marginLeft: 20
   },
-});
+  radioButton: {
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 40,
+    height: 20,
+  },
+})
