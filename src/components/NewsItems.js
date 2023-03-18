@@ -9,9 +9,6 @@ import PictureSelect from '../assets/profilePictureRequire.js';
 
 import DummyUsers from '../assets/dummyprofilepictures/dummyUserData.js';
 
-//need to build a profile pics require thing with people's data!
-
-
 const screenWidth = Dimensions.get('window').width;
 
 export default function NewsItems({news}) {
@@ -80,7 +77,7 @@ export default function NewsItems({news}) {
   const name = DummyUsers[news.username].firstName + ' ' + DummyUsers[news.username].lastName;
   const fund = news.fund.length > 13 ? news.fund.substring(0,11)+'...' : news.fund;
   const tagFund = news.tag + ' • ' + fund;
-  const trade = news.trade > 0 ? '+$'+news.trade.toFixed(2) : '-$'+Math.abs(news.trade).toFixed(2);
+  const trade = news.trade > 0 ? '+$'+news.trade.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",") : '-$'+Math.abs(news.trade).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   const color = news.trade > 0 ? 'success' : 'error';
   const boughtSold = news.trade < 0 ? 'bought' : 'sold';
 
