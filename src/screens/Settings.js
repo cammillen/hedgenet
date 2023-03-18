@@ -1,7 +1,7 @@
 //Settings
 //Navigation for buttons need to be added here.
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity, Image, Text} from 'react-native';
+import { View, StyleSheet, Image, Text} from 'react-native';
 import { StatusBar } from 'react-native';
 import { useCallback } from 'react';
 import { useFonts } from 'expo-font';
@@ -13,6 +13,8 @@ import BottomMenuBar from '../components/BottomMenuBar.js';
 import { globalColors } from '../styles/Colors.js';
 import { globalFonts } from '../styles/Fonts.js';
 import { ScrollView } from 'react-native-gesture-handler';
+import {TouchableOpacity} from 'react-native-gesture-handler';
+import Language from './Language.js';
 
 export default function Settings () {
 
@@ -40,7 +42,7 @@ export default function Settings () {
   const navigation = useNavigation();
 
   const renderButton = ({ image, text }) => (
-    <TouchableOpacity onPress={() => console.log(text)}>
+    <TouchableOpacity onPress={() => navigation.navigate(text)}>
       <View style={styles.buttonContainer}>
         <Image source={image} style={styles.buttonImage} />
         <Text style={[globalFonts.H5(globalColors.others.white.color), {marginLeft:20}]}>{text}</Text>
@@ -53,7 +55,7 @@ export default function Settings () {
   );
 
   const renderButton2 = ({ image, text, text2 }) => (
-    <TouchableOpacity onPress={() => console.log(text)}>
+    <TouchableOpacity onPress={() => navigation.navigate(text)}>
       <View style={styles.buttonContainer}>
         <Image source={image} style={styles.buttonImage} />
         <Text style={[globalFonts.H5(globalColors.others.white.color), {marginLeft:20}]}>{text}</Text>
@@ -67,7 +69,7 @@ export default function Settings () {
   );
 
   const renderButton3 = ({ image, text, text2 }) => (
-    <TouchableOpacity onPress={() => console.log(text)}>
+    <TouchableOpacity onPress={() => navigation.navigate(text)}>
       <View style={styles.buttonContainer}>
         <Image source={image} style={styles.buttonImage} />
         <Text style={[globalFonts.H5(globalColors.others.white.color), {marginLeft:20}]}>{text}</Text>
@@ -79,6 +81,7 @@ export default function Settings () {
       </View>
     </TouchableOpacity>
   );
+
 
   return ( 
     <Background>
@@ -96,7 +99,8 @@ export default function Settings () {
         </View>   
         <View style={styles.bigbox}>
           <View style={styles.scrollbox}>
-            <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+            <ScrollView contentContainerStyle={{ flexGrow: 1 }} alwaysBounceVertical={true}>
+              <View style={{paddingBottom: 100}}>
             <View style={styles.containerfreestock}>
             <Image 
               source={require('../assets/PictureSettings1.png')}
@@ -114,16 +118,16 @@ export default function Settings () {
               })}
               {renderButton({
                 image: require('../assets/PictureSettings3.png'),
-                text: 'Notifications',
+                text: 'NotificationSettings',
               })}
               {renderButton({
                 image: require('../assets/PictureSettings4.png'),
-                text: 'Security',
+                text: 'SecuritySettings',
               })}
               {renderButton2({
                 image: require('../assets/PictureSettings5.png'),
                 text: 'Language',
-                text2: 'English (US)'
+                text2: 'English (US)',
               })}
               {renderButton3({
                 image: require('../assets/PictureSettings6.png'),
@@ -150,6 +154,7 @@ export default function Settings () {
                 image: require('../assets/PictureSettings11.png'),
                 text: 'Logout',
               })}
+              </View>
             </ScrollView>
           </View>  
           </View>   
@@ -212,7 +217,7 @@ const styles = StyleSheet.create({
     marginRight:24
   },
   scrollbox: {
-    height: 'auto',
+    height: 600,
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center'
@@ -221,9 +226,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    //width: 382,
     height: 116,
-    marginTop: 24,
     backgroundColor: globalColors.dark._2.color,
     borderColor: globalColors.dark._3.color,
     borderRadius: 24,
@@ -258,3 +261,4 @@ const styles = StyleSheet.create({
     marginLeft: 20
   },
 });
+
