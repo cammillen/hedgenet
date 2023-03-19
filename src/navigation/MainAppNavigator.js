@@ -24,6 +24,7 @@ import MarketStatsDetails from '../components/StockPage/MarketStatsDetails.js';
 import NewsSectionDetails from '../components/StockPage/NewsSectionDetails.js';
 import SecuritySettings from '../components/SecuritySettings.js';
 import NotificationSettings from '../components/NotificationSettings.js';
+import Legal from '../components/Legal.js';
 import AdminPanel from '../screens/AdminPanel.js';
 import Browse from '../screens/Browse.js';
 import Search from '../screens/Search.js';
@@ -37,7 +38,6 @@ import HelpCenter from '../screens/HelpCenter';
 // import KeyActionsModal from '../components/KeyActionsModal.js';
 
 const Stack = createStackNavigator();
-
 const MainAppNavigator = () => {
   return (
     <Stack.Navigator initialRouteName="Home" screenOptions={{ animationEnabled: false, gestureEnabled: false}}>
@@ -71,6 +71,7 @@ const MainAppNavigator = () => {
       <Stack.Screen name="Help Center" component={HelpCenter} options={{ headerShown: false}}/>
       <Stack.Screen name="SecuritySettings" component={SecuritySettings} options={{ headerShown: false}}/>
       <Stack.Screen name="NotificationSettings" component={NotificationSettings} options={{ headerShown: false}}/>
+      <Stack.Screen name="Legal" component={Legal} options={{ headerShown: false}}/>
       {/* Adding Browse */}
       <Stack.Screen name="Browse" component={Browse} options={{ headerShown: false}}/>
     </Stack.Navigator>
@@ -78,4 +79,3 @@ const MainAppNavigator = () => {
 };
 
 export default MainAppNavigator;
-

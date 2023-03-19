@@ -83,6 +83,22 @@ export default function Settings () {
   );
 
 
+  const renderButton5 = ({ image, text, text2 }) => (
+    <TouchableOpacity onPress={() => navigation.navigate(text)}>
+      <View style={styles.buttonContainer}>
+        <Image source={image} style={styles.buttonImage} />
+        <Text style={[globalFonts.H5(globalColors.others.white.color), {marginLeft:20}]}>{text}</Text>
+        <Text style={[globalFonts.BodyXLarge.semiBold(globalColors.others.white.color), {marginLeft: 90}]}>{text2}</Text>
+        <Image
+            source={require('../assets/icons/ArrowRightWhite.png')}
+            style={styles.ArrowRightWhite}
+        />   
+      </View>
+    </TouchableOpacity>
+  );
+  
+
+
   return ( 
     <Background>
       <StatusBar barStyle="light-content" backgroundColor="#000" />
@@ -138,7 +154,7 @@ export default function Settings () {
                 image: require('../assets/PictureSettings7.png'),
                 text: 'Help Center',
               })}
-              {renderButton({
+              {renderButton5({
                 image: require('../assets/PictureSettings8.png'),
                 text: 'Legal',
               })}
@@ -261,4 +277,3 @@ const styles = StyleSheet.create({
     marginLeft: 20
   },
 });
-
