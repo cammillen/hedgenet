@@ -118,11 +118,11 @@ export default function Settings () {
               })}
               {renderButton({
                 image: require('../assets/PictureSettings3.png'),
-                text: 'Notifications',
+                text: 'NotificationSettings',
               })}
               {renderButton({
                 image: require('../assets/PictureSettings4.png'),
-                text: 'Security',
+                text: 'SecuritySettings',
               })}
               {renderButton2({
                 image: require('../assets/PictureSettings5.png'),

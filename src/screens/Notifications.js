@@ -1,5 +1,4 @@
 // Notifications  Screen
-
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { StatusBar } from 'react-native';
@@ -13,9 +12,6 @@ import BottomMenuBar from '../components/BottomMenuBar.js';
 import TextWithFilter from '../components/SectionHeaders/TextWithFilterArrowBack.js';
 import SliderBar from '../components/SliderBar';
 import MyNotifications from '../components/MyNotifications.js';
-
-import MyPositions from '../components/MyPositions.js';
-
 
 
 const notifications = [
@@ -93,12 +89,3 @@ const styles = StyleSheet.create({
     marginLeft: 5,
   },
 });
-
-const titles = ['Personal', 'UCL FinTech Fund', 'LSE Sustainable Finance Fund'];
-const screens2 = [
-  // TO DO: Link to backend
-  // paddingBottom is passed in so you can see the last stock - so it isnt covered by bottom menu bar.
-  () => <MyPositions stocks={['Tesla', 'Blackberry', 'Coca-Cola', 'Netflix', 'Apple']} paddingBottom={150} bottomText={'See More'}/>,
-  () => <MyPositions stocks={['Amazon', 'Advanced Micro Devices', 'Dell', 'LG', 'Meta']} paddingBottom={150} bottomText={'See More'}/>,
-  () => <MyPositions stocks={['Microsoft', 'Sony', 'Spotify', 'Tesla']} paddingBottom={150} bottomText={'See More'} />,
-];

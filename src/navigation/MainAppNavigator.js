@@ -22,6 +22,8 @@ import Menu from '../screens/Menu.js';
 import StockPage from '../screens/StockPage.js';
 import MarketStatsDetails from '../components/StockPage/MarketStatsDetails.js';
 import NewsSectionDetails from '../components/StockPage/NewsSectionDetails.js';
+import SecuritySettings from '../components/SecuritySettings.js';
+import NotificationSettings from '../components/NotificationSettings.js';
 import AdminPanel from '../screens/AdminPanel.js';
 import Browse from '../screens/Browse.js';
 import Search from '../screens/Search.js';
@@ -70,6 +72,8 @@ const MainAppNavigator = () => {
       <Stack.Screen name="AdminPanel" component={AdminPanel} options={{ headerShown: false}}/>
       <Stack.Screen name="FundMembers" component={FundMembers} options={{ headerShown: false}}/>
       <Stack.Screen name="TradingInsights" component={TradingInsights} options={{ headerShown: false}}/>
+      <Stack.Screen name="SecuritySettings" component={SecuritySettings} options={{ headerShown: false}}/>
+      <Stack.Screen name="NotificationSettings" component={NotificationSettings} options={{ headerShown: false}}/>
       {/* Adding Browse */}
       <Stack.Screen name="Browse" component={Browse} options={{ headerShown: false}}/>
     </Stack.Navigator>
