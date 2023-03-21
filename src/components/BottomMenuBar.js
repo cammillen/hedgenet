@@ -36,7 +36,7 @@ const BottomMenuContent = () => {
 
   return ( 
       // width needs to be equal to screen width of device
-    <BlurView intensity={Platform.OS === 'ios' ? 30 : 100} tint="dark" width={width}  height={145} style={styles.container}>
+    <BlurView intensity={Platform.OS === 'ios' ? 30 : 120} tint="dark" width={width}  height={145} style={styles.container}>
 
         {/* Profile Icon */}
         <TouchableOpacity style={styles.iconContainer} onPress={() => navigation.navigate('Home')}// NAVIGATION 
