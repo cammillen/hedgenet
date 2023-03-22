@@ -31,7 +31,7 @@ export default function Profile () {
   const Screen = 'Profile';
  
   const countries = ["Egypt", "Canada", "Australia", "Ireland"]
-
+  
   const [fontsLoaded] = useFonts({
     'Urbanist-Bold': require('../assets/fonts/Urbanist-Bold.ttf'),
     'Urbanist-SemiBold': require('../assets/fonts/Urbanist-SemiBold.ttf'),
