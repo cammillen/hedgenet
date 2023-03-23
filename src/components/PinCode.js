@@ -9,34 +9,24 @@ const PinCode = (props) => {
   // state: 0: not set, 1: now setting, 2: setted
 
   const password = props.password;
-  const passwordState = props.passwordState;
+  const passwordIndex = props.passwordIndex;
 
   useEffect(() => {
 
   }
-  , [password, passwordState]);
+  , [password, passwordIndex]);
 
   const renderBox = (props) => {
     return (
-      <View style={[{
-        borderWidth: 2,
-        borderRadius: 15,
-        justifyContent: 'center',
-        width: 50,
-        marginTop: 10,
-        marginLeft: 10,
-        marginRight: 10,
-        marginBottom: 10,
-        flex: 1,
-        alignItems: 'center',
-        elevation: 1
-        }, props.type === 1 ? {backgroundColor: '#1E2A22'} : {backgroundColor: '#1F222A'} ,
-           props.type === 1 ? {borderColor: '#12D18E'} : {borderColor: '#35383F'}]}
+      <View style={[
+          styles.box, 
+          props.index === passwordIndex ? {backgroundColor: '#1E2A22'} : {backgroundColor: '#1F222A'} ,
+          props.index === passwordIndex ? {borderColor: '#12D18E'} : {borderColor: '#35383F'}]}
         >
         {
-          props.type === 0 ? <></>
-            : props.type === 1 ?
-              <Text style={{fontSize: 16, color: 'white'}}>7</Text>
+          props.index > passwordIndex ? <></>
+            : props.index === passwordIndex  ?
+              <Text style={{fontSize: 16, color: 'white'}}>{props.val}</Text>
             : <View style={{height: 20, width: 20, borderRadius: 40, backgroundColor: '#ffffff'}}>
               </View>
         }
@@ -47,14 +37,25 @@ const PinCode = (props) => {
   return (
     <View style={[{flexDirection: 'row', height: '80%'}]}>
       {
-        passwordState.map((value, i) => renderBox({type: passwordState[i], val: value, index: i}))
+        password.map((value, i) => renderBox({val: value, index: i}))
       }
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  
+  box: {
+    borderWidth: 2,
+    borderRadius: 15,
+    justifyContent: 'center',
+    marginTop: '2%',
+    marginLeft: '2%',
+    marginRight: '2%',
+    marginBottom: '2%',
+    flex: 1,
+    alignItems: 'center',
+    elevation: 1
+  }
 });
 
 export default PinCode;
