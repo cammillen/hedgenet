@@ -25,6 +25,7 @@ import NewsSectionDetails from '../components/StockPage/NewsSectionDetails.js';
 import SecuritySettings from '../components/SecuritySettings.js';
 import NotificationSettings from '../components/NotificationSettings.js';
 import ProfileSettings from '../components/ProfileSettings.js';
+import ChangePincode from '../components/ChangePincode';
 import Legal from '../components/Legal.js';
 import AdminPanel from '../screens/AdminPanel.js';
 import Browse from '../screens/Browse.js';
@@ -74,6 +75,7 @@ const MainAppNavigator = () => {
       <Stack.Screen name="NotificationSettings" component={NotificationSettings} options={{ headerShown: false}}/>
       <Stack.Screen name="Legal" component={Legal} options={{ headerShown: false}}/>
       <Stack.Screen name="ProfileSettings" component={ProfileSettings} options={{ headerShown: false}}/>
+      <Stack.Screen name="ChangePincode" component={ChangePincode} options={{ headerShown: false}}/>
       {/* Adding Browse */}
       <Stack.Screen name="Browse" component={Browse} options={{ headerShown: false}}/>
     </Stack.Navigator>
