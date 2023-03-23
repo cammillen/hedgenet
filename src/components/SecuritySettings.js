@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, View, TouchableOpacity, Image, Text } from "react-native";
+import { StyleSheet, View, TouchableOpacity, Image, Text, Pressable } from "react-native";
 import CupertinoSwitch from "../components/CupertinoSwitch";
 import { useFonts } from 'expo-font';
 import { globalColors } from '../styles/Colors.js';
@@ -28,18 +28,13 @@ function Notifications(props) {
         <Text style={styles.loremIpsum}>Remember me</Text>
         <CupertinoSwitch style={styles.cupertinoSwitch}></CupertinoSwitch>
       </View>
-      <View style={styles.group3}>
-        <View style={styles.myStockGoesUpRow}>
-          <Text style={styles.myStockGoesUp}>Face ID</Text>
-          <CupertinoSwitch style={styles.cupertinoSwitch2}></CupertinoSwitch>
-        </View>
+      <View style={styles.loremIpsumRow}>
+        <Text style={styles.myStockGoesUp}>Face ID</Text>
+        <CupertinoSwitch style={styles.cupertinoSwitch}></CupertinoSwitch>
       </View>
-     
-     
-     
-     
-    
-     
+      <Pressable style={styles.pincodebutton} onPress={() => props.navigation.navigate('ChangePincode')}>
+        <Text style={styles.text}>Change Pincode</Text>
+      </Pressable>
     </View>
   );
 }
@@ -50,7 +45,7 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0,0,0,1)"
   },
   group: {
-    width: 139,
+    width: '80%',
     height: 24,
     flexDirection: "row",
     marginTop: 41,
@@ -85,19 +80,35 @@ const styles = StyleSheet.create({
     ...globalFonts.H5(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 16,
-    marginTop: 2
+    marginTop: 2,
+    flex: 1,
+    alignItems: 'flex-start'
   },
   cupertinoSwitch: {
     width: 45,
     height: 23,
-    marginLeft: '62%'
+    marginRight: 0,
+    flex: 1,
+    alignItems: 'flex-end'
   },
   loremIpsumRow: {
     height: 23,
     flexDirection: "row",
     marginTop: 31,
-    marginLeft: 18,
-    marginRight: 16
+    marginLeft: '8%',
+    marginRight: '8%'
+  },
+  pincodebutton: {
+    marginTop: 40,
+    marginLeft: '8%',
+    marginRight: '8%',
+    height: 50,
+    fontSize: 18,
+    backgroundColor: '#35833F',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 100,
+    backgroundColor: '#353835'
   },
   group3: {
     width: 341,

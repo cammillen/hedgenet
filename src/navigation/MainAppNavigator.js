@@ -24,6 +24,8 @@ import MarketStatsDetails from '../components/StockPage/MarketStatsDetails.js';
 import NewsSectionDetails from '../components/StockPage/NewsSectionDetails.js';
 import SecuritySettings from '../components/SecuritySettings.js';
 import NotificationSettings from '../components/NotificationSettings.js';
+import ProfileSettings from '../components/ProfileSettings.js';
+import Legal from '../components/Legal.js';
 import AdminPanel from '../screens/AdminPanel.js';
 import Browse from '../screens/Browse.js';
 import Search from '../screens/Search.js';
@@ -38,7 +40,6 @@ import Currency from '../screens/Currency';
 // import KeyActionsModal from '../components/KeyActionsModal.js';
 
 const Stack = createStackNavigator();
-
 const MainAppNavigator = () => {
   return (
     <Stack.Navigator initialRouteName="Home" screenOptions={{ animationEnabled: false, gestureEnabled: false}}>
@@ -70,10 +71,8 @@ const MainAppNavigator = () => {
       <Stack.Screen name="Currency" component={Currency} options={{ headerShown: false}}/>
       <Stack.Screen name="SecuritySettings" component={SecuritySettings} options={{ headerShown: false}}/>
       <Stack.Screen name="NotificationSettings" component={NotificationSettings} options={{ headerShown: false}}/>
-      {/* Other Navigation */}
-      <Stack.Screen name="AdminPanel" component={AdminPanel} options={{ headerShown: false}}/>
-      <Stack.Screen name="FundMembers" component={FundMembers} options={{ headerShown: false}}/>
-      <Stack.Screen name="TradingInsights" component={TradingInsights} options={{ headerShown: false}}/>
+      <Stack.Screen name="Legal" component={Legal} options={{ headerShown: false}}/>
+      <Stack.Screen name="ProfileSettings" component={ProfileSettings} options={{ headerShown: false}}/>
       {/* Adding Browse */}
       <Stack.Screen name="Browse" component={Browse} options={{ headerShown: false}}/>
     </Stack.Navigator>
@@ -81,4 +80,3 @@ const MainAppNavigator = () => {
 };
 
 export default MainAppNavigator;
-
