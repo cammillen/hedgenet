@@ -68,12 +68,12 @@ const MainAppNavigator = () => {
       <Stack.Screen name="Language" component={Language} options={{ headerShown: false}}/>
       <Stack.Screen name="Help Center" component={HelpCenter} options={{ headerShown: false}}/>
       <Stack.Screen name="Currency" component={Currency} options={{ headerShown: false}}/>
+      <Stack.Screen name="SecuritySettings" component={SecuritySettings} options={{ headerShown: false}}/>
+      <Stack.Screen name="NotificationSettings" component={NotificationSettings} options={{ headerShown: false}}/>
       {/* Other Navigation */}
       <Stack.Screen name="AdminPanel" component={AdminPanel} options={{ headerShown: false}}/>
       <Stack.Screen name="FundMembers" component={FundMembers} options={{ headerShown: false}}/>
       <Stack.Screen name="TradingInsights" component={TradingInsights} options={{ headerShown: false}}/>
-      <Stack.Screen name="SecuritySettings" component={SecuritySettings} options={{ headerShown: false}}/>
-      <Stack.Screen name="NotificationSettings" component={NotificationSettings} options={{ headerShown: false}}/>
       {/* Adding Browse */}
       <Stack.Screen name="Browse" component={Browse} options={{ headerShown: false}}/>
     </Stack.Navigator>
