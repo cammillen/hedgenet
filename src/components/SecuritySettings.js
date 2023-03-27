@@ -89,7 +89,6 @@ const styles = StyleSheet.create({
   cupertinoSwitch: {
     width: 45,
     height: 23,
-    marginRight: 0,
     flex: 1,
     alignItems: 'flex-end'
   },
