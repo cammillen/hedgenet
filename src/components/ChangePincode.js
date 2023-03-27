@@ -5,21 +5,19 @@ import { useFonts } from 'expo-font';
 import { globalColors } from '../styles/Colors.js';
 import { globalFonts } from '../styles/Fonts.js';
 import { ScrollView } from 'react-native-gesture-handler';
-import OldPinCode from './PinCode';
-import NewPinCode from './PinCode';
+import PinCode from './PinCode';
 
 function ChangePincode(props) {
 
   // state: 0: not set, 1: now setting, 2: setted
-  const [oldPassword, setOldPassword] = useState([0, 1, 2, 3]);
-  const [oldPasswordState, setOldPasswordState] = useState([2, 2, 2, 2]);
+  const [oldPassword, setOldPassword] = useState([0, 0, 0, 0]);
+  const [newPassword, setNewPassword] = useState([0, 0, 0, 0]);
 
-  const [newPassword, setNewPassword] = useState([0, 7, 2, 3]);
-  const [newPasswordState, setNewPasswordState] = useState([2, 1, 0, 0]);
+  const [passwordIndex, setPasswordIndex] = useState(-1);
 
   const PinKey = (props) => {
     return (
-      <TouchableOpacity style={[styles.pinKey, props.label.length == 0 && styles.pinKeyEmpty]}>
+      <TouchableOpacity style={[styles.pinKey]} onPress={props.onPress}>
         {
           props.label === 'backspace' ? 
           <Image 
@@ -44,26 +42,27 @@ function ChangePincode(props) {
   }
 
   const PinKeyboard = () => {
+    const label = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '*', '0', 'backspace']
     return (
-      <View style ={styles.panel}>
+      <View style ={styles.pinKeyboardPanel}>
         <View style={styles.pinKeyboard}>
-          <PinKey label='1' />
-          <PinKey label='2'/>
-          <PinKey label='3'/>
-          <PinKey label='4'/>
-          <PinKey label='5'/>
-          <PinKey label='6'/>
-          <PinKey label='7'/>
-          <PinKey label='8'/>
-          <PinKey label='9'/>
-          <PinKey label='*'/>
-          <PinKey label='0'/>
-          <PinKey label='backspace'/>
+          {
+            label.map((value, index) => <PinKey key={index} label={value} onPress={() => onPressKey(value)} />)
+          }
         </View>
         <View style={{height: 8, backgroundColor: '#35383F', width: '40%', marginTop: 10, marginLeft: '30%', borderRadius: 5, marginBottom: 10}}>
         </View>
       </View>
     );
+  }
+
+  const onPressKey = (value) => {
+    if(value === 'backspace') setPasswordIndex((passwordIndex - 1) < -1 ? -1 : passwordIndex - 1);
+    if(value >= '0' && value <= '9' && passwordIndex < 7) {
+      if(passwordIndex < 3) oldPassword[passwordIndex + 1] = value - '0';
+      else newPassword[passwordIndex - 4  + 1] = value - '0';
+      setPasswordIndex(passwordIndex + 1);
+    }
   }
 
   return (
@@ -86,15 +85,13 @@ function ChangePincode(props) {
         </View>
         <View style={styles.loremIpsumRow}>
           <Text style={{color: 'white', fontSize: 12}}>Old Pincode</Text>
-
-          <OldPinCode password = {oldPassword} passwordState = {oldPasswordState} />
-
+            <PinCode password = {oldPassword} passwordIndex = {passwordIndex} />
           <View style={{height: 2, backgroundColor: '#096847'}}>
           </View>
         </View>
         <View style={styles.loremIpsumRow}>
           <Text style={{color: 'white', fontSize: 12}}>New Pincode</Text>
-          <NewPinCode password = {newPassword} passwordState = {newPasswordState} />
+            <PinCode password = {newPassword} passwordIndex = {passwordIndex-4} />
           <View style={{height: 2, backgroundColor: '#096847'}}>
           </View>
         </View>
@@ -110,16 +107,11 @@ function ChangePincode(props) {
 }
 
 const styles = StyleSheet.create({
+
+  // styles for arrow button and title
   container: {
     flex: 1,
     backgroundColor: "rgba(0,0,0,1)"
-  },
-  box: {
-    width: '20%',
-    aspectRatio: 1,
-    border: 1,
-    borderColor: '#35383F',
-    backgroundColor: '#1F222A'
   },
   group: {
     width: '80%',
@@ -153,16 +145,13 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flex: 1
   },
+
+  // styles for board
   loremIpsum: {
     ...globalFonts.H5(globalColors.others.white.color),
     color: "rgba(255,255,255,1)",
     fontSize: 16,
     marginTop: 2
-  },
-  cupertinoSwitch: {
-    width: 45,
-    height: 23,
-    marginLeft: '62%'
   },
   loremIpsumRow: {
     height: 130,
@@ -171,162 +160,8 @@ const styles = StyleSheet.create({
     marginLeft: '8%',
     marginRight: '8%'
   },
-  pincodebutton: {
-    marginTop: 40,
-    marginLeft: '8%',
-    marginRight: '8%',
-    height: 50,
-    fontSize: 18,
-    backgroundColor: '#35833F',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 100,
-    backgroundColor: '#353835'
-  },
-  group3: {
-    width: 341,
-    height: 23,
-    flexDirection: "row",
-    marginTop: 22,
-    marginLeft: 18
-  },
-  myStockGoesUp: {
-    ...globalFonts.H5(globalColors.others.white.color),
-    color: "rgba(255,255,255,1)",
-    fontSize: 16,
-    marginTop: 2
-  },
-  cupertinoSwitch2: {
-    width: 45,
-    height: 23,
-    marginLeft: '72%'
-  },
-  myStockGoesUpRow: {
-    height: 23,
-    flexDirection: "row",
-    flex: 1
-  },
-  group4: {
-    width: 341,
-    height: 23,
-    flexDirection: "row",
-    marginTop: 19,
-    marginLeft: 18
-  },
-  myStockIsDown: {
-    ...globalFonts.H5(globalColors.others.white.color),
-    color: "rgba(255,255,255,1)",
-    fontSize: 16,
-    marginTop: 2
-  },
-  cupertinoSwitch3: {
-    width: 45,
-    height: 23,
-    marginLeft: 180
-  },
-  myStockIsDownRow: {
-    height: 23,
-    flexDirection: "row",
-    flex: 1
-  },
-  group5: {
-    width: 341,
-    height: 23,
-    flexDirection: "row",
-    marginTop: 21,
-    marginLeft: 18
-  },
-  topMoversUpdates: {
-    ...globalFonts.H5(globalColors.others.white.color),
-    color: "rgba(255,255,255,1)",
-    fontSize: 16,
-    marginTop: 2
-  },
-  cupertinoSwitch4: {
-    width: 45,
-    height: 23,
-    marginLeft: 165
-  },
-  topMoversUpdatesRow: {
-    height: 23,
-    flexDirection: "row",
-    flex: 1
-  },
-  group6: {
-    width: 341,
-    height: 23,
-    flexDirection: "row",
-    marginTop: 22,
-    marginLeft: 18
-  },
-  leaderboardUpdates: {
-    ...globalFonts.H5(globalColors.others.white.color),
-    color: "rgba(255,255,255,1)",
-    fontSize: 16,
-    marginTop: 2
-  },
-  cupertinoSwitch5: {
-    width: 45,
-    height: 23,
-    marginLeft: 160
-  },
-  leaderboardUpdatesRow: {
-    height: 23,
-    flexDirection: "row",
-    flex: 1
-  },
-  group7: {
-    width: 341,
-    height: 23,
-    flexDirection: "row",
-    marginTop: 25,
-    marginLeft: 18
-  },
-  leaderboardUpdates2: {
-    ...globalFonts.H5(globalColors.others.white.color),
-    color: "rgba(255,255,255,1)",
-    fontSize: 16,
-    marginTop: 2
-  },
-  cupertinoSwitch6: {
-    width: 45,
-    height: 23,
-    marginLeft: 127
-  },
-  leaderboardUpdates2Row: {
-    height: 23,
-    flexDirection: "row",
-    flex: 1
-  },
-  group8: {
-    width: 341,
-    height: 23,
-    flexDirection: "row",
-    marginTop: 20,
-    alignSelf: "center"
-  },
-  text2: {
-    ...globalFonts.H5(globalColors.others.white.color),
-    color: "rgba(255,255,255,1)",
-    fontSize: 16,
-    marginTop: 2
-  },
-  cupertinoSwitch7: {
-    width: 45,
-    height: 23,
-    marginLeft: 160
-  },
-  text2Row: {
-    height: 23,
-    flexDirection: "row",
-    flex: 1
-  },
-  materialSwitch: {
-    width: 45,
-    height: 23,
-    marginTop: 12,
-    marginLeft: 135
-  },
+
+  // styles for pinKeyboard
   pinKey: {
     alignItems: 'center',
     justifyContent: 'flex-start',
@@ -337,9 +172,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     paddingTop: 8,
   },
-  pinKeyEmpty: {
-    backgroundColor: 'rgb(239, 239, 244)',
-  },
+
   pinKeyboard: {
     flexDirection: 'row',
     flexWrap: 'wrap',
@@ -347,7 +180,8 @@ const styles = StyleSheet.create({
     marginRight: '8%',
     backgroundColor: '#1F222A'
   },
-  panel: {
+  
+  pinKeyboardPanel: {
     backgroundColor: '#1F222A',
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
