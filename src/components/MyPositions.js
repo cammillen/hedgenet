@@ -26,7 +26,7 @@ export default function MyPositions({ stocks, paddingBottom, bottomText }) {
   let positions = [];
   stocks.forEach(element => positions.push(
   <TouchableOpacity key = {element} onPress={() => navigation.navigate('StockPage', {stockName: element})}>
-  <MyPositionsItem key = {element} stockName={element} userShares={DummyStocks[element].userShares} shareValue={DummyStocks[element].shareValue} previousValue={DummyStocks[element].previousValue} />
+    <MyPositionsItem key = {element} stockName={element} userShares={DummyStocks[element].userShares} shareValue={DummyStocks[element].shareValue} previousValue={DummyStocks[element].previousValue} />
   </TouchableOpacity>
   ));
 

@@ -4,7 +4,7 @@ import IconTextArrowRight from './IconTextArrowRight';
 import { useNavigation } from '@react-navigation/native';
 
 function FundListLoop({ fundnames, profilePics }) {
-    const navigation = useNavigation();
+  const navigation = useNavigation();
   const fundComponents = fundnames.map((fundname, index) => {
     return (
       <IconTextArrowRight

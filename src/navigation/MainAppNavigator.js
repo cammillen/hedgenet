@@ -25,6 +25,7 @@ import NewsSectionDetails from '../components/StockPage/NewsSectionDetails.js';
 import SecuritySettings from '../components/SecuritySettings.js';
 import NotificationSettings from '../components/NotificationSettings.js';
 import ProfileSettings from '../components/ProfileSettings.js';
+import ChangePincode from '../components/ChangePincode';
 import Legal from '../components/Legal.js';
 import AdminPanel from '../screens/AdminPanel.js';
 import Browse from '../screens/Browse.js';
@@ -39,6 +40,11 @@ import HelpCenter from '../screens/HelpCenter.js';
 import Currency from '../screens/Currency.js';
 import MyAccount from '../screens/MyAccount.js';
 import Friends from '../screens/Friends';
+import HelpCenter from '../screens/HelpCenter';
+import Currency from '../screens/Currency';
+import UCLFintechFundProfile from '../screens/UCLFintechFundProfile';
+import LSESustainablefinanceFundProfile from '../screens/LSESustainablefinanceFundProfile';
+import CambridgeAlgoTradersProfile from '../screens/CambridgeAlgoTradersProfile';
 // import KeyActionsModal from '../components/KeyActionsModal.js';
 
 const Stack = createStackNavigator();
@@ -75,6 +81,10 @@ const MainAppNavigator = () => {
       <Stack.Screen name="NotificationSettings" component={NotificationSettings} options={{ headerShown: false}}/>
       <Stack.Screen name="Legal" component={Legal} options={{ headerShown: false}}/>
       <Stack.Screen name="ProfileSettings" component={ProfileSettings} options={{ headerShown: false}}/>
+      <Stack.Screen name="ChangePincode" component={ChangePincode} options={{ headerShown: false}}/>
+      <Stack.Screen name="UCL Fintech Fund" component={UCLFintechFundProfile} options={{ headerShown: false}}/>
+      <Stack.Screen name="LSE Sustainable finance Fund" component={LSESustainablefinanceFundProfile} options={{ headerShown: false}}/>
+      <Stack.Screen name="Cambridge Algo Traders" component={CambridgeAlgoTradersProfile} options={{ headerShown: false}}/>
       {/* Adding Browse */}
       <Stack.Screen name="Browse" component={Browse} options={{ headerShown: false}}/>
       {/* Other Navigation */}
