@@ -1,5 +1,4 @@
-// PLaceholder Screen
-// Chnage everything with PLaceholder in, only 2 things to change. 
+// Friends Screen
 
 import React from 'react';
 import { View, StyleSheet, Text, TouchableOpacity, Image } from 'react-native';
@@ -230,7 +229,7 @@ const styles = StyleSheet.create({
     marginBottom: 14,
     marginRight: 24,
     marginTop: 14
-  }
+  },
 });
 
 //NEEDS TO BE LINKED WITH DATABASE
