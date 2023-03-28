@@ -25,6 +25,7 @@ import NewsSectionDetails from '../components/StockPage/NewsSectionDetails.js';
 import SecuritySettings from '../components/SecuritySettings.js';
 import NotificationSettings from '../components/NotificationSettings.js';
 import ProfileSettings from '../components/ProfileSettings.js';
+import ChangePincode from '../components/ChangePincode';
 import Legal from '../components/Legal.js';
 import AdminPanel from '../screens/AdminPanel.js';
 import Browse from '../screens/Browse.js';
@@ -36,6 +37,10 @@ import TradingInsights from '../components/Dashboard/TradingInsights.js';
 import Settings from '../screens/Settings.js';
 import Language from '../screens/Language.js';
 import HelpCenter from '../screens/HelpCenter';
+import Currency from '../screens/Currency';
+import UCLFintechFundProfile from '../screens/UCLFintechFundProfile';
+import LSESustainablefinanceFundProfile from '../screens/LSESustainablefinanceFundProfile';
+import CambridgeAlgoTradersProfile from '../screens/CambridgeAlgoTradersProfile';
 // import KeyActionsModal from '../components/KeyActionsModal.js';
 
 const Stack = createStackNavigator();
@@ -63,17 +68,19 @@ const MainAppNavigator = () => {
       <Stack.Screen name="StockPage" component={StockPage} options={{ headerShown: false}}/>
       <Stack.Screen name="MarketStatsDetails" component={MarketStatsDetails} options={{ headerShown: false}}/>
       <Stack.Screen name="NewsSectionDetails" component={NewsSectionDetails} options={{ headerShown: false}}/>
-      {/* Other Navigation */}
-      <Stack.Screen name="AdminPanel" component={AdminPanel} options={{ headerShown: false}}/>
-      <Stack.Screen name="FundMembers" component={FundMembers} options={{ headerShown: false}}/>
-      <Stack.Screen name="TradingInsights" component={TradingInsights} options={{ headerShown: false}}/>
+      {/* Settings Navigation */}
       <Stack.Screen name="Settings" component={Settings} options={{ headerShown: false}}/>
       <Stack.Screen name="Language" component={Language} options={{ headerShown: false}}/>
       <Stack.Screen name="Help Center" component={HelpCenter} options={{ headerShown: false}}/>
+      <Stack.Screen name="Currency" component={Currency} options={{ headerShown: false}}/>
       <Stack.Screen name="SecuritySettings" component={SecuritySettings} options={{ headerShown: false}}/>
       <Stack.Screen name="NotificationSettings" component={NotificationSettings} options={{ headerShown: false}}/>
       <Stack.Screen name="Legal" component={Legal} options={{ headerShown: false}}/>
       <Stack.Screen name="ProfileSettings" component={ProfileSettings} options={{ headerShown: false}}/>
+      <Stack.Screen name="ChangePincode" component={ChangePincode} options={{ headerShown: false}}/>
+      <Stack.Screen name="UCL Fintech Fund" component={UCLFintechFundProfile} options={{ headerShown: false}}/>
+      <Stack.Screen name="LSE Sustainable finance Fund" component={LSESustainablefinanceFundProfile} options={{ headerShown: false}}/>
+      <Stack.Screen name="Cambridge Algo Traders" component={CambridgeAlgoTradersProfile} options={{ headerShown: false}}/>
       {/* Adding Browse */}
       <Stack.Screen name="Browse" component={Browse} options={{ headerShown: false}}/>
     </Stack.Navigator>

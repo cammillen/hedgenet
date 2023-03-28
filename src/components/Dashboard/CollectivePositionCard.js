@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(27,172,75,0)',
         marginLeft: 24,
         marginRight: 24
-      },
+    },
     // make this a set width 
     imageTextFlexBox:{
         flex: 1,

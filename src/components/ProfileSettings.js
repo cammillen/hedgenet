@@ -2,8 +2,8 @@
 // Chnage everything with PLaceholder in, only 2 things to change. 
 
 import React, {useState} from 'react';
-import { View, StyleSheet, Text, Image, TextInput, Select } from 'react-native';
-import { StatusBar } from 'react-native';
+import { View, StyleSheet, Text, Image, TextInput, Select, Button } from 'react-native';
+import { StatusBar, DatePickerIOS } from 'react-native';
 import { useCallback } from 'react';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
@@ -17,7 +17,9 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import { ScrollView } from 'react-native-gesture-handler';
 import DropDownPicker from 'react-native-dropdown-picker';
-import DatePicker from 'react-native-datepicker';
+import SelectDropdown from 'react-native-select-dropdown'
+import {Dropdown} from 'react-native-element-dropdown';
+
 
 export default function Profile () {
 
@@ -27,10 +29,32 @@ export default function Profile () {
     {label: 'Apple', value: 'apple'},
     {label: 'Banana', value: 'banana'}
   ]);
+  const [dropdown, setDropdown] = useState(null);
+
+  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
+
+  const showDatePicker = () => {
+    setDatePickerVisibility(true);
+  };
+
+  const hideDatePicker = () => {
+    setDatePickerVisibility(false);
+  };
+
+  const handleConfirm = (date) => {
+    setSelectedDate(date);
+    hideDatePicker();
+  };
 
   const Screen = 'Profile';
- 
-  const countries = ["Egypt", "Canada", "Australia", "Ireland"]
+
+  const data = [
+    {label: 'Egypt', value: 'Egypt'},
+    {label: 'Canada', value: 'Canada'},
+    {label: 'Australia', value: 'Australia'},
+    {label: 'Ireland', value: 'Ireland'}
+];
 
   const [fontsLoaded] = useFonts({
     'Urbanist-Bold': require('../assets/fonts/Urbanist-Bold.ttf'),
@@ -51,6 +75,14 @@ export default function Profile () {
     return null;
   }
 
+  const _renderItem = item => {
+    return (
+    <View style={styles.item}>
+        <Text style={styles.textItem}>{item.label}</Text>
+    </View>
+    );
+  };
+
   const renderEditor = ({text, type}) => {
     return (
       <View style={styles.inputContainer}>
@@ -58,32 +90,28 @@ export default function Profile () {
         {
           type === 'select' ?
           (
-            <DropDownPicker
-              items={countries.map((item, index) => {
-                return ({
-                  label: item,
-                  value: index
-                })
-              })}
-              open={open}
-              setOpen={setOpen}
-              setValue={setValue}
-              setItems={setItems}
-              placeholder={"Select your Country"}
-              containerStyle={styles.dropDownContainer}
-              itemStyle={{ justifyContent: "flex-start" }}
-              dropDownStyle={{ backgroundColor: 'white' }}
-              dropDownMaxHeight={33}
-              onChangeItem={item => timeSelected(item.value)}
-              arrowSize={30}
-              arrowStyle={{ position: "absolute", right: 0 }}
-              labelStyle={{
-                fontSize: '3.5%',
-                textAlign: 'left',
-                color: '#fff',
-                alignSelf: 'center',
+            <Dropdown
+              style={styles.dropdown}
+              data={data}
+              search
+              searchPlaceholder="Search"
+              labelField="label"
+              valueField="value"
+              label="Dropdown"
+              placeholder="Select item"
+              value={dropdown}
+              onChange={item => {
+              setDropdown(item.value);
+                  console.log('selected', item);
               }}
-              style={styles.selectbox}
+              renderItem={item => _renderItem(item)}
+              textError="Error"
+              selectedTextProps={{
+                style: {
+                  fontSize: 22, 
+                  color: 'white',
+                },
+              }}
             />
           ) : 
           (
@@ -96,47 +124,30 @@ export default function Profile () {
       </View>
     );
   }
+  
 
-  const [date, setDate] = ("03-19-2023");
   const renderDateEditor = ({text, type}) => {
     return (
       <View style={styles.inputContainer}>
         <Text style={[globalFonts.H5(globalColors.others.white.color), {marginLeft:20}]}>{text}</Text>
-        <DatePicker
-          style={styles.input}
-          date={date}
-          mode="date"
-          placeholder="select date"
-          format="DD/MM/YYYY"
-          minDate="01-01-1900"
-          maxDate="01-01-2050"
-          confirmBtnText="Confirm"
-          cancelBtnText="Cancel"
-          customStyles={{
-            dateIcon: {
-              position: 'absolute',
-              right: -5,
-              top: 4,
-              marginLeft: 0,
-            },
-            dateInput: {
-              borderColor : "gray",
-              alignItems: "flex-start",
-              borderWidth: 0,
-              borderBottomWidth: 1,
-            },
-            placeholderText: {
-              fontSize: 17,
-              color: "gray"
-            },
-            dateText: {
-              fontSize: 17,
-            }
-          }}
-          onDateChange={(date) => {
-            setDate(date);
-          }}
-        />
+        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: '85%', height: 50, margigLeft: 200 }}>
+          <TextInput
+            style = {styles.input}
+            type = {type}
+            value = {selectedDate.toLocaleDateString()}
+          />
+          <TouchableOpacity
+            style={styles.buttonGPlusStyle}
+            activeOpacity={0.5}
+            onPress={showDatePicker}
+            >
+            <Image
+              source={require('../assets/icons/datepickerbutton.png')}
+              style={styles.buttonImageIconStyle}
+            />
+            <View style={styles.buttonIconSeparatorStyle} />
+          </TouchableOpacity>
+        </View>
       </View>
     );
   }
@@ -193,12 +204,6 @@ export default function Profile () {
               renderEditor({
                 text: "Street Address",
                 type: 'text'
-              })
-            }
-            {
-              renderEditor({
-                text: "Country",
-                type: 'select'
               })
             }
             {
@@ -277,6 +282,17 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: 'white'
   },
+  inputanddatebutton: {
+    alignItems: 'center',
+    borderWidth: 0,
+    width: '85%',
+    height: 50,
+    marginHorizontal: 22,
+    borderBottomWidth: 2,
+    borderColor: '#096847',
+    fontSize: 20,
+    color: 'white'
+  },
   inputContainer: {
     marginTop: 24
   },
@@ -291,5 +307,74 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: 'white',
     backgroundColor: 'black',
-  }
+  },
+  buttonImageIconStyle: {
+    padding: 10,
+    margin: 5,
+    height: 25,
+    width: 25,
+    resizeMode: 'stretch',
+  },
+  dropdown: {
+    backgroundColor: 'black',
+    borderBottomColor: '#096847',
+    borderBottomWidth: 2,
+    marginTop: 20,
+    fontSize: 20,
+    width: '85%',
+    marginLeft: 20,
+    color: 'white',
+    textColor: 'white',
+    baseColor: "rgba(255, 255, 255, 1)"
+  },
+  item: {
+    paddingVertical: 5,
+    paddingHorizontal: 4,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    fontSize: 16,
+  },
+  textItem: {
+    flex: 1,
+    fontSize: 16,
+  },
 });
+
+/*
+<DatePicker
+          style={styles.input}
+          date={date}
+          mode="date"
+          placeholder="select date"
+          format="DD/MM/YYYY"
+          minDate="01-01-1900"
+          maxDate="01-01-2050"
+          confirmBtnText="Confirm"
+          cancelBtnText="Cancel"
+          customStyles={{
+            dateIcon: {
+              position: 'absolute',
+              right: -5,
+              top: 4,
+              marginLeft: 0,
+            },
+            dateInput: {
+              borderColor : "gray",
+              alignItems: "flex-start",
+              borderWidth: 0,
+              borderBottomWidth: 1,
+            },
+            placeholderText: {
+              fontSize: 17,
+              color: "gray"
+            },
+            dateText: {
+              fontSize: 17,
+            }
+          }}
+          onDateChange={(date) => {
+            setDate(date);
+          }}
+        />
+*/

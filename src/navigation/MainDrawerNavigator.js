@@ -17,6 +17,7 @@ const MainDrawerNavigator = () => {
   const DrawerContent = () => {
     
     return (
+      
       <View style={styles.drawerContent}>
         <View style={styles.logoText}>
         {/* MENU ICONS AND NAVIGATION SECTION */}
@@ -57,7 +58,7 @@ const MainDrawerNavigator = () => {
           {/* MY FUNDS SECTION */}
           <Text style={[globalFonts.H5(globalColors.others.white.color),{paddingTop: 24}]}>My Funds</Text>
           {/* The screens are labelled as they are titled e.g. "UCL Fintech Fund" */}
-          <FundListLoop fundnames={fundnames} profilePics={profilePics} />
+            <FundListLoop fundnames={fundnames} profilePics={profilePics} />
           <Text> </Text>
         </ScrollView>
         {/* PROFILE BOTTOM SECTION */}
@@ -147,4 +148,3 @@ export default MainDrawerNavigator;
 // TO DO: BACKEND these need to be replaced with backend calls to users funds and thier icons. 
 const fundnames = ['UCL Fintech Fund', 'LSE Sustainable finance Fund', 'Cambridge Algo Traders'];
 const profilePics = [require('../assets/funds/UCLFintech.png'), require('../assets/funds/BioShorters.png'), require('../assets/funds/UCLFoodTech.png')];
-
