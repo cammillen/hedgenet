@@ -42,7 +42,7 @@ export default function Chat () {
       <View style={styles.container} onLayout={onLayoutRootView}>
         <TopMenuBar screen={Screen} />
         {/* TO DO: NAVIGATION link the header to the create a post popup */}
-        <ChatPageHeader name={'My Funds'} marginBottom={10}  buttonnavigation={'Profile'}/>
+        <ChatPageHeader name={'My Funds'} marginBottom={5}  buttonnavigation={'Profile'}/>
         <SliderBar titles={titles} screens={screens} />
         <View style={styles.bottomMenuBarContainer}>
           <BottomMenuBar />

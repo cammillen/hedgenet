@@ -65,9 +65,6 @@ export default function Post () {
             upvotes={'123'}
         />
         </ScrollView>
-        <View style={styles.bottomMenuBarContainer}>
-          <BottomMenuBar />
-        </View>
       </View>
     </Background>
   );
@@ -76,13 +73,5 @@ export default function Post () {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  bottomMenuBarContainer: {
-    position: 'absolute',
-    bottom: 0,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: -5,
-    marginLeft: 5,
   },
 });
