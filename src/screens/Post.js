@@ -14,7 +14,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 import CommentCard from '../components/ChatPage/CommentCard.js';
 import { useRoute } from '@react-navigation/native';
 
-export default function Post () {
+export default function Post (props) {
 
   const Screen = 'Post';
 
@@ -37,6 +37,8 @@ export default function Post () {
     return null;
   }
 
+  const { imagesource, username, timesincepost, strategy1, strategy2, strategy3, postcontent, upvotes, comments  } = props.route.params;
+
   return ( 
     <Background>
       <StatusBar barStyle="light-content" backgroundColor="#000" />
@@ -45,13 +47,13 @@ export default function Post () {
         <ScrollView>
         <PostHeader title="Fund Post" />
         <PostCard
-            username ={'cameronrmillen'}
-            timesincepost={'1'}
-            strategy1={'sell@TSLA'} strategy2={'buy@MSFT'} strategy3={'hold@NVDA'}
-            imagesource={require('../assets/icons/ProfilePlaceholder.png')}
-            postcontent={'I really think that we should sell@TSLA this week due to the recent rumors about the quarterly report and Elon Musk being a hairy alien. We should also buy@MSFT as there has been speculation that Gates was good friends with Epstein which could see the share price rocket as his popularity grows. I think we should also hold@NVDA as their new tech that allows Incels to fly may take off, so we should see what happens next week.'}
-            upvotes={'123'}
-            comments={'10'}
+            username ={username}
+            timesincepost={timesincepost}
+            strategy1={strategy1} strategy2={strategy2} strategy3={strategy3}
+            imagesource={imagesource}
+            postcontent={postcontent}
+            upvotes={upvotes}
+            comments={comments}
         />
         <CommentSectionEntry 
             totalcomments={'10'}

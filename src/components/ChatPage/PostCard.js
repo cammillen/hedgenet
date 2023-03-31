@@ -10,7 +10,7 @@
 // comments={'10'}
 // />
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Image, StyleSheet, Text, View, Dimensions, TouchableWithoutFeedback} from 'react-native';
 import { globalColors } from '../../styles/Colors.js';
 import { globalFonts } from '../../styles/Fonts.js';
@@ -21,11 +21,16 @@ function PostCard(props) {
     const navigation = useNavigation();
     const { imagesource, username, timesincepost, strategy1, strategy2, strategy3, postcontent, upvotes, comments  } = props;
     
+    const handlePress = () => {
+        navigation.navigate('Post', {
+            imagesource: imagesource, username: username, timesincepost: timesincepost, strategy1: strategy1, strategy2: strategy2, strategy3: strategy3, postcontent: postcontent, upvotes: upvotes, comments: comments
+        });
+    }
     return (
-        <TouchableWithoutFeedback onPress={() => navigation.navigate('Post')}>
+        <TouchableWithoutFeedback onPress={handlePress}>
             <View style={styles.outerContainer}>
                 <View style={styles.imageTitleContainer}>
-                    <Image source={props.imagesource} style={[styles.profileIcon, { marginRight: 14}]} />
+                    <Image source={imagesource} style={[styles.profileIcon, { marginRight: 14}]} />
                     <View style={styles.usernameStrategyVertContainer}>
                         <Text style={[globalFonts.BodySmall.semiBold(globalColors.others.white.color), { paddingBottom: 5}]}>u/{username} • {timesincepost}h</Text>
                         <Text style={[globalFonts.BodyXLarge.semiBold(globalColors.others.white.color), styles.title]} numberOfLines={1}>{strategy1} • {strategy2} • {strategy3}</Text>
