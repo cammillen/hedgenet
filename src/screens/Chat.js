@@ -1,8 +1,5 @@
-// PLaceholder Screen
-// Chnage everything with PLaceholder in, only 2 things to change. 
-
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 import { StatusBar } from 'react-native';
 import { useCallback } from 'react';
 import { useFonts } from 'expo-font';
@@ -10,8 +7,15 @@ import * as SplashScreen from 'expo-splash-screen';
 import TopMenuBar from '../components/TopMenuBar.js';
 import Background from '../components/Background.js';
 import BottomMenuBar from '../components/BottomMenuBar.js';
+import ChatPageHeader from '../components/SectionHeaders/ChatPageHeader';
+import ChatPageContent from '../components/ChatPage/ChatPageContent.js';
+import SliderBar from '../components/SliderBar';
+import { useNavigation } from '@react-navigation/native';
+//Backend TO DO: this has to import the real backend data 
+import { fund1posts, fund2posts } from '../backend/dummyPostData';
 
 export default function Chat () {
+  const navigation = useNavigation();
 
   const Screen = 'Chat';
 
@@ -39,6 +43,9 @@ export default function Chat () {
       <StatusBar barStyle="light-content" backgroundColor="#000" />
       <View style={styles.container} onLayout={onLayoutRootView}>
         <TopMenuBar screen={Screen} />
+        {/* TO DO: NAVIGATION link the header to the create a post popup */}
+        <ChatPageHeader name={'My Funds'} marginBottom={5}  buttonnavigation={'Profile'}/>
+        <SliderBar titles={titles} screens={screens} />
         <View style={styles.bottomMenuBarContainer}>
           <BottomMenuBar />
         </View>
@@ -60,3 +67,14 @@ const styles = StyleSheet.create({
     marginLeft: 5,
   },
 });
+
+// Slider Bar Implementation
+// TO DO: you need to create a loop that inputs the list of all the funds they are a member of
+// You then need to add the logic that creates the dictionary of posts associated which each fund, and the enter it into posts={}
+
+const titles = ['UCL FinTech Fund', 'LSE Sustainable Finance']; 
+const screens = [
+  () => <ChatPageContent posts={fund1posts}  />,
+  () => <ChatPageContent posts={fund2posts}  />,
+];
+

@@ -15,7 +15,7 @@
         // <TouchableOpacity style={styles.removeButton} onPress={openModal}>
         // <Text style={[globalFonts.BodyMedium.semiBold(globalColors.others.white.color)]}>Remove</Text>
         // </TouchableOpacity>
-  // COPY THIS:
+  // This code goes directly below the end of the touchable opacity tag: 
         // <SquareModal
         // visible={modalVisible}
         // mainIconSource={require('../../assets/icons/BinRed.png')}

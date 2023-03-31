@@ -1,0 +1,221 @@
+Date : 2023-03-31 12:37:20
+Directory : /Users/cameronmillen/hedgenet-1/hedgenet-10
+Total : 169 files,  58372 codes, 569 comments, 1292 blanks, all 60233 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JSON       |          4 |     43,132 |         17 |          2 |     43,151 |
+| JavaScript |        163 |     15,153 |        539 |      1,283 |     16,975 |
+| Postgres   |          2 |         87 |         13 |          7 |        107 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                 | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                    |        169 |     58,372 |        569 |      1,292 |     60,233 |
+| . (Files)                                                                                            |          8 |     43,253 |         27 |         26 |     43,306 |
+| .vs                                                                                                  |          1 |          7 |          0 |          0 |          7 |
+| src                                                                                                  |        160 |     15,112 |        542 |      1,266 |     16,920 |
+| src/assets                                                                                           |          7 |        146 |         24 |          8 |        178 |
+| src/assets (Files)                                                                                   |          4 |        103 |          6 |          8 |        117 |
+| src/assets/dummyprofilepictures                                                                      |          1 |         10 |          1 |          0 |         11 |
+| src/assets/funds                                                                                     |          1 |         14 |          5 |          0 |         19 |
+| src/assets/stocks                                                                                    |          1 |         19 |         12 |          0 |         31 |
+| src/backend                                                                                          |          3 |        188 |         17 |          9 |        214 |
+| src/components                                                                                       |        112 |     10,685 |        404 |        848 |     11,937 |
+| src/components (Files)                                                                               |         42 |      3,514 |        185 |        353 |      4,052 |
+| src/components/AdminPanel                                                                            |          7 |        498 |         18 |         49 |        565 |
+| src/components/ChatPage                                                                              |          6 |        356 |         23 |         35 |        414 |
+| src/components/Chips                                                                                 |          6 |        156 |          0 |         24 |        180 |
+| src/components/CreateAFundFlow                                                                       |         15 |      1,541 |         96 |        139 |      1,776 |
+| src/components/Dashboard                                                                             |          8 |        722 |         22 |         74 |        818 |
+| src/components/Graphs                                                                                |          1 |         28 |          0 |          5 |         33 |
+| src/components/OnBoarding                                                                            |          3 |        159 |          0 |         20 |        179 |
+| src/components/PlaceTradeFlow                                                                        |          1 |        108 |          8 |          7 |        123 |
+| src/components/SectionHeaders                                                                        |          9 |        491 |         25 |         47 |        563 |
+| src/components/StockPage                                                                             |         14 |      3,112 |         27 |         95 |      3,234 |
+| src/navigation                                                                                       |          2 |        217 |         12 |         14 |        243 |
+| src/screens                                                                                          |         31 |      3,650 |         74 |        368 |      4,092 |
+| src/services                                                                                         |          1 |          0 |          1 |          0 |          1 |
+| src/styles                                                                                           |          3 |        226 |          9 |         19 |        254 |
+| src/utils                                                                                            |          1 |          0 |          1 |          0 |          1 |
++------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                             | language   | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/.vs/VSWorkspaceState.json                                | JSON       |          7 |          0 |          0 |          7 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/App.js                                                   | JavaScript |         45 |          1 |         10 |         56 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/AppOld.js                                                | JavaScript |         73 |          8 |         12 |         93 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/Sandbox.js                                               | JavaScript |          0 |          0 |          1 |          1 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/app.json                                                 | JSON       |         18 |         17 |          0 |         35 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/babel.config.js                                          | JavaScript |          7 |          0 |          1 |          8 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/package-lock.json                                        | JSON       |     43,042 |          0 |          1 |     43,043 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/package.json                                             | JSON       |         65 |          0 |          1 |         66 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/react-native.config.js                                   | JavaScript |          3 |          1 |          0 |          4 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/assets/categories.js                                 | JavaScript |         11 |          0 |          0 |         11 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/assets/dummyprofilepictures/dummyUserData.js         | JavaScript |         10 |          1 |          0 |         11 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/assets/fundImageRequire.js                           | JavaScript |         30 |          2 |          2 |         34 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/assets/funds/dummyFundData.js                        | JavaScript |         14 |          5 |          0 |         19 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/assets/logoRequire.js                                | JavaScript |         40 |          2 |          3 |         45 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/assets/profilePictureRequire.js                      | JavaScript |         22 |          2 |          3 |         27 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/assets/stocks/dummyStockData.js                      | JavaScript |         19 |         12 |          0 |         31 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/backend/create_tables.pgsql                          | Postgres   |         77 |         11 |          6 |         94 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/backend/dummyPostData.js                             | JavaScript |        101 |          4 |          2 |        107 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/backend/dummy_data.pgsql                             | Postgres   |         10 |          2 |          1 |         13 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/AdminPanel/AdminPanelHeader.js            | JavaScript |         60 |          2 |          6 |         68 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/AdminPanel/FundMembers.js                 | JavaScript |         80 |          6 |         10 |         96 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/AdminPanel/FundSettings.js                | JavaScript |         50 |          1 |          8 |         59 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/AdminPanel/JoinRequestCard.js             | JavaScript |         90 |          3 |          7 |        100 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/AdminPanel/JoinRequests.js                | JavaScript |         66 |          0 |          6 |         72 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/AdminPanel/MemberCard.js                  | JavaScript |         94 |          4 |          6 |        104 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/AdminPanel/ToggleOption.js                | JavaScript |         58 |          2 |          6 |         66 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/Background.js                             | JavaScript |         21 |          2 |          5 |         28 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/BottomMenuBar.js                          | JavaScript |        160 |          6 |         18 |        184 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/BrowseFunds.js                            | JavaScript |         39 |          1 |         10 |         50 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/BrowseFundsItem.js                        | JavaScript |         72 |          1 |          8 |         81 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/BrowseFundsTopPerformers.js               | JavaScript |         75 |          1 |          7 |         83 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/CategorySearchHeader.js                   | JavaScript |         69 |          0 |          4 |         73 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/CategorySearchScroller.js                 | JavaScript |         56 |          2 |          8 |         66 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/ChangePincode.js                          | JavaScript |        174 |          4 |         15 |        193 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/ChatPage/ChatPageContent.js               | JavaScript |         41 |          0 |          8 |         49 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/ChatPage/CommentCard.js                   | JavaScript |         77 |          6 |          5 |         88 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/ChatPage/CommentEntryBox.js               | JavaScript |         39 |          1 |          7 |         47 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/ChatPage/CommentSectionEntry.js           | JavaScript |         50 |          5 |          6 |         61 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/ChatPage/PostCard.js                      | JavaScript |        112 |         11 |          5 |        128 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/ChatPage/PostPageContent.js               | JavaScript |         37 |          0 |          4 |         41 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/Chips/MaterialChipBasic.js                | JavaScript |         26 |          0 |          4 |         30 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/Chips/MaterialChipBasic1.js               | JavaScript |         26 |          0 |          4 |         30 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/Chips/MaterialChipBasic2.js               | JavaScript |         26 |          0 |          4 |         30 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/Chips/MaterialChipBasic3.js               | JavaScript |         26 |          0 |          4 |         30 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/Chips/MaterialChipBasic4.js               | JavaScript |         26 |          0 |          4 |         30 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/Chips/MaterialChipBasic5.js               | JavaScript |         26 |          0 |          4 |         30 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/CreateAFundFlow/BottomBotton.js           | JavaScript |         56 |          9 |         10 |         75 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/CreateAFundFlow/CreateAFundModal1.js      | JavaScript |        155 |          5 |         15 |        175 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/CreateAFundFlow/CreateAFundModal2.js      | JavaScript |        151 |          5 |          9 |        165 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/CreateAFundFlow/CreateAFundModal3.js      | JavaScript |        150 |          5 |          8 |        163 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/CreateAFundFlow/CreateAFundModal4.js      | JavaScript |        152 |          5 |         11 |        168 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/CreateAFundFlow/CreateAFundModal5.js      | JavaScript |        174 |          7 |         12 |        193 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/CreateAFundFlow/CreateAFundModal6.js      | JavaScript |        199 |          8 |         15 |        222 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/CreateAFundFlow/CreateFundButton.js       | JavaScript |         46 |          0 |          5 |         51 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/CreateAFundFlow/Friends.js                | JavaScript |         73 |          5 |         10 |         88 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/CreateAFundFlow/FriendsCard.js            | JavaScript |         86 |          1 |          8 |         95 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/CreateAFundFlow/FundSettings.js           | JavaScript |         51 |          0 |          5 |         56 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/CreateAFundFlow/TagSelection.js           | JavaScript |         66 |          2 |          6 |         74 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/CreateAFundFlow/TextEntry.js              | JavaScript |         60 |         22 |          9 |         91 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/CreateAFundFlow/TextEntryFinalSlide.js    | JavaScript |         60 |         22 |          9 |         91 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/CreateAFundFlow/UploadImage.js            | JavaScript |         62 |          0 |          7 |         69 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/CupertinoSwitch.js                        | JavaScript |         29 |          0 |          5 |         34 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/Dashboard/CollectivePositionCard.js       | JavaScript |         69 |          4 |         10 |         83 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/Dashboard/FundCard.js                     | JavaScript |        101 |          6 |         15 |        122 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/Dashboard/FundDashboardSliderContent.js   | JavaScript |         37 |          3 |          4 |         44 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/Dashboard/FundMembers.js                  | JavaScript |        127 |          2 |         11 |        140 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/Dashboard/KeyStatistics.js                | JavaScript |        192 |          3 |         11 |        206 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/Dashboard/MemberCard.js                   | JavaScript |         69 |          4 |         10 |         83 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/Dashboard/MyTradingHistory.js             | JavaScript |          0 |          0 |          1 |          1 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/Dashboard/TradingInsights.js              | JavaScript |        127 |          0 |         12 |        139 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/FundListLoop.js                           | JavaScript |         25 |          0 |          5 |         30 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/Graphs/FundGraph.js                       | JavaScript |         28 |          0 |          5 |         33 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/IconTextArrowRight.js                     | JavaScript |         58 |          0 |          5 |         63 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/IndexFundCard.js                          | JavaScript |         69 |          3 |          9 |         81 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/KeyActionsModal.js                        | JavaScript |        196 |          4 |         10 |        210 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/KeyStaticButton.js                        | JavaScript |         47 |          1 |          5 |         53 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/Legal.js                                  | JavaScript |        119 |          0 |          4 |        123 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/LinearGradients.js                        | JavaScript |         13 |          4 |          4 |         21 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/Menu.js                                   | JavaScript |          0 |          0 |          1 |          1 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/MyNewsfeed.js                             | JavaScript |         33 |          1 |          5 |         39 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/MyNotifications.js                        | JavaScript |         33 |          1 |          5 |         39 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/MyPositions.js                            | JavaScript |         39 |          3 |          9 |         51 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/MyPositionsItem.js                        | JavaScript |         71 |          1 |          8 |         80 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/MyTradingHistoryItem.js                   | JavaScript |         71 |          0 |          8 |         79 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/NewsItems.js                              | JavaScript |        158 |          3 |         13 |        174 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/NotificationPositions.js                  | JavaScript |        133 |          1 |         12 |        146 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/NotificationSettings.js                   | JavaScript |        114 |          2 |          6 |        122 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/OTP.js                                    | JavaScript |        275 |         10 |         23 |        308 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/OnBoarding/Carousel.js                    | JavaScript |         83 |          0 |         12 |         95 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/OnBoarding/OnBoardingButton.js            | JavaScript |         32 |          0 |          3 |         35 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/OnBoarding/Pagination.js                  | JavaScript |         44 |          0 |          5 |         49 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/PinCode.js                                | JavaScript |         51 |          1 |          9 |         61 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/PlaceTradeFlow/PlaceTradeModal.js         | JavaScript |        108 |          8 |          7 |        123 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/Position.js                               | JavaScript |         64 |         13 |          7 |         84 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/ProfileSettings.js                        | JavaScript |        318 |         39 |         23 |        380 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/SearchBarActive.js                        | JavaScript |        102 |          0 |          9 |        111 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/SearchBarInactive.js                      | JavaScript |         59 |          1 |          4 |         64 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/SectionHeaders/ChatPageHeader.js          | JavaScript |         47 |          5 |          6 |         58 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/SectionHeaders/LeftArrowTextHeader.js     | JavaScript |         65 |          0 |          4 |         69 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/SectionHeaders/LogoHeader.js              | JavaScript |         48 |          5 |          6 |         59 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/SectionHeaders/PopupHeader.js             | JavaScript |         79 |          0 |         10 |         89 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/SectionHeaders/PostHeader.js              | JavaScript |         53 |          3 |          4 |         60 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/SectionHeaders/TextRightArrowHeader.js    | JavaScript |         39 |          3 |          4 |         46 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/SectionHeaders/TextWithFilterArrowBack.js | JavaScript |         56 |          3 |          4 |         63 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/SectionHeaders/TextWithSort.js            | JavaScript |         48 |          3 |          5 |         56 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/SectionHeaders/TextWithSortArrowBack.js   | JavaScript |         56 |          3 |          4 |         63 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/SecuritySettings.js                       | JavaScript |        110 |          2 |          8 |        120 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/SliderBar.js                              | JavaScript |         67 |         14 |          7 |         88 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/SplashScreen.js                           | JavaScript |         60 |          1 |          9 |         70 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/SquareModal.js                            | JavaScript |         73 |         34 |          5 |        112 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/StockHeader.js                            | JavaScript |         83 |          6 |         13 |        102 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/StockPage/EarningShare.js                 | JavaScript |        546 |          0 |          6 |        552 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/StockPage/MarketCap.js                    | JavaScript |        223 |          0 |          6 |        229 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/StockPage/MarketStats.js                  | JavaScript |         42 |          1 |         10 |         53 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/StockPage/MarketStatsDetails.js           | JavaScript |        360 |          0 |          8 |        368 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/StockPage/NewsSection.js                  | JavaScript |        557 |          0 |          7 |        564 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/StockPage/NewsSectionDetails.js           | JavaScript |        579 |          0 |          4 |        583 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/StockPage/SliderBar.js                    | JavaScript |         67 |         14 |          7 |         88 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/StockPage/StockGraphVisual.js             | JavaScript |         21 |          3 |          6 |         30 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/StockPage/StockHeader.js                  | JavaScript |         83 |          6 |         13 |        102 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/StockPage/StockHeaderCard.js              | JavaScript |         38 |          1 |          7 |         46 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/StockPage/StockPosition.js                | JavaScript |         20 |          1 |          4 |         25 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/StockPage/StockPriceCard.js               | JavaScript |         58 |          1 |          8 |         67 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/StockPage/StoryBlocks.js                  | JavaScript |         79 |          0 |          3 |         82 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/StockPage/WhatExpert.js                   | JavaScript |        439 |          0 |          6 |        445 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/TemplateComponent.js                      | JavaScript |         16 |          0 |          5 |         21 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/TemplateSlideUpModal.js                   | JavaScript |        108 |         19 |          9 |        136 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/TopMenuBar.js                             | JavaScript |         79 |          3 |         14 |         96 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/TopMoversHeader.js                        | JavaScript |         46 |          0 |          3 |         49 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/TopMoversScroller.js                      | JavaScript |         73 |          0 |          9 |         82 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/components/ValueCard.js                              | JavaScript |         56 |          1 |          7 |         64 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/navigation/MainAppNavigator.js                       | JavaScript |         78 |         11 |          3 |         92 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/navigation/MainDrawerNavigator.js                    | JavaScript |        139 |          1 |         11 |        151 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/screens/AdminPanel.js                                | JavaScript |         64 |          1 |         10 |         75 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/screens/Browse.js                                    | JavaScript |         73 |          1 |         13 |         87 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/screens/CambridgeAlgoTradersProfile.js               | JavaScript |        267 |          4 |         13 |        284 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/screens/CategorySearch.js                            | JavaScript |         62 |          2 |         11 |         75 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/screens/Chat.js                                      | JavaScript |         65 |          4 |         12 |         81 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/screens/CountryLeaderboard.js                        | JavaScript |         90 |          2 |         14 |        106 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/screens/Currency.js                                  | JavaScript |        166 |          1 |          7 |        174 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/screens/Dashboard.js                                 | JavaScript |         65 |          4 |         13 |         82 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/screens/Friends.js                                   | JavaScript |        316 |          7 |         14 |        337 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/screens/FundDiscussion.js                            | JavaScript |         56 |          1 |         10 |         67 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/screens/HelpCenter.js                                | JavaScript |        304 |          2 |         21 |        327 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/screens/Home.js                                      | JavaScript |         74 |          7 |         14 |         95 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/screens/KeyActions.js                                | JavaScript |         51 |          0 |          8 |         59 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/screens/LSESustainablefinanceFundProfile.js          | JavaScript |        267 |          4 |         13 |        284 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/screens/Language.js                                  | JavaScript |        166 |          1 |          7 |        174 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/screens/Leaderboard.js                               | JavaScript |         81 |          2 |         15 |         98 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/screens/LogInEmail.js                                | JavaScript |        151 |          4 |         13 |        168 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/screens/Menu.js                                      | JavaScript |         51 |          0 |          9 |         60 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/screens/MyAccount.js                                 | JavaScript |         51 |          2 |         10 |         63 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/screens/Newsfeed.js                                  | JavaScript |         77 |          2 |         13 |         92 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/screens/Notifications.js                             | JavaScript |         77 |          2 |         12 |         91 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/screens/OnBoarding.js                                | JavaScript |         84 |          3 |          9 |         96 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/screens/PlaceholderScreen.js                         | JavaScript |         51 |          2 |         10 |         63 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/screens/Post.js                                      | JavaScript |         69 |          0 |          9 |         78 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/screens/Profile.js                                   | JavaScript |         51 |          2 |          9 |         62 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/screens/Search.js                                    | JavaScript |         71 |          2 |         12 |         85 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/screens/Settings.js                                  | JavaScript |        273 |          3 |         18 |        294 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/screens/SignUp.js                                    | JavaScript |         60 |          2 |         13 |         75 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/screens/StockPage.js                                 | JavaScript |         83 |          1 |         11 |         95 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/screens/TopMoversSearch .js                          | JavaScript |         67 |          2 |         12 |         81 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/screens/UCLFintechFundProfile.js                     | JavaScript |        267 |          4 |         13 |        284 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/services/ExampleFile.js                              | JavaScript |          0 |          1 |          0 |          1 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/styles/ButtonStyles.js                               | JavaScript |          0 |          1 |          0 |          1 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/styles/Colors.js                                     | JavaScript |         83 |          3 |         10 |         96 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/styles/Fonts.js                                      | JavaScript |        143 |          5 |          9 |        157 |
+| /Users/cameronmillen/hedgenet-1/hedgenet-10/src/utils/API.js                                         | JavaScript |          0 |          1 |          0 |          1 |
+| Total                                                                                                |            |     58,372 |        569 |      1,292 |     60,233 |
++------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
