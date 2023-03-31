@@ -2,13 +2,25 @@ import React, { useState } from 'react';
 import { View, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import { globalColors } from '../../styles/Colors.js';
 import { globalFonts } from '../../styles/Fonts.js';
+import { post1comments } from '../../backend/dummyCommentData.js';
 
 const CommentEntryBox = () => {
   const [comment, setComment] = useState('');
 
+  // BACKEND TO DO: NEED TO ADD BACKEND TO ADD NEW COMMENT TO DATABASE
+
   const handleCommentSubmit = () => {
-    // Do something with the comment, e.g. send it to a variable or list
-    console.log(`Submitted comment: ${comment}`);
+    // Update the list of comments with the new comment
+    const newComment = {
+      username: 'yourUsername',
+      timesincepost: 'now',
+      imagesource: require('../../assets/dummyprofilepictures/1.png'),
+      commentcontent: comment,
+      upvotes: '0',
+    };
+    post1comments.push(newComment);
+
+    // Clear the comment input
     setComment('');
   };
 

@@ -25,7 +25,6 @@ function CommentSectionEntry(props) {
             <View style={styles.commentOuterContainer}>
                 <Image source={props.imagesource} style={[styles.profileIcon, { marginRight: 14}]} />
                 <CommentEntryBox/>
-
             </View>
         </View>
     );
