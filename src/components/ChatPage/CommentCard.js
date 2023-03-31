@@ -21,7 +21,7 @@ function CommentCard(props) {
     return (
         <View style={styles.outerContainer}>
             <View style={styles.imageTitleContainer}>
-                <Image source={props.imagesource} style={[styles.profileIcon, { marginRight: 14}]} />
+                <Image source={imagesource} style={[styles.profileIcon, { marginRight: 14}]} />
                 <View style={styles.usernameStrategyVertContainer}>
                     <Text style={[globalFonts.BodySmall.semiBold(globalColors.others.white.color), { paddingBottom: 5}]}>u/{username} • {timesincepost}h</Text>
                     <Text style={[globalFonts.BodyLarge.Medium(globalColors.others.white.color), { paddingBottom: 5}]}>{commentcontent}</Text>

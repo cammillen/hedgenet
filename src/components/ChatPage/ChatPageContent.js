@@ -12,7 +12,6 @@ function ChatPageContent({ posts }) {
     <ScrollView style={styles.container}>
     <Text style={styles.text}>Discussion</Text>
       {posts.map((post, index) => (
-        <TouchableOpacity key={index} onPress={() => onPressPost(post)}>
         <PostCard
             username={post.username}
             timesincepost={post.timesincepost}
@@ -24,7 +23,6 @@ function ChatPageContent({ posts }) {
             upvotes={post.upvotes}
             comments={post.comments}
         />
-        </TouchableOpacity>
       ))}
     </ScrollView>
   );

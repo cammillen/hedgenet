@@ -16,9 +16,19 @@ import { globalColors } from '../../styles/Colors.js';
 import { globalFonts } from '../../styles/Fonts.js';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Share } from 'react-native';
+import SquareModal from '../SquareModal.js'; 
+import { NavigationContainer } from '@react-navigation/native';
 
 function PostCard(props) {
     const navigation = useNavigation();
+    const [modalVisible, setModalVisible] = useState(false);
+    const openModal = () => {
+    setModalVisible(true);
+    };
+    const closeModal = () => {
+    setModalVisible(false);
+    };
     const { imagesource, username, timesincepost, strategy1, strategy2, strategy3, postcontent, upvotes, comments  } = props;
     
     const handlePress = () => {
@@ -26,9 +36,21 @@ function PostCard(props) {
             imagesource: imagesource, username: username, timesincepost: timesincepost, strategy1: strategy1, strategy2: strategy2, strategy3: strategy3, postcontent: postcontent, upvotes: upvotes, comments: comments
         });
     }
+    const handleSharePress = async () => {
+        try {
+          await Share.share({
+            message: 'Check out this post on my Hedgenet!',
+            url: 'https://myapp.com/post',
+            title: 'My App - Post',
+          });
+        } catch (error) {
+          console.log(error);
+        }
+      }
     return (
-        <TouchableWithoutFeedback onPress={handlePress}>
-            <View style={styles.outerContainer}>
+        <View style={styles.outerContainer}>
+            <TouchableWithoutFeedback onPress={handlePress}>
+                <View>
                 <View style={styles.imageTitleContainer}>
                     <Image source={imagesource} style={[styles.profileIcon, { marginRight: 14}]} />
                     <View style={styles.usernameStrategyVertContainer}>
@@ -52,32 +74,58 @@ function PostCard(props) {
                     })
                 }
                 </Text>
-                <View style={styles.bottomButtons}>
-                    <View style={styles.upvoteCommentsHBox}>
-                        <Image
-                        source={require('../../assets/icons/UpVotes.png')}
-                        style={[styles.icon, { marginRight: 12 }]}
-                        />
-                        <Text style={[globalFonts.BodyLarge.Medium(globalColors.others.white.color), { marginRight: 15 }]}>{upvotes}</Text>
-                        <Image
-                        source={require('../../assets/icons/Chat.png')}
-                        style={[styles.icon, { marginRight: 12 }]}
-                        />
-                        <Text style={[globalFonts.BodyLarge.Medium(globalColors.others.white.color)]}>{comments}</Text>
-                    </View>
-                    <View style={styles.shareMoreBox}>
+                </View>
+            </TouchableWithoutFeedback>
+            <View style={styles.bottomButtons}>
+                <View style={styles.upvoteCommentsHBox}>
+                    {/* TO DO: BACKEND: do the on press so that when they press it once the upvote goes up by one and the icon is replaces with a bolder icon.  */}
+                    <Image
+                    source={require('../../assets/icons/UpVotes.png')}
+                    style={[styles.icon, { marginRight: 12 }]}
+                    />
+                    <Text style={[globalFonts.BodyLarge.Medium(globalColors.others.white.color), { marginRight: 15 }]}>{upvotes}</Text>
+                    <TouchableOpacity onPress={handlePress}>
+                        <View style={styles.upvoteCommentsHBox}>
+                            <Image
+                            source={require('../../assets/icons/Chat.png')}
+                            style={[styles.icon, { marginRight: 12 }]}
+                            />
+                            <Text style={[globalFonts.BodyLarge.Medium(globalColors.others.white.color)]}>{comments}</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.shareMoreBox}>
+                    <TouchableOpacity onPress={handleSharePress}>
                         <Image
                         source={require('../../assets/icons/Share.png')}
                         style={[styles.icon, { marginRight: 12 }]}
                         />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={openModal}>
                         <Image
-                        source={require('../../assets/icons/More.png')}
-                        style={[styles.icon]}
+                            source={require('../../assets/icons/More.png')}
+                            style={[styles.icon]}
                         />
-                    </View>
+                    </TouchableOpacity>
+                    <SquareModal
+                    visible={modalVisible}
+                    mainIconSource={require('../../assets/icons/WarningRed.png')}
+                    title='Report Post'
+                    titleColor= {globalColors.status.error.color}
+                    text='Reporting will inform the admin of an inappropriate post.'
+                    button1Color= {globalColors.dark._3.color}
+                    button1Text='Close'
+                    button2Color=  {globalColors.status.error.color}
+                    button2Text='Report Comment'
+                    onButton1Press={() => setModalVisible(false)}
+                    onButton2Press={() => {
+                    // TO DO: BACKEND add the code that reports the fund. 
+                    setModalVisible(false);
+                    }}
+                    />
                 </View>
             </View>
-        </TouchableWithoutFeedback>
+        </View>
     );
 }
 
@@ -131,3 +179,4 @@ const styles = StyleSheet.create({
 });
 
 export default PostCard;
+
