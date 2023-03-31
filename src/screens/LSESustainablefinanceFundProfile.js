@@ -64,26 +64,26 @@ export default function LSESustainablefinanceFundProfile () {
             source={require('../assets/funds/BioShorters.png')} 
             style={styles.FundImage}
           />
-          <View style={styles.FundNameGroup}>
-            <Text style={[globalFonts.H6(globalColors.others.white.color), {marginTop: 5, marginLeft: 5, alignItems: 'flex-start'}]}>
-              LSE Sustainable finance Fund
+          <View style={[styles.FundNameGroup, {flex: 6}]}>
+            <Text style={[globalFonts.H6(globalColors.others.white.color), {marginTop: 5, marginLeft: 5, alignItems: 'flex-start', fontSize: 16}]}>
+              UCL Fintech Fund
             </Text>
-            <Text style={[globalFonts.H6(globalColors.others.white.color), {marginTop: 5, marginLeft: 5, alignItems: 'flex-start', fontSize: 14}]}>
+            <Text style={[globalFonts.H6(globalColors.others.white.color), {marginTop: 5, marginLeft: 5, alignItems: 'flex-start', fontSize: 12}]}>
               102 Members - 156 Stocks
             </Text>
             <View style={styles.FundNameGroupButtonGroup}>
-              <TouchableOpacity style={{borderWidth: 2, borderColor: '#12D18E', marginRight: 5, borderRadius: 5}}>
-                <Text style={[globalFonts.H6('#12D18E'), {marginRight: 5, fontSize: 10}]}>
+              <TouchableOpacity style={{borderWidth: 2, borderColor: '#12D18E', marginRight: 5, borderRadius: 5, flex: 1}}>
+                <Text style={[globalFonts.H6('#12D18E'), {fontSize: 10}]}>
                   LSE
                 </Text>
               </TouchableOpacity>
               <TouchableOpacity style={{borderWidth: 2, borderColor: '#12D18E', marginRight: 5, borderRadius: 5}}>
-                <Text style={[globalFonts.H6('#12D18E'), {marginRight: 5, fontSize: 10}]}>
+                <Text style={[globalFonts.H6('#12D18E'), {fontSize: 10}]}>
                 Sustainable
                 </Text>
               </TouchableOpacity>
               <TouchableOpacity style={{borderWidth: 2, borderColor: '#12D18E', marginRight: 5, borderRadius: 5}}>
-                <Text style={[globalFonts.H6('#12D18E'), {marginRight: 5, fontSize: 10}]}>
+                <Text style={[globalFonts.H6('#12D18E'), {fontSize: 10}]}>
                   S&P 1000
                 </Text>
               </TouchableOpacity>
@@ -91,12 +91,12 @@ export default function LSESustainablefinanceFundProfile () {
           </View>
           <View style={styles.FundNameGroup}>
             <View style={{alignItems: 'flex-end'}}>
-              <Text style={[globalFonts.H6(globalColors.others.white.color), {marginTop: 5, marginLeft: 5, fontSize: 14}]}>
+              <Text style={[globalFonts.H6(globalColors.others.white.color), {marginTop: 5, marginLeft: 5, fontSize: 12}]}>
                 Market Cap
               </Text>
             </View>
             <View style={{alignItems: 'flex-end'}}>
-              <Text style={[globalFonts.H6(globalColors.others.white.color), {marginTop: 5, marginLeft: 5}]}>
+              <Text style={[globalFonts.H6(globalColors.others.white.color), {marginTop: 5, marginLeft: 5, fontSize: 16}]}>
                 £45,12.78
               </Text>
             </View>
@@ -161,10 +161,11 @@ export default function LSESustainablefinanceFundProfile () {
             </View>
             <View style={styles.KeyStatics}>
               {
-                KeyStaticsNames.map((value, index) => 
-                  <View key={index} styles={{width: '50%', marginLeft: 40}}>
-                    <KeyStaticButton name={KeyStaticsNames[index]} value={KeyStaticsValues[index]} />
-                  </View>
+                KeyStaticsNames.map((value, index) => {
+                    return(
+                      <KeyStaticButton key={index} name={KeyStaticsNames[index]} value={KeyStaticsValues[index]} />
+                    );
+                  }
                 )
               }
             </View>
@@ -224,7 +225,7 @@ const styles = StyleSheet.create({
   FundImage: {
     width: 80,
     aspectRatio: 1,
-    flex: 1,
+    flex: 2,
     marginTop: 0,
     justifyContent: 'flex-end',
     marginLeft: 10
@@ -267,10 +268,10 @@ const styles = StyleSheet.create({
     resizeMode: 'contain'
   },
   KeyStatics: {
-    marginLeft: 50,
-    marginRight: 50,
+    marginLeft: 10,
+    marginRight: 10,
     flexDirection: 'row',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
   },
   LeaveFundButton: {
     backgroundColor: '#F75555',

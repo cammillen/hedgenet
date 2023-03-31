@@ -53,6 +53,7 @@ export default function UCLFintechFundProfile () {
       <StatusBar barStyle="light-content" backgroundColor="#000" />
       <View style={styles.container} onLayout={onLayoutRootView}>
         <TopMenuBar screen={Screen} />
+
         <View style={styles.fullComp}>
           <TouchableOpacity  onPress={() => navigation.goBack()} style={{flex: 1, justifyContent: 'center',}}>
             <Image
@@ -64,26 +65,26 @@ export default function UCLFintechFundProfile () {
             source={require('../assets/funds/UCLFinTech1.png')} 
             style={styles.FundImage}
           />
-          <View style={styles.FundNameGroup}>
-            <Text style={[globalFonts.H6(globalColors.others.white.color), {marginTop: 5, marginLeft: 5, alignItems: 'flex-start'}]}>
+          <View style={[styles.FundNameGroup, {flex: 6}]}>
+            <Text style={[globalFonts.H6(globalColors.others.white.color), {marginTop: 5, marginLeft: 5, alignItems: 'flex-start', fontSize: 16}]}>
               UCL Fintech Fund
             </Text>
-            <Text style={[globalFonts.H6(globalColors.others.white.color), {marginTop: 5, marginLeft: 5, alignItems: 'flex-start', fontSize: 14}]}>
+            <Text style={[globalFonts.H6(globalColors.others.white.color), {marginTop: 5, marginLeft: 5, alignItems: 'flex-start', fontSize: 12}]}>
               45 Members - 123 Stocks
             </Text>
             <View style={styles.FundNameGroupButtonGroup}>
-              <TouchableOpacity style={{borderWidth: 2, borderColor: '#12D18E', marginRight: 5, borderRadius: 5}}>
-                <Text style={[globalFonts.H6('#12D18E'), {marginRight: 5, fontSize: 10}]}>
+              <TouchableOpacity style={{borderWidth: 2, borderColor: '#12D18E', marginRight: 5, borderRadius: 5, flex: 1}}>
+                <Text style={[globalFonts.H6('#12D18E'), {fontSize: 10}]}>
                   UCL
                 </Text>
               </TouchableOpacity>
               <TouchableOpacity style={{borderWidth: 2, borderColor: '#12D18E', marginRight: 5, borderRadius: 5}}>
-                <Text style={[globalFonts.H6('#12D18E'), {marginRight: 5, fontSize: 10}]}>
+                <Text style={[globalFonts.H6('#12D18E'), {fontSize: 10}]}>
                   FinTech
                 </Text>
               </TouchableOpacity>
               <TouchableOpacity style={{borderWidth: 2, borderColor: '#12D18E', marginRight: 5, borderRadius: 5}}>
-                <Text style={[globalFonts.H6('#12D18E'), {marginRight: 5, fontSize: 10}]}>
+                <Text style={[globalFonts.H6('#12D18E'), {fontSize: 10}]}>
                   S&P 500
                 </Text>
               </TouchableOpacity>
@@ -91,17 +92,18 @@ export default function UCLFintechFundProfile () {
           </View>
           <View style={styles.FundNameGroup}>
             <View style={{alignItems: 'flex-end'}}>
-              <Text style={[globalFonts.H6(globalColors.others.white.color), {marginTop: 5, marginLeft: 5, fontSize: 14}]}>
+              <Text style={[globalFonts.H6(globalColors.others.white.color), {marginTop: 5, marginLeft: 5, fontSize: 12}]}>
                 Market Cap
               </Text>
             </View>
             <View style={{alignItems: 'flex-end'}}>
-              <Text style={[globalFonts.H6(globalColors.others.white.color), {marginTop: 5, marginLeft: 5}]}>
+              <Text style={[globalFonts.H6(globalColors.others.white.color), {marginTop: 5, marginLeft: 5, fontSize: 16}]}>
                 £123,213.11
               </Text>
             </View>
           </View>
         </View>
+
         <View style={styles.InfoGroup}>
           <View style={{flex: 1, flexDirection:'column', alignItems: 'center', justifyContent: 'center'}}>
             <Text style={[globalFonts.H6('white'), {fontSize: 18}]}>
@@ -128,8 +130,10 @@ export default function UCLFintechFundProfile () {
             </Text>
           </View>
         </View>
+
         <ScrollView showsVerticalScrollIndicator={true}>
           <View style={{flexDirection: 'column', marginTop: 20}}>
+
             <View style={styles.TitleGroup}>
               <View style={{flex: 1, alignItems: 'flex-start'}}>
                 <Text style={[globalFonts.H6('white'), {fontSize: 18}]}>
@@ -148,10 +152,12 @@ export default function UCLFintechFundProfile () {
                 </View>
               </TouchableOpacity>
             </View>
-            <Image 
+
+            <Image
               source={require('../assets/graphs(delete)/FundGraphPlaceholder.png')}
               style={styles.graph}
             />
+
             <View style={styles.TitleGroup}>
               <View style={{flex: 1, alignItems: 'flex-start'}}>
                 <Text style={[globalFonts.H6('white'), {fontSize: 18}]}>
@@ -159,15 +165,18 @@ export default function UCLFintechFundProfile () {
                 </Text>
               </View>
             </View>
+            
             <View style={styles.KeyStatics}>
               {
-                KeyStaticsNames.map((value, index) => 
-                  <View key={index} styles={{width: '50%', marginLeft: 40}}>
-                    <KeyStaticButton name={KeyStaticsNames[index]} value={KeyStaticsValues[index]} />
-                  </View>
+                KeyStaticsNames.map((value, index) => {
+                    return(
+                      <KeyStaticButton key={index} name={KeyStaticsNames[index]} value={KeyStaticsValues[index]} />
+                    );
+                  }
                 )
               }
             </View>
+
             <View style={styles.TitleGroup}>
               <View style={{flex: 1, alignItems: 'flex-start'}}>
                 <Text style={[globalFonts.H6('white'), {fontSize: 18}]}>
@@ -186,7 +195,9 @@ export default function UCLFintechFundProfile () {
                 </View>
               </TouchableOpacity>
             </View>
+
             <MyPositions stocks={['Google', 'Netflix', 'Amazon', 'Blackberry', 'Coca-Cola', 'Apple', 'Sony']} paddingBottom={10} bottomText={'See More'}/>
+
             <TouchableOpacity style={styles.LeaveFundButton} onPress={() => navigation.goBack()} >
               <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', flexDirection: 'row'}}>
                 <Image
@@ -224,7 +235,7 @@ const styles = StyleSheet.create({
   FundImage: {
     width: 80,
     aspectRatio: 1,
-    flex: 1,
+    flex: 2,
     marginTop: 0,
     justifyContent: 'flex-end',
     marginLeft: 10
@@ -267,10 +278,10 @@ const styles = StyleSheet.create({
     resizeMode: 'contain'
   },
   KeyStatics: {
-    marginLeft: 50,
-    marginRight: 50,
+    marginLeft: 10,
+    marginRight: 10,
     flexDirection: 'row',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
   },
   LeaveFundButton: {
     backgroundColor: '#F75555',

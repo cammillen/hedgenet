@@ -85,13 +85,13 @@ function ChangePincode(props) {
         </View>
         <View style={styles.loremIpsumRow}>
           <Text style={{color: 'white', fontSize: 12}}>Old Pincode</Text>
-            <PinCode password = {oldPassword} passwordIndex = {passwordIndex} />
+          <PinCode password = {oldPassword} passwordIndex = {passwordIndex} />
           <View style={{height: 2, backgroundColor: '#096847'}}>
           </View>
         </View>
         <View style={styles.loremIpsumRow}>
           <Text style={{color: 'white', fontSize: 12}}>New Pincode</Text>
-            <PinCode password = {newPassword} passwordIndex = {passwordIndex-4} />
+          <PinCode password = {newPassword} passwordIndex = {passwordIndex-4} />
           <View style={{height: 2, backgroundColor: '#096847'}}>
           </View>
         </View>
@@ -154,11 +154,12 @@ const styles = StyleSheet.create({
     marginTop: 2
   },
   loremIpsumRow: {
-    height: 130,
     flexDirection: 'column',
     marginTop: 31,
     marginLeft: '8%',
-    marginRight: '8%'
+    marginRight: '8%',
+    width: '84%',
+    aspectRatio: 3.2,
   },
 
   // styles for pinKeyboard

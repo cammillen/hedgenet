@@ -28,14 +28,14 @@ const KeyStaticButton = (props) => {
     <View style={styles.mainGroup}>
       <Image 
         source={getImage(props.name)}
-        style={{width: 80, height: 80}}
+        style={{width: 50, height: 50}}
       />
       <View style={{flexDirection: 'column'}}>
         <View style={{flex: 1, justifyContent: 'center'}}>
-          <Text style={[globalFonts.H6('white'), {fontSize: 15}]}>{props.name}</Text>
+          <Text style={[globalFonts.H6('white'), {fontSize: 10}]}>{props.name}</Text>
         </View>
         <View style={{flex: 1}}>
-          <Text style={[globalFonts.H6('white'), {fontSize: 20}]}>{props.value}</Text>
+          <Text style={[globalFonts.H6('white'), {fontSize: 14}]}>{props.value}</Text>
         </View>
       </View>
     </View>
@@ -44,8 +44,7 @@ const KeyStaticButton = (props) => {
 
 const styles = StyleSheet.create({
   mainGroup: {
-    marginLeft: 10,
-    marginRight: 10,
+    width: '50%',
     flexDirection: 'row'
   }
 });
