@@ -35,8 +35,8 @@
 
 import React from 'react';
 import { Modal, View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
-import { globalColors } from '../styles/Colors';
-import { globalFonts } from '../styles/Fonts';
+import { globalColors } from '../../styles/Colors';
+import { globalFonts } from '../../styles/Fonts';
 
 const SquareModal = (props) => {
   return (
@@ -48,9 +48,6 @@ const SquareModal = (props) => {
           <Text style={styles.text}>{props.text}</Text>
           <TouchableOpacity style={[styles.button, { backgroundColor: props.button1Color }]} onPress={props.onButton1Press}>
             <Text style={styles.buttonText}>{props.button1Text}</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={[styles.button, { backgroundColor: props.button2Color }]} onPress={props.onButton2Press}>
-            <Text style={styles.buttonText}>{props.button2Text}</Text>
           </TouchableOpacity>
         </View>
       </View>

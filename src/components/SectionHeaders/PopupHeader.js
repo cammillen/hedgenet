@@ -69,12 +69,12 @@ const styles = StyleSheet.create({
         width: 20,
         height: 20,
         resizeMode: 'contain',
-        marginRight: 10,
+        marginRight: 10
     },
     icon:{
         width: 24,
         height: 24,
-        resizeMode: 'contain'
+        resizeMode: 'contain',
     },
     loadingBars:{
         flexDirection: 'row',

@@ -17,7 +17,7 @@ import { globalFonts } from '../../styles/Fonts.js';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Share } from 'react-native';
-import SquareModal from '../SquareModal.js'; 
+import SquareModal from '../SquareModals/SquareModal.js'; 
 import { NavigationContainer } from '@react-navigation/native';
 
 function PostCard(props) {

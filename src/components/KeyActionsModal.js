@@ -18,8 +18,9 @@ const KeyActionsModal = ({ visible, onClose}) => {
     setModalVisible(false);
   };
 
-  const onCloseAllModals = () => {
+  const closeAllModals = () => {
     setModalVisible(false);
+    navigation.dismissAllModals();
   };
 
 //This is all animation stuff: 
@@ -105,12 +106,12 @@ const KeyActionsModal = ({ visible, onClose}) => {
                       style={[styles.arrowIcon]}
               />
             </TouchableOpacity>
-            <CreateAFundModal1 visible={modalVisible} onClose={closeModal}/>
+            <CreateAFundModal1 visible={modalVisible} onClose={closeModal} allClose={closeAllModals} />
             {/* Browse Funds: */}
             <TouchableOpacity style={[ styles.horizontalOuterBox, {paddingTop: 24}]} onPress={() => navigation.navigate('Browse')}>
             <View style={styles.horizontalInnerBox}>
                 <Image
-                    source={require('../assets/icons/BrowseFunds.png')}  
+                    source={require('../assets/icons/BrowseFunds.png')}
                     style={[styles.icon]}
                 />
                 <Text style={globalFonts.H6(globalColors.others.white.color)}>Browse Funds</Text>
