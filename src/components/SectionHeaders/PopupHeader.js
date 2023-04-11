@@ -11,7 +11,7 @@ const screenWidth = Dimensions.get('window').width;
 function PopupHeader(props) {
     const navigation = useNavigation();
 
-    const { numberOfBars, activeBars, popupHeaderText, onClose } = props;
+    const { numberOfBars, activeBars, popupHeaderText, onClose, allClose } = props;
 
     const loadingBars = [];
 
@@ -41,7 +41,7 @@ function PopupHeader(props) {
                     <Image source={require('../../assets/icons/3UserWhite.png')} style={styles.topIcon} />
                     <Text style={globalFonts.H5(globalColors.others.white.color)}>{popupHeaderText}</Text>
                 </View>
-                <TouchableOpacity onPress={onClose}>
+                <TouchableOpacity onPress={allClose}>
                     <Image source={require('../../assets/icons/CloseGreen.png')} style={styles.icon} />
                 </TouchableOpacity>
             </View>

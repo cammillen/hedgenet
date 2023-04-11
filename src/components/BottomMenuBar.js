@@ -11,7 +11,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { globalColors } from '../styles/Colors.js';
 import { globalFonts } from '../styles/Fonts.js';
 import { useRoute } from '@react-navigation/native';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, ModalProvider } from '@react-navigation/native';
 import KeyActionsModal from './KeyActionsModal';
 import { useState } from 'react';
 
@@ -35,6 +35,7 @@ const BottomMenuContent = () => {
   const navigation = useNavigation();
 
   return ( 
+
       // width needs to be equal to screen width of device
     <BlurView intensity={Platform.OS === 'ios' ? 30 : 120} tint="dark" width={width}  height={145} style={styles.container}>
 
@@ -65,7 +66,7 @@ const BottomMenuContent = () => {
             style={[styles.switchIcon]}
           />
         </TouchableOpacity>
-        <KeyActionsModal visible={modalVisible} onClose={closeModal}>
+        <KeyActionsModal visible={modalVisible} onClose={closeModal} navigation={navigation}>
           <Text>This is the content of the modal</Text>
         </KeyActionsModal>
 

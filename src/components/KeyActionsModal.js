@@ -6,8 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import CreateAFundModal1 from './CreateAFundFlow/CreateAFundModal1';
 import { useState } from 'react';
 
-const KeyActionsModal = ({ visible, onClose}) => {
-  const navigation = useNavigation();
+const KeyActionsModal = ({ visible, onClose, navigation}) => {
   const [modalVisible, setModalVisible] = useState(false);
 
   const openModal = () => {
@@ -20,7 +19,7 @@ const KeyActionsModal = ({ visible, onClose}) => {
 
   const closeAllModals = () => {
     setModalVisible(false);
-    navigation.dismissAllModals();
+    navigation.navigate("Home");
   };
 
 //This is all animation stuff: 
