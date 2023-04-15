@@ -19,7 +19,7 @@ import { globalColors } from '../../styles/Colors.js';
 import { globalFonts } from '../../styles/Fonts.js';
 import { BorderlessButton } from 'react-native-gesture-handler';
 
-const Tab = createMaterialTopTabNavigator()
+const Tab = createMaterialTopTabNavigator();
 
 const SliderBar = ({ titles, screens, bottomspacing}) =>{
 
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
         marginTop: -5,
         paddingTop: 0,
         flex: 1,
-        height: Dimensions.get('window').height + 1000, // adjust the height accordingly
+        height: 200 // adjust the height accordingly
     },
     tabNavigator:{
         flex: 1,

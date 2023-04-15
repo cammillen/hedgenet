@@ -11,6 +11,7 @@
   "dependencies": {
     "@expo/webpack-config": "^0.17.2",
     "@freakycoder/react-native-bounceable": "^1.0.3",
+    "@react-native-community/datetimepicker": "6.5.2",
     "@react-native-community/masked-view": "^0.1.11",
     "@react-navigation/bottom-tabs": "^6.5.5",
     "@react-navigation/drawer": "^6.6.2",
@@ -44,6 +45,7 @@
     "react-native-dynamic-vector-icons": "github:WrathChaos/react-native-dynamic-vector-icons#expo",
     "react-native-element-dropdown": "^2.9.0",
     "react-native-gesture-handler": "~2.8.0",
+    "react-native-modal-datetime-picker": "^14.0.1",
     "react-native-pager-view": "6.0.1",
     "react-native-paper": "^5.3.1",
     "react-native-platform-stylesheet": "^0.0.6",
