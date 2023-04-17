@@ -10,11 +10,11 @@ import BottomButton from './BottomBotton';
 import CreateAFundModal2 from './CreateAFundModal2.js';
 
 let text1Value = '';
-let text2Value = '';
+let text2Value = '';//
 
 const screenHeight = Dimensions.get('window').height;
 
-const CreateAFundModal1 = ({ visible, onClose}) => {
+const CreateAFundModal1 = ({ visible, onClose, allClose}) => {
   // This is to open next modal: 
   const [modalVisible, setModalVisible] = useState(false);
   const openModal = () => {
@@ -96,7 +96,6 @@ const handleTextChange2 = (value2) => {
 };
 
 //This is all modal specific stuff: 
-const navigation = useNavigation();
 
   return (
     <Modal transparent visible={visible} animationType="none" onRequestClose={onClose}>
@@ -106,7 +105,7 @@ const navigation = useNavigation();
             <Animated.View {...panResponder.panHandlers} style={[styles.modalContainer, { opacity: modalOpacity, transform: [{ translateY: modalTranslateY }] }]}>
               <View style={styles.tabBar}/>
               {/* Header: */}
-              <PopupHeader numberOfBars={6} activeBars={1} popupHeaderText="Create Fund" onClose={onClose} />
+              <PopupHeader numberOfBars={6} activeBars={1} popupHeaderText="Create Fund" onClose={onClose} allClose={allClose} />
               {/* Content: */}
               <View style={styles.contentVerticalContainer} >
                 <Text style={[globalFonts.H3(globalColors.others.white.color), {paddingBottom: 24}]}>Enter your funds name and biography. 🏛️</Text>
@@ -118,7 +117,8 @@ const navigation = useNavigation();
                 </ScrollView>
               </View>
               {/* TO DO: BACKEND need to send text1 and text2 to the backend storing the new fund name and bio */}
-              <BottomButton texts={[text1, text2]} modal={<CreateAFundModal2 visible={modalVisible} onClose={closeModal}/>} onPress={openModal}/>
+
+              <BottomButton texts={[text1, text2]} modal={<CreateAFundModal2 visible={modalVisible} onClose={closeModal} allClose={allClose}/>} onPress={openModal}/>
               {/* This is end of flex box with content.*/}
             </Animated.View>
           </TouchableWithoutFeedback>

@@ -14,7 +14,7 @@ let text3Value = '';
 
 const screenHeight = Dimensions.get('window').height;
 
-const CreateAFundModal2 = ({ visible, onClose }) => {
+const CreateAFundModal2 = ({ visible, onClose, allClose }) => {
 // This is to open next modal: 
     const [modalVisible, setModalVisible] = useState(false);
     const openModal = () => {
@@ -99,7 +99,7 @@ const navigation = useNavigation();
               <View style={styles.tabBar}/>
               {/* Enter content for modal here:  */}
               {/* Header: */}
-              <PopupHeader numberOfBars={6} activeBars={2} popupHeaderText="Create Fund" onClose={onClose} />
+              <PopupHeader numberOfBars={6} activeBars={2} popupHeaderText="Create Fund" onClose={allClose} />
               {/* Content: */}
               <View style={styles.contentVerticalContainer} >
                 <Text style={[globalFonts.H3(globalColors.others.white.color), {paddingBottom: 24}]}>Enter affiliated university and icon. 🚀</Text>

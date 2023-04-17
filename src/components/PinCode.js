@@ -49,12 +49,11 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     justifyContent: 'center',
     marginTop: '2%',
-    marginLeft: '2%',
     marginRight: '2%',
+    marginLeft: '2%',
     marginBottom: '2%',
     flex: 1,
-    alignItems: 'center',
-    elevation: 1
+    alignItems: 'center'
   }
 });
 

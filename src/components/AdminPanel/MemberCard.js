@@ -8,7 +8,7 @@ import { globalColors } from '../../styles/Colors.js';
 import { globalFonts } from '../../styles/Fonts.js';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import SquareModal from '../SquareModal.js';
+import SquareModal from '../SquareModals/SquareModal.js';
 
 const screenWidth = Dimensions.get('window').width;
 

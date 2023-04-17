@@ -44,6 +44,7 @@ import ManageFunds from '../screens/ManageFunds.js';
 import UCLFintechFundProfile from '../screens/UCLFintechFundProfile';
 import LSESustainablefinanceFundProfile from '../screens/LSESustainablefinanceFundProfile';
 import CambridgeAlgoTradersProfile from '../screens/CambridgeAlgoTradersProfile';
+import Post from '../screens/Post';
 // import KeyActionsModal from '../components/KeyActionsModal.js';
 
 const Stack = createStackNavigator();
@@ -84,6 +85,7 @@ const MainAppNavigator = () => {
       <Stack.Screen name="UCL Fintech Fund" component={UCLFintechFundProfile} options={{ headerShown: false}}/>
       <Stack.Screen name="LSE Sustainable finance Fund" component={LSESustainablefinanceFundProfile} options={{ headerShown: false}}/>
       <Stack.Screen name="Cambridge Algo Traders" component={CambridgeAlgoTradersProfile} options={{ headerShown: false}}/>
+      <Stack.Screen name="Post" component={Post} options={{ headerShown: false}}/>
       {/* Adding Browse */}
       <Stack.Screen name="Browse" component={Browse} options={{ headerShown: false}}/>
       {/* Other Navigation */}
