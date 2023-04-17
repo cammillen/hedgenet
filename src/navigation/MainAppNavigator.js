@@ -40,8 +40,7 @@ import HelpCenter from '../screens/HelpCenter.js';
 import Currency from '../screens/Currency.js';
 import MyAccount from '../screens/MyAccount.js';
 import Friends from '../screens/Friends';
-import HelpCenter from '../screens/HelpCenter';
-import Currency from '../screens/Currency';
+import ManageFunds from '../screens/ManageFunds.js';
 import UCLFintechFundProfile from '../screens/UCLFintechFundProfile';
 import LSESustainablefinanceFundProfile from '../screens/LSESustainablefinanceFundProfile';
 import CambridgeAlgoTradersProfile from '../screens/CambridgeAlgoTradersProfile';
@@ -90,6 +89,7 @@ const MainAppNavigator = () => {
       {/* Other Navigation */}
       <Stack.Screen name="MyAccount" component={MyAccount} options={{ headerShown: false}}/>
       <Stack.Screen name="Friends" component={Friends} options={{ headerShown: false}}/>
+      <Stack.Screen name="ManageFunds" component={ManageFunds} options={{ headerShown: false}}/>
     </Stack.Navigator>
   );
 };
