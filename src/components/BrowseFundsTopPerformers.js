@@ -7,9 +7,33 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import fundImageSelect from '../assets/fundImageRequire.js';
 
 import DummyFunds from '../assets/funds/dummyFundData.js';
+import fetchMyData from '../backend/backendCall.js';
+
 
 function TopPerformers({funds}) {
     const navigation = useNavigation();
+
+      //Replace with backend and api calls!
+
+    //this uses spaces between each member name
+    //how do we calculate fund value and previous fund value?
+    let qFunds = [];
+    funds.forEach(element => qFunds.push(fetchMyData('SELECT * FROM public.fund WHERE fundname = '+element)));
+    let qFundlist = [];
+    qFunds.forEach(element => {
+      const name = element.fundname.length < 13 ? element.fundname : element.fundname.substring(0,12) + '...';
+      const left = element.fundname == funds[0] ? 24 : 0
+      const growth = ((DummyFunds[element].fundValue - DummyFunds[element].previousValue) / DummyFunds[element].previousValue) * 100;
+      qFundlist.push(
+        <TouchableOpacity key={element} style={styles.column(left)} onPress={() => {/* Individual Fund Page */}}>
+          <Image source={require(element.imagefile)} style={{...styles.logoIcon, borderColor: globalColors.status[growth > 0 ? 'success' : 'error'].color}} />
+          <Text style={styles.topText}>{name}</Text>
+          <Text style={globalFonts.BodyMedium.semiBold(globalColors.status[growth > 0 ? 'success' : 'error'].color)}>
+            {growth > 0 ? `+${growth.toFixed(2)}` : `${growth.toFixed(2)}`}%
+          </Text>
+        </TouchableOpacity>
+      );
+    });
 
     let fundlist = [];
 

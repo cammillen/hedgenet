@@ -23,6 +23,26 @@ export default function MyPositions({ stocks, paddingBottom, bottomText }) {
 
   const navigation = useNavigation();
 
+      //this uses spaces between each member name
+    //how do we calculate fund value and previous fund value?
+    //let qStocks = [];
+    //stocks.forEach(element => qStocks.push(fetchMyData('SELECT * FROM public.stock WHERE stockname = '+element)));
+    //let qFundlist = [];
+    //qFunds.forEach(element => {
+    //  const name = element.fundname.length < 13 ? element.fundname : element.fundname.substring(0,12) + '...';
+    //  const left = element.fundname == funds[0] ? 24 : 0
+    //  const growth = ((DummyFunds[element].fundValue - DummyFunds[element].previousValue) / DummyFunds[element].previousValue) * 100;
+    //  qFundlist.push(
+    //    <TouchableOpacity key={element} style={styles.column(left)} onPress={() => {/* Individual Fund Page */}}>
+    //      <Image source={require(element.imagefile)} style={{...styles.logoIcon, borderColor: globalColors.status[growth > 0 ? 'success' : 'error'].color}} />
+    //      <Text style={styles.topText}>{name}</Text>
+    //      <Text style={globalFonts.BodyMedium.semiBold(globalColors.status[growth > 0 ? 'success' : 'error'].color)}>
+    //        {growth > 0 ? `+${growth.toFixed(2)}` : `${growth.toFixed(2)}`}%
+    //      </Text>
+    //    </TouchableOpacity>
+    //  );
+    //});
+
   let positions = [];
   stocks.forEach(element => positions.push(
   <TouchableOpacity key = {element} onPress={() => navigation.navigate('StockPage', {stockName: element})}>

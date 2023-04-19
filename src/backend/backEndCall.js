@@ -30,3 +30,4 @@ function pushMyData(sqlArg) {
 }
 
 export default {pushMyData, fetchMyData};
+
