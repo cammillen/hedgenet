@@ -8,7 +8,7 @@ import { useRoute } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/native';
 
 import DummyFunds from '../assets/funds/dummyFundData.js';
-import fetchMyData from '../backend/backendCall.js';
+//import fetchMyData from '../backend/backendCall.js';
 
 
 export default function BrowseFunds({ funds, paddingBottom }) {

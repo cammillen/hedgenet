@@ -7,7 +7,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import fundImageSelect from '../assets/fundImageRequire.js';
 
 import DummyFunds from '../assets/funds/dummyFundData.js';
-import fetchMyData from '../backend/backendCall.js';
+//import fetchMyData from '../backend/backendCall.js';
 
 
 function TopPerformers({funds}) {
