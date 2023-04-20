@@ -25,14 +25,14 @@ export default function BrowseFunds({ funds, paddingBottom }) {
 
   //this uses spaces between each member name
   //how do we calculate fund value and previous fund value?
-  let qFunds = [];
-  funds.forEach(element => qFunds.push(fetchMyData('SELECT * FROM public.fund WHERE fundname = '+element)));
-  let qPositions = [];
-  qFunds.forEach(element => qPositions.push(
-  <TouchableOpacity key = {element} onPress={() => navigation.navigate('FundDiscussion', {fundName: element.fundname})}>
-  <BrowseFundsItem key = {element} fundName={element.fundname} uni={element.uni} memberNumbers={element.memberlist.split(' ').length} fundValue={DummyFunds[element].fundValue} previousValue={DummyFunds[element].previousValue} />
-  </TouchableOpacity>
-  ));
+  //let qFunds = [];
+  //funds.forEach(element => qFunds.push(fetchMyData('SELECT * FROM public.fund WHERE fundname = '+element)));
+  //let qPositions = [];
+  //qFunds.forEach(element => qPositions.push(
+  //<TouchableOpacity key = {element} onPress={() => navigation.navigate('FundDiscussion', {fundName: element.fundname})}>
+  //<BrowseFundsItem key = {element} fundName={element.fundname} uni={element.uni} memberNumbers={element.memberlist.split(' ').length} fundValue={DummyFunds[element].fundValue} previousValue={DummyFunds[element].previousValue} />
+  //</TouchableOpacity>
+  //));
 
   let positions = [];
   funds.forEach(element => positions.push(
