@@ -38,7 +38,6 @@ import Settings from '../screens/Settings.js';
 import Language from '../screens/Language.js';
 import Friends from '../screens/Friends.js';
 import HelpCenter from '../screens/HelpCenter';
-import Friends from '../screens/Friends';
 import ManageFunds from '../screens/ManageFunds.js';
 import MyAccount from '../screens/MyAccount.js';
 import Currency from '../screens/Currency';
