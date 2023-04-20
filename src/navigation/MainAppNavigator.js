@@ -38,11 +38,22 @@ import Settings from '../screens/Settings.js';
 import Language from '../screens/Language.js';
 import Friends from '../screens/Friends.js';
 import HelpCenter from '../screens/HelpCenter';
+import Friends from '../screens/Friends';
+import ManageFunds from '../screens/ManageFunds.js';
+import MyAccount from '../screens/MyAccount.js';
 import Currency from '../screens/Currency';
 import UCLFintechFundProfile from '../screens/UCLFintechFundProfile';
 import LSESustainablefinanceFundProfile from '../screens/LSESustainablefinanceFundProfile';
 import CambridgeAlgoTradersProfile from '../screens/CambridgeAlgoTradersProfile';
 import Post from '../screens/Post';
+import SignUp2 from '../screens/SignUp/SignUp2.js';
+import SignUp3 from '../screens/SignUp/SignUp3.js';
+import SignUp4 from '../screens/SignUp/SignUp4.js';
+import SignUp5 from '../screens/SignUp/SignUp5.js';
+import SignUp6 from '../screens/SignUp/SignUp6.js';
+import SignUp7 from '../screens/SignUp/SignUp7.js';
+import SignUp8 from '../screens/SignUp/SignUp8.js';
+import SignUp9 from '../screens/SignUp/SignUp9.js';
 // import KeyActionsModal from '../components/KeyActionsModal.js';
 
 const Stack = createStackNavigator();
@@ -72,6 +83,9 @@ const MainAppNavigator = () => {
       <Stack.Screen name="NewsSectionDetails" component={NewsSectionDetails} options={{ headerShown: false}}/>
       {/* Settings Navigation */}
       <Stack.Screen name="Settings" component={Settings} options={{ headerShown: false}}/>
+      <Stack.Screen name="MyAccount" component={MyAccount} options={{ headerShown: false}}/>
+      <Stack.Screen name="ManageFunds" component={ManageFunds} options={{ headerShown: false}}/>
+      <Stack.Screen name="Friends" component={Friends} options={{ headerShown: false}}/>
       <Stack.Screen name="Language" component={Language} options={{ headerShown: false}}/>
       <Stack.Screen name="Help Center" component={HelpCenter} options={{ headerShown: false}}/>
       <Stack.Screen name="Currency" component={Currency} options={{ headerShown: false}}/>
@@ -87,6 +101,15 @@ const MainAppNavigator = () => {
       <Stack.Screen name="Post" component={Post} options={{ headerShown: false}}/>
       {/* Adding Browse */}
       <Stack.Screen name="Browse" component={Browse} options={{ headerShown: false}}/>
+      {/* SignUp Navigation */}
+      <Stack.Screen name="SignUp2" component={SignUp2} options={{ headerShown: false}}/>
+      <Stack.Screen name="SignUp3" component={SignUp3} options={{ headerShown: false}}/>
+      <Stack.Screen name="SignUp4" component={SignUp4} options={{ headerShown: false}}/>
+      <Stack.Screen name="SignUp5" component={SignUp5} options={{ headerShown: false}}/>
+      <Stack.Screen name="SignUp6" component={SignUp6} options={{ headerShown: false}}/>
+      <Stack.Screen name="SignUp7" component={SignUp7} options={{ headerShown: false}}/>
+      <Stack.Screen name="SignUp8" component={SignUp8} options={{ headerShown: false}}/>
+      <Stack.Screen name="SignUp9" component={SignUp9} options={{ headerShown: false}}/>
     </Stack.Navigator>
   );
 };

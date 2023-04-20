@@ -11,31 +11,32 @@ export default function MyTradingHistoryItem(params) {
 
   let stockImage = LogoSelect(params.stockName);
   let stockValue = (params.userShares * params.shareValue).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  let percentageGrowth = "+ " + (100*(params.shareValue - params.previousValue)/params.previousValue).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  let growthColor = 'success';
-  if (percentageGrowth[2] == '-') {
-    percentageGrowth = percentageGrowth.replace('-','').replace('+','-');
-    growthColor = 'error';
-  }
-  let stockName = params.stockName;
-  if (stockName.length > 10) { stockName = stockName.substring(0,9) + '...';
+  let date = '5 Mar';
+  let fund = 'UCL Fintech';
+  
+  let status = 'Sold';
+  let statusColor = 'success';
+  if (status != 'Sold') {
+    statusColor = 'error';
   }
 
-  const graphImage = growthColor == 'success' ? require('../assets/graphs(delete)/ExampleGraphGreen.png') : require('../assets/graphs(delete)/ExampleGraphRed.png'); //generalise once on graphing
+  let stockName = params.stockName;
+  if (stockName.length > 10) { stockName = stockName.substring(0,9) + '...';}
+  if (fund.length > 10) { fund = fund.substring(0,9) + '...';}
 
 
   return (
     <View style={{ width: screenWidth, paddingLeft: 24, paddingRight: 24 }}>
       <View style={styles.header}>
-      <Image source={stockImage} style={[styles.logoIcon, { marginRight: 16 }]} />
+      <Image source={stockImage} style={[styles.logoIcon]} />
         <View style={styles.subHeaderLeft}>
           <Text style={globalFonts.H6(globalColors.others.white.color)}>{stockName}</Text>
+          <Text style={globalFonts.BodyMedium.semiBold(globalColors.others.white.color)}>{date} • {fund}</Text>
           <Text style={globalFonts.BodyMedium.semiBold(globalColors.others.white.color)}>{String(params.userShares.toPrecision(6)).substring(0,7)} shares</Text>
         </View>
-        <Image source={graphImage} style={[styles.graphVisual, { marginLeft: 16, marginRight: 16 }]} />
         <View style={styles.subHeaderRight}>
           <Text style={globalFonts.H6(globalColors.others.white.color)}>${stockValue}</Text>
-          <Text style={globalFonts.BodyMedium.semiBold(globalColors.status[growthColor].color)}>{percentageGrowth}%</Text>
+          <Text style={[ globalFonts.BodySmall.semiBold(globalColors.status[statusColor].color), {borderColor: globalColors.status[statusColor].color}, {borderWidth: 1}, {borderRadius: 6}, {marginTop: 8}, {paddingBottom: 6}, {paddingLeft: 10}, {paddingTop: 6}, {paddingRight: 10}, {display: 'flex'}, {flexDirection: 'row'}, {justifyContent: 'center'}, {alignItems: 'center'} ]}>{status}</Text>
         </View>
       </View>
     </View>
@@ -59,21 +60,21 @@ const styles = StyleSheet.create({
       alignItems: 'flex-start',
       justifyContent: 'space-around',
       height: 55,
+      marginLeft: -75
     },
     subHeaderRight: {
+      display: 'flex',
       flexDirection: 'column',
       alignItems: 'flex-end',
-      justifyContent: 'space-around',
-      height: 55
+      height: 55,
+      gap: 6
     },
     logoIcon: {
       width: 60,
       height: 60,
-      resizeMode: 'contain'
+      resizeMode: 'contain',
     },
-    graphVisual: {
-      width: 63.99,
-      height: 27.58,
-      resizeMode: 'contain'
+    statusBox:{
+      
     }
   });
