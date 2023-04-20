@@ -36,6 +36,7 @@ import FundMembers from '../components/Dashboard/FundMembers.js';
 import TradingInsights from '../components/Dashboard/TradingInsights.js';
 import Settings from '../screens/Settings.js';
 import Language from '../screens/Language.js';
+import Friends from '../screens/Friends.js';
 import HelpCenter from '../screens/HelpCenter';
 import Currency from '../screens/Currency';
 import UCLFintechFundProfile from '../screens/UCLFintechFundProfile';
@@ -78,6 +79,7 @@ const MainAppNavigator = () => {
       <Stack.Screen name="NotificationSettings" component={NotificationSettings} options={{ headerShown: false}}/>
       <Stack.Screen name="Legal" component={Legal} options={{ headerShown: false}}/>
       <Stack.Screen name="ProfileSettings" component={ProfileSettings} options={{ headerShown: false}}/>
+      <Stack.Screen name="Friends" component={Friends} options={{ headerShown: false}}/>
       <Stack.Screen name="ChangePincode" component={ChangePincode} options={{ headerShown: false}}/>
       <Stack.Screen name="UCL Fintech Fund" component={UCLFintechFundProfile} options={{ headerShown: false}}/>
       <Stack.Screen name="LSE Sustainable finance Fund" component={LSESustainablefinanceFundProfile} options={{ headerShown: false}}/>
