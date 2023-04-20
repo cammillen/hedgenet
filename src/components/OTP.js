@@ -146,7 +146,7 @@ export default function OTP () {
               keyboardType="numeric"
               textAlign='center'
               alignItems='center'
-              ref={inputRefs.input2Ref}            />
+              ref={inputRefs.input2Ref}/>
             <TextInput
               value={inputValues.input3}
               onChangeText={(text) => handleInputChange('input3', text)} 
@@ -156,7 +156,7 @@ export default function OTP () {
               keyboardType="numeric"
               textAlign='center'
               alignItems='center'
-              ref={inputRefs.input3Ref}            />
+              ref={inputRefs.input3Ref}/>
             <TextInput
               value={inputValues.input4}
               onChangeText={(text) => handleInputChange('input4', text)} 
@@ -166,7 +166,7 @@ export default function OTP () {
               keyboardType="numeric"
               textAlign='center'
               alignItems='center'
-              ref={inputRefs.input4Ref}            />
+              ref={inputRefs.input4Ref}/>
         </View>
             <View>
                 <Text style={[styles.text5,{paddingTop:40}]}>Didn't receive email?</Text>
@@ -290,8 +290,6 @@ const styles = StyleSheet.create({
     gap: 16,
     paddingTop: 16,
     marginLeft:24,
-    //paddingLeft: 24,
-    //paddingRight: 24 
   },
   textinput: {
     ...globalFonts.H3(globalColors.others.white.color),
