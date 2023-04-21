@@ -23,6 +23,28 @@ export default function MyPositions({ stocks, paddingBottom, bottomText }) {
 
   const navigation = useNavigation();
 
+  
+  //// Loop through each stock name and fetch ticker symbol from backend
+  //for (let i = 0; i < stocks.length; i++) {
+  //  const tickerQuery = `SELECT ticker FROM public.stock WHERE name = '${stocks[i]}'`;
+  //  const tickerData = fetchMyData(tickerQuery);
+  //  tickers.push(tickerData[0].ticker);
+  //}
+//
+  //// Define object to store today's and yesterday's stock values
+  //const stockValues = {};
+//
+  //// Loop through each ticker symbol and fetch stock values from Yahoo Finance API
+  //for (let i = 0; i < tickers.length; i++) {
+  //  const response = fetch(`https://query1.finance.yahoo.com/v7/finance/quote?symbols=${tickers[i]}`);
+  //  const data = response.json();
+  //  const today = data.quoteResponse.result[0].regularMarketPrice;
+  //  const yesterday = data.quoteResponse.result[0].regularMarketPreviousClose;
+  //  stockValues[tickers[i]] = { today, yesterday };
+  //}
+
+
+
   let positions = [];
   stocks.forEach(element => positions.push(
   <TouchableOpacity key = {element} onPress={() => navigation.navigate('StockPage', {stockName: element})}>
