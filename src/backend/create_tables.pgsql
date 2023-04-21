@@ -95,7 +95,7 @@ CREATE TABLE IF NOT EXISTS public.trade
     username character varying(32) COLLATE pg_catalog."default" NOT NULL,
     stockname character varying(32) COLLATE pg_catalog."default" NOT NULL,
     "time" timestamp without time zone NOT NULL,
-    value real NOT NULL,
+    shares real NOT NULL,
     CONSTRAINT trade_pkey PRIMARY KEY (tradeid)
 )
 

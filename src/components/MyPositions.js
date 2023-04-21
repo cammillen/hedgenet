@@ -22,6 +22,47 @@ export default function MyPositions({ stocks, paddingBottom, bottomText }) {
   }
 
   const navigation = useNavigation();
+  
+  //Backend code to test and implement
+
+  //let tickers=[];
+  ////Loop through each stock name and fetch ticker symbol from backend
+  //for (let i = 0; i < stocks.length; i++) {
+  //  const tickerQuery = `SELECT ticker FROM public.stock WHERE name = '${stocks[i]}'`;
+  //  const tickerData = fetchMyData(tickerQuery);
+  //  tickers.push(tickerData[0].ticker);
+  //}
+  //
+  //// Define object to store today's and yesterday's stock values
+  //let stockValues = [];
+  //// Loop through each ticker symbol and fetch stock values from Yahoo Finance API
+  //for (let i = 0; i < tickers.length; i++) {
+  //  const response = fetch(`https://query1.finance.yahoo.com/v7/finance/quote?symbols=${tickers[i]}`);
+  //  const data = response.json();
+  //  const today = data.quoteResponse.result[0].regularMarketPrice;
+  //  const yesterday = data.quoteResponse.result[0].regularMarketPreviousClose;
+  //  stockValues.push({ today, yesterday });
+  //}
+  //  const sumSharesQuery = `SELECT SUM(shares) as totalShares FROM public.trades username = '${user}' AND stockname = '${stocks[i]}'`;
+  //  const sumSharesData = fetchMyData(sumSharesQuery);
+  //  userShares = sumSharesData[0].totalShares
+//
+  //let positions = [];
+  //for (let i = 0; i < stocks.length; i++) {
+  //  positions.push(
+  //    <TouchableOpacity key = {stocks[i]} onPress={() => navigation.navigate('StockPage', {stockName: stocks[i]})}>
+  //      <MyPositionsItem key = {stocks[i]} stockName={stocks[i]} userShares={userShares} shareValue={stockValues[i].today} previousValue={stockValues[i].yesterday} />
+  //    </TouchableOpacity>
+  //  );
+  //}
+  //return (
+  //  <ScrollView alwaysBounceVertical={true}>
+  //  <View style={styles(paddingBottom).container}>
+  //      {positions}
+  //      <Text style={[globalFonts.BodyLarge.semiBold(globalColors.primary._500.color), {paddingTop: 30}]}>{bottomText}</Text>
+  //  </View>
+  //  </ScrollView>
+  //  );
 
   let positions = [];
   stocks.forEach(element => positions.push(
