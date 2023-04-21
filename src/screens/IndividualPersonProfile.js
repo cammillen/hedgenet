@@ -102,7 +102,7 @@ export default function IndividualPersonProfile () {
         </View>
         <ScrollView style={{ marginTop: 18}} contentContainerStyle={{ flexGrow: 1 }} alwaysBounceVertical={true}>
         <View style={{paddingBottom: 140}}>
-          <TextWithSort title={'${name}  Funds'} rightTitle={'Asc. Order'} />
+          <TextWithSort title={'Peters  Funds'} rightTitle={'Asc. Order'} />
           <BrowseFunds funds={['Fintech Algo', 'UCL Agtech']} paddingBottom={10}/>
           <TextWithSort title={'My Open Positions'} rightTitle={'Asc. Order'} />
           <MyPositions stocks={['Tesla', 'Blackberry', 'Coca-Cola', 'Netflix', 'Apple']} paddingBottom={10} bottomText={'See More'}/>

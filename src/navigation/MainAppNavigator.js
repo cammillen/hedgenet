@@ -47,6 +47,14 @@
       import Post from '../screens/Post';
       import AboutHedgenet from '../screens/AboutHedgenet.js';
       import IndividualPersonProfile from '../screens/IndividualPersonProfile.js';
+      import SignUp2 from '../screens/SignUp/SignUp2.js';
+      import SignUp3 from '../screens/SignUp/SignUp3.js';
+      import SignUp4 from '../screens/SignUp/SignUp4.js';
+      import SignUp5 from '../screens/SignUp/SignUp5.js';
+      import SignUp6 from '../screens/SignUp/SignUp6.js';
+      import SignUp7 from '../screens/SignUp/SignUp7.js';
+      import SignUp8 from '../screens/SignUp/SignUp8.js';
+      import SignUp9 from '../screens/SignUp/SignUp9.js';
       // import KeyActionsModal from '../components/KeyActionsModal.js';
       
       const Stack = createStackNavigator();
@@ -95,6 +103,15 @@
             <Stack.Screen name="Individual Person Profile" component={IndividualPersonProfile} options={{ headerShown: false}}/>
             {/* Adding Browse */}
             <Stack.Screen name="Browse" component={Browse} options={{ headerShown: false}}/>
+            {/* SignUp Navigation */}
+            <Stack.Screen name="SignUp2" component={SignUp2} options={{ headerShown: false}}/>
+            <Stack.Screen name="SignUp3" component={SignUp3} options={{ headerShown: false}}/>
+            <Stack.Screen name="SignUp4" component={SignUp4} options={{ headerShown: false}}/>
+            <Stack.Screen name="SignUp5" component={SignUp5} options={{ headerShown: false}}/>
+            <Stack.Screen name="SignUp6" component={SignUp6} options={{ headerShown: false}}/>
+            <Stack.Screen name="SignUp7" component={SignUp7} options={{ headerShown: false}}/>
+            <Stack.Screen name="SignUp8" component={SignUp8} options={{ headerShown: false}}/>
+            <Stack.Screen name="SignUp9" component={SignUp9} options={{ headerShown: false}}/>
           </Stack.Navigator>
         );
       };
