@@ -35,14 +35,18 @@
       import FundMembers from '../components/Dashboard/FundMembers.js';
       import TradingInsights from '../components/Dashboard/TradingInsights.js';
       import Settings from '../screens/Settings.js';
+      import Friends from '../screens/Friends.js';
       import Language from '../screens/Language.js';
       import HelpCenter from '../screens/HelpCenter';
+      import ManageFunds from '../screens/ManageFunds.js';
+      import MyAccount from '../screens/MyAccount.js';
       import Currency from '../screens/Currency';
       import UCLFintechFundProfile from '../screens/UCLFintechFundProfile';
       import LSESustainablefinanceFundProfile from '../screens/LSESustainablefinanceFundProfile';
       import CambridgeAlgoTradersProfile from '../screens/CambridgeAlgoTradersProfile';
       import Post from '../screens/Post';
       import AboutHedgenet from '../screens/AboutHedgenet.js';
+      import IndividualPersonProfile from '../screens/IndividualPersonProfile.js';
       // import KeyActionsModal from '../components/KeyActionsModal.js';
       
       const Stack = createStackNavigator();
@@ -82,9 +86,13 @@
             <Stack.Screen name="ProfileSettings" component={ProfileSettings} options={{ headerShown: false}}/>
             <Stack.Screen name="ChangePincode" component={ChangePincode} options={{ headerShown: false}}/>
             <Stack.Screen name="UCL Fintech Fund" component={UCLFintechFundProfile} options={{ headerShown: false}}/>
+            <Stack.Screen name="Friends" component={Friends} options={{ headerShown: false}}/>
+            <Stack.Screen name="MyAccount" component={MyAccount} options={{ headerShown: false}}/>
+            <Stack.Screen name="ManageFunds" component={ManageFunds} options={{ headerShown: false}}/>
             <Stack.Screen name="LSE Sustainable finance Fund" component={LSESustainablefinanceFundProfile} options={{ headerShown: false}}/>
             <Stack.Screen name="Cambridge Algo Traders" component={CambridgeAlgoTradersProfile} options={{ headerShown: false}}/>
             <Stack.Screen name="Post" component={Post} options={{ headerShown: false}}/>
+            <Stack.Screen name="Individual Person Profile" component={IndividualPersonProfile} options={{ headerShown: false}}/>
             {/* Adding Browse */}
             <Stack.Screen name="Browse" component={Browse} options={{ headerShown: false}}/>
           </Stack.Navigator>

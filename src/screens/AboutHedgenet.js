@@ -21,11 +21,11 @@ import SelectDropdown from 'react-native-select-dropdown'
 import {Dropdown} from 'react-native-element-dropdown';
 
 
-export default function Profile () {
+export default function AboutHedgenet () {
 
   const navigation = useNavigation();
   
-  const Screen = 'Settings';
+  const Screen = 'About Hedgenet';
 
   const [fontsLoaded] = useFonts({
     'Urbanist-Bold': require('../assets/fonts/Urbanist-Bold.ttf'),
@@ -79,7 +79,7 @@ export default function Profile () {
               style={styles.ArrowLeft_GreenIcon}
             />
           </TouchableOpacity>
-          <Text style={[globalFonts.H4(globalColors.others.white.color), {marginLeft:16}]}>About eeee</Text>
+          <Text style={[globalFonts.H4(globalColors.others.white.color), {marginLeft:16}]}>About Hedgenet</Text>
         </View>
         <View style={styles.bigbox}>
           <ScrollView contentContainerStyle={{ flexGrow: 1 }} alwaysBounceVertical={true}>

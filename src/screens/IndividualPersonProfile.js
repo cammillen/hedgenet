@@ -1,4 +1,4 @@
-// Profile Page
+// My Account page
 
 import React from 'react';
 import { View, StyleSheet, Image, Text } from 'react-native';
@@ -18,9 +18,9 @@ import TextWithSort from '../components/SectionHeaders/TextWithSort.js';
 import MyPositions from '../components/MyPositions.js';
 import MyTradingHistory from '../components/MyTradingHistory';
 
-export default function Profile () {
+export default function IndividualPersonProfile () {
 
-  const Screen = 'Profile';
+  const Screen = 'Individual Person Profile';
 
   const [fontsLoaded] = useFonts({
     'Urbanist-Bold': require('../assets/fonts/Urbanist-Bold.ttf'),
@@ -70,7 +70,7 @@ export default function Profile () {
                 </View>
             <View style={styles.editprofile}>
               <TouchableOpacity onPress={() => {}} >
-                <Text style={[globalFonts.BodyMedium.semiBold(globalColors.others.white.color)]}>Edit Profile</Text>
+                <Text style={[globalFonts.BodyMedium.semiBold(globalColors.others.white.color)]}>Following</Text>
               </TouchableOpacity>
             </View>
             <View style={{display: 'flex', flexDirection: 'row', alignItems: 'flex-start', marginTop: 61, marginLeft: 117}}>
@@ -102,7 +102,7 @@ export default function Profile () {
         </View>
         <ScrollView style={{ marginTop: 18}} contentContainerStyle={{ flexGrow: 1 }} alwaysBounceVertical={true}>
         <View style={{paddingBottom: 140}}>
-          <TextWithSort title={'My Funds'} rightTitle={'Asc. Order'} />
+          <TextWithSort title={'${name}  Funds'} rightTitle={'Asc. Order'} />
           <BrowseFunds funds={['Fintech Algo', 'UCL Agtech']} paddingBottom={10}/>
           <TextWithSort title={'My Open Positions'} rightTitle={'Asc. Order'} />
           <MyPositions stocks={['Tesla', 'Blackberry', 'Coca-Cola', 'Netflix', 'Apple']} paddingBottom={10} bottomText={'See More'}/>
@@ -210,18 +210,19 @@ const styles = StyleSheet.create({
 const details = [
   {
     image: require('../assets/icons/ProfilePlaceholder.png'),
-    name: 'Omiros Smit',
-    username: 'omismit',
+    name: 'Peter Lookman',
+    username: 'peterlok',
     balance: '87,323.22',
     university: 'UCL',
     bestfund: 'AgTech',
-    index: 'FTSE 500'
+    index: 'FTSE 500',
+    state: 'following'
   },
 ]
 const info = [
   {
-    trades: 2921,
-    followers: 234,
-    following: 134,
+    trades: 593,
+    followers: 45,
+    following: 32,
   }
 ]

@@ -14,7 +14,6 @@ import { useNavigation } from '@react-navigation/native';
 import { globalColors } from '../styles/Colors.js';
 import { globalFonts } from '../styles/Fonts.js';
 import { ScrollView } from 'react-native-gesture-handler';
-import IndividualPersonProfile from './IndividualPersonProfile.js';
 
 
 const screenWidth = Dimensions.get('window').width;
@@ -32,7 +31,8 @@ export default function Friends () {
 
   SplashScreen.preventAutoHideAsync(); 
   const navigation = useNavigation();
-
+  
+  const [profileselected, setProfileSelected] = useState('');
   const [isSelected, setIsSelected] = useState('Followers');
   const [showFollowers, setShowFollowers] = useState(true);
   const [showFollowing,setShowFollowing] = useState(false);
@@ -42,16 +42,20 @@ export default function Friends () {
     setShowFollowers(screen === 'Followers');
     setShowFollowing(screen === 'Following');
   };
+
+  
   //ADD LOGIC FOR REMOVE AND UNFOLLOW BUTTONS
 
-  const ProfileCard = ({ image, name, mutualGroups, numTrades }) => {
+  const ProfileCard = ({ image, namesur, mutualGroups, numTrades }) => {
+  if (namesur.length > 18) { namesur = namesur.substring(0,17) + '...';
+  }
     return (
-      <TouchableOpacity style={styles.personbox} onPress={() => navigation.navigate('Individual Person Profile')}>
+      <TouchableOpacity style={styles.personbox} onPress={() => setProfileSelected(namesur)}>
         <Image style={styles.image}
           source={image}
         />
         <View style={styles.textbox}>
-          <Text style={[globalFonts.H6(globalColors.others.white.color), {display: 'flex'}, {alignItems: 'center'}, {height: 29}]}>{name}</Text>
+          <Text style={[globalFonts.H6(globalColors.others.white.color), {display: 'flex'}, {alignItems: 'center'}, {height: 29}]}>{namesur}</Text>
           <Text style={[globalFonts.BodyMedium.Medium(globalColors.greyscale._300.color), {display: 'flex'}, {alignItems: 'center'}, {marginTop: 4}]}> {`${mutualGroups} Mutual Groups • ${numTrades} Trades`}</Text>
         </View> 
         <TouchableOpacity style={[styles.smallbutton, { backgroundColor: isSelected === 'Followers' ? globalColors.status.error.color : globalColors.greyscale._900.color }]}>
@@ -99,7 +103,7 @@ export default function Friends () {
               <ProfileCard
                 key={index}
                 image={followers.image}
-                name={followers.name}
+                namesur={followers.namesur}
                 mutualGroups={followers.mutualGroups}
                 numTrades={followers.numTrades}
               />
@@ -114,7 +118,7 @@ export default function Friends () {
               <ProfileCard
                 key={index}
                 image={following.image}
-                name={following.name}
+                namesur={following.namesur}
                 mutualGroups={following.mutualGroups}
                 numTrades={following.numTrades}
               />
@@ -230,56 +234,56 @@ const styles = StyleSheet.create({
     marginBottom: 14,
     marginRight: 24,
     marginTop: 14
-  }
+  },
 });
 
 //NEEDS TO BE LINKED WITH DATABASE
 const followers = [
   {
     image: require('../assets/icons/MockProfileImage.png'),
-    name: 'John Doe',
+    namesur: 'John Doe',
     mutualGroups: 5,
     numTrades: 10,
   },
   {
     image: require('../assets/icons/MockProfileImage.png'),
-    name: 'Jane Smith',
+    namesur: 'Jane Smith',
     mutualGroups: 3,
     numTrades: 7,
   },
   {
     image: require('../assets/icons/MockProfileImage.png'),
-    name: 'Jane Smith',
+    namesur: 'Christos Pingureiross',
     mutualGroups: 3,
     numTrades: 7,
   },
   {
     image: require('../assets/icons/MockProfileImage.png'),
-    name: 'Jane Smith',
+    namesur: 'Panayiotis Yiasemi',
     mutualGroups: 3,
     numTrades: 7,
   },
   {
     image: require('../assets/icons/MockProfileImage.png'),
-    name: 'Jane Smith',
+    namesur: 'Jane Smith',
     mutualGroups: 3,
     numTrades: 7,
   },
   {
     image: require('../assets/icons/MockProfileImage.png'),
-    name: 'Jane Smith',
+    namesur: 'Jane Smith',
     mutualGroups: 3,
     numTrades: 7,
   },
   {
     image: require('../assets/icons/MockProfileImage.png'),
-    name: 'Jane Smith',
+    namesur: 'Jane Smith',
     mutualGroups: 3,
     numTrades: 7,
   },
   {
     image: require('../assets/icons/MockProfileImage.png'),
-    name: 'Jane Smith',
+    namesur: 'Jane Smith',
     mutualGroups: 3,
     numTrades: 7,
   },
@@ -288,49 +292,49 @@ const followers = [
 const following = [
   {
     image: require('../assets/icons/MockProfileImage.png'),
-    name: 'Omiros Smit',
+    namesur: 'Omiros Smit',
     mutualGroups: 5,
     numTrades: 10,
   },
   {
     image: require('../assets/icons/MockProfileImage.png'),
-    name: 'Jorge Loizeth',
+    namesur: 'Jorge Loizeth',
     mutualGroups: 3,
     numTrades: 7,
   },
   {
     image: require('../assets/icons/MockProfileImage.png'),
-    name: 'Jane Smith',
+    namesur: 'Jane Shillopellex',
     mutualGroups: 3,
     numTrades: 7,
   },
   {
     image: require('../assets/icons/MockProfileImage.png'),
-    name: 'Jane Smith',
+    namesur: 'Jane Smith',
     mutualGroups: 3,
     numTrades: 7,
   },
   {
     image: require('../assets/icons/MockProfileImage.png'),
-    name: 'Jane Smith',
+    namesur: 'Jane Smith',
     mutualGroups: 3,
     numTrades: 7,
   },
   {
     image: require('../assets/icons/MockProfileImage.png'),
-    name: 'Jane Smith',
+    namesur: 'Jane Smith',
     mutualGroups: 3,
     numTrades: 7,
   },
   {
     image: require('../assets/icons/MockProfileImage.png'),
-    name: 'Jane Smith',
+    namesur: 'Jane Smith',
     mutualGroups: 3,
     numTrades: 7,
   },
   {
     image: require('../assets/icons/MockProfileImage.png'),
-    name: 'Jane Smith',
+    namesur: 'Jane Smith',
     mutualGroups: 3,
     numTrades: 7,
   },
