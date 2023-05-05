@@ -4,10 +4,10 @@
     "slug": "hedgenet",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./src/assets/icon.png",
+    "icon": "./src/assets/icons/HedgenetGreen.png", //hedgenet logo
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./src/assets/splash.png",
+      "image": "./src/assets/SplashFrames/1.png",
       "resizeMode": "contain",
       "backgroundColor": "#000000"
     },
@@ -25,10 +25,16 @@
       "backgroundColor": "#000000",
       "adaptiveIcon": {
         "foregroundImage": "./src/assets/adaptive-icon.png"
-      }
+      },
+      "package": "com.hedgenetmobile.hedgenet"
     },
     "web": {
-      "favicon": "./src/assets/favicon.png"
+      "favicon": "./src/assets/IOSBackground.png" //random
+    },
+    "extra": {
+      "eas": {
+        "projectId": "991b2191-2a34-4ab9-a9c8-1da49c978ead"
+      }
     }
   }
 }
