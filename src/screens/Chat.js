@@ -14,6 +14,8 @@ import { useNavigation } from '@react-navigation/native';
 //Backend TO DO: this has to import the real backend data 
 import { fund1posts, fund2posts } from '../backend/dummyPostData';
 
+console.log(fund1posts);
+
 export default function Chat () {
   const navigation = useNavigation();
 
@@ -45,7 +47,8 @@ export default function Chat () {
         <TopMenuBar screen={Screen} />
         {/* TO DO: NAVIGATION link the header to the create a post popup */}
         <ChatPageHeader name={'My Funds'} marginBottom={5}  buttonnavigation={'Profile'}/>
-        <SliderBar titles={titles} screens={screens} />
+        {/* <SliderBar titles={titles} screens={screens} /> */}
+        <ChatPageContent posts={fund1posts}  />
         <View style={styles.bottomMenuBarContainer}>
           <BottomMenuBar />
         </View>

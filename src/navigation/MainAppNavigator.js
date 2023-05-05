@@ -76,7 +76,7 @@
             <Stack.Screen name="Home" component={Home} options={{ headerShown: false}}/>
             <Stack.Screen name="Dashboard" component={Dashboard} options={{ headerShown: false}}/>
             {/* <Stack.Screen name="KeyActionsModal" component={KeyActionsModal} options={{ headerShown: false}}/> */}
-            <Stack.Screen name="Chat" component={Chat} options={{ headerShown: false}}/>
+            <Stack.Screen name="Chat" component={Newsfeed} options={{ headerShown: false}}/>
             <Stack.Screen name="Menu" component={Menu} options={{ headerShown: false}}/>
             {/* Individual Stock Navigation */}
             <Stack.Screen name="StockPage" component={StockPage} options={{ headerShown: false}}/>

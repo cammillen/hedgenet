@@ -32,9 +32,10 @@ function PostCard(props) {
     const { imagesource, username, timesincepost, strategy1, strategy2, strategy3, postcontent, upvotes, comments  } = props;
     
     const handlePress = () => {
-        navigation.navigate('Post', {
+        try {navigation.navigate('Post', {
             imagesource: imagesource, username: username, timesincepost: timesincepost, strategy1: strategy1, strategy2: strategy2, strategy3: strategy3, postcontent: postcontent, upvotes: upvotes, comments: comments
         });
+        }  catch (error) { console.log(error); }
     }
     const handleSharePress = async () => {
         try {
@@ -47,35 +48,64 @@ function PostCard(props) {
           console.log(error);
         }
       }
+
+    //let messageComponents = [];
+    //let temp = '';
+    //if (messageComponents.length < 8) {
+    //  news.message.split(' ').forEach(text => {
+    //    if (text.includes('@')) {
+    //      messageComponents.push(<Text style={globalFonts.BodyLarge.Medium(globalColors.others.white.color)}>{temp.trim()+' '}</Text>);
+    //      temp = '';
+    //      messageComponents.push(<Text style={globalFonts.BodyLarge.Medium(globalColors.primary._500.color)}>{text.trim()+' '}</Text>);
+    //    } else { temp = [temp,text].join(' '); }
+    //})
+    //  messageComponents.push(<Text style={globalFonts.BodyLarge.Medium(globalColors.others.white.color)}>{temp.trim()}</Text>);
+    //}
+
+    //return (
+    //    <View style={styles.outerContainer}>
+    //        <TouchableWithoutFeedback onPress={handlePress}>
+    //            <View>
+    //            <View style={styles.imageTitleContainer}>
+    //                <Image source={imagesource} style={[styles.profileIcon, { marginRight: 14}]} />
+    //                <View style={styles.usernameStrategyVertContainer}>
+    //                    <Text style={[globalFonts.BodySmall.semiBold(globalColors.others.white.color), { paddingBottom: 5}]}>u/{username} • {timesincepost}h</Text>
+    //                    <Text style={[globalFonts.BodyXLarge.semiBold(globalColors.others.white.color), styles.title]} numberOfLines={1}>{strategy1} • {strategy2} • {strategy3}</Text>
+    //                </View>
+    //            </View>
+    //            {/* This is the logic that turns the text green*/}
+    //            <Text style={[globalFonts.BodyLarge.Medium(globalColors.others.white.color), { marginBottom: 12 }]}>
+    //            {
+    //                postcontent.split(' ').map((word, index) => {
+    //                if (word.includes('@')) {
+    //                    return (
+    //                    <Text key={index} style={globalFonts.BodyLarge.semiBold(globalColors.primary._500.color)}>{word} </Text>
+    //                    );
+    //                } else {
+    //                    return (
+    //                    <Text key={index}>{word} </Text>
+    //                    );
+    //                }
+    //                })
+    //            }
+    //            </Text>
+    //            </View>
+    //        </TouchableWithoutFeedback>
+    //        </View>
+    //    );
+
+
     return (
         <View style={styles.outerContainer}>
             <TouchableWithoutFeedback onPress={handlePress}>
-                <View>
                 <View style={styles.imageTitleContainer}>
-                    <Image source={imagesource} style={[styles.profileIcon, { marginRight: 14}]} />
                     <View style={styles.usernameStrategyVertContainer}>
                         <Text style={[globalFonts.BodySmall.semiBold(globalColors.others.white.color), { paddingBottom: 5}]}>u/{username} • {timesincepost}h</Text>
                         <Text style={[globalFonts.BodyXLarge.semiBold(globalColors.others.white.color), styles.title]} numberOfLines={1}>{strategy1} • {strategy2} • {strategy3}</Text>
                     </View>
                 </View>
-                {/* This is the logic that turns the text green*/}
-                <Text style={[globalFonts.BodyLarge.Medium(globalColors.others.white.color), { marginBottom: 12 }]}>
-                {
-                    postcontent.split(' ').map((word, index) => {
-                    if (word.includes('@')) {
-                        return (
-                        <Text key={index} style={globalFonts.BodyLarge.semiBold(globalColors.primary._500.color)}>{word} </Text>
-                        );
-                    } else {
-                        return (
-                        <Text key={index}>{word} </Text>
-                        );
-                    }
-                    })
-                }
-                </Text>
-                </View>
             </TouchableWithoutFeedback>
+
             <View style={styles.bottomButtons}>
                 <View style={styles.upvoteCommentsHBox}>
                     {/* TO DO: BACKEND: do the on press so that when they press it once the upvote goes up by one and the icon is replaces with a bolder icon.  */}

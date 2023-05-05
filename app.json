@@ -7,7 +7,7 @@
     "icon": "./src/assets/icons/HedgenetGreen.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./src/assets/SplashFrames/1.png",
+      "image": "./src/assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#000000"
     },
